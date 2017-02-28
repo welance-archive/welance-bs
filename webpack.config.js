@@ -2,6 +2,8 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
+//process.env.NODE_ENV): prod | dev
+
 module.exports = {
     entry: "./main.js",
     output: {
