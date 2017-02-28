@@ -1,29 +1,29 @@
-# README #
+# Welance Website #
 
-This README would normally document whatever steps are necessary to get your application up and running.
-
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+This is the main repository for the welance website. A Single Page Application using HTML, CSS(SASS), JS (VueJS) and Webpack for bundling. Content and data comes from using an external (not yet defined) REST API.
 
 ### How do I get set up? ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
+1. Install the latest node and NPM if you haven't yet.
+2. Install webpack globally with `npm install webpack -g` _(optional, suggested)_
+3. Install vue-cli globally with `npm install vue-cli -g` _(optional, suggested)_
+4. Install projects dependencies with `npm install`
+
+#### Development
+
+1. Run webpack-dev-server with `npm run dev` and navigate to [http://localhost:8080](http://localhost:8080) **☆**
+
+**☆** _The local dev server is available on any device on the network at http://yourIP:8080_
+
+#### Bundled (Production) Version
+1. Obtain bundled production app running `npm run prod`. Find production files under **_/dist_** folder.
+
 
 ### Contribution guidelines ###
 
-* Writing tests
-* Code review
-* Other guidelines
+* Use exclusively `npm` to install new modules
+
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+For more info you can ask [enrico](https://github.com/ricricucit/).
