@@ -1,0 +1,12 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        //"chrome": 52,
+        "browsers": ["last 50 versions", "safari >= 7"]
+        //"modules" : false
+        //"debug" : true
+      }
+    }]
+  ]
+}

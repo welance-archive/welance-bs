@@ -11,6 +11,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: "babel-loader"
+            },
+            {
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: "style-loader",
@@ -27,7 +32,8 @@ module.exports = {
                         template: "./index.html",
                         minify:{
                             collapseWhitespace: true
-                    }}),
+                        }
+                    }),
                 new ExtractTextPlugin({
                         filename: "bundle.css"
                     })
