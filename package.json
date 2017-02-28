@@ -16,7 +16,8 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/ricricucit/welance-2017#readme",
   "dependencies": {
-    "bootstrap": "^4.0.0-alpha.6"
+    "bootstrap": "^4.0.0-alpha.6",
+    "vue": "^2.2.1"
   },
   "devDependencies": {
     "css-loader": "^0.26.2",
