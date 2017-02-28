@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV='dev' webpack-dev-server --host 0.0.0.0",
+    "dev": "NODE_ENV='dev' webpack-dev-server --host 0.0.0.0 --open",
     "prod": "NODE_ENV='prod' webpack -p"
   },
   "repository": {
@@ -17,7 +17,8 @@
   "homepage": "https://bitbucket.org/ricricucit/welance-2017#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-alpha.6",
-    "vue": "^2.2.1"
+    "vue": "^2.2.1",
+    "vue-router": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.23.1",
@@ -29,6 +30,8 @@
     "node-sass": "^4.5.0",
     "sass-loader": "^6.0.2",
     "style-loader": "^0.13.2",
+    "vue-loader": "^11.1.3",
+    "vue-template-compiler": "^2.2.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }
