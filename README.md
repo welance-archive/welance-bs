@@ -9,26 +9,35 @@ This is the main repository for the welance website. A Single Page Application u
 Directory structure of the app is inspired by [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack)
 Content and data comes from using an external (not yet defined) REST API.
 
+#### This project features:
+* VueJS (ES6) implementation w/ tree-shaking
+* autogeneration and compression of HTML, CSS, JS (from SASS/VUE components), images and favicon generation (for needed devices) using webpack.
+* ES6(2015) for JS, autocompiled to ES5 for older browsers (babel)
+* async communication using [axios](https://github.com/mzabriskie/axios)
+* bootstrap SASS v4
+
+Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more.
+
+
 ## Software Requirements
-* No specific SW requirements needed.
+* No specific SW requirements needed, see _Installation solutions to possible errors_ section for more.
 
 ## Application Requirements
 
-* Node.js (6+) and NPM (4+)
-* Webpack
+* [node](https://nodejs.org/en/) (6+) and NPM (4+)
+* [Webpack](https://github.com/webpack/webpack)
 
 ## Installation Instructions
 
-1. Install the latest node and NPM if you haven't yet.
+1. Install the latest [node](https://nodejs.org/en/) and NPM. (For future use, I suggest using [NVM](https://github.com/creationix/nvm) to manage both of these)
 2. Install webpack globally with `npm install webpack -g` _(optional, suggested)_
-3. Install vue-cli globally with `npm install vue-cli -g` _(optional, suggested)_
-4. Install projects dependencies with `npm install`
+3. Install projects dependencies with `npm install`
 
 ### Installation solutions to possible errors
 ...if you get a `mozjpeg pre-build test failed` running `npm install`, run the following commands (as suggested [here](https://github.com/tcoopman/image-webpack-loader/issues/49)):
 
-1. `brew install libpng` (OSX)
-2. `brew install libtool automake autoconf nasm` (OSX)
+1. `brew install libpng` (on OSX)
+2. `brew install libtool automake autoconf nasm` (on OSX)
 3. If you still get errors related to images (_libpng, etc._) check out [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for alternative fixes
 
 ### Development
@@ -52,6 +61,10 @@ Content and data comes from using an external (not yet defined) REST API.
 
 * Read **[Welance Development Guidelines](https://welance-handbook.herokuapp.com/welance-development-guidelines.html)**
 * Install [Vue.JS devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) for easier Front-End debugging
+
+- - -
+
+* When you need to refer to **static assets**, always reference like `/assets/[folder]/[folder_or_file].[extension]` in both HTML, SASS and JS files
 
 - - -
 
