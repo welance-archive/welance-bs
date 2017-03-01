@@ -4,6 +4,25 @@
     Go To: <router-link to="/hello">Hello</router-link> / <router-link to="/">Home</router-link>
     <router-view></router-view>
     <br/>footer
+    <div class="row">
+        <div class="col-4">
+            this is a col 4
+        </div>
+        <div class="col-8">
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+        </div>
+    </div>
   </div>
 </template>
 

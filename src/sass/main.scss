@@ -1,5 +1,26 @@
+@import "bootstrap/bootstrap";
 @import "variables";
 
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.row{
+
+    @include make-row();
+    .col-4{
+        @include make-col(4);
+        background: blue;
+        height: 200px;
+    }
+    .col-8{
+        @include make-col(8);
+        background: red;
+        display: flex;
+        justify-content: space-around;
+    }
+}
 html {
     background: url("/assets/images/logo.png") repeat;
 }
