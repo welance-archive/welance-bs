@@ -24,6 +24,13 @@ Content and data comes from using an external (not yet defined) REST API.
 3. Install vue-cli globally with `npm install vue-cli -g` _(optional, suggested)_
 4. Install projects dependencies with `npm install`
 
+### Installation solutions to possible errors
+...if you get a `mozjpeg pre-build test failed` running `npm install`, run the following commands (as suggested [here](https://github.com/tcoopman/image-webpack-loader/issues/49)):
+
+1. `brew install libpng` (OSX)
+2. `brew install libtool automake autoconf nasm` (OSX)
+3. If you still get errors related to images (_libpng, etc._) check out [imagemin-webpack-plugin](https://github.com/Klathmon/imagemin-webpack-plugin) for alternative fixes
+
 ### Development
 
 1. Run webpack-dev-server with `npm run dev` and navigate to [http://localhost:8080](http://localhost:8080) **☆**
@@ -32,7 +39,6 @@ Content and data comes from using an external (not yet defined) REST API.
 
 ### Bundled (Production) Version
 1. Obtain bundled production app running `npm run prod`. Find production files under **_/dist_** folder.
-
 
 ## Recovery Procedures
 * No specific Recovery procedures.
