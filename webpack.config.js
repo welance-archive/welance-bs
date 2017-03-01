@@ -94,7 +94,7 @@ module.exports = {
 			// Your source logo
 			logo: './src/assets/images/favicon.png',
 			// The prefix for all image files (might be a folder or a name)
-			prefix: 'icons-[hash]/',
+			prefix: './assets/images/icons-[hash]/',
 			// Emit all stats of the generated icons
 			emitStats: false,
 			// The name of the json containing all favicon information
