@@ -1,9 +1,10 @@
-var webpack = require("webpack");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var path = require('path');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+let webpack = require("webpack");
+let HtmlWebpackPlugin = require('html-webpack-plugin');
+let ExtractTextPlugin = require('extract-text-webpack-plugin');
+let path = require('path');
+let CopyWebpackPlugin = require('copy-webpack-plugin');
+let ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 //process.env.NODE_ENV): prod | dev
 
@@ -57,7 +58,7 @@ module.exports = {
 			template: "./index.html",
 			hash: true,
 			minify:{
-				collapseWhitespace: true
+				collapseWhitespace: process.env.NODE_ENV == 'prod'
 			}
 		}),
 		//about SASS compilation
@@ -87,6 +88,39 @@ module.exports = {
 			},
 			gifsicle: {
 				optimizationLevel: 3 //1-3 (3 slower)
+			}
+		}),
+		new FaviconsWebpackPlugin({
+			// Your source logo
+			logo: './src/assets/images/favicon.png',
+			// The prefix for all image files (might be a folder or a name)
+			prefix: 'icons-[hash]/',
+			// Emit all stats of the generated icons
+			emitStats: false,
+			// The name of the json containing all favicon information
+			statsFilename: 'iconstats-[hash].json',
+			// Generate a cache file with control hashes and
+			// don't rebuild the favicons until those hashes change
+			persistentCache: true,
+			// Inject the html into the html-webpack-plugin
+			inject: true,
+			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+			//background: '#fff',
+			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+			title: 'Welance Website',
+
+			// which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+			icons: {
+				android: true,
+				appleIcon: true,
+				appleStartup: true,
+				coast: false,
+				favicons: true,
+				firefox: true,
+				opengraph: false,
+				twitter: false,
+				yandex: false,
+				windows: false
 			}
 		})
 	]
