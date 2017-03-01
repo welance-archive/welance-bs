@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV='dev' webpack-dev-server --host 0.0.0.0 --open",
-    "prod": "NODE_ENV='prod' webpack -p"
+    "prod": "NODE_ENV='prod' webpack -p --optimize-minimize"
   },
   "repository": {
     "type": "git",
@@ -16,6 +16,7 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/ricricucit/welance-2017#readme",
   "dependencies": {
+    "axios": "^0.15.3",
     "bootstrap": "^4.0.0-alpha.6",
     "vue": "^2.2.1",
     "vue-router": "^2.3.0"

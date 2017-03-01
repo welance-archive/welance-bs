@@ -45,6 +45,7 @@ Content and data comes from using an external (not yet defined) REST API.
 ## Contribution guidelines
 
 * Read **[Welance Development Guidelines](https://welance-handbook.herokuapp.com/welance-development-guidelines.html)**
+* Install [Vue.JS devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) for easier Front-End debugging
 
 - - -
 
