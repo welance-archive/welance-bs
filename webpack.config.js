@@ -4,15 +4,237 @@ let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let path = require('path');
 let CopyWebpackPlugin = require('copy-webpack-plugin');
 let ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
-let FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+let PrerenderSpaPlugin = require('prerender-spa-plugin');
 
-//process.env.NODE_ENV): prod | dev
+const seo_routes = [ '/', '/hello' ];
+
+const prod_plugins = [
+		//about HTML compression and CSS/JS scripts injection
+		new HtmlWebpackPlugin({
+			filename: "index.html",
+			template: "./index.html",
+			hash: true,
+			minify:{
+				collapseWhitespace: true
+			}
+		}),
+		//about SASS compilation
+		new ExtractTextPlugin({
+			filename: "assets/bundle.css"
+		}),
+		//Giving ES6 libraries what they need (should be enough using the babel-polyfill as entry point)
+		/*new webpack.ProvidePlugin({
+			axios: "axios"
+		}),*/
+		// Copy the images folder and optimize all the images
+		new CopyWebpackPlugin([{
+			from: 'src/assets/images/',
+			to: 'assets/images/'
+		}]),
+		new ImageminWebpackPlugin({
+			test: /\.(jpe?g|png|gif|svg)$/i,
+			//disable: process.env.NODE_ENV !== 'prod',
+			pngquant: {
+				quality: '95-100'
+			},
+			optipng: {
+				optimizationLevel: 5 //0-7 (7 slower)
+			},
+			jpegtran: {
+				progressive: true
+			},
+			gifsicle: {
+				optimizationLevel: 3 //1-3 (3 slower)
+			}
+		}),
+		new FaviconsWebpackPlugin({
+			// Your source logo
+			logo: './src/assets/images/favicon.png',
+			// The prefix for all image files (might be a folder or a name)
+			prefix: 'assets/images/icons-[hash]/',
+			// Emit all stats of the generated icons
+			emitStats: false,
+			// The name of the json containing all favicon information
+			statsFilename: 'iconstats-[hash].json',
+			// Generate a cache file with control hashes and
+			// don't rebuild the favicons until those hashes change
+			persistentCache: true,
+			// Inject the html into the html-webpack-plugin
+			inject: true,
+			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+			//background: '#fff',
+			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+			title: 'Welance Website',
+
+			// which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+			icons: {
+				android: true,
+				appleIcon: true,
+				appleStartup: true,
+				coast: false,
+				favicons: true,
+				firefox: true,
+				opengraph: false,
+				twitter: false,
+				yandex: false,
+				windows: false
+			}
+		}),
+		new PrerenderSpaPlugin(
+			// (REQUIRED) Absolute path to static root
+			path.join(__dirname, 'dist'),
+			//path.resolve(__dirname, "dist"),
+			// (REQUIRED) List of routes to prerender
+			seo_routes,
+			// (OPTIONAL) Options
+			{
+				// NOTE: Unless you are relying on asynchronously rendered content,
+				// such as after an Ajax request, none of these options should be
+				// necessary. All synchronous scripts are already executed before
+				// capturing the page content.
+
+				// Wait until a specific event is fired on the document.
+				//**** captureAfterDocumentEvent: 'now-its-seo-time',
+				// This is how you would trigger this example event:
+				// document.dispatchEvent(new Event('now-its-seo-time'))
+
+				// Wait until a specific element is detected with
+				// document.querySelector.
+				//**** captureAfterElementExists: '#content',
+
+				// Wait until a number of milliseconds has passed after scripts
+				// have been executed. It's important to note that this may
+				// produce unreliable results when relying on network
+				// communication or other operations with highly variable timing.
+				captureAfterTime: 3000,
+
+				// NOTE: You can even combine strategies if you like. For example,
+				// if you only _sometimes_ want to wait for an event to fire, you
+				// can create a timeout by combining captureAfterTime with
+				// captureAfterDocumentEvent. When combining strategies, page
+				// content will be captured after the first triggered strategy.
+
+				// Instead of loudly failing on JS errors (the default), ignore them.
+				//**** ignoreJSErrors: true,
+
+				// Because PhantomJS occasionally runs into an intermittent issue,
+				// we will retry a page capture up to 10 times by default. You may
+				// raise or lower this limit if you wish.
+				maxAttempts: 10,
+
+				// Prevent PhantomJS from navigating away from the URL passed to it
+				// and prevent loading embedded iframes (e.g. Disqus and Soundcloud
+				// embeds), which are not ideal for SEO and may introduce JS errors.
+				navigationLocked: true,
+
+				// The options below expose configuration options for PhantomJS,
+				// for the rare case that you need special settings for specific
+				// systems or applications.
+
+				// http://phantomjs.org/api/command-line.html#command-line-options
+				phantomOptions: '--disk-cache=true',
+
+				// http://phantomjs.org/api/webpage/property/settings.html
+				phantomPageSettings: {
+					loadImages: true
+				},
+
+				// Manually transform the HTML for each page after prerendering,
+				// for example to set the page title and metadata in edge cases
+				// where you cannot handle this via your routing solution.
+				//
+				// The function's context argument contains two properties:
+				//
+				// - html :: the resulting HTML after prerendering)
+				// - route :: the route currently being processed
+				//            e.g. "/", "/about", or "/contact")
+				//
+				// Whatever is returned will be printed to the prerendered file.
+				/*postProcessHtml: function (context) {
+					var titles = {
+						'/': 'Welance Home',
+						'/hello': 'Hello!'
+					}
+					return context.html.replace(
+						/<title>[^<]*<\/title>/i,
+						'<title>' + titles[context.route] + '</title>'
+					)
+				}*/
+			}
+		)
+	];
+
+
+const dev_plugins = [
+		//about HTML compression and CSS/JS scripts injection
+		new HtmlWebpackPlugin({
+			filename: "index.html",
+			template: "./index.html",
+			hash: true,
+			minify:{
+				collapseWhitespace: false
+			}
+		}),
+		//about SASS compilation
+		new ExtractTextPlugin({
+			filename: "assets/bundle.css"
+		}),
+		//Giving ES6 libraries what they need (should be enough using the babel-polyfill as entry point)
+		/*new webpack.ProvidePlugin({
+			axios: "axios"
+		}),*/
+		// Copy the images folder and optimize all the images
+		new CopyWebpackPlugin([{
+			from: 'src/assets/images/',
+			to: 'assets/images/'
+		}]),
+		new FaviconsWebpackPlugin({
+			// Your source logo
+			logo: './src/assets/images/favicon.png',
+			// The prefix for all image files (might be a folder or a name)
+			prefix: 'assets/images/icons-[hash]/',
+			// Emit all stats of the generated icons
+			emitStats: false,
+			// The name of the json containing all favicon information
+			statsFilename: 'iconstats-[hash].json',
+			// Generate a cache file with control hashes and
+			// don't rebuild the favicons until those hashes change
+			persistentCache: true,
+			// Inject the html into the html-webpack-plugin
+			inject: true,
+			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
+			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
+			title: 'Welance Website',
+
+			// which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
+			icons: {
+				android: false,
+				appleIcon: false,
+				appleStartup: false,
+				coast: false,
+				favicons: true,
+				firefox: false,
+				opengraph: false,
+				twitter: false,
+				yandex: false,
+				windows: false
+			}
+		})
+	];
+
+const plugins = process.env.NODE_ENV === 'prod' ? prod_plugins : dev_plugins;
+
+
 
 module.exports = {
-	entry: "./src/main.js",
+	entry: ["babel-polyfill", "./src/main.js"],	//this is to support ES6 features
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "assets/bundle.js"
+	},
+	devServer: {
+		historyApiFallback: true
 	},
 	module: {
 		rules: [
@@ -51,77 +273,5 @@ module.exports = {
 			}
 		]
 	},
-	plugins: [
-		//about HTML compression and CSS/JS scripts injection
-		new HtmlWebpackPlugin({
-			filename: "index.html",
-			template: "./index.html",
-			hash: true,
-			minify:{
-				collapseWhitespace: process.env.NODE_ENV == 'prod'
-			}
-		}),
-		//about SASS compilation
-		new ExtractTextPlugin({
-			filename: "assets/bundle.css"
-		}),
-		//Giving ES6 libraries what they need
-		new webpack.ProvidePlugin({
-			axios: "axios"
-		}),
-		// Copy the images folder and optimize all the images
-		new CopyWebpackPlugin([{
-			from: 'src/assets/images/',
-			to: 'assets/images/'
-		}]),
-		new ImageminWebpackPlugin({
-			test: /\.(jpe?g|png|gif|svg)$/i,
-			disable: process.env.NODE_ENV !== 'prod',
-			pngquant: {
-				quality: '95-100'
-			},
-			optipng: {
-				optimizationLevel: 5 //0-7 (7 slower)
-			},
-			jpegtran: {
-				progressive: true
-			},
-			gifsicle: {
-				optimizationLevel: 3 //1-3 (3 slower)
-			}
-		}),
-		new FaviconsWebpackPlugin({
-			// Your source logo
-			logo: './src/assets/images/favicon.png',
-			// The prefix for all image files (might be a folder or a name)
-			prefix: './assets/images/icons-[hash]/',
-			// Emit all stats of the generated icons
-			emitStats: false,
-			// The name of the json containing all favicon information
-			statsFilename: 'iconstats-[hash].json',
-			// Generate a cache file with control hashes and
-			// don't rebuild the favicons until those hashes change
-			persistentCache: true,
-			// Inject the html into the html-webpack-plugin
-			inject: true,
-			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-			//background: '#fff',
-			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-			title: 'Welance Website',
-
-			// which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
-			icons: {
-				android: true,
-				appleIcon: true,
-				appleStartup: true,
-				coast: false,
-				favicons: true,
-				firefox: true,
-				opengraph: false,
-				twitter: false,
-				yandex: false,
-				windows: false
-			}
-		})
-	]
+	plugins: plugins
 };

@@ -15,6 +15,7 @@ Content and data comes from using an external (not yet defined) REST API.
 * ES6(2015) for JS, autocompiled to ES5 for older browsers (babel)
 * async communication using [axios](https://github.com/mzabriskie/axios)
 * bootstrap SASS v4
+* SEO Pre-Rendering of specific routes using PhantomJS and prerender-spa-plugin
 
 Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more.
 

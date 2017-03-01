@@ -24,6 +24,7 @@ export default {
       })
       .then(function (response) {
         vc.user = response.data;
+        document.dispatchEvent(new Event('now-its-seo-time'));
       })
       .catch(function (error) {
         console.log(error);
