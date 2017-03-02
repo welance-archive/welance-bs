@@ -30,15 +30,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-/*
- *
- *
- * IMPORTANT:
- * try not to write styles here and use SASS files instead
- * use this styling only when strictly necessary.
- * ...but even then, first try to find better alternatives.
- *
- *
- */
+<style lang="scss">
+@import "~styles/_variables.scss";
+
+.hello {
+  background: $primary-color;
+};
+
 </style>

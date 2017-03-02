@@ -236,6 +236,11 @@ module.exports = {
 	devServer: {
 		historyApiFallback: true
 	},
+	resolve: {
+		alias: {
+			styles:  path.resolve(__dirname, 'src/sass') // relative to the location of the webpack config file!
+		}
+	},
 	module: {
 		rules: [
 			//allows vue compoents in "<template><html><script><style>" syntax
@@ -243,17 +248,20 @@ module.exports = {
 				test: /\.vue$/,
 				loader: 'vue-loader',
 				options: {
-				loaders: {
-						//This is to be able to write SASS in Vue Components (not used for now)
-						/*{{#sass}}
-						// Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-						// the "scss" and "sass" values for the lang attribute to the right configs here.
-						// other preprocessors should work out of the box, no loader config like this necessary.
-						'scss': 'vue-style-loader!css-loader!sass-loader',
-						'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-						{{/sass}}*/
-				}
-				// other vue-loader options go here
+					loaders: {
+							//This is to be able to write SASS in Vue Components
+							// Since sass-loader (weirdly) has SCSS as its default parse mode, we map
+							// the "scss" and "sass" values for the lang attribute to the right configs here.
+							// other preprocessors should work out of the box, no loader config like this necessary.
+							/*'scss': 'vue-style-loader!css-loader!sass-loader',
+							'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',*/
+							'scss': ExtractTextPlugin.extract({
+								fallback: "style-loader",
+								use: ["css-loader", "sass-loader"],
+								publicPath: "/dist"
+							})
+					},
+					// other vue-loader options go here
 				}
 			},
 			//ES2015 to ES5 compilation
