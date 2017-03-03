@@ -88,9 +88,10 @@ export default {
 }
 .text-container{
   @include make-row();
-  background:red;
   flex-direction: row;
   overflow: hidden;
+  @include padding(5); 
+  //background: red;
   
   &__col{
     @include make-col-ready();
@@ -98,12 +99,10 @@ export default {
   }
 }
 .list-container{
-  background:green;
   @include make-row();
   flex-direction: row;
 
   &__col{
-    border: 1px solid blue;
     @include make-col-ready();
     @include make-col(4);
   }
