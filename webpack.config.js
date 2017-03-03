@@ -50,7 +50,7 @@ const prod_plugins = [
 		}),
 		new FaviconsWebpackPlugin({
 			// Your source logo
-			logo: './src/assets/images/favicon.png',
+			logo: './src/assets/images/favicon.svg',
 			// The prefix for all image files (might be a folder or a name)
 			prefix: 'assets/images/icons-[hash]/',
 			// Emit all stats of the generated icons
@@ -191,7 +191,7 @@ const dev_plugins = [
 		}]),
 		new FaviconsWebpackPlugin({
 			// Your source logo
-			logo: './src/assets/images/favicon.png',
+			logo: './src/assets/images/favicon.svg',
 			// The prefix for all image files (might be a folder or a name)
 			prefix: 'assets/images/icons-[hash]/',
 			// Emit all stats of the generated icons
