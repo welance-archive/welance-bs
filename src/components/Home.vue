@@ -12,6 +12,9 @@
         <h3 slot="header">custom header</h3>
         <p slot="body"></p>
     </modal-component>
+
+    <gallery-component></gallery-component>
+
     <!--
     <div class="row">
         <div class="col-4">
@@ -43,13 +46,15 @@ import FooterComponent from './FooterComponent.vue';
 import HeroComponent from './HeroComponent.vue';
 import QuoteComponent from './QuoteComponent.vue';
 import ModalComponent from './common/ModalComponent.vue';
+import GalleryComponent from './GalleryComponent.vue';
+
 
 import axios from 'axios';
 
 export default {
     name: 'home',
     components: {
-      HeaderComponent, FooterComponent, HeroComponent, QuoteComponent, ModalComponent
+      HeaderComponent, FooterComponent, HeroComponent, QuoteComponent, ModalComponent, GalleryComponent
     },
     data () {
         return{
