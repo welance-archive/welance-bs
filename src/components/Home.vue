@@ -5,6 +5,13 @@
     <hero-component></hero-component>
 
     <quote-component></quote-component>
+
+    <h1 @click="showModal = true">show modal</h1>
+
+    <modal-component v-if="showModal" @close="showModal = false">
+        <h3 slot="header">custom header</h3>
+        <p slot="body"></p>
+    </modal-component>
     <!--
     <div class="row">
         <div class="col-4">
@@ -35,18 +42,20 @@ import HeaderComponent from './HeaderComponent.vue';
 import FooterComponent from './FooterComponent.vue';
 import HeroComponent from './HeroComponent.vue';
 import QuoteComponent from './QuoteComponent.vue';
+import ModalComponent from './common/ModalComponent.vue';
 
 import axios from 'axios';
 
 export default {
     name: 'home',
     components: {
-      HeaderComponent, FooterComponent, HeroComponent, QuoteComponent
+      HeaderComponent, FooterComponent, HeroComponent, QuoteComponent, ModalComponent
     },
     data () {
         return{
             msg: 'This is Home!',
-            user: {}
+            user: {},
+            showModal: false
         }
     },
     created () {
