@@ -64,25 +64,25 @@ export default {
     }
  }
 
-
   &__col{
     @include make-col-ready();
     @include make-col(3);
+		
     @include media-breakpoint-down('sm'){
-    @include make-col(12);
-    }
-    &--position-odd{
-    }
-    &:nth-child(odd){
-    	padding-top:0px;
-    }
-		&:nth-child(1){
-			align-self: flex-start;
+    	@include make-col(12);
 		}
-  }
+		&--odd-position{
+			&:nth-child(1){
+				align-self: flex-start;
+				border: 1px solid red;
+			}
+		}
+	}
+
   img{
     width: 100%;
   }
+
 };
 
 </style>
