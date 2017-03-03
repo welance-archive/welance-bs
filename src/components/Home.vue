@@ -4,6 +4,8 @@
 
     <hero-component></hero-component>
 
+    <text-form-component></text-form-component>
+
     <quote-component></quote-component>
 
     <h1 @click="showModal = true">show modal</h1>
@@ -26,14 +28,20 @@ import HeroComponent from './HeroComponent.vue';
 import QuoteComponent from './QuoteComponent.vue';
 import ModalComponent from './common/ModalComponent.vue';
 import GalleryComponent from './GalleryComponent.vue';
-
+import TextFormComponent from './common/TextFormComponent.vue';
 
 import axios from 'axios';
 
 export default {
     name: 'home',
     components: {
-      HeaderComponent, FooterComponent, HeroComponent, QuoteComponent, ModalComponent, GalleryComponent
+      HeaderComponent,
+      FooterComponent,
+      HeroComponent,
+      QuoteComponent,
+      ModalComponent,
+      GalleryComponent,
+      TextFormComponent
     },
     data () {
         return{
@@ -62,6 +70,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "~styles/main.scss";
+@import "~styles/_variables.scss";
 
 .home{
 	display: flex;

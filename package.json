@@ -19,6 +19,7 @@
     "axios": "^0.15.3",
     "bootstrap": "^4.0.0-alpha.6",
     "vue": "^2.2.1",
+    "vue-multiselect": "^2.0.0-beta.14",
     "vue-router": "^2.3.0"
   },
   "devDependencies": {
