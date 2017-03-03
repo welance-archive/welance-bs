@@ -16,6 +16,22 @@
         font-size: 1em;
     }
 }
+.text{
+    &--xl{
+        font-size: 2.5em;
+    }
+    &--l{
+        font-size: 1.5em;
+    }
+    &--m{
+        font-size: 1em;
+    }
+    &--s{
+        font-size: 0.5em;
+    }
+}
+
+
 
 .section{
   background: white;

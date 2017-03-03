@@ -35,6 +35,14 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
+.section{
+  background-color: $ultra-light-grey;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero {
   @include make-container-max-widths();
   margin: 0 auto;

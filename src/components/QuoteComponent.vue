@@ -3,12 +3,12 @@
     <div class="quote">
       <div class="quote__container">
         <div class="quote__col">
-          <h1 class="title title--l">
-            {{text}}
-          </h1>
           <h4 class="title title--s">
             {{smallText}}
           </h4>
+          <h1 class="title title--l">
+            {{text}}
+          </h1>
         </div>
       </div>
     </div>
@@ -20,8 +20,8 @@ export default {
     name: 'QuoteComponent',
     data () {
         return{
-            text: 'This is a huge text with some content in it',
-						smallText: 'M. Gandhi'
+            text: 'Welance is a bag bicycle rights, High Life sartorial cray craft beer',
+						smallText: 'About Us'
         }
     }
 };

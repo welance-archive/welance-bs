@@ -17,6 +17,10 @@
 
     <gallery-component></gallery-component>
 
+    <service-list-component></service-list-component>
+    <logo-list-component></logo-list-component>
+    <contact-component></contact-component>
+
     <footer-component></footer-component>
   </div>
 </template>
@@ -29,6 +33,9 @@ import QuoteComponent from './QuoteComponent.vue';
 import ModalComponent from './common/ModalComponent.vue';
 import GalleryComponent from './GalleryComponent.vue';
 import TextFormComponent from './common/TextFormComponent.vue';
+import ServiceListComponent from './ServiceListComponent.vue';
+import LogoListComponent from './LogoListComponent.vue';
+import ContactComponent from './ContactComponent.vue';
 
 import axios from 'axios';
 
@@ -41,7 +48,10 @@ export default {
       QuoteComponent,
       ModalComponent,
       GalleryComponent,
-      TextFormComponent
+      TextFormComponent,
+      ServiceListComponent,
+      LogoListComponent,
+      ContactComponent
     },
     data () {
         return{
