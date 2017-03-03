@@ -15,27 +15,6 @@
 
     <gallery-component></gallery-component>
 
-    <!--
-    <div class="row">
-        <div class="col-4">
-            this is a col 4
-        </div>
-        <div class="col-8">
-            <div class="item">
-                <img src="/assets/images/logo.png"/>
-            </div>
-            <div class="item">
-                <img src="/assets/images/logo.png"/>
-            </div>
-            <div class="item">
-                <img src="/assets/images/logo.png"/>
-            </div>
-            <div class="item">
-                <img src="/assets/images/logo.png"/>
-            </div>
-        </div>
-    </div>
-    -->
     <footer-component></footer-component>
   </div>
 </template>
