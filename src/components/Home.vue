@@ -1,15 +1,48 @@
 <template>
   <div class="home">
-    <h1>{{ msg }}</h1>
-    <p>User grabbed via mixcloud.com API: <strong>{{ user.name ? user.name : 'Not Retrieved' }}</strong></p>
+    <header-component></header-component>
+
+    <hero-component></hero-component>
+
+    <quote-component></quote-component>
+    <!--
+    <div class="row">
+        <div class="col-4">
+            this is a col 4
+        </div>
+        <div class="col-8">
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+            <div class="item">
+                <img src="/assets/images/logo.png"/>
+            </div>
+        </div>
+    </div>
+    -->
+    <footer-component></footer-component>
   </div>
 </template>
 
 <script>
+import HeaderComponent from './HeaderComponent.vue';
+import FooterComponent from './FooterComponent.vue';
+import HeroComponent from './HeroComponent.vue';
+import QuoteComponent from './QuoteComponent.vue';
+
 import axios from 'axios';
 
 export default {
     name: 'home',
+    components: {
+      HeaderComponent, FooterComponent, HeroComponent, QuoteComponent
+    },
     data () {
         return{
             msg: 'This is Home!',
@@ -34,15 +67,13 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-/*
- *
- *
- * IMPORTANT:
- * try not to write styles here and use SASS files instead
- * use this styling only when strictly necessary.
- * ...but even then, first try to find better alternatives.
- *
- *
- */
+<style lang="scss">
+@import "~styles/main.scss";
+
+.home{
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
 </style>

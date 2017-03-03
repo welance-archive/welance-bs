@@ -1,0 +1,4 @@
+@mixin padding($multiplier: 1){
+    //.5 is 8pt for a "standard" base of 16px (to respect 8pt grid)
+    padding: .5em * $multiplier;
+}
