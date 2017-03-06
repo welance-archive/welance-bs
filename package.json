@@ -33,6 +33,7 @@
     "favicons-webpack-plugin": "0.0.7",
     "html-webpack-plugin": "^2.28.0",
     "imagemin-webpack-plugin": "^1.4.4",
+    "modularscale-sass": "^2.1.1",
     "node-sass": "^4.5.0",
     "prerender-spa-plugin": "^2.0.1",
     "sass-loader": "^6.0.2",

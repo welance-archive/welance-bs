@@ -35,21 +35,6 @@ $link-decoration:       none !default;
 $link-hover-color:      darken($link-color, 15%) !default;
 $link-hover-decoration: underline !default;
 
-// Fonts
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
-
-$font-family-base:      $font-family-sans-serif !default;
-$font-size-base:        1rem !default; // Assumes the browser default, typically `16px`
-$font-weight-base:      $font-weight-normal !default;
-$line-height-base:      1.5em;
-$body-color:          black !default;
-$body-bg:             white !default; // 2
-$dt-font-weight:        $font-weight-bold !default;
-$link-color:            $brand-primary !default;
-
 // Hover
 $enable-hover-media-query:  false !default;
 
@@ -57,6 +42,8 @@ $enable-hover-media-query:  false !default;
 $table-cell-padding:    .75rem !default;
 $text-muted:            $gray-light !default;
 $cursor-disabled:       not-allowed !default;
+$body-color:          black !default;
+$body-bg:             white !default; // 2
 
 
 // Utils for breakpoints

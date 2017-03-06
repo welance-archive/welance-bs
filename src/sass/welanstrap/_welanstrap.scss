@@ -1,5 +1,7 @@
 // SASS framework
 @import "variables";
+@import '~modularscale-sass/stylesheets/modular-scale';
+@import "typography";
 @import "hover";
 @import "normalise";
 @import "mixins";
