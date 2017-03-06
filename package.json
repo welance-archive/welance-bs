@@ -17,7 +17,7 @@
   "homepage": "https://bitbucket.org/ricricucit/welance-2017#readme",
   "dependencies": {
     "axios": "^0.15.3",
-    "bootstrap": "^4.0.0-alpha.6",
+    "sass-mq": "^3.3.2",
     "vue": "^2.2.1",
     "vue-multiselect": "^2.0.0-beta.14",
     "vue-router": "^2.3.0"

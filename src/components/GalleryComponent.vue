@@ -54,21 +54,21 @@ export default {
     padding: 0px;
     margin: 0 auto;
     align-items: flex-end;
-    
+
     &--off-canvas{
         overflow: hidden;
         position: relative;
         width: 120%;
         left: -10%;
-        right: -10%;    
+        right: -10%;
     }
  }
 
   &__col{
     @include make-col-ready();
     @include make-col(3);
-		
-    @include media-breakpoint-down('sm'){
+
+    @include mq($until: 'md'){
     	@include make-col(12);
 		}
 		&--odd-position{

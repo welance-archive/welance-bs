@@ -49,7 +49,7 @@ export default {
 
   &__container{
     @include make-row();
-    @include media-breakpoint-down('sm'){
+    @include mq($until: 'md'){
       flex-direction: column-reverse;
     }
     max-height: 100vh;
@@ -58,7 +58,7 @@ export default {
   &__col{
     @include make-col-ready();
     @include make-col(6);
-    @include media-breakpoint-down('sm'){
+    @include mq($until: 'md'){
       @include make-col(12);
     }
   }
@@ -68,7 +68,7 @@ export default {
   &__visuals{
     @include make-col-ready();
     @include make-col(6);
-    @include media-breakpoint-down('sm'){
+    @include mq($until: 'md'){
       @include make-col(12);
     }
     text-align: right;

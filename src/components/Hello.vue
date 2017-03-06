@@ -41,10 +41,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/_variables.scss";
+@import "~styles/main.scss";
 
 .hello {
-  background: $primary-color;
+  background: $brand-primary;
 };
 
 </style>
