@@ -3,22 +3,22 @@
     <div class="service-list">
       <div class="text-container">
         <div class="text-container__col">
-          <h4 class="title title--s">
+          <h4>
             {{smallText}}
           </h4>
-          <h1 class="title title--l">
+          <h1>
             {{text}}
           </h1>
         </div>
       </div>
       <div class="list-container">
         <div class="list-container__col" v-for="service in services">
-          <h4 class="title title--s">{{service.title}}</h4>
+          <h4>{{service.title}}</h4>
           <ul>
             <li v-for="item in service.items"><a v-bind:href="item.url">{{item.title}}</a></li>
           </ul>
         </div>
-      </div>    
+      </div>
     </div>
   </div>
 </template>
@@ -90,9 +90,8 @@ export default {
   @include make-row();
   flex-direction: row;
   overflow: hidden;
-  @include padding(5); 
-  //background: red;
-  
+  @include padding(5);
+
   &__col{
     @include make-col-ready();
     @include make-col(12);

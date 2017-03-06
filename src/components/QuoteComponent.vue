@@ -3,10 +3,10 @@
     <div class="quote">
       <div class="quote__container">
         <div class="quote__col">
-          <h4 class="title title--s">
+          <h4>
             {{smallText}}
           </h4>
-          <h1 class="title title--l">
+          <h1>
             {{text}}
           </h1>
         </div>
@@ -21,7 +21,7 @@ export default {
     data () {
         return{
             text: 'Welance is a bag bicycle rights, High Life sartorial cray craft beer',
-						smallText: 'About Us'
+			smallText: 'About Us'
         }
     }
 };

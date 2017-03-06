@@ -3,7 +3,7 @@
     <div class="contact">
       <div class="contact__container">
         <div class="contact__col">
-          <h2 class="title title--l">
+          <h2>
             {{text}}
           </h2>
           <p class="contact__details">

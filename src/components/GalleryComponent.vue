@@ -74,7 +74,6 @@ export default {
 		&--odd-position{
 			&:nth-child(1){
 				align-self: flex-start;
-				border: 1px solid red;
 			}
 		}
 	}

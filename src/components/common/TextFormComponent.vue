@@ -4,7 +4,7 @@
       <div class="text-form__container">
         <div class="text-form__col">
           <form>
-            <p class="title title--l">
+            <p>
               <span v-for="(selectable, index) in selectables" v-bind:item="selectable" v-bind:index="index">
                 {{selectable.text_before}}
                 <dropdown-component
@@ -21,7 +21,7 @@
               </span>
             </p>
           </form>
-          <h4 class="title title--s">
+          <h4>
             {{smallText}}
           </h4>
         </div>
