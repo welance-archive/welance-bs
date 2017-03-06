@@ -6,7 +6,7 @@
           <div class="hero__col-inner">
             <h1 class="title title--xl">{{title}}</h1>
             <h2 class="title title--m">{{subtitle}}</h2>
-            <button class="hero__col-btn" type="button">BUY MORE</button>
+            <button class="btn btn--primary" type="button">BUY MORE</button>
           </div>
         </div>
         <div class="hero__visuals">

@@ -1,0 +1,38 @@
+//
+// Base styles
+//
+
+.btn{
+    display: inline-block;
+    font-weight: normal;
+    color: $white;
+    font-size: ms(0);
+    line-height: $line-height-base;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: none;
+
+
+    &:focus,
+    &--focus {
+        outline: 0;
+    }
+
+    &:disabled
+    &--disabled{
+        cursor: not-allowed;
+        opacity: .65;
+    }
+
+
+//
+// Alternate buttons
+//
+    &--primary{
+        background: $brand-primary;
+        padding: 20px 40px;
+    }
+
+}
