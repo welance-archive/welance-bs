@@ -1,7 +1,5 @@
 <template>
   <div class="home">
-    <header-component></header-component>
-
     <hero-component></hero-component>
 
     <text-form-component></text-form-component>
@@ -20,14 +18,10 @@
     <service-list-component></service-list-component>
     <logo-list-component></logo-list-component>
     <contact-component></contact-component>
-
-    <footer-component></footer-component>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './HeaderComponent.vue';
-import FooterComponent from './FooterComponent.vue';
 import HeroComponent from './HeroComponent.vue';
 import QuoteComponent from './QuoteComponent.vue';
 import ModalComponent from './common/ModalComponent.vue';
@@ -42,8 +36,6 @@ import axios from 'axios';
 export default {
     name: 'home',
     components: {
-      HeaderComponent,
-      FooterComponent,
       HeroComponent,
       QuoteComponent,
       ModalComponent,

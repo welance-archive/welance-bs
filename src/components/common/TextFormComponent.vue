@@ -21,9 +21,9 @@
               </span>
             </p>
           </form>
-          <h4>
+          <h5>
             {{smallText}}
-          </h4>
+          </h5>
         </div>
       </div>
     </div>

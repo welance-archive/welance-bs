@@ -33,7 +33,7 @@ export default {
     data () {
         return{
             text: 'This is a huge text with some content in it',
-						smallText: 'M. Gandhi'
+			smallText: 'M. Gandhi'
         }
     }
 };

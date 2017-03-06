@@ -1,25 +1,16 @@
 <template>
   <div class="hello">
-    <header-component></header-component>
-
     <h1>{{ msg }}</h1>
     <input type="text" v-model="msg"/>
-
-    <footer-component></footer-component>
   </div>
 </template>
 
 <script>
-import HeaderComponent from './HeaderComponent.vue';
-import FooterComponent from './FooterComponent.vue';
-
 let message = '';
 
 export default {
     name: 'hello',
-    components: {
-      HeaderComponent, FooterComponent
-    },
+    components: {},
     data () {
         return{
             msg: 'This is Hello!'

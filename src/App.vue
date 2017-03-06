@@ -1,12 +1,14 @@
 <template>
   <div class="app">
+    <header-component></header-component>
     <router-view></router-view>
+    <footer-component></footer-component>
   </div>
 </template>
 
 <script>
-//import Header from './components/Header.vue';
-
+import HeaderComponent from './components/common/HeaderComponent.vue';
+import FooterComponent from './components/common/FooterComponent.vue';
 export default {
     name: 'app',
     data () {
@@ -15,7 +17,8 @@ export default {
         }
     },
     components: {
-        //Header
+        HeaderComponent,
+        FooterComponent
     }
 };
 </script>
