@@ -6,7 +6,7 @@
           <div class="hero__col-inner">
             <h1 class="title title--xl">{{title}}</h1>
             <h2 class="title title--m">{{subtitle}}</h2>
-            <button class="hero__col-btn" type="button">BUY MORE</button>
+            <button class="hero__col-btn" type="button">Start a project</button>
           </div>
         </div>
         <div class="hero__visuals">
@@ -22,9 +22,8 @@ export default {
     name: 'HeroComponent',
     data () {
         return{
-            title: 'This is Header',
-						subtitle: 'this is a subtitle',
-						ctaText: '+49 30 609 857 750',
+            title: 'We help you build the next Squarespace',
+						subtitle: 'Bring Your Ideas To Life',
 						ctaUrl: '/contact'
         }
     }

@@ -4,3 +4,8 @@
     //.5 is 8pt for a "standard" base of 16px (to respect 8pt grid)
     padding: (.5em * $multiT) (.5em * $multiR) (.5em * $multiB) (.5em * $multiL);
 }
+
+@mixin button{
+    background: red;
+    border: none;
+}
