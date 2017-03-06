@@ -4,9 +4,9 @@
       <div class="hero__container">
         <div class="hero__col">
           <div class="hero__col-inner">
-            <h1 class="title title--xl">{{title}}</h1>
-            <h2 class="title title--m">{{subtitle}}</h2>
-            <button class="hero__col-btn" type="button">Start a project</button>
+            <h1>{{title}}</h1>
+            <h2>{{subtitle}}</h2>
+            <button class="btn btn--primary" type="button">{{ctaText}}</button>
           </div>
         </div>
         <div class="hero__visuals">
@@ -23,8 +23,9 @@ export default {
     data () {
         return{
             title: 'We help you build the next Squarespace',
-						subtitle: 'Bring Your Ideas To Life',
-						ctaUrl: '/contact'
+			subtitle: 'Bring Your Ideas To Life',
+			ctaUrl: '/contact',
+            ctaText: 'Start a project'
         }
     }
 };
@@ -60,9 +61,6 @@ export default {
     @include mq($until: 'md'){
       @include make-col(12);
     }
-  }
-  &__col-btn{
-    //display: inline-block;
   }
   &__visuals{
     @include make-col-ready();
