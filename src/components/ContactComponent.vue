@@ -6,7 +6,7 @@
           <h2 class="title title--l">
             {{text}}
           </h2>
-          <p class="contact__details text text--l">
+          <p class="contact__details">
             Just Call Philipp <a href="#">030 / 60 98 57 750</a>send a message to <a href="#">projects@welance.com</a> or visit our wonderful Space in Berlin- Kreuzberg
           </p>
           <form>
@@ -47,10 +47,9 @@ export default {
   @include make-container-max-widths();
   margin: 0 auto;
   padding: 20vh 0;
-  
+
   &__container{
     @include make-row();
-    background:red;
     flex-direction: row;
     justify-content: space-between;
     overflow: hidden;
@@ -59,11 +58,9 @@ export default {
   &__col{
     @include make-col-ready();
     @include make-col(6);
-    background: green;
-  
+
     &:nth-child(2){
       text-align: right;
-      background: grey;
       align-self: flex-end;
     }
   }
