@@ -1,16 +1,13 @@
 <template>
-  <div class="home">
+  <div class="home" v-bind:class="{ 'home--fixed': showModal }">
     <hero-component></hero-component>
-
-    <text-form-component></text-form-component>
+    <button class="btn" @click="showModal = true">show modal</button>
 
     <quote-component></quote-component>
 
-    <h1 @click="showModal = true">show modal</h1>
-
     <modal-component v-if="showModal" @close="showModal = false">
-        <h3 slot="header">custom header</h3>
-        <p slot="body"></p>
+        <text-form-component slot="body"></text-form-component>
+        <span slot="footer">bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/></span>
     </modal-component>
 
     <gallery-component></gallery-component>
@@ -78,6 +75,9 @@ export default {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+    &--fixed{
+        position: fixed;
+    }
 }
 
 </style>
