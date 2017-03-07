@@ -3,10 +3,10 @@
     <div class="modal">
 			<div class="modal__mask" v-on:click="closeModal"></div>
 			<div class="modal__wrapper">
-				<div class="modal__container modal__container--tiny">
+				<div class="modal__container" v-bind:class="dimensionClass">
 					<div class="modal__header">
 					<slot name="header">
-						<span v-on:click="closeModal">close</span>
+						<strong><span v-on:click="closeModal">close</span></strong> Modal of Size: {{modalSize}}
 					</slot>
 					</div>
 					<div class="modal__body">
@@ -31,8 +31,15 @@
 <script>
 export default {
     name: 'ModalComponent',
+		props: ['modalSize'],
     data () {
-        return{}
+        return{
+					dimensionClass: {
+						'modal__container--tiny' : this.modalSize === 'tiny',
+						'modal__container--half' : this.modalSize === 'half',
+						'modal__container--full' : this.modalSize === 'full'
+					}
+				}
     },
 		methods: {
 			closeModal: function(event){
