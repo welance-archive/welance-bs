@@ -10,12 +10,12 @@
                 <dropdown-component
                   :options="selectable.selections.options"
                   :value="selectable.selections.options[0]"
-                  :close-on-select="false"
+                  :close-on-select="true"
                   :hide-selected="true"
-                  :clear-on-select="false"
+                  :clear-on-select="true"
                   :multiple="true"
                   select-label=""
-                  placeholder=""
+                  :placeholder="selectable.placeholder"
                 ></dropdown-component>
                 {{selectable.text_after}}
               </span>
@@ -25,6 +25,9 @@
             {{smallText}}
           </h5>
         </div>
+      </div>
+      <div class="text-form__action">
+          <button type="button" class="btn btn--primary">Get Free Quote ⟶</button>
       </div>
     </div>
   </div>
@@ -44,6 +47,7 @@ export default {
 						smallText: 'M. Gandhi',
             selectables: [
                 {
+                  placeholder: "Tool",
                   text_before: "I want need a ",
                   selections: {
                     selected: null,
@@ -52,6 +56,7 @@ export default {
                   text_after: " ",
                 },
                 {
+                  placeholder: "Business",
                   text_before: "for my ",
                   selections: {
                     selected: null,
@@ -60,6 +65,7 @@ export default {
                   text_after: ". "
                 },
                 {
+                  placeholder: "Something",
                   text_before: "It should also include ",
                   selections: {
                     selected: null,
@@ -68,6 +74,7 @@ export default {
                   text_after: " ",
                 },
                 {
+                  placeholder: "Yesterday",
                   text_before: "and I want to start ",
                   selections: {
                     selected: null,
@@ -76,6 +83,7 @@ export default {
                   text_after: ". "
                 },
                 {
+                  placeholder: "Nothing yet",
                   text_before: "Oh! I've done ",
                   selections: {
                     selected: "nothing yet",
@@ -110,6 +118,11 @@ export default {
   &__col{
     @include make-col-ready();
     @include make-col(12);
+  }
+  &__action{
+    @include make-col-ready();
+    @include make-col(12);
+    text-align: right;
   }
 }
 
