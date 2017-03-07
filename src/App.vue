@@ -1,9 +1,9 @@
 <template>
-  <div class="app">
+  <body class="app" v-bind:class="{ 'app--no-overflow': showModal }">
     <header-component></header-component>
-    <router-view></router-view>
+    <router-view @modalOpened="showModal = true" @modalClosed="showModal = false"></router-view>
     <footer-component></footer-component>
-  </div>
+  </body>
 </template>
 
 <script>
@@ -13,7 +13,8 @@ export default {
     name: 'app',
     data () {
         return{
-            msg: 'This is Home!'
+            msg: 'This is Home!',
+            showModal: false
         }
     },
     components: {
@@ -25,5 +26,9 @@ export default {
 
 <style lang="scss">
 @import "~styles/_variables.scss";
-.app{}
+.app{
+    &--no-overflow{
+        overflow: hidden;
+    }
+}
 </style>

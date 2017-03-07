@@ -1,29 +1,29 @@
 <template>
   <transition name="modal">
     <div class="modal">
-        <div class="modal__mask" @click="$emit('close')"></div>
-        <div class="modal__wrapper modal__wrapper--half">
-            <div class="modal__container modal__container--half">
-                <div class="modal__header">
-                <slot name="header">
-                    <span @click="$emit('close')">close</span>
-                </slot>
-                </div>
-                <div class="modal__body">
-                <slot name="body">
-                    default body
-                </slot>
-                </div>
-                <div class="modal__footer">
-                <slot name="footer">
-                    default footer
-                    <button class="modal__default-btn" @click="$emit('close')">
-                    OK
-                    </button>
-                </slot>
-                </div>
-            </div>
-        </div>
+			<div class="modal__mask" v-on:click="closeModal"></div>
+			<div class="modal__wrapper">
+				<div class="modal__container modal__container--tiny">
+					<div class="modal__header">
+					<slot name="header">
+						<span v-on:click="closeModal">close</span>
+					</slot>
+					</div>
+					<div class="modal__body">
+					<slot name="body">
+						default body
+					</slot>
+					</div>
+					<div class="modal__footer">
+					<slot name="footer">
+						default footer
+						<button class="modal__default-btn" v-on:click="closeModal">
+						OK
+						</button>
+					</slot>
+					</div>
+				</div>
+			</div>
     </div>
   </transition>
 </template>
@@ -32,11 +32,14 @@
 export default {
     name: 'ModalComponent',
     data () {
-        return{
-            text: 'This is a huge text with some content in it',
-			smallText: 'M. Gandhi'
-        }
-    }
+        return{}
+    },
+		methods: {
+			closeModal: function(event){
+				if (event) event.preventDefault();
+				this.$emit('close');
+			}
+		}
 };
 </script>
 
@@ -59,27 +62,27 @@ export default {
   }
 
   &__wrapper{
+		pointer-events: none; //TODO: double check safari for this
     position: fixed;
+		display: flex;
+		align-items: flex-start;
+  	justify-content: center;
+
     z-index: 9998;
     top: 0;
     left: 0;
-    width: 100vw;
     height: 100vh;
-
-    display: table-cell;
-    vertical-align: middle;
-    &--full{
-        overflow-y: scroll;
-    }
-    &--half, &--tiny{
-        display: block;
-        overflow-y: scroll;
-        height: 100vh;
-    }
+		width: 100vw;
+    overflow: scroll;
   }
 
   &__container{
-    pointer-events: auto;
+		pointer-events: initial; //TODO: double check safari for this
+    overflow-x: scroll;
+		padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+    transition: all .3s ease;
 
     &--full{
         width: 100vw;
@@ -96,12 +99,6 @@ export default {
         margin-top: 10vh;
         margin-bottom: 10vh;
     }
-    margin: 0px auto;
-    padding: 20px 30px;
-    background-color: #fff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-    transition: all .3s ease;
-    font-family: Helvetica, Arial, sans-serif;
   }
 
   &__header{
@@ -111,6 +108,9 @@ export default {
 
   &__body{
     margin: 20px 0;
+  }
+
+  &__footer{
   }
 
   &__default-btn{

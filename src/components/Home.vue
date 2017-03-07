@@ -1,11 +1,11 @@
 <template>
-  <div class="home" v-bind:class="{ 'home--fixed': showModal }">
+  <div class="home">
     <hero-component></hero-component>
-    <button class="btn" @click="showModal = true">show modal</button>
+    <a class="btn" v-on:click.stop.prevent="openModal()">show modal</a>
 
     <quote-component></quote-component>
 
-    <modal-component v-if="showModal" @close="showModal = false">
+    <modal-component v-if="showModal" @close="closeModal()">
         <text-form-component slot="body"></text-form-component>
         <span slot="footer">bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/></span>
     </modal-component>
@@ -49,10 +49,20 @@ export default {
             showModal: false
         }
     },
+    methods: {
+        openModal: function(){
+            this.showModal = true;
+            this.$emit('modalOpened');
+        },
+        closeModal: function(){
+            this.showModal = false;
+            this.$emit('modalClosed');
+        },
+    },
     created () {
       let vc = this; //vc = VueComponent
 
-      axios.get('https://api.mixcloud.com/spartacus/', {
+      axios.get("https://api.mixcloud.com/spartacus/", {
 
       })
       .then(function (response) {
@@ -75,9 +85,6 @@ export default {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-    &--fixed{
-        position: fixed;
-    }
 }
 
 </style>
