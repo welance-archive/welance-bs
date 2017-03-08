@@ -4,7 +4,7 @@
       <div class="hero__container">
         <div class="hero__col">
           <div class="hero__col-inner">
-            <h1>{{title}}</h1>
+            <h1 >{{title}}</h1>
             <h4>{{subtitle}}</h4>
             <button class="btn btn--primary" type="button" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
           </div>
@@ -66,7 +66,7 @@ export default {
       @include make-col(12);
     }
     & h1{
-      margin-bottom: 30px;
+      @include mb(4);
     }
     & h4{
       margin-bottom: ms(1);
