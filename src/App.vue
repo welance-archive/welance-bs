@@ -1,6 +1,7 @@
 <template>
   <body class="app" v-bind:class="{ 'app--no-overflow': showModal }">
     <header-component></header-component>
+    <fixed-header-component></fixed-header-component>
     <router-view @modalOpened="showModal = true" @modalClosed="showModal = false"></router-view>
     <footer-component></footer-component>
   </body>
@@ -9,6 +10,8 @@
 <script>
 import HeaderComponent from './components/common/HeaderComponent.vue';
 import FooterComponent from './components/common/FooterComponent.vue';
+import FixedHeaderComponent from './components/common/FixedHeaderComponent.vue';
+
 export default {
     name: 'app',
     data () {
@@ -19,7 +22,8 @@ export default {
     },
     components: {
         HeaderComponent,
-        FooterComponent
+        FooterComponent,
+        FixedHeaderComponent
     }
 };
 </script>
