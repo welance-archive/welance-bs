@@ -55,10 +55,9 @@ export default {
   &__container{
     @include make-row();
     @include mq($until: 'md'){
-    flex-direction: column-reverse;
+    flex-wrap: wrap-reverse;
     }
-    max-height: 100vh;
-    overflow: hidden;
+
   }
   &__col{
     @include make-col-ready();
