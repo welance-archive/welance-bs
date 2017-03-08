@@ -20,11 +20,12 @@
 <script>
 export default {
     name: 'HeroComponent',
+    props: ['openModal'],
     data () {
         return{
             title: 'We help you build the next Squarespace',
-			      subtitle: 'Being the savages bowsman, that is, the person who pulled the.',
-			      ctaUrl: '/contact',
+            subtitle: 'Being the savages bowsman, that is, the person who pulled the.',
+            ctaUrl: '/contact',
             ctaText: 'Start a project'
         }
     }

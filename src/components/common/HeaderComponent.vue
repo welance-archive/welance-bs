@@ -6,14 +6,14 @@
 					<img class="logo" src="/assets/images/logo.svg"/>
 				</div>
 				<div class="header__col">
-					<div class="phone">
+					<h6 class="phone">
 						<a :href="'tel:'+phone_number" class="phone__number">
 							{{phone_number}}
-						</a>
-						<div class="phone__availability">
+						</a><br/>
+						<span class="phone__availability">
 							<span class="phone__availability-check"></span> {{availabilityText}}
-						</div>
-					</div>
+						</span>
+					</h6>
 				</div>
 			</div>
 		</div>
@@ -38,28 +38,46 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss">
 @import "~styles/main.scss";
 
 .header {
   @include make-container-max-widths();
   margin: 0 auto;
 
+  @include mq($until: 'sm'){
+    @include make-container();
+  }
+
 	&__container{
 		@include make-row();
-		//@include padding(4);
 		justify-content: space-between;
+    align-items: center;
 	}
 	&__col{
 		@include make-col-ready();
 		@include make-col(6);
+    &:first-child{
+      @include make-col(4);
+    }
+    &:last-child{
+      @include make-col(8);
+    }
 	}
 };
 .logo{
-	max-height: 100px;
+	max-height: 60px;
+  @include mq($until: 'sm'){
+    float: right;
+  }
 }
 .phone{
+  margin-bottom: 0;
 	text-align: right;
+  @include mq($until: 'sm'){
+    font-size: 0.75em;
+    text-align: left;
+  }
 }
 
 </style>
