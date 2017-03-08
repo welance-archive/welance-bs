@@ -1,7 +1,6 @@
 <template>
   <div class="home">
-    <hero-component></hero-component>
-    <a class="btn" v-on:click.stop.prevent="openModal()">show modal</a>
+    <hero-component :open-modal="openModal"></hero-component>
 
     <quote-component></quote-component>
 
