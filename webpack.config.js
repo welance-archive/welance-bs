@@ -279,7 +279,24 @@ module.exports = {
 					use: ["css-loader", "sass-loader"],
 					publicPath: "/dist"
 				})
-			}
+			},
+      {
+      // Post-CSS
+      test: /\.css/,
+      use: [
+        {
+          loader: 'postcss-loader',
+          options: {
+            plugins: function () {
+              return [
+                require('precss'),
+                require('autoprefixer')
+              ];
+            }
+          }
+        }
+        ]
+      }
 		]
 	},
 	plugins: plugins
