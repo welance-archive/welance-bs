@@ -9,9 +9,9 @@
           <p class="contact__details">
             Just Call Philipp <a href="#">030 / 60 98 57 750</a>send a message to <a href="#">projects@welance.com</a> or visit our wonderful Space in Berlin- Kreuzberg
           </p>
-          <form>
+          <form class="contact__form">
             <input type="email" placeholder="Join the welance list...">
-            <input type="submit" value="subscribe">
+            <input class="btn btn--primary" type="submit" value="subscribe">
           </form>
         </div>
         <div class="contact__col">
@@ -41,6 +41,10 @@ export default {
 
 .section{
   background: $ultra-light-grey;
+    @include mq($until: 'md'){
+      padding: 0 3em;
+      overflow: hidden;
+    }
 }
 
 .contact {
@@ -54,14 +58,37 @@ export default {
     justify-content: space-between;
     overflow: hidden;
   }
-
+  
   &__col{
     @include make-col-ready();
     @include make-col(6);
-
+      @include mq($until: 'md'){
+        @include make-col(12);
+      }
     &:nth-child(2){
       text-align: right;
       align-self: flex-end;
+    }
+  }
+
+  & h2{
+    margin-bottom: .7em;
+  }
+  & p{
+    margin-bottom: 2em;
+  }
+
+  &__form{
+    input[type=email]{
+      height: 56px;
+      padding: 2em 1.25em;
+      width: 100%;
+      margin-bottom: 15px;
+      border-radius: 4px;
+      box-shadow: none;
+      border: 1px solid #eee;
+    }
+    input[type=submit]{
     }
   }
 

@@ -5,8 +5,8 @@
         <div class="hero__col">
           <div class="hero__col-inner">
             <h1>{{title}}</h1>
-            <h2>{{subtitle}}</h2>
-            <button class="btn btn--primary" type="button">{{ctaText}}</button>
+            <h4>{{subtitle}}</h4>
+            <button class="btn btn--primary" type="button" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
           </div>
         </div>
         <div class="hero__visuals">
@@ -23,11 +23,12 @@ export default {
     data () {
         return{
             title: 'We help you build the next Squarespace',
-			subtitle: 'Bring Your Ideas To Life',
-			ctaUrl: '/contact',
+			      subtitle: 'Being the savages bowsman, that is, the person who pulled the.',
+			      ctaUrl: '/contact',
             ctaText: 'Start a project'
         }
     }
+
 };
 </script>
 
@@ -37,10 +38,13 @@ export default {
 
 .section{
   background-color: $ultra-light-grey;
-  min-height: 80vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+  @include mq($until: 'sm'){
+    padding: 0 3em;
+  }
 }
 
 .hero {
@@ -57,20 +61,37 @@ export default {
   }
   &__col{
     @include make-col-ready();
-    @include make-col(6);
+    @include make-col(7);
     @include mq($until: 'md'){
       @include make-col(12);
+    }
+    & h1{
+      margin-bottom: 30px;
+    }
+    & h4{
+      margin-bottom: ms(1);
+      max-width: 500px;
+    }
+    & .btn{
+      @include mq($until: 'sm'){
+        width: 100%;
+        display: block;
+      }
     }
   }
   &__visuals{
     @include make-col-ready();
-    @include make-col(6);
+    @include make-col(5);
     @include mq($until: 'md'){
       @include make-col(12);
     }
     text-align: right;
     .img{
-      width: 50%;
+      width: 90%;
+      @include mq($until: 'md'){
+        width: 100%;
+        margin-bottom: 3em;
+      }
     }
   }
 };

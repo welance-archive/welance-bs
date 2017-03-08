@@ -3,12 +3,12 @@
     <div class="client-list">
       <div class="text-container">
         <div class="text-container__col">
-          <h4>
+          <h5>
             {{smallText}}
-          </h4>
-          <h1>
+          </h5>
+          <h2>
             {{text}}
-          </h1>
+          </h2>
         </div>
       </div>
       <div class="list-container">
@@ -63,7 +63,11 @@ export default {
 @import "~styles/main.scss";
 
 .section{
-  //background: red;
+    @include mq($until: 'md'){
+      padding: 0 3em;
+      overflow: hidden;
+    }
+
 }
 
 .client-list {
@@ -76,10 +80,11 @@ export default {
 
   flex-direction: row;
   overflow: hidden;
+  padding: 0 0 5vh 0;
 
   &__col{
     @include make-col-ready();
-    @include make-col(12);
+    @include make-col(10);
   }
 }
 .list-container{
@@ -90,6 +95,15 @@ export default {
   &__col{
     @include make-col-ready();
     @include make-col(3);
+    margin-bottom: 30px;
+      @include mq($until: 'md'){
+          @include make-col(6);
+      }
+      @include mq($until: 'sm'){
+          @include make-col(12);
+      }
+
+
   }
   img{
     width:100%;

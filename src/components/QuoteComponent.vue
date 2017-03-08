@@ -3,12 +3,12 @@
     <div class="quote">
       <div class="quote__container">
         <div class="quote__col">
-          <h4>
+          <h5>
             {{smallText}}
-          </h4>
-          <h1>
+          </h5>
+          <h2>
             {{text}}
-          </h1>
+          </h2>
         </div>
       </div>
     </div>
@@ -20,8 +20,8 @@ export default {
     name: 'QuoteComponent',
     data () {
         return{
-            text: 'Welance is a bag bicycle rights, High Life sartorial cray craft beer',
-			smallText: 'About Us'
+            text: 'We make digital products and help organisations big and small connect with their audience.',
+			      smallText: ''
         }
     }
 };
@@ -32,14 +32,17 @@ export default {
 @import "~styles/main.scss";
 
 .section{
-  //background: red;
+  @include mq($until: 'sm'){
+    padding: 0 3em;
+  }
+
 }
 
 .quote {
   @include make-container-max-widths();
   margin: 0 auto;
 
-  padding: 20vh 0;
+  padding: 10vh 0;
 
   &__container{
     @include make-row();
@@ -49,7 +52,10 @@ export default {
 
   &__col{
     @include make-col-ready();
-    @include make-col(12);
+    @include make-col(10);
+      @include mq($until: 'xl'){
+        @include make-col(12);
+      }
   }
 };
 

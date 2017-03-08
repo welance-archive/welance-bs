@@ -39,15 +39,24 @@ export default {
 .section{
   //background: red;
   overflow: hidden;
+  @include mq($until: 'md'){
+    padding: 0 3em;
+    overflow: hidden;
+  }
+
+
 }
 
 .gallery {
-//  @include make-container();
+//
   //margin: 0 auto;
-
-  padding: 20vh 0px;
+    @include mq($from: 'xl'){
+        @include make-container-max-widths();
+        margin:  0 auto;
+    }
+  padding: 10vh 0px;
   position: relative;
-
+  
   &__container{
     @include make-row();
     flex-direction: row;
@@ -61,6 +70,7 @@ export default {
         width: 120%;
         left: -10%;
         right: -10%;
+
     }
  }
 
@@ -68,14 +78,20 @@ export default {
     @include make-col-ready();
     @include make-col(3);
 
-    @include mq($until: 'md'){
-    	@include make-col(12);
-		}
-		&--odd-position{
-			&:nth-child(1){
-				align-self: flex-start;
-			}
-		}
+        @include mq($until: 'md'){
+            @include make-col(12);
+            margin-bottom:30px;
+        }
+    &--odd-position{
+        &:nth-child(1){
+            align-self: flex-start;
+            
+            @include mq($from: 'xl'){
+                align-self: flex-end;
+            }
+        }
+    }
+
 	}
 
   img{
