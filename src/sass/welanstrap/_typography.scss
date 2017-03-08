@@ -5,7 +5,7 @@ $font-weight-normal: normal !default;
 $font-weight-bold: bold !default;
 
 $font-family-base:      $font-family-sans-serif !default;
-$font-size-base:        20px !default; // Assumes the browser default, typically `16px`
+$font-size-base:        1em !default; // Assumes the browser default, typically `16px`
 $font-weight-base:      $font-weight-normal !default;
 $dt-font-weight:        $font-weight-bold !default;
 
@@ -67,7 +67,7 @@ h5{
 }
 
 h6{
-    @include ms-respond(font-size, -1);
+    @include ms-respond(font-size, 0);
     font-weight: $font-weight-normal;
     line-height: 1.3;
 }

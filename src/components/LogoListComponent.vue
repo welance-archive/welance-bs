@@ -3,7 +3,7 @@
     <div class="client-list">
       <div class="text-container">
         <div class="text-container__col">
-          <h5>
+          <h5 class="text-container__subheading">
             {{smallText}}
           </h5>
           <h2>
@@ -86,6 +86,11 @@ export default {
     @include make-col-ready();
     @include make-col(10);
   }
+  &__subheading{
+    @include mb(3);
+  }
+
+
 }
 .list-container{
 

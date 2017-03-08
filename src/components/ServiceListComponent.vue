@@ -3,9 +3,9 @@
     <div class="service-list">
       <div class="text-container">
         <div class="text-container__col">
-          <h6>
+          <h5 class="text-container__subheading">
             {{smallText}}
-          </h6>
+          </h5>
           <h2>
             {{text}}
           </h2>
@@ -13,7 +13,7 @@
       </div>
       <div class="list-container">
         <div class="list-container__col" v-for="service in services">
-          <h5>{{service.title}}</h5>
+          <h5 class="list-container__service-title">{{service.title}}</h5>
           <ul>
             <li v-for="item in service.items"><a v-bind:href="item.url">{{item.title}}</a></li>
           </ul>
@@ -120,14 +120,14 @@ export default {
         @include make-col(12);
       }
   }
-  & h5{
-    margin-bottom: 1em;
+  &__subheading{
+    @include mb(3);
   }
 }
 .list-container{
   @include make-row();
   flex-direction: row;
-  
+
   &__col{
     @include make-col-ready();
     @include make-col(4);
@@ -144,8 +144,8 @@ export default {
 
     margin-bottom: 3em;
   }
-  & h5{
-    margin-bottom: 1em;
+  &__service-title{
+    @include mb(2);
   }
 
   & ul{
