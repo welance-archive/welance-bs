@@ -3,12 +3,10 @@
     <div class="client-list">
       <div class="text-container">
         <div class="text-container__col">
-          <h5 class="text-container__subheading">
-            {{smallText}}
-          </h5>
-          <h2>
-            {{text}}
-          </h2>
+          <quote  :small-text-pre="smallTextPre"
+                  :big-text="bigText"
+                  :small-text-sub="smallTextSub"
+          ></quote>
         </div>
       </div>
       <div class="list-container">
@@ -21,40 +19,46 @@
 </template>
 
 <script>
+import Quote from './common/Quote.vue';
+
 export default {
-    name: 'LogoList',
-    data () {
-        return{
-            text: 'Welance is a bag bicycle rights, High Life sartorial cray craft beer',
-						smallText: 'Our Clients',
-            clients: [
-                {
-                  name: "Client Name",
-                  imgUrl: "https://placehold.it/200x200"
-                },
-                {
-                  name: "Client Name",
-                  imgUrl: "https://placehold.it/200x200"
-                },
-                {
-                  name: "Client Name",
-                  imgUrl: "https://placehold.it/200x200"
-                },
-                {
-                  name: "Client Name",
-                  imgUrl: "https://placehold.it/200x200"
-                },
-                {
-                  name: "Client Name",
-                  imgUrl: "https://placehold.it/200x200"
-                },
-                {
-                  name: "Client Name",
-                  imgUrl: "https://placehold.it/200x200"
-                }
-            ]
-        }
+  name: 'LogoList',
+  components: {
+    Quote
+  },
+  data () {
+    return{
+      smallTextPre: 'Clients List',
+      bigText: 'These are our awesome clients',
+      smallTextSub: '',
+      clients: [
+          {
+            name: "Client Name",
+            imgUrl: "https://placehold.it/200x200"
+          },
+          {
+            name: "Client Name",
+            imgUrl: "https://placehold.it/200x200"
+          },
+          {
+            name: "Client Name",
+            imgUrl: "https://placehold.it/200x200"
+          },
+          {
+            name: "Client Name",
+            imgUrl: "https://placehold.it/200x200"
+          },
+          {
+            name: "Client Name",
+            imgUrl: "https://placehold.it/200x200"
+          },
+          {
+            name: "Client Name",
+            imgUrl: "https://placehold.it/200x200"
+          }
+      ]
     }
+  }
 };
 </script>
 
@@ -63,11 +67,10 @@ export default {
 @import "~styles/main.scss";
 
 .section{
-    @include mq($until: 'md'){
-      padding: 0 3em;
-      overflow: hidden;
-    }
-
+  @include mq($until: 'md'){
+    padding: 0 3em;
+    overflow: hidden;
+  }
 }
 
 .client-list {
@@ -86,10 +89,6 @@ export default {
     @include make-col-ready();
     @include make-col(10);
   }
-  &__subheading{
-    @include mb(3);
-  }
-
 
 }
 .list-container{
@@ -101,14 +100,12 @@ export default {
     @include make-col-ready();
     @include make-col(3);
     margin-bottom: 30px;
-      @include mq($until: 'md'){
-          @include make-col(6);
-      }
-      @include mq($until: 'sm'){
-          @include make-col(12);
-      }
-
-
+    @include mq($until: 'md'){
+        @include make-col(6);
+    }
+    @include mq($until: 'sm'){
+        @include make-col(12);
+    }
   }
   img{
     width:100%;
