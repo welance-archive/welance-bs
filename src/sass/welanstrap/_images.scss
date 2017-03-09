@@ -1,0 +1,62 @@
+// Flexible Cover Images
+// http://nicolasgallagher.com/flexible-css-cover-images
+//
+// $btm-padding: [ratio percentage]
+// For Example: 16:9 (16/9 = .5625 || 56.25%)
+// $btm-padding: 56.25%
+
+@mixin flexembed-image($btm-padding, $bg-image, $min-width: 400px, $min-height: null, $max-width: 1200px, $max-height: 1200px) {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  margin: 0 auto;
+
+  min-height: #{$min-height};
+  min-width: #{$min-width};
+  max-height: #{$max-height};
+  max-width: #{$max-width};
+
+
+  @if($bg-image){
+    background-image: $bg-image;
+  }
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+      content: "";
+      display: block;
+      padding-bottom: $btm-padding;
+      width: 100%;
+  }
+}
+
+
+.img{
+  //classic 2:3 Portrait Photo Ratio
+  @include flexembed-image(150%, null);
+
+  &--ratio-3-1{
+    @include flexembed-image(33.333%, null);
+  }
+  &--ratio-3-2{
+    @include flexembed-image(66.666%, null);
+  }
+  &--ratio-2-3{
+    @include flexembed-image(150%, null);
+  }
+  &--ratio-4-1{
+    @include flexembed-image(25%, null);
+  }
+  &--ratio-16-9{
+    @include flexembed-image(56.25%, null);
+  }
+  &--ratio-9-16{
+    @include flexembed-image(177.777%, null);
+  }
+  &--ratio-12-16{
+    @include flexembed-image(133.33%, null);
+  }
+}
