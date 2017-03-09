@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'LogoListComponent',
+    name: 'LogoList',
     data () {
         return{
             text: 'Welance is a bag bicycle rights, High Life sartorial cray craft beer',

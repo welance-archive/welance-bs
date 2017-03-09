@@ -22,7 +22,7 @@
 
 <script>
 export default {
-    name: 'GalleryComponent',
+    name: 'Gallery',
     data () {
         return{
             text: 'Image Row',
@@ -56,7 +56,7 @@ export default {
     }
   padding: 10vh 0px;
   position: relative;
-  
+
   &__container{
     @include make-row();
     flex-direction: row;
@@ -85,7 +85,7 @@ export default {
     &--odd-position{
         &:nth-child(1){
             align-self: flex-start;
-            
+
             @include mq($from: 'xl'){
                 align-self: flex-end;
             }

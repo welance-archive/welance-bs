@@ -25,7 +25,7 @@
 
 <script>
 export default {
-    name: 'ServiceListComponent',
+    name: 'ServiceList',
     data () {
         return{
             text: 'We make digital products and help organisations big and small connect with their audience.',

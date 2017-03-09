@@ -3,7 +3,7 @@ import Multiselect from 'vue-multiselect'; //https://monterail.github.io/vue-mul
 
 export default {
     extends: Multiselect,
-    name: 'DropdownComponent',
+    name: 'Dropdown',
     /*components: {
       Multiselect
     },*/

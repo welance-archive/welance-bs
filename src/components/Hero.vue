@@ -19,7 +19,7 @@
 
 <script>
 export default {
-    name: 'HeroComponent',
+    name: 'Hero',
     props: ['openModal'],
     data () {
         return{

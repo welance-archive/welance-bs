@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    name: 'FixedHeaderComponent',
+    name: 'FixedHeader',
     data () {
         return{
             msg: 'This is Header',

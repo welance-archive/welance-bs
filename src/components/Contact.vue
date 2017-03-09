@@ -25,7 +25,7 @@
 
 <script>
 export default {
-    name: 'ContactComponent',
+    name: 'Contact',
     data () {
         return{
             text: 'Curious to find out more? Let’s get in touch!',
@@ -58,7 +58,7 @@ export default {
     justify-content: space-between;
     overflow: hidden;
   }
-  
+
   &__col{
     @include make-col-ready();
     @include make-col(6);

@@ -7,7 +7,7 @@
             <p>
               <span v-for="(selectable, index) in selectables" v-bind:item="selectable" v-bind:index="index">
                 {{selectable.text_before}}
-                <dropdown-component
+                <dropdown
                   :options="selectable.selections.options"
                   :value="selectable.selections.options[0]"
                   :close-on-select="true"
@@ -16,7 +16,7 @@
                   :multiple="true"
                   select-label=""
                   :placeholder="selectable.placeholder"
-                ></dropdown-component>
+                ></dropdown>
                 {{selectable.text_after}}
               </span>
             </p>
@@ -34,12 +34,12 @@
 </template>
 
 <script>
-import DropdownComponent from './DropdownComponent.vue';
+import Dropdown from './Dropdown.vue';
 
 export default {
-    name: 'TextFormComponent',
+    name: 'TextForm',
     components: {
-      DropdownComponent
+      Dropdown
     },
     data () {
         return{

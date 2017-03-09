@@ -1,45 +1,45 @@
 <template>
   <div class="home">
-    <hero-component :open-modal="openModal"></hero-component>
+    <hero :open-modal="openModal"></hero>
 
-    <quote-component></quote-component>
+    <quote></quote>
 
-    <modal-component :modal-size="'half'" v-if="showModal" @close="closeModal()">
-        <text-form-component slot="body"></text-form-component>
+    <modal :modal-size="'half'" v-if="showModal" @close="closeModal()">
+        <text-form slot="body"></text-form>
         <span slot="footer">bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/></span>
-    </modal-component>
+    </modal>
 
-    <gallery-component></gallery-component>
+    <gallery></gallery>
 
-    <service-list-component></service-list-component>
-    <logo-list-component></logo-list-component>
-    <contact-component></contact-component>
+    <service-list></service-list>
+    <logo-list></logo-list>
+    <contact></contact>
   </div>
 </template>
 
 <script>
-import HeroComponent from './HeroComponent.vue';
-import QuoteComponent from './QuoteComponent.vue';
-import ModalComponent from './common/ModalComponent.vue';
-import GalleryComponent from './GalleryComponent.vue';
-import TextFormComponent from './common/TextFormComponent.vue';
-import ServiceListComponent from './ServiceListComponent.vue';
-import LogoListComponent from './LogoListComponent.vue';
-import ContactComponent from './ContactComponent.vue';
+import Hero from './Hero.vue';
+import Quote from './Quote.vue';
+import Modal from './common/Modal.vue';
+import Gallery from './Gallery.vue';
+import TextForm from './common/TextForm.vue';
+import ServiceList from './ServiceList.vue';
+import LogoList from './LogoList.vue';
+import Contact from './Contact.vue';
 
 import axios from 'axios';
 
 export default {
     name: 'home',
     components: {
-      HeroComponent,
-      QuoteComponent,
-      ModalComponent,
-      GalleryComponent,
-      TextFormComponent,
-      ServiceListComponent,
-      LogoListComponent,
-      ContactComponent
+      Hero,
+      Quote,
+      Modal,
+      Gallery,
+      TextForm,
+      ServiceList,
+      LogoList,
+      Contact
     },
     data () {
         return{
