@@ -1,12 +1,12 @@
 <template>
-  <transition name="header">
-	<div class="section section--active" v-if="scrolled">
-		<div class="header">
-			<div class="header__container">
-				<div class="header__col">
+  <transition name="fixed-header">
+	<div class="fixed-header-wrap fixed-header-wrap--active" v-if="scrolled">
+		<div class="fixed-header">
+			<div class="fixed-header__container">
+				<div class="fixed-header__col">
 					<img class="logo" src="/assets/images/logo.svg"/>
 				</div>
-				<div class="header__col">
+				<div class="fixed-header__col">
 					<h6 class="phone">
 						<a :href="'tel:'+phone_number" class="phone__number">
 							{{phone_number}}
@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
+.fixed-header-wrap{
   position: fixed;
   opacity: 0;
   top: 0;
@@ -63,13 +63,14 @@ export default {
   right: 0;
   transition: all .2s ease;
   z-index: 99999;
+  background: rgba(255,255,255,.8);
 
   &--active{
     opacity: 1;
   }
 }
 
-.header {
+.fixed-header {
   @include make-container-max-widths();
   margin: 0 auto;
 
@@ -118,19 +119,19 @@ export default {
  * these styles.
  */
 
-.header-enter, .header-leave-to{
+.fixed-header-enter, .fixed-header-leave-to{
   transform: translateY(-100px);
   opacity: 0;
 }
-.header-leave, .header-enter-to{
+.fixed-header-leave, .fixed-header-enter-to{
   transform: translateY(-100px);
   opacity: 0;
 }
 
-.header-enter-active {
+.fixed-header-enter-active {
   transition: all .3s ease;
 }
-.header-leave-active {
+.fixed-header-leave-active {
   transition: all .3s ease;
 }
 

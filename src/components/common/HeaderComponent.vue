@@ -1,23 +1,21 @@
 <template>
-	<section class="section">
-		<div class="header">
-			<div class="header__container">
-				<div class="header__col">
-					<img class="logo" src="/assets/images/logo.svg"/>
-				</div>
-				<div class="header__col">
-					<h6 class="phone">
-						<a :href="'tel:'+phone_number" class="phone__number">
-							{{phone_number}}
-						</a><br/>
-						<span class="phone__availability">
-							<span class="phone__availability-check"></span> {{availabilityText}}
-						</span>
-					</h6>
-				</div>
-			</div>
-		</div>
-	</section>
+  <header class="header">
+    <div class="header__container">
+      <div class="header__col">
+        <img class="logo" src="/assets/images/logo.svg"/>
+      </div>
+      <div class="header__col">
+        <h6 class="phone">
+          <a :href="'tel:'+phone_number" class="phone__number">
+            {{phone_number}}
+          </a><br/>
+          <span class="phone__availability">
+            <span class="phone__availability-check"></span> {{availabilityText}}
+          </span>
+        </h6>
+      </div>
+    </div>
+  </header>
 </template>
 
 <script>
