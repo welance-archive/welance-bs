@@ -1,24 +1,22 @@
 <template>
-  <section class="section">
-    <div class="hero">
-      <div class="hero__container">
-        <div class="hero__col">
-          <div class="hero__col-inner">
-            <quote  :type="'main'"
-                    :small-text-pre="''"
-                    :big-text="title"
-                    :small-text-sub="subtitle"
-            ></quote>
-            <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
-            <a class="btn btn--info" v-if="ctaUrl" :href="ctaUrl">{{ctaText}}</a>
-          </div>
-        </div>
-        <div class="hero__visuals">
-          <div class="img img--ratio-1-1" :style="{ 'background-image': 'url(' + image + ')' }"> </div>
+  <div class="hero">
+    <div class="hero__container">
+      <div class="hero__col">
+        <div class="hero__col-inner">
+          <quote  :type="'main'"
+                  :small-text-pre="''"
+                  :big-text="title"
+                  :small-text-sub="subtitle"
+          ></quote>
+          <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
+          <a class="btn btn--info" v-if="ctaUrl" :href="ctaUrl">{{ctaText}}</a>
         </div>
       </div>
+      <div class="hero__visuals">
+        <div class="img img--ratio-1-1" :style="{ 'background-image': 'url(' + image + ')' }"> </div>
+      </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -47,8 +45,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~styles/main.scss";
-
-.section{}
 
 .hero {
   @include make-container-max-widths();

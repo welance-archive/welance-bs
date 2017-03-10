@@ -1,26 +1,24 @@
 <template>
-  <section class="section">
-    <div class="contact">
-      <div class="contact__container">
-        <div class="contact__col">
-          <h2>
-            {{text}}
-          </h2>
-          <p class="contact__details">
-            Just Call Philipp <a href="#">030 / 60 98 57 750</a>send a message to <a href="#">projects@welance.com</a> or visit our wonderful Space in Berlin- Kreuzberg
-          </p>
-          <form class="contact__form">
-            <input type="email" placeholder="Join the welance list...">
-            <input class="btn btn--primary" type="submit" value="subscribe">
-          </form>
-        </div>
-        <div class="contact__col">
-          <span>this is Philipp</span>
-          <img :src="imgUrl" class="contact__img">
-        </div>
+  <div class="contact">
+    <div class="contact__container">
+      <div class="contact__col">
+        <h2>
+          {{text}}
+        </h2>
+        <p class="contact__details">
+          Just Call Philipp <a href="#">030 / 60 98 57 750</a>send a message to <a href="#">projects@welance.com</a> or visit our wonderful Space in Berlin- Kreuzberg
+        </p>
+        <form class="contact__form">
+          <input type="email" placeholder="Join the welance list...">
+          <input class="btn btn--primary" type="submit" value="subscribe">
+        </form>
+      </div>
+      <div class="contact__col">
+        <span>this is Philipp</span>
+        <img :src="imgUrl" class="contact__img">
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -38,8 +36,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~styles/main.scss";
-
-.section{}
 
 .contact {
   @include make-container-max-widths();

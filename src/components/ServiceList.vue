@@ -1,24 +1,22 @@
 <template>
-  <section class="section">
-    <div class="service-list">
-      <div class="text-container">
-        <div class="text-container__col">
-          <quote  :small-text-pre="smallTextPre"
-                  :big-text="bigText"
-                  :small-text-sub="smallTextSub"
-          ></quote>
-        </div>
-      </div>
-      <div class="list-container">
-        <div class="list-container__col" v-for="service in services">
-          <h5 class="list-container__list-title">{{service.title}}</h5>
-          <ul class="list-container__list">
-            <li class="list-container__list-item" v-for="item in service.items"><a v-bind:href="item.url">{{item.title}}</a></li>
-          </ul>
-        </div>
+  <div class="service-list">
+    <div class="text-container">
+      <div class="text-container__col">
+        <quote  :small-text-pre="smallTextPre"
+                :big-text="bigText"
+                :small-text-sub="smallTextSub"
+        ></quote>
       </div>
     </div>
-  </section>
+    <div class="list-container">
+      <div class="list-container__col" v-for="service in services">
+        <h5 class="list-container__list-title">{{service.title}}</h5>
+        <ul class="list-container__list">
+          <li class="list-container__list-item" v-for="item in service.items"><a v-bind:href="item.url">{{item.title}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -98,8 +96,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~styles/main.scss";
-
-.section{}
 
 .service-list {
   @include make-container-max-widths();

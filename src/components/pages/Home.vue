@@ -1,34 +1,45 @@
 <template>
   <div class="home">
 
-    <hero   :title="heroTitle"
-            :subtitle="heroSubtitle"
-            :image="heroImage"
-            :open-modal="openModal"
-            :ctaUrl="heroUrl"
-            :ctaText="heroText"
-    ></hero>
+    <section class="hero-section">
+      <hero   :title="heroTitle"
+              :subtitle="heroSubtitle"
+              :image="heroImage"
+              :open-modal="openModal"
+              :ctaUrl="heroUrl"
+              :ctaText="heroText"
+      ></hero>
+    </section>
 
-    <quote  :small-text-pre="mainQuoteSmallTextPre"
-            :big-text="mainQuoteBigText"
-            :small-text-sub="mainQuoteSmallTextSub"
-    ></quote>
+    <section class="quote-section">
+      <quote  :small-text-pre="mainQuoteSmallTextPre"
+              :big-text="mainQuoteBigText"
+              :small-text-sub="mainQuoteSmallTextSub"
+      ></quote>
+    </section>
 
     <modal :modal-size="'half'" v-if="showModal" @close="closeModal()">
         <text-form slot="body"></text-form>
         <span slot="footer"></span>
     </modal>
 
-    <gallery  :images="officeImages"
-              :gallery-type="'off-canvas'"
-    ></gallery>
+    <section class="gallery-section">
+      <gallery  :images="officeImages"
+                :gallery-type="'off-canvas'"
+      ></gallery>
+    </section>
 
-    <service-list></service-list>
+    <section class="services-section">
+      <service-list></service-list>
+    </section>
 
-    <logo-list  :logos="clientsImages"
-    ></logo-list>
+    <section class="clients-section">
+      <logo-list :logos="clientsImages"></logo-list>
+    </section>
 
-    <contact></contact>
+    <section class="contact-section">
+      <contact></contact>
+    </section>
 
   </div>
 </template>
@@ -235,6 +246,31 @@ export default {
 	display: flex;
 	min-height: 100vh;
 	flex-direction: column;
+}
+
+.hero-section{
+  background: #f3f3f3;
+  padding: 10vh 0;
+}
+.quote-section{
+  background: white;
+  padding: 10vh 0;
+}
+.gallery-section{
+  background: #f3f3f3;
+  padding: 10vh 0;
+}
+.services-section{
+  background: white;
+  padding: 10vh 0;
+}
+.clients-section{
+  background: #f3f3f3;
+  padding: 10vh 0;
+}
+.contact-section{
+  background: white;
+  padding: 10vh 0;
 }
 
 </style>

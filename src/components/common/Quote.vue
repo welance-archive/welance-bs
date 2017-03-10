@@ -1,22 +1,20 @@
 <template>
-  <section class="section">
-    <div class="quote">
-      <div class="quote__container">
-        <div class="quote__col">
-          <template v-if="type==='main'">
-          <h4 v-if="smallTextPre" v-html="smallTextPre"></h4>
-          <h1 v-if="bigText" v-html="bigText" class="quote-heading"></h1>
-          <h4 v-if="smallTextSub" v-html="smallTextSub"></h4>
-          </template>
-          <template v-else>
-            <h5 v-if="smallTextPre" v-html="smallTextPre"></h5>
-            <h2 v-if="bigText" v-html="bigText" class="quote-heading"></h2>
-            <h5 v-if="smallTextSub" v-html="smallTextSub"></h5>
-          </template>
-        </div>
+  <div class="quote">
+    <div class="quote__container">
+      <div class="quote__col">
+        <template v-if="type==='main'">
+        <h4 v-if="smallTextPre" v-html="smallTextPre"></h4>
+        <h1 v-if="bigText" v-html="bigText" class="quote-heading"></h1>
+        <h4 v-if="smallTextSub" v-html="smallTextSub"></h4>
+        </template>
+        <template v-else>
+          <h5 v-if="smallTextPre" v-html="smallTextPre"></h5>
+          <h2 v-if="bigText" v-html="bigText" class="quote-heading"></h2>
+          <h5 v-if="smallTextSub" v-html="smallTextSub"></h5>
+        </template>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -49,8 +47,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~styles/main.scss";
-
-.section{}
 
 .quote {
   @include make-container-max-widths();

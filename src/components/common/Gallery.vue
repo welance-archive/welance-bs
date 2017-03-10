@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <div class="gallery-wrapper">
     <div class="gallery">
       <div class="gallery__container" :class="galleryTypeClass">
         <template v-for="image in images">
@@ -32,7 +32,7 @@
         </template>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
@@ -55,7 +55,7 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
+.gallery-wrapper{
   //background: red;
   overflow: hidden;
 }

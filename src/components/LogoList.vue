@@ -1,17 +1,15 @@
 <template>
-  <section class="section">
-    <div class="logo-list">
-        <quote  :small-text-pre="smallTextPre"
-                :big-text="bigText"
-                :small-text-sub="smallTextSub"
-        ></quote>
-        <div class="logo-list__col">
-          <gallery  :images="logos"
-                    :gallery-type="'squares'"
-          ></gallery>
-        </div>
-    </div>
-  </section>
+  <div class="logo-list">
+      <quote  :small-text-pre="smallTextPre"
+              :big-text="bigText"
+              :small-text-sub="smallTextSub"
+      ></quote>
+      <div class="logo-list__col">
+        <gallery  :images="logos"
+                  :gallery-type="'squares'"
+        ></gallery>
+      </div>
+  </div>
 </template>
 
 <script>
@@ -38,8 +36,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "~styles/main.scss";
-
-.section{}
 
 .logo-list{
   @include make-container-max-widths();
