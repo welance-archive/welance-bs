@@ -255,9 +255,13 @@ export default {
 	flex-direction: column;
 }
 
+section{
+  @include pt(6);
+  @include pb(8);
+}
+
 .hero-section{
   background: #f3f3f3;
-  padding: 10vh 0;
   .quote__col[data-v-675f2c2e]{
     @include mq($from: 'md'){
       @include mt(0);
@@ -269,23 +273,22 @@ export default {
 }
 .quote-section{
   background: white;
-  padding-top: 10vh
+  @include pt(6);
+  @include pb(0);
 }
 .gallery-section{
   background: white;
-  padding-bottom: 10vh
+  @include pt(0);
+  @include pb(6);
 }
 .services-section{
   background: white;
-  padding: 10vh 0;
 }
 .clients-section{
   background: #f3f3f3;
-  padding: 10vh 0;
 }
 .contact-section{
   background: white;
-  padding: 10vh 0;
   h5[data-v-675f2c2e]{
     @include ms-respond(font-size, 1);
     line-height: 1.5em;
