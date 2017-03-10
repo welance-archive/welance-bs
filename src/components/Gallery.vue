@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section">
     <div class="gallery">
       <div class="gallery__container gallery__container--off-canvas">
         <div class="img img--ratio-9-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
@@ -12,7 +12,7 @@
         <div class="img img--ratio-12-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

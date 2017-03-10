@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section">
     <div class="text-form">
       <div class="text-form__container">
         <div class="text-form__col">
@@ -30,7 +30,7 @@
           <button type="button" class="btn btn--primary">Get Free Quote ⟶</button>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

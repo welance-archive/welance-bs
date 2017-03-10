@@ -1,9 +1,9 @@
 <template>
-  <div class="section">
+  <section class="section">
     <div class="footer">
       <h1>{{ msg }}</h1>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

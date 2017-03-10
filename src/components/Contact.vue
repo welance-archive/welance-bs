@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section">
     <div class="contact">
       <div class="contact__container">
         <div class="contact__col">
@@ -20,7 +20,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

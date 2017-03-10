@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <section class="section">
     <div class="hero">
       <div class="hero__container">
         <div class="hero__col">
@@ -14,7 +14,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
