@@ -5,7 +5,7 @@
 // For Example: 16:9 (16/9 = .5625 || 56.25%)
 // $btm-padding: 56.25%
 
-@mixin flexembed-image($btm-padding, $bg-image, $min-width: 400px, $min-height: null, $max-width: 1200px, $max-height: 1200px) {
+@mixin flexembed-image($btm-padding, $bg-image, $min-width: 320px, $min-height: null, $max-width: 1200px, $max-height: 1200px) {
   display: block;
   overflow: hidden;
   position: relative;
@@ -37,6 +37,19 @@
 .img{
   //classic 2:3 Portrait Photo Ratio
   @include flexembed-image(150%, null);
+  position: relative;
+
+  a, a:active{
+    color: green;
+  }
+
+  &__text-container{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    padding: 0;
+    margin: 0;
+  }
 
   &--ratio-1-1{
     @include flexembed-image(100%, null);

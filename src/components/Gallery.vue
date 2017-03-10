@@ -1,15 +1,35 @@
 <template>
   <section class="section">
     <div class="gallery">
-      <div class="gallery__container gallery__container--off-canvas">
-        <div class="img img--ratio-9-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-12-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-9-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-12-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-9-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-12-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-9-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
-        <div class="img img--ratio-12-16" style="background-image:url('http://fillmurray.com/400/400');"> </div>
+      <div class="gallery__container" :class="galleryTypeClass">
+        <template v-for="image in images">
+          <template v-if="image.link">
+
+              <a    :href="image.link" :alt="image.alt" :target="image.target"
+                    class="img"
+                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
+                    :style="{ backgroundImage: 'url(' + image.src + ')' }"
+
+              >
+                <div class="img__text-container">
+                  <h5 v-if="image.title">{{image.title}}</h5>
+                  <h6 v-if="image.subtitle">{{image.subtitle}}</h6>
+                </div>
+              </a>
+
+          </template>
+          <template v-else>
+              <div  class="img"
+                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
+                    :style="{ backgroundImage: 'url(' + image.src + ')' }"
+              >
+                <div class="img__text-container">
+                  <h5 v-if="image.title">{{image.title}}</h5>
+                  <h6 v-if="image.subtitle">{{image.subtitle}}</h6>
+                </div>
+              </div>
+          </template>
+        </template>
       </div>
     </div>
   </section>
@@ -18,8 +38,14 @@
 <script>
 export default {
   name: 'Gallery',
+  props: ['images', 'galleryType'],
   data () {
-    return{}
+    return{
+      galleryTypeClass: {
+        'gallery__container--off-canvas'  : this.galleryType === 'off-canvas',
+        'gallery__container--blocky'      : this.galleryType === 'blocky'
+      }
+    }
   }
 };
 </script>
@@ -64,17 +90,22 @@ export default {
     // 3) vertically centered alignement for medium displays
     // 4) 100% responsive on small displays
     &--off-canvas{
-      @include make-row();
-      flex-flow: row nowrap;
+      @include mq($from: 'md'){
+        @include make-row();
+        flex-flow: row nowrap;
+      }
 
       .img{
         align-self: center;
-        border: 16px solid white;
+        margin: 16px;
         &:last-child{
-          border-right: none;
+          margin-right: 0px;
         }
         &:first-child{
-          border-left: none;
+          margin-left: 0px;
+        }
+        &__text-container{
+          @include ml(1);
         }
 
         @include mq($from: 'xl'){
@@ -83,10 +114,13 @@ export default {
       }
 
       @include mq($until: 'md'){
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         .img{
-          border: none;
-          border-top: 16px solid white;
+          margin: 0px;
+          margin-top: 16px;
+          &:first-child{
+            margin-top: 0px;
+          }
           width: 100%;
         }
       }

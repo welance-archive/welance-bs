@@ -19,7 +19,9 @@
         <span slot="footer"></span>
     </modal>
 
-    <gallery></gallery>
+    <gallery  :images="officeImages"
+              :gallery-type="'off-canvas'"
+    ></gallery>
 
     <service-list></service-list>
 
@@ -34,7 +36,7 @@
 import Hero from 'components/common/Hero.vue';
 import Quote from 'components/common/Quote.vue';
 import Modal from 'components/common/Modal.vue';
-import Gallery from 'components/Gallery.vue';
+import Gallery from 'components/common/Gallery.vue';
 import TextForm from 'components/common/TextForm.vue';
 import ServiceList from 'components/ServiceList.vue';
 import LogoList from 'components/LogoList.vue';
@@ -68,7 +70,70 @@ export default {
 
         mainQuoteSmallTextPre: 'The Coolest',
         mainQuoteBigText: 'kids on the...new line:<br/>block',
-        mainQuoteSmallTextSub: ''
+        mainQuoteSmallTextSub: '',
+
+        officeImages: [
+          {
+            src: 'http://fillmurray.com/400/400',
+            srcRetina: 'http://fillmurray.com/800/800',
+            ratio: '9-16', //see welanstrap/_images.scsss for possible ratio values
+            title: 'Title',
+            subtitle: 'subtitle',
+            alt: 'Alternate Text',
+            link: '',
+            target: '_blank'
+          },
+          {
+            src: 'http://fillmurray.com/401/401',
+            srcRetina: 'http://fillmurray.com/801/801',
+            ratio: '12-16', //see welanstrap/_images.scsss for possible ratio values
+            title: 'Title',
+            subtitle: 'subtitle',
+            alt: 'Alternate Text',
+            link: '',
+            target: '_blank'
+          },
+          {
+            src: 'http://fillmurray.com/402/402',
+            srcRetina: 'http://fillmurray.com/802/802',
+            ratio: '9-16', //see welanstrap/_images.scsss for possible ratio values
+            title: 'Title',
+            subtitle: 'subtitle',
+            alt: 'Alternate Text',
+            link: '',
+            target: '_blank'
+          },
+          {
+            src: 'http://fillmurray.com/403/403',
+            srcRetina: 'http://fillmurray.com/803/803',
+            ratio: '12-16', //see welanstrap/_images.scsss for possible ratio values
+            title: 'Title',
+            subtitle: 'subtitle',
+            alt: 'Alternate Text',
+            link: 'http://example.com',
+            target: '_blank'
+          },
+          {
+            src: 'http://fillmurray.com/404/404',
+            srcRetina: 'http://fillmurray.com/804/804',
+            ratio: '9-16', //see welanstrap/_images.scsss for possible ratio values
+            title: 'Title',
+            subtitle: 'subtitle',
+            alt: 'Alternate Text',
+            link: '',
+            target: '_blank'
+          },
+          {
+            src: 'http://fillmurray.com/405/405',
+            srcRetina: 'http://fillmurray.com/805/805',
+            ratio: '12-16', //see welanstrap/_images.scsss for possible ratio values
+            title: 'Title',
+            subtitle: 'subtitle',
+            alt: 'Alternate Text',
+            link: '',
+            target: '_blank'
+          }
+        ]
     }
   },
   methods: {
