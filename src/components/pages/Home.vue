@@ -1,19 +1,22 @@
 <template>
   <div class="home">
 
-    <hero :open-modal="openModal"
-          :title="heroTitle"
-          :subtitle="heroSubtitle"
-          :image="heroImage"
-          :ctaUrl="heroUrl"
-          :ctaText="heroText"
+    <hero   :title="heroTitle"
+            :subtitle="heroSubtitle"
+            :image="heroImage"
+            :open-modal="openModal"
+            :ctaUrl="heroUrl"
+            :ctaText="heroText"
     ></hero>
 
-    <quote></quote>
+    <quote  :small-text-pre="mainQuoteSmallTextPre"
+            :big-text="mainQuoteBigText"
+            :small-text-sub="mainQuoteSmallTextSub"
+    ></quote>
 
     <modal :modal-size="'half'" v-if="showModal" @close="closeModal()">
         <text-form slot="body"></text-form>
-        <span slot="footer">bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/>bla<br/></span>
+        <span slot="footer"></span>
     </modal>
 
     <gallery></gallery>
@@ -28,7 +31,7 @@
 </template>
 
 <script>
-import Hero from 'components/Hero.vue';
+import Hero from 'components/common/Hero.vue';
 import Quote from 'components/common/Quote.vue';
 import Modal from 'components/common/Modal.vue';
 import Gallery from 'components/Gallery.vue';
@@ -60,8 +63,12 @@ export default {
         heroTitle: 'We are the coolest kids in town, really kewl. 🖖',
         heroSubtitle: 'I am seriously guys',
         heroImage: 'http://fillmurray.com/1400/1400',
-        heroUrl: '/contacts',
-        heroText: 'Start Project'
+        heroUrl: '',  //if empty, opens modal, if filled, goest to link (eg. "/contacts" or "http://example.com")
+        heroText: 'Start Project',
+
+        mainQuoteSmallTextPre: 'The Coolest',
+        mainQuoteBigText: 'kids on the...new line:<br/>block',
+        mainQuoteSmallTextSub: ''
     }
   },
   methods: {
