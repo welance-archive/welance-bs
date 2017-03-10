@@ -10,7 +10,7 @@
           </div>
         </div>
         <div class="hero__visuals">
-          <img class="img img-square" src="https://placeholdit.imgix.net/~text?txtsize=150&txt=1500%C3%971500&w=1500&h=1500"/>
+          <div class="img img--ratio-1-1" style="background-image:url('http://fillmurray.com/1400/1400');"> </div>
         </div>
       </div>
     </div>
