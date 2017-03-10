@@ -1,62 +1,35 @@
 <template>
   <section class="section">
-    <div class="client-list">
-      <div class="text-container">
-        <div class="text-container__col">
-          <quote  :small-text-pre="smallTextPre"
-                  :big-text="bigText"
-                  :small-text-sub="smallTextSub"
-          ></quote>
+    <div class="logo-list">
+        <quote  :small-text-pre="smallTextPre"
+                :big-text="bigText"
+                :small-text-sub="smallTextSub"
+        ></quote>
+        <div class="logo-list__col">
+          <gallery  :images="logos"
+                    :gallery-type="'squares'"
+          ></gallery>
         </div>
-      </div>
-      <div class="list-container">
-        <div class="list-container__col" v-for="client in clients">
-           <img v-bind:src="client.imgUrl" v-bind:alt="client.name">
-        </div>
-      </div>
     </div>
   </section>
 </template>
 
 <script>
 import Quote from 'components/common/Quote.vue';
+import Gallery from 'components/common/Gallery.vue';
 
 export default {
   name: 'LogoList',
   components: {
-    Quote
+    Quote,
+    Gallery
   },
+  props: ['logos'],
   data () {
     return{
       smallTextPre: 'Clients List',
       bigText: 'These are our awesome clients',
-      smallTextSub: '',
-      clients: [
-          {
-            name: "Client Name",
-            imgUrl: "https://placehold.it/200x200"
-          },
-          {
-            name: "Client Name",
-            imgUrl: "https://placehold.it/200x200"
-          },
-          {
-            name: "Client Name",
-            imgUrl: "https://placehold.it/200x200"
-          },
-          {
-            name: "Client Name",
-            imgUrl: "https://placehold.it/200x200"
-          },
-          {
-            name: "Client Name",
-            imgUrl: "https://placehold.it/200x200"
-          },
-          {
-            name: "Client Name",
-            imgUrl: "https://placehold.it/200x200"
-          }
-      ]
+      smallTextSub: ''
     }
   }
 };
@@ -66,51 +39,15 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
-  @include mq($until: 'md'){
-    padding: 0 3em;
-    overflow: hidden;
-  }
-}
+.section{}
 
-.client-list {
+.logo-list{
   @include make-container-max-widths();
   margin: 0 auto;
-  padding: 20vh 0;
-}
-.text-container{
-  @include make-row();
-
-  flex-direction: row;
-  overflow: hidden;
-  padding: 0 0 5vh 0;
 
   &__col{
-    @include make-col-ready();
-    @include make-col(10);
+    @include make-col(12);
   }
-
 }
-.list-container{
-
-  @include make-row();
-  flex-direction: row;
-
-  &__col{
-    @include make-col-ready();
-    @include make-col(3);
-    margin-bottom: 30px;
-    @include mq($until: 'md'){
-        @include make-col(6);
-    }
-    @include mq($until: 'sm'){
-        @include make-col(12);
-    }
-  }
-  img{
-    width:100%;
-  }
-};
-
 
 </style>

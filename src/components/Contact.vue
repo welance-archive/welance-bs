@@ -39,18 +39,11 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
-  background: $ultra-light-grey;
-    @include mq($until: 'md'){
-      padding: 0 3em;
-      overflow: hidden;
-    }
-}
+.section{}
 
 .contact {
   @include make-container-max-widths();
   margin: 0 auto;
-  padding: 20vh 0;
 
   &__container{
     @include make-row();
@@ -70,14 +63,6 @@ export default {
       align-self: flex-end;
     }
   }
-
-  & h2{
-    margin-bottom: .7em;
-  }
-  & p{
-    margin-bottom: 2em;
-  }
-
   &__form{
     input[type=email]{
       height: 56px;
@@ -91,7 +76,6 @@ export default {
     input[type=submit]{
     }
   }
-
 };
 
 

@@ -43,7 +43,8 @@ export default {
     return{
       galleryTypeClass: {
         'gallery__container--off-canvas'  : this.galleryType === 'off-canvas',
-        'gallery__container--blocky'      : this.galleryType === 'blocky'
+        'gallery__container--blocky'      : this.galleryType === 'blocky',
+        'gallery__container--squares'      : this.galleryType === 'squares'
       }
     }
   }
@@ -66,6 +67,36 @@ export default {
   &__container{
     flex-flow: row wrap;
     justify-content: space-around;
+
+    // Mode: blocky
+    //
+    // Feature List:
+    // T.B.D with @nano
+    //
+    &--squares{
+      @include make-row();
+      justify-content: center;
+
+      .img{
+        min-width: 128px;
+        align-self: center;
+        margin:  .5vw;
+      }
+      @include mq($until: 'md'){
+        @include make-row();
+        flex-flow: row wrap;
+        //justify-content: flex-start;
+        .img{
+          min-width: 160px;
+          align-self: center;
+        }
+      }
+      @include mq($from: 'md'){
+        @include make-row();
+        flex-flow: row wrap;
+        justify-content: flex-start;
+      }
+    }
 
     // Mode: blocky
     //

@@ -40,16 +40,7 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
-  background-color: $ultra-light-grey;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  @include mq($until: 'sm'){
-    padding: 0 3em;
-  }
-}
+.section{}
 
 .hero {
   @include make-container-max-widths();

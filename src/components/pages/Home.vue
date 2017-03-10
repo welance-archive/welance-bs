@@ -25,7 +25,8 @@
 
     <service-list></service-list>
 
-    <logo-list></logo-list>
+    <logo-list  :logos="clientsImages"
+    ></logo-list>
 
     <contact></contact>
 
@@ -132,6 +133,68 @@ export default {
             alt: 'Alternate Text',
             link: '',
             target: '_blank'
+          }
+        ],
+        clientsImages: [
+          {
+            src: 'http://placehold.it/400x400?text=LOGO+HERE',
+            srcRetina: 'http://placehold.it/800x800?text=LOGO+HERE',
+            ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
+            title: '',
+            subtitle: '',
+            alt: '',
+            link: '',
+            target: ''
+          },
+          {
+            src: 'http://placehold.it/401x401?text=LOGO+HERE',
+            srcRetina: 'http://placehold.it/801x801?text=LOGO+HERE',
+            ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
+            title: '',
+            subtitle: '',
+            alt: '',
+            link: '',
+            target: ''
+          },
+          {
+            src: 'http://placehold.it/402x402?text=LOGO+HERE',
+            srcRetina: 'http://placehold.it/802x802?text=LOGO+HERE',
+            ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
+            title: '',
+            subtitle: '',
+            alt: '',
+            link: '',
+            target: ''
+          },
+          {
+            src: 'http://placehold.it/403x403?text=LOGO+HERE',
+            srcRetina: 'http://placehold.it/803x803?text=LOGO+HERE',
+            ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
+            title: '',
+            subtitle: '',
+            alt: '',
+            link: 'http://example.com',
+            target: ''
+          },
+          {
+            src: 'http://placehold.it/404x404?text=LOGO+HERE',
+            srcRetina: 'http://placehold.it/804x804?text=LOGO+HERE',
+            ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
+            title: '',
+            subtitle: '',
+            alt: '',
+            link: '',
+            target: ''
+          },
+          {
+            src: 'http://placehold.it/405x405?text=LOGO+HERE',
+            srcRetina: 'http://placehold.it/805x805?text=LOGO+HERE',
+            ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
+            title: '',
+            subtitle: '',
+            alt: '',
+            link: '',
+            target: ''
           }
         ]
     }

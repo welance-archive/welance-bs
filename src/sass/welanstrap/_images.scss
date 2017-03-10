@@ -5,7 +5,7 @@
 // For Example: 16:9 (16/9 = .5625 || 56.25%)
 // $btm-padding: 56.25%
 
-@mixin flexembed-image($btm-padding, $bg-image, $min-width: 320px, $min-height: null, $max-width: 1200px, $max-height: 1200px) {
+@mixin flexembed-image($btm-padding, $bg-image, $min-width: 80px, $min-height: null, $max-width: 1200px, $max-height: 1200px) {
   display: block;
   overflow: hidden;
   position: relative;
@@ -67,12 +67,12 @@
     @include flexembed-image(25%, null);
   }
   &--ratio-16-9{
-    @include flexembed-image(56.25%, null);
+    @include flexembed-image(56.25%, null, 320px);
   }
   &--ratio-9-16{
-    @include flexembed-image(177.777%, null);
+    @include flexembed-image(177.777%, null, 320px);
   }
   &--ratio-12-16{
-    @include flexembed-image(133.33%, null);
+    @include flexembed-image(133.33%, null, 320px);
   }
 }

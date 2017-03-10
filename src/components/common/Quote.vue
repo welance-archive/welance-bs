@@ -39,31 +39,27 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
-  @include mq($until: 'sm'){
-    padding: 0 3em;
-  }
-
-}
+.section{}
 
 .quote {
   @include make-container-max-widths();
   margin: 0 auto;
 
-  padding: 10vh 0;
-
   &__container{
     @include make-row();
-    flex-direction: row;
-    overflow: hidden;
   }
 
   &__col{
     @include make-col-ready();
     @include make-col(10);
-      @include mq($until: 'xl'){
-        @include make-col(12);
-      }
+
+    @include mq($until: 'xl'){
+      @include make-col(12);
+    }
+
+    @include mq($until: 'md'){
+      //text-align: center;
+    }
   }
 };
 

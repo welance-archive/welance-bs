@@ -99,23 +99,16 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section{
-  background: $ultra-light-grey;
-  @include mq($until: 'sm'){
-    padding: 0 3em;
-  }
-}
+.section{}
 
 .service-list {
   @include make-container-max-widths();
   margin: 0 auto;
-  padding: 20vh 0;
 }
 .text-container{
   @include make-row();
   flex-direction: row;
   overflow: hidden;
-  padding: 0 0 10vh 0;
 
   &__col{
     @include make-col-ready();
