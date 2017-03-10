@@ -1,7 +1,13 @@
 <template>
   <div class="home">
 
-    <hero :open-modal="openModal"></hero>
+    <hero :open-modal="openModal"
+          :title="heroTitle"
+          :subtitle="heroSubtitle"
+          :image="heroImage"
+          :ctaUrl="heroUrl"
+          :ctaText="heroText"
+    ></hero>
 
     <quote></quote>
 
@@ -49,7 +55,13 @@ export default {
     return{
         msg: 'This is Home!',
         user: {},
-        showModal: false
+        showModal: false,
+
+        heroTitle: 'We are the coolest kids in town, really kewl. 🖖',
+        heroSubtitle: 'I am seriously guys',
+        heroImage: 'http://fillmurray.com/1400/1400',
+        heroUrl: '/contacts',
+        heroText: 'Start Project'
     }
   },
   methods: {

@@ -6,11 +6,12 @@
           <div class="hero__col-inner">
             <h1 >{{title}}</h1>
             <h4>{{subtitle}}</h4>
-            <button class="btn btn--primary" type="button" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
+            <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
+            <a class="btn btn--info" v-if="ctaUrl" :href="ctaUrl">{{ctaText}}</a>
           </div>
         </div>
         <div class="hero__visuals">
-          <div class="img img--ratio-1-1" style="background-image:url('http://fillmurray.com/1400/1400');"> </div>
+          <div class="img img--ratio-1-1" :style="{ 'background-image': 'url(' + image + ')' }"> </div>
         </div>
       </div>
     </div>
@@ -20,14 +21,16 @@
 <script>
 export default {
     name: 'Hero',
-    props: ['openModal'],
+    props: [
+              'openModal',
+              'title',
+              'subtitle',
+              'image',
+              'ctaUrl',
+              'ctaText'
+            ],
     data () {
-        return{
-            title: 'We help you build the next Squarespace',
-            subtitle: 'Being the savages bowsman, that is, the person who pulled the.',
-            ctaUrl: '/contact',
-            ctaText: 'Start a project'
-        }
+        return{}
     }
 
 };
