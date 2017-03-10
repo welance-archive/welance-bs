@@ -4,8 +4,11 @@
       <div class="hero__container">
         <div class="hero__col">
           <div class="hero__col-inner">
-            <h1 >{{title}}</h1>
-            <h4>{{subtitle}}</h4>
+            <quote  :type="'main'"
+                    :small-text-pre="''"
+                    :big-text="title"
+                    :small-text-sub="subtitle"
+            ></quote>
             <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
             <a class="btn btn--info" v-if="ctaUrl" :href="ctaUrl">{{ctaText}}</a>
           </div>
@@ -19,8 +22,13 @@
 </template>
 
 <script>
+import Quote from 'components/common/Quote.vue';
+
 export default {
     name: 'Hero',
+    components: {
+      Quote
+    },
     props: [
               'openModal',
               'title',
@@ -49,28 +57,16 @@ export default {
   &__container{
     @include make-row();
     @include mq($until: 'md'){
-    flex-wrap: wrap-reverse;
+      flex-wrap: wrap-reverse;
     }
 
   }
   &__col{
     @include make-col-ready();
     @include make-col(7);
+
     @include mq($until: 'md'){
       @include make-col(12);
-    }
-    & h1{
-      @include mb(4);
-    }
-    & h4{
-      margin-bottom: ms(1);
-      max-width: 500px;
-    }
-    & .btn{
-      @include mq($until: 'sm'){
-        width: 100%;
-        display: block;
-      }
     }
   }
   &__visuals{
@@ -84,7 +80,6 @@ export default {
       width: 90%;
       @include mq($until: 'md'){
         width: 100%;
-        margin-bottom: 3em;
       }
     }
   }

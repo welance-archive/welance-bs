@@ -3,10 +3,16 @@
     <div class="quote">
       <div class="quote__container">
         <div class="quote__col">
-          <h5 v-if="smallTextPre" v-html="smallTextPre"></h5>
-          <h2 v-if="hugeText" v-html="hugeText" class="quote-heading"></h2>
-          <h2 v-if="bigText" v-html="bigText" class="quote-heading"></h2>
-          <h5 v-if="smallTextSub" v-html="smallTextSub"></h5>
+          <template v-if="type==='main'">
+          <h4 v-if="smallTextPre" v-html="smallTextPre"></h4>
+          <h1 v-if="bigText" v-html="bigText" class="quote-heading"></h1>
+          <h4 v-if="smallTextSub" v-html="smallTextSub"></h4>
+          </template>
+          <template v-else>
+            <h5 v-if="smallTextPre" v-html="smallTextPre"></h5>
+            <h2 v-if="bigText" v-html="bigText" class="quote-heading"></h2>
+            <h5 v-if="smallTextSub" v-html="smallTextSub"></h5>
+          </template>
         </div>
       </div>
     </div>
@@ -17,13 +23,13 @@
 export default {
   name: 'Quote',
   props: {
+            'type': {
+              type: String,
+              default: 'section'
+            },
             'smallTextPre': {
               type: String,
               default: 'Here a small text BEFORE Bit Text'
-            },
-            'hugeText': {
-              type: String,
-              default: ''
             },
             'bigText': {
               type: String,
@@ -62,11 +68,12 @@ export default {
       @include make-col(12);
     }
 
+    @include mb(6);
+    @include mt(6);
+
     @include mq($until: 'sm'){
       @include pl(6);
       @include pr(6);
-      @include mb(6);
-      @include mt(6);
     }
   }
 };
@@ -74,16 +81,6 @@ export default {
 .quote-heading{
   @include mb(3);
   @include mt(3);
-
-  &:first-child{
-    @include mb(0);
-    @include mt(0);
-  }
-  &:last-child{
-    @include mb(0);
-    @include mt(0);
-  }
-
 }
 
 </style>
