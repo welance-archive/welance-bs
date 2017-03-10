@@ -34,11 +34,18 @@
     </section>
 
     <section class="clients-section">
-      <logo-list :logos="clientsImages"></logo-list>
+      <logo-list  :logos="clientsImages"
+                  :smallTextPre="''"
+                  :bigText="'Clients'"
+                  :smallTextSub="'this is some of them'"
+      ></logo-list>
     </section>
 
     <section class="contact-section">
-      <contact></contact>
+      <contact  :preTitle="''"
+                :title="'Curious to find out more? Let’s get in touch!'"
+                :subTitle="'Just Call Philipp <a href=\'#\'>030 / 60 98 57 750</a>send a message to <a href=\'#\'>projects@welance.com</a> or visit our wonderful Space in Berlin- Kreuzberg'"
+      ></contact>
     </section>
 
   </div>
@@ -252,9 +259,11 @@ export default {
   background: #f3f3f3;
   padding: 10vh 0;
   .quote__col[data-v-675f2c2e]{
-    @include mt(0);
-    .quote-heading{
+    @include mq($from: 'md'){
       @include mt(0);
+      .quote-heading{
+        @include mt(0);
+      }
     }
   }
 }
@@ -277,6 +286,10 @@ export default {
 .contact-section{
   background: white;
   padding: 10vh 0;
+  h5[data-v-675f2c2e]{
+    @include ms-respond(font-size, 1);
+    line-height: 1.5em;
+  }
 }
 
 </style>

@@ -22,13 +22,14 @@ export default {
     Quote,
     Gallery
   },
-  props: ['logos'],
+  props: [
+    'logos',
+    'smallTextPre',
+    'bigText',
+    'smallTextSub'
+  ],
   data () {
-    return{
-      smallTextPre: 'Clients List',
-      bigText: 'These are our awesome clients',
-      smallTextSub: ''
-    }
+    return{}
   }
 };
 </script>
