@@ -38,6 +38,9 @@
   //classic 2:3 Portrait Photo Ratio
   @include flexembed-image(150%, null);
 
+  &--ratio-1-1{
+    @include flexembed-image(100%, null);
+  }
   &--ratio-3-1{
     @include flexembed-image(33.333%, null);
   }
