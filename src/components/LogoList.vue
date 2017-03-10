@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import Quote from './common/Quote.vue';
+import Quote from 'components/common/Quote.vue';
 
 export default {
   name: 'LogoList',

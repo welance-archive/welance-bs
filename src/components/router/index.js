@@ -1,10 +1,10 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Hello from '../Hello.vue';
-import Home from '../Home.vue';
+import Hello from 'components/pages/Hello.vue';
+import Home from 'components/pages/Home.vue';
 
-import StyleGuide from '../StyleGuide.vue';
+import StyleGuide from 'components/pages/StyleGuide.vue';
 
 Vue.use(Router);
 

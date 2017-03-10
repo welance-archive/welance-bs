@@ -22,14 +22,14 @@
 </template>
 
 <script>
-import Hero from './Hero.vue';
-import Quote from './common/Quote.vue';
-import Modal from './common/Modal.vue';
-import Gallery from './Gallery.vue';
-import TextForm from './common/TextForm.vue';
-import ServiceList from './ServiceList.vue';
-import LogoList from './LogoList.vue';
-import Contact from './Contact.vue';
+import Hero from 'components/Hero.vue';
+import Quote from 'components/common/Quote.vue';
+import Modal from 'components/common/Modal.vue';
+import Gallery from 'components/Gallery.vue';
+import TextForm from 'components/common/TextForm.vue';
+import ServiceList from 'components/ServiceList.vue';
+import LogoList from 'components/LogoList.vue';
+import Contact from 'components/Contact.vue';
 
 import axios from 'axios';
 
