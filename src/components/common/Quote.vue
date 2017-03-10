@@ -4,6 +4,7 @@
       <div class="quote__container">
         <div class="quote__col">
           <h5 v-if="smallTextPre" v-html="smallTextPre"></h5>
+          <h2 v-if="hugeText" v-html="hugeText" class="quote-heading"></h2>
           <h2 v-if="bigText" v-html="bigText" class="quote-heading"></h2>
           <h5 v-if="smallTextSub" v-html="smallTextSub"></h5>
         </div>
@@ -19,6 +20,10 @@ export default {
             'smallTextPre': {
               type: String,
               default: 'Here a small text BEFORE Bit Text'
+            },
+            'hugeText': {
+              type: String,
+              default: ''
             },
             'bigText': {
               type: String,
@@ -57,8 +62,11 @@ export default {
       @include make-col(12);
     }
 
-    @include mq($until: 'md'){
-      //text-align: center;
+    @include mq($until: 'sm'){
+      @include pl(6);
+      @include pr(6);
+      @include mb(6);
+      @include mt(6);
     }
   }
 };
@@ -66,6 +74,16 @@ export default {
 .quote-heading{
   @include mb(3);
   @include mt(3);
+
+  &:first-child{
+    @include mb(0);
+    @include mt(0);
+  }
+  &:last-child{
+    @include mb(0);
+    @include mt(0);
+  }
+
 }
 
 </style>
