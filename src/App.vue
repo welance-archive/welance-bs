@@ -34,5 +34,11 @@ export default {
     &--no-overflow{
         overflow: hidden;
     }
+    .header-wrap{
+      background: #f3f3f3;
+    }
+    .footer-wrap{
+      background: #f3f3f3;
+    }
 }
 </style>

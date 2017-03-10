@@ -1,9 +1,9 @@
 <template>
-  <section class="section">
+  <footer class="footer-wrap">
     <div class="footer">
-      <h1>{{ msg }}</h1>
+      <p>{{ msg }}</p><br/><br/><br/>
     </div>
-  </section>
+  </footer>
 </template>
 
 <script>
@@ -21,9 +21,9 @@ export default {
 <style lang="scss" scoped>
 @import "~styles/main.scss";
 
-.section {
-  background: black;
-  flex: 1;
-};
+.footer{
+  @include make-container-max-widths();
+  margin: 0 auto;
+}
 
 </style>
