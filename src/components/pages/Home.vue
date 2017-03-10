@@ -251,14 +251,20 @@ export default {
 .hero-section{
   background: #f3f3f3;
   padding: 10vh 0;
+  .quote__col[data-v-675f2c2e]{
+    @include mt(0);
+    .quote-heading{
+      @include mt(0);
+    }
+  }
 }
 .quote-section{
   background: white;
-  padding: 10vh 0;
+  padding-top: 10vh
 }
 .gallery-section{
-  background: #f3f3f3;
-  padding: 10vh 0;
+  background: white;
+  padding-bottom: 10vh
 }
 .services-section{
   background: white;
