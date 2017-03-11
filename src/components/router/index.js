@@ -13,18 +13,20 @@ export default new Router({
     routes: [
     {
         path: '/hello',
-        name: 'Hello',
         component: Hello
     },
     {
         path: '/styles',
-        name: 'StyleGuide',
         component: StyleGuide
     },
     {
+        path: '/:stuff',
+        component: Home
+    },
+    {
         path: '/',
-        name: 'Home',
         component: Home
     }
+
     ]
 });

@@ -9,7 +9,7 @@
                   :small-text-sub="subtitle"
           ></quote>
           <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
-          <a class="btn btn--info" v-if="ctaUrl" :href="ctaUrl">{{ctaText}}</a>
+          <router-link class="btn btn--info" v-if="ctaUrl" :to="ctaUrl">{{ctaText}}</router-link>
         </div>
       </div>
       <div class="hero__visuals">

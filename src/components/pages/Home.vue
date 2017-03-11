@@ -65,6 +65,11 @@ import axios from 'axios';
 
 export default {
   name: 'home',
+  watch: {
+    '$route' (to, from) {
+      console.log('route changed');
+    }
+  },
   components: {
     Hero,
     Quote,
@@ -84,7 +89,7 @@ export default {
         heroTitle: 'We are the coolest kids in town, really kewl. 🖖',
         heroSubtitle: 'I am seriously guys',
         heroImage: 'http://fillmurray.com/1400/1400',
-        heroUrl: '',  //if empty, opens modal, if filled, goest to link (eg. "/contacts" or "http://example.com")
+        heroUrl: '/woppi',      //if empty, opens modal, if filled, goest to internal route (eg. YES: "/contacts", NO: "http://example.com")
         heroText: 'Start Project',
 
         mainQuoteSmallTextPre: 'The Coolest',
