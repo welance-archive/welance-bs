@@ -12,10 +12,20 @@
     </section>
 
     <section class="quote-section">
-      <quote  :small-text-pre="mainQuoteSmallTextPre"
-              :big-text="mainQuoteBigText"
-              :small-text-sub="mainQuoteSmallTextSub"
-      ></quote>
+      <div class="quote-section__row">
+        <div class="quote-section__col">
+          <quote  :small-text-pre="mainQuoteSmallTextPre"
+                  :big-text="mainQuoteBigText"
+                  :small-text-sub="mainQuoteSmallTextSub"
+          ></quote>
+        </div>
+        <div class="quote-section__col">
+          <gallery  :images="officeImages"
+                    :gallery-type="'squares'"
+                    :ignore-ratio="true"
+          ></gallery>
+        </div>
+      </div>
     </section>
 
     <modal :modal-size="'half'" v-if="showModal" @close="closeModal()">
@@ -160,7 +170,7 @@ export default {
         ],
         clientsImages: [
           {
-            src: 'http://placehold.it/400x400?text=LOGO+HERE',
+            src: 'http://placehold.it/800x400?text=LOGO+HERE',
             srcRetina: 'http://placehold.it/800x800?text=LOGO+HERE',
             ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
             title: '',
@@ -170,7 +180,7 @@ export default {
             target: ''
           },
           {
-            src: 'http://placehold.it/401x401?text=LOGO+HERE',
+            src: 'http://placehold.it/801x401?text=LOGO+HERE',
             srcRetina: 'http://placehold.it/801x801?text=LOGO+HERE',
             ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
             title: '',
@@ -180,7 +190,7 @@ export default {
             target: ''
           },
           {
-            src: 'http://placehold.it/402x402?text=LOGO+HERE',
+            src: 'http://placehold.it/802x402?text=LOGO+HERE',
             srcRetina: 'http://placehold.it/802x802?text=LOGO+HERE',
             ratio: '1-1', //see welanstrap/_images.scsss for possible ratio values
             title: '',
@@ -255,7 +265,7 @@ export default {
 @import "~styles/_variables.scss";
 
 .home{
-	display: flex;
+  display: flex;
 	min-height: 100vh;
 	flex-direction: column;
 }
@@ -277,6 +287,17 @@ section{
   }
 }
 .quote-section{
+  @include make-container-max-widths();
+  margin: 0 auto;
+  &__row{
+    @include make-row();
+    margin: 0 auto;
+  }
+  &__col{
+    @include make-col-ready();
+    @include make-col(6);
+  }
+
   background: white;
   @include pt(6);
   @include pb(0);
