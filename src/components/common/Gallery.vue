@@ -7,7 +7,7 @@
 
               <a    :href="image.link" :alt="image.alt" :target="image.target"
                     class="img"
-                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
+                    :class="[image.ratio && !ignoreRatio ? 'img--ratio-' + image.ratio : '']"
                     :style="{ backgroundImage: 'url(' + image.src + ')' }"
 
               >
@@ -20,7 +20,7 @@
           </template>
           <template v-else>
               <div  class="img"
-                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
+                    :class="[image.ratio && !ignoreRatio ? 'img--ratio-' + image.ratio : '']"
                     :style="{ backgroundImage: 'url(' + image.src + ')' }"
               >
                 <div class="img__text-container">
@@ -38,13 +38,17 @@
 <script>
 export default {
   name: 'Gallery',
-  props: ['images', 'galleryType'],
+  props: [
+          'images',
+          'galleryType',
+          'ignoreRatio'
+          ],
   data () {
     return{
       galleryTypeClass: {
         'gallery__container--off-canvas'  : this.galleryType === 'off-canvas',
         'gallery__container--blocky'      : this.galleryType === 'blocky',
-        'gallery__container--squares'      : this.galleryType === 'squares'
+        'gallery__container--squares'     : this.galleryType === 'squares'
       }
     }
   }
@@ -68,19 +72,26 @@ export default {
     flex-flow: row wrap;
     justify-content: space-around;
 
-    // Mode: blocky
+    // Mode: squares
     //
     // Feature List:
-    // T.B.D with @nano
+    // 1) respect image sizes ratios (unless ignored from component setup) so it can show non-squared images
+    // 2) displays squared images next to each other, going on new line with .5vw margin
+    // 3) stays on left edge until md, where it centers all the squares
+    // 4) If links exists they work, but title and subtitle are not shown
     //
     &--squares{
       @include make-row();
       justify-content: center;
 
       .img{
+        @include flexembed-image(100%, null);
         min-width: 128px;
         align-self: center;
         margin:  .5vw;
+        &__text-container{
+          display: none;
+        }
       }
       @include mq($until: 'md'){
         @include make-row();
@@ -116,10 +127,11 @@ export default {
     // Mode: off-canvas
     //
     // Feature List:
-    // 1) respect image sizes ratios
+    // 1) respect image sizes ratios (unless ignored from component setup)
     // 2) flex-end alignement for big displays
     // 3) vertically centered alignement for medium displays
     // 4) 100% responsive on small displays
+    // 5) If links exists they work, and title and subtitle are shown
     &--off-canvas{
       @include mq($from: 'md'){
         @include make-row();
