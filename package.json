@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV='dev' webpack-dev-server --host 0.0.0.0 --open",
-    "prod": "NODE_ENV='prod' webpack -p"
+    "prod": "NODE_ENV='prod' webpack -p  --optimize-minimize"
   },
   "repository": {
     "type": "git",

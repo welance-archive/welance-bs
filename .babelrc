@@ -3,8 +3,8 @@
     ["env", {
       "targets": {
         //"chrome": 52,
-        "browsers": ["last 50 versions", "safari >= 7"]
-        //"modules" : false
+        "browsers": ["last 10 versions", "safari >= 7"],
+        "modules" : false
         //"debug" : true
         //"comments": false
       }
