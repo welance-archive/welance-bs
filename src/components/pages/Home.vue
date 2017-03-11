@@ -276,7 +276,8 @@ section{
 }
 
 .hero-section{
-  background: #f3f3f3;
+  background: url('http://www.fillmurray.com/1550/800');
+  background-size: cover;
   .quote__col[data-v-675f2c2e]{
     @include mq($from: 'md'){
       @include mt(0);

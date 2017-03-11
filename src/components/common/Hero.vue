@@ -12,7 +12,7 @@
           <router-link class="btn btn--info" v-if="ctaUrl" :to="ctaUrl">{{ctaText}}</router-link>
         </div>
       </div>
-      <div class="hero__visuals">
+      <div class="hero__visuals" v-if="image">
         <div class="img img--ratio-1-1" :style="{ 'background-image': 'url(' + image + ')' }"> </div>
       </div>
     </div>
