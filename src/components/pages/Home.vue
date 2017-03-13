@@ -118,57 +118,187 @@ export default {
 
         servicesList: [
           {
-            title: "Web Design",
+            title: 'Web Design - NO URL',
+            url: '',
+            extUrl: '',
+            extUrlTarget: '_blank',
+            image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+            },
             items: [
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element2", url: "http://example.com"},
-              {title: "List Element3", url: "http://example.com"},
-              {title: "List Element4", url: "http://example.com"}
+              {
+                title: 'Web Design 1 - EXT URL',
+                url: '',
+                extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Web Design 2 - internal URL',
+                url: '/styles',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Web Design 2',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              }
             ]
           },
           {
-            title: "User Research",
+            title: 'Awesomeness',
+            url: '',
+            extUrl: '',
+            extUrlTarget: '_blank',
+            image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+            },
             items: [
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"}
+              {
+                title: 'Awesomeness 1',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Awesomeness 1',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Awesomeness 3',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              }
             ]
           },
           {
-            title: "eCommerce",
+            title: 'Ultra Awesomeness',
+            url: '',
+            extUrl: '',
+            extUrlTarget: '_blank',
+            image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+            },
             items: [
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"}
+              {
+                title: 'Ultra Awesomeness 1',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Ultra Awesomeness 2',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Ultra Awesomeness 3',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              }
             ]
           },
           {
-            title: "List Headline",
+            title: 'Something Else',
+            url: '',
+            extUrl: '',
+            extUrlTarget: '_blank',
+            image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+            },
             items: [
-              {title: "List Element", url: "http://example.com"},
-              {title: "Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"}
-            ]
-          },
-          {
-            title: "List Headline",
-            items: [
-              {title: "List ", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"}
-            ]
-          },
-          {
-            title: "List Headline",
-            items: [
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"},
-              {title: "List Element", url: "http://example.com"}
+              {
+                title: 'Something Else 1',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Something Else 2',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              },
+              {
+                title: 'Something Else 3',
+                url: '/',
+                extUrl: '',
+                extUrlTarget: '_blank',
+                image: {
+                  src: 'http://fillmurray.com/400/400',
+                  srcRetina: 'http://fillmurray.com/800/800',
+                  ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+                }
+              }
             ]
           }
         ],
@@ -298,6 +428,7 @@ export default {
             target: ''
           }
         ],
+
         startProjectSelectables: [
           {
             placeholder: "Tool",
@@ -424,6 +555,16 @@ section{
   @include pb(6);
 }
 .services-section{
+  .list-of-lists-services{
+    .list-wrap__list-header-img{
+      min-width: 100%;
+    }
+    .list-wrap__list-item{
+      .img{
+        display: none;
+      }
+    }
+  }
   background: white;
 }
 .clients-section{

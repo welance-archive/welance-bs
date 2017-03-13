@@ -7,7 +7,7 @@
 
               <a    :href="image.link" :alt="image.alt" :target="image.target"
                     class="img"
-                    :class="[image.ratio && !ignoreRatio ? 'img--ratio-' + image.ratio : '']"
+                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
                     :style="{ backgroundImage: 'url(' + image.src + ')' }"
 
               >
@@ -20,7 +20,7 @@
           </template>
           <template v-else>
               <div  class="img"
-                    :class="[image.ratio && !ignoreRatio ? 'img--ratio-' + image.ratio : '']"
+                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
                     :style="{ backgroundImage: 'url(' + image.src + ')' }"
               >
                 <div class="img__text-container">
@@ -41,8 +41,7 @@ export default {
   props: [
           'name',
           'images',
-          'galleryType',
-          'ignoreRatio'
+          'galleryType'
           ],
   data () {
     return{

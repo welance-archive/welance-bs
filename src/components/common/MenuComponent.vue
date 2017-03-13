@@ -1,5 +1,5 @@
 <template>
-  <div class="list-of-lists" :class="'list-of-lists-' + name">
+  <div class="menu" :class="'menu-' + name">
     <div class="text-wrap">
       <div class="text-wrap__col">
         <quote  v-if="bigText || smallTextPre || smallTextSub"
@@ -10,43 +10,51 @@
         ></quote>
       </div>
     </div>
-    <div class="list-wrap">
-      <div class="list-wrap__col" v-for="(list, indexL) in lists">
+    <div class="menu-wrap">
+      <ul class="menu-wrap__col" v-for="(list, indexL) in lists">
 
         <template v-if="list.url">
-          <div  class="img list-wrap__list-header-img"
-                :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
-                :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
-          ></div>
-          <h5 class="list-wrap__list-title" :class="'list-wrap__list-title-' + indexL">
-            <router-link v-if="list.url" :to="list.url">{{list.title}}</router-link>
-          </h5>
+          <li class="menu-wrap__menu-title" :class="'menu-wrap__menu-title-' + indexL">
+            <div  v-if="showImages"
+                  class="img menu-wrap__menu-header-img"
+                  :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
+                  :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
+            ></div>
+            <router-link v-if="list.url" :to="list.url">
+              {{list.title}}
+            </router-link>
+          </li>
         </template>
         <template v-else-if="list.extUrl">
-          <div  class="img list-wrap__list-header-img"
+          <li class="menu-wrap__menu-title" :class="'menu-wrap__menu-title-' + indexL">
+            <div  v-if="showImages"
+                  class="img menu-wrap__menu-header-img"
                   :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
                   :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
-          ></div>
-          <h5 class="list-wrap__list-title" :class="'list-wrap__list-title-' + indexL">
+            ></div>
             <a v-if="list.extUrl" :href="list.extUrl" :target="list.extUrlTarget ? list.extUrlTarget : '_blank'">{{list.title}}</a>
-          </h5>
+          </li>
         </template>
         <template v-else>
-          <div  class="img list-wrap__list-header-img"
+          <li class="menu-wrap__menu-title" :class="'menu-wrap__menu-title-' + indexL">
+            <div  v-if="showImages"
+                  class="img menu-wrap__menu-header-img"
                   :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
                   :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
-          ></div>
-          <h5 class="list-wrap__list-title" :class="'list-wrap__list-title-' + indexL">{{list.title}}</h5>
+            ></div>
+            {{list.title}}
+          </li>
         </template>
 
-        <ul v-if="levels!==1" class="list-wrap__list" :class="'list-wrap__list-item-' + indexL">
+        <ul v-if="levels!==1" class="menu-wrap__list" :class="'menu-wrap__menu-item-' + indexL">
 
-          <li class="list-wrap__list-item" :class="'list-wrap__list-item-' + index" v-for="(item,index) in list.items">
+          <li class="menu-wrap__menu-item" :class="'menu-wrap__menu-item-' + index" v-for="(item,index) in list.items">
 
-              <div  class="img"
-                    :class="[item.image.ratio ? 'img--ratio-' + item.image.ratio : '']"
-                    :style="{ backgroundImage: 'url(' + item.image.src + ')' }"
-              ></div>
+            <div  v-if="showImages"
+                  class="img menu-wrap__menu-header-img"
+                  :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
+                  :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
+            ></div>
 
             <template v-if="item.url">
               <router-link v-if="item.url" :to="item.url">{{item.title}}</router-link>
@@ -62,7 +70,7 @@
 
         </ul>
 
-      </div>
+      </ul>
     </div>
   </div>
 </template>
@@ -71,14 +79,15 @@
 import Quote from 'components/common/Quote.vue';
 
 export default {
-    name: 'ListOfLists',
+    name: 'MenuComponent',
     props: [
       'smallTextPre',
       'bigText',
       'smallTextSub',
       'lists',
       'name',
-      'levels'
+      'levels',
+      'showImages'
     ],
     components: {
       Quote
@@ -93,7 +102,7 @@ export default {
 <style lang="scss">
 @import "~styles/main.scss";
 
-.list-of-lists {
+.menu {
   @include make-container-max-widths();
   margin: 0 auto;
 }
@@ -110,21 +119,22 @@ export default {
     }
   }
 }
-.list-wrap{
+.menu-wrap{
   @include make-row();
   flex-direction: row;
 
   &__list{
   }
 
-  &__list-header-img{
+  &__menu-header-img{
     //border: 1px solid blue;
   }
 
-  &__list-title{
+  &__menu-title{
     //display: none;
+    font-size: 1.5em;
   }
-  &__list-item{
+  &__menu-item{
     //border: 1px solid red;
   }
 

@@ -19,7 +19,20 @@
                       :contacts="contacts"
                       :details="details"
                       :menu="menu"
-    ></footer-component>
+    >
+      <menu-component   slot="row-0"
+                        :show-images="false"
+                        :name="'footer'"
+                        :smallTextPre="''"
+                        :bigText="''"
+                        :smallTextSub="''"
+                        :lists="menu"
+      ></menu-component>
+
+      <div slot="row-1"></div>
+      <div slot="row-2"></div>
+
+    </footer-component>
   </body>
 </template>
 
@@ -27,13 +40,15 @@
 import HeaderComponent from './components/common/HeaderComponent.vue';
 import FooterComponent from './components/common/FooterComponent.vue';
 import FixedHeader from './components/common/FixedHeader.vue';
+import MenuComponent from 'components/common/MenuComponent.vue';
 
 export default {
   name: 'app',
   components: {
     HeaderComponent,
     FooterComponent,
-    FixedHeader
+    FixedHeader,
+    MenuComponent
   },
   data () {
     return{
@@ -52,32 +67,188 @@ export default {
       },
       menu: [
         {
-          title: 'Home',
-          url: '/',
-          extUrl: '',
-          image: '/assets/images/logo.svg',
-          altImage: 'Welance - Freelancing Collectively'
-        },
-        {
-          title: 'Style Guide',
+          title: 'Styles',
           url: '/styles',
           extUrl: '',
-          image: '/assets/images/logo.svg',
-          altImage: 'Welance - Freelancing Collectively'
+          extUrlTarget: '_blank',
+          image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Web Design 1 - EXT URL',
+              url: '',
+              extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Web Design 2 - internal URL',
+              url: '/styles',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Web Design 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
         },
         {
-          title: 'Hello',
-          url: '/hello',
+          title: 'Styles',
+          url: '/styles',
           extUrl: '',
-          image: '/assets/images/logo.svg',
-          altImage: 'Welance - Freelancing Collectively'
+          extUrlTarget: '_blank',
+          image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Awesomeness 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Awesomeness 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Awesomeness 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
         },
         {
-          title: 'Development Guidelines',
-          url: '',
-          extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
-          image: '/assets/images/logo.svg',
-          altImage: 'Welance - Freelancing Collectively'
+          title: 'Styles',
+          url: '/styles',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Ultra Awesomeness 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Ultra Awesomeness 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Ultra Awesomeness 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Styles',
+          url: '/styles',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'http://fillmurray.com/400/400',
+                srcRetina: 'http://fillmurray.com/800/800',
+                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
         }
       ],
       showModal: false
@@ -92,10 +263,15 @@ export default {
   &--no-overflow{
       overflow: hidden;
   }
-  .header-wrap{
+  .header{
     background: #f3f3f3;
   }
-  .footer-wrap{
+  .footer{
+    .menu-footer{
+      .img{
+        //display: none;
+      }
+    }
     background: #f3f3f3;
   }
 }

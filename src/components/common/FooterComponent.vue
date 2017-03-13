@@ -1,8 +1,23 @@
 <template>
-  <footer class="footer-wrap">
-    <div class="footer" :class="'footer-' + name">
-      <p>{{ contacts.address }}</p><br/><br/><br/>
-    </div>
+  <footer class="footer">
+    <slot name="row-0">
+      <div class="footer__wrap">
+        SLOT "row-0"
+      </div>
+    </slot>
+
+    <slot name="row-1">
+      <div class="footer__wrap">
+        SLOT "row-1"
+      </div>
+    </slot>
+
+    <slot name="row-2">
+      <div class="footer__wrap">
+        SLOT "row-2"
+      </div>
+    </slot>
+
   </footer>
 </template>
 
@@ -26,8 +41,10 @@ export default {
 @import "~styles/main.scss";
 
 .footer{
-  @include make-container-max-widths();
-  margin: 0 auto;
+  &__wrap{
+    @include make-container-max-widths();
+    margin: 0 auto;
+  }
 }
 
 </style>
