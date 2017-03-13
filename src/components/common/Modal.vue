@@ -1,6 +1,6 @@
 <template>
   <transition name="modal">
-    <div class="modal">
+    <div class="modal" :class="'modal-' + name">
 			<div class="modal__mask" v-on:click="closeModal"></div>
 			<div class="modal__wrapper">
 				<div class="modal__container" v-bind:class="dimensionClass">
@@ -31,7 +31,10 @@
 <script>
 export default {
     name: 'Modal',
-		props: ['modalSize'],
+		props: [
+      'name',
+      'modalSize'
+    ],
     data () {
         return{
 					dimensionClass: {

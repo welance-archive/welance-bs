@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery-wrapper">
+  <div class="gallery-wrapper" :class="'gallery-' + name">
     <div class="gallery">
       <div class="gallery__container" :class="galleryTypeClass">
         <template v-for="image in images">
@@ -39,6 +39,7 @@
 export default {
   name: 'Gallery',
   props: [
+          'name',
           'images',
           'galleryType',
           'ignoreRatio'

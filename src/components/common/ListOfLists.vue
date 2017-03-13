@@ -2,7 +2,8 @@
   <div class="list-of-lists" :class="'list-of-lists-' + name">
     <div class="text-wrap">
       <div class="text-wrap__col">
-        <quote  :small-text-pre="smallTextPre"
+        <quote  :name="name"
+                :small-text-pre="smallTextPre"
                 :big-text="bigText"
                 :small-text-sub="smallTextSub"
         ></quote>

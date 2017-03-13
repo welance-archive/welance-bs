@@ -1,5 +1,5 @@
 <template>
-  <div class="hero">
+  <div class="hero" :class="'hero-' + name">
     <div class="hero__container">
       <div class="hero__col">
         <div class="hero__col-inner">
@@ -28,6 +28,7 @@ export default {
       Quote
     },
     props: [
+              'name',
               'openModal',
               'title',
               'subtitle',

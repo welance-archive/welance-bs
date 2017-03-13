@@ -1,8 +1,9 @@
 <template>
-  <div class="contact">
+  <div class="contact" :class="'contact-' + name">
     <div class="contact__container">
       <div class="contact__left-col">
-        <quote  :small-text-pre="preTitle"
+        <quote  :name="name"
+                :small-text-pre="preTitle"
                 :big-text="title"
                 :small-text-sub="subTitle"
         ></quote>
@@ -25,6 +26,7 @@ import Quote from 'components/common/Quote.vue';
 export default {
     name: 'Contact',
     props: [
+      'name',
       'preTitle',
       'title',
       'subTitle'

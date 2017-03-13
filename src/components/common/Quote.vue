@@ -1,5 +1,5 @@
 <template>
-  <div class="quote">
+  <div class="quote" :class="'quote-' + name">
     <div class="quote__container">
       <div class="quote__col">
         <template v-if="type==='main'">
@@ -21,6 +21,10 @@
 export default {
   name: 'Quote',
   props: {
+            'name': {
+              type: String,
+              default: 'default'
+            },
             'type': {
               type: String,
               default: 'section'

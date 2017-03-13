@@ -1,11 +1,13 @@
 <template>
-  <div class="logo-list">
-      <quote  :small-text-pre="smallTextPre"
+  <div class="logo-list" :class="'logo-list-' + name">
+      <quote  :name="name"
+              :small-text-pre="smallTextPre"
               :big-text="bigText"
               :small-text-sub="smallTextSub"
       ></quote>
       <div class="logo-list__col">
-        <gallery  :images="logos"
+        <gallery  :name="name"
+                  :images="logos"
                   :gallery-type="'squares'"
         ></gallery>
       </div>
@@ -23,6 +25,7 @@ export default {
     Gallery
   },
   props: [
+    'name',
     'logos',
     'smallTextPre',
     'bigText',

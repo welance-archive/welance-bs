@@ -2,39 +2,40 @@
   <div class="home">
 
     <section class="hero-section">
-      <hero   :title="heroTitle"
+      <hero   :name="'main'"
+              :title="heroTitle"
               :subtitle="heroSubtitle"
               :image="heroImage"
               :open-modal="openModal"
               :ctaUrl="heroUrl"
-              :ctaText="heroText"
+              :ctaText="'Start Project'"
       ></hero>
     </section>
 
     <section class="quote-section">
       <div class="quote-section__row">
         <div class="quote-section__col">
-          <quote  :small-text-pre="mainQuoteSmallTextPre"
+          <quote  :name="'quoty'"
+                  :small-text-pre="mainQuoteSmallTextPre"
                   :big-text="mainQuoteBigText"
                   :small-text-sub="mainQuoteSmallTextSub"
           ></quote>
         </div>
-        <div class="quote-section__col">
-          <gallery  :images="officeImages"
-                    :gallery-type="'squares'"
-                    :ignore-ratio="true"
-          ></gallery>
-        </div>
       </div>
     </section>
 
-    <modal :modal-size="'half'" v-if="showModal" @close="closeModal()">
+    <modal  :name="'project'"
+            :modal-size="'half'"
+            v-if="showModal"
+            @close="closeModal()"
+    >
         <text-form slot="body"></text-form>
         <span slot="footer"></span>
     </modal>
 
     <section class="gallery-section">
-      <gallery  :images="officeImages"
+      <gallery  :name="'office'"
+                :images="officeImages"
                 :gallery-type="'off-canvas'"
       ></gallery>
     </section>
@@ -49,7 +50,8 @@
     </section>
 
     <section class="clients-section">
-      <logo-list  :logos="clientsImages"
+      <logo-list  :name="'clients'"
+                  :logos="clientsImages"
                   :smallTextPre="''"
                   :bigText="'Clients'"
                   :smallTextSub="'this is some of them'"
@@ -57,7 +59,8 @@
     </section>
 
     <section class="contact-section">
-      <contact  :preTitle="''"
+      <contact  :name="'welance'"
+                :preTitle="''"
                 :title="'Curious to find out more? Let’s get in touch!'"
                 :subTitle="'Just Call Philipp <a href=\'#\'>030 / 60 98 57 750</a>send a message to <a href=\'#\'>projects@welance.com</a> or visit our wonderful Space in Berlin- Kreuzberg'"
       ></contact>
@@ -73,7 +76,7 @@ import Modal from 'components/common/Modal.vue';
 import Gallery from 'components/common/Gallery.vue';
 import TextForm from 'components/common/TextForm.vue';
 import ListOfLists from 'components/common/ListOfLists.vue';
-import LogoList from 'components/LogoList.vue';
+import LogoList from 'components/common/LogoList.vue';
 import Contact from 'components/Contact.vue';
 
 import axios from 'axios';
@@ -104,8 +107,7 @@ export default {
         heroTitle: 'We are the coolest kids in town, really kewl. 🖖',
         heroSubtitle: 'I am seriously guys',
         heroImage: 'http://fillmurray.com/1400/1400',
-        heroUrl: '/woppi',      //if empty, opens modal, if filled, goest to internal route (eg. YES: "/contacts", NO: "http://example.com")
-        heroText: 'Start Project',
+        heroUrl: '',      //if empty, opens modal using "open-modal" prop, if filled, goest to internal route (eg. YES: "/contacts", NO: "http://example.com")
 
         mainQuoteSmallTextPre: 'The Coolest',
         mainQuoteBigText: 'kids on the...new line:<br/>block',
@@ -341,7 +343,7 @@ section{
 .hero-section{
   background: url('http://www.fillmurray.com/1550/800');
   background-size: cover;
-  .quote__col[data-v-675f2c2e]{
+  .quote__col{
     @include mq($from: 'md'){
       @include mt(0);
       .quote-heading{
