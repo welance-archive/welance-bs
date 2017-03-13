@@ -29,7 +29,10 @@
             v-if="showModal"
             @close="closeModal()"
     >
-        <text-form slot="body"></text-form>
+        <text-form  slot="body"
+                    :name="'project'"
+                    :selectables="startProjectSelectables"
+        ></text-form>
         <span slot="footer"></span>
     </modal>
 
@@ -293,6 +296,53 @@ export default {
             alt: '',
             link: '',
             target: ''
+          }
+        ],
+        startProjectSelectables: [
+          {
+            placeholder: "Tool",
+            text_before: "I want need a ",
+            selections: {
+              selected: null,
+              options: ["Web App", "Mobile App", "Website", "Shop Online", "Custom Solution"]
+            },
+            text_after: " ",
+          },
+          {
+            placeholder: "Business",
+            text_before: "for my ",
+            selections: {
+              selected: null,
+              options: ["Startup/Venture","Company","Non Profit Org","Government Org"]
+            },
+            text_after: ". "
+          },
+          {
+            placeholder: "Something",
+            text_before: "It should also include ",
+            selections: {
+              selected: null,
+              options: ["Corporate Identity (re)Design", "Maintenance Contract", "Marketing Plan", "Metrics Tracker"]
+            },
+            text_after: " ",
+          },
+          {
+            placeholder: "Yesterday",
+            text_before: "and I want to start ",
+            selections: {
+              selected: null,
+              options: ["ASAP", "this Week", "this Month", "this Year"]
+            },
+            text_after: ". "
+          },
+          {
+            placeholder: "Nothing yet",
+            text_before: "Oh! I've done ",
+            selections: {
+              selected: "nothing yet",
+              options: ["nothing yet", "some parts", "a lot already"]
+            },
+            text_after: "."
           }
         ]
     }

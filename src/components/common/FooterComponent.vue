@@ -1,19 +1,23 @@
 <template>
   <footer class="footer-wrap">
-    <div class="footer">
-      <p>{{ msg }}</p><br/><br/><br/>
+    <div class="footer" :class="'footer-' + name">
+      <p>{{ contacts.address }}</p><br/><br/><br/>
     </div>
   </footer>
 </template>
 
 <script>
 export default {
-    name: 'FooterComponent',
-    data () {
-        return{
-            msg: 'This is Footer'
-        }
-    }
+  name: 'FooterComponent',
+  props: [
+    'name',
+    'contacts',
+    'menu',
+    'details'
+  ],
+  data () {
+    return{}
+  }
 };
 </script>
 

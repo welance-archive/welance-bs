@@ -1,15 +1,15 @@
 <template>
   <transition name="fixed-header">
 	<div class="fixed-header-wrap fixed-header-wrap--active" v-if="scrolled">
-		<div class="fixed-header">
+		<div class="fixed-header" :class="'fixed-header-' + name">
 			<div class="fixed-header__container">
 				<div class="fixed-header__col">
 					<img class="logo" src="/assets/images/logo.svg"/>
 				</div>
 				<div class="fixed-header__col">
 					<h6 class="phone">
-						<a :href="'tel:'+phone_number" class="phone__number">
-							{{phone_number}}
+						<a :href="'tel:'+contacts.phone" class="phone__number">
+							{{contacts.phone}}
 						</a><br/>
 						<span class="phone__availability">
 							<span class="phone__availability-check"></span> {{availabilityText}}
@@ -25,10 +25,14 @@
 <script>
 export default {
     name: 'FixedHeader',
+    props: [
+      'name',
+      'contacts',
+      'menu',
+      'details'
+    ],
     data () {
         return{
-            msg: 'This is Header',
-						phone_number: '+49 30 609 857 750',
             scrolled: false
         }
     },
