@@ -4,23 +4,4 @@
 $brand-primary: #FF5507;
 $ultra-light-grey: #FAFAFA;
 $large-text: 2em;
-//debug
-$mq-show-breakpoints: (xs, sm, md, lg, xl, xxl);
 
-$spacing-sizes: (
-  0: 0rem,
-  1: 0.5rem,
-  2: 1rem,
-  3: 1.5rem,
-  4: 2rem,
-  5: 2.5rem,
-  6: 3rem,
-  7: 3.5rem,
-  8: 4rem,
-  9: 4.5rem,
-  10: 5rem,
-  11: 5.5rem,
-  12: 6rem
-) !default;
-
-$spacing-important: false;

@@ -40,7 +40,12 @@
     </section>
 
     <section class="services-section">
-      <service-list></service-list>
+      <list-of-lists :name="'services'"
+                    :smallTextPre="'Services'"
+                    :bigText="'These is what we do best and what we can help you with Professionally.'"
+						        :smallTextSub="''"
+                    :lists="servicesList"
+      ></list-of-lists>
     </section>
 
     <section class="clients-section">
@@ -67,7 +72,7 @@ import Quote from 'components/common/Quote.vue';
 import Modal from 'components/common/Modal.vue';
 import Gallery from 'components/common/Gallery.vue';
 import TextForm from 'components/common/TextForm.vue';
-import ServiceList from 'components/ServiceList.vue';
+import ListOfLists from 'components/common/ListOfLists.vue';
 import LogoList from 'components/LogoList.vue';
 import Contact from 'components/Contact.vue';
 
@@ -86,7 +91,7 @@ export default {
     Modal,
     Gallery,
     TextForm,
-    ServiceList,
+    ListOfLists,
     LogoList,
     Contact
   },
@@ -105,6 +110,63 @@ export default {
         mainQuoteSmallTextPre: 'The Coolest',
         mainQuoteBigText: 'kids on the...new line:<br/>block',
         mainQuoteSmallTextSub: '',
+
+        servicesList: [
+          {
+            title: "Web Design",
+            items: [
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element2", url: "http://example.com"},
+              {title: "List Element3", url: "http://example.com"},
+              {title: "List Element4", url: "http://example.com"}
+            ]
+          },
+          {
+            title: "User Research",
+            items: [
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"}
+            ]
+          },
+          {
+            title: "eCommerce",
+            items: [
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"}
+            ]
+          },
+          {
+            title: "List Headline",
+            items: [
+              {title: "List Element", url: "http://example.com"},
+              {title: "Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"}
+            ]
+          },
+          {
+            title: "List Headline",
+            items: [
+              {title: "List ", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"}
+            ]
+          },
+          {
+            title: "List Headline",
+            items: [
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"},
+              {title: "List Element", url: "http://example.com"}
+            ]
+          }
+        ],
 
         officeImages: [
           {
@@ -168,6 +230,7 @@ export default {
             target: '_blank'
           }
         ],
+
         clientsImages: [
           {
             src: 'http://placehold.it/800x400?text=LOGO+HERE',
@@ -272,7 +335,7 @@ export default {
 
 section{
   @include pt(6);
-  @include pb(8);
+  @include pb(6);
 }
 
 .hero-section{

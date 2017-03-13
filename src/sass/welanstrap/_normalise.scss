@@ -86,8 +86,8 @@ hr {
 // By default, `<h1>`-`<h6>` all receive top and bottom margins. We nuke the top
 // margin for easier control within type scales as it avoids margin collapsing.
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 0;
-  margin-bottom: .5rem;
+  @include m(0);
+  @include mb(1);
 }
 
 // Reset margins on paragraphs
@@ -95,8 +95,8 @@ h1, h2, h3, h4, h5, h6 {
 // Similarly, the top margin on `<p>`s get reset. However, we also reset the
 // bottom margin to use `rem` units instead of `em`.
 p {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  @include mt(0);
+  @include mb(2)
 }
 
 // Abbreviations
@@ -115,7 +115,7 @@ abbr[data-original-title] { // 4
 }
 
 address {
-  margin-bottom: 1rem;
+  @include mb(2)
   font-style: normal;
   line-height: inherit;
 }
@@ -123,8 +123,8 @@ address {
 ol,
 ul,
 dl {
-  margin-top: 0;
-  margin-bottom: 1rem;
+  @include mt(0);
+  @include mb(2)
 }
 
 ol ol,
@@ -139,7 +139,7 @@ dt {
 }
 
 dd {
-  margin-bottom: .5rem;
+  @include mb(1);
   margin-left: 0; // Undo browser default
 }
 
@@ -228,9 +228,9 @@ samp {
 
 pre {
   // Remove browser default top margin
-  margin-top: 0;
+  @include mt(0);
   // Reset browser default of `1em` to use `rem`s
-  margin-bottom: 1rem;
+  @include mb(2)
   // Don't allow content to break outside
   overflow: auto;
 }
@@ -312,7 +312,7 @@ th {
 label {
   // Allow labels to use `margin` for spacing.
   display: inline-block;
-  margin-bottom: .5rem;
+  @include mb(1);
 }
 
 // Work around a Firefox/IE bug where the transparent `button` background
@@ -416,7 +416,7 @@ legend {
   width: 100%;
   max-width: 100%; // 1
   padding: 0;
-  margin-bottom: .5rem;
+  @include mb(1);
   font-size: 1.5rem;
   line-height: inherit;
   color: inherit; // 2

@@ -1,15 +1,6 @@
-// Fonts
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
-$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
-$font-weight-normal: normal !default;
-$font-weight-bold: bold !default;
-
-$font-family-base:      $font-family-sans-serif !default;
-$font-size-base:        1em !default; // Assumes the browser default, typically `16px`
-$font-weight-base:      $font-weight-normal !default;
-$dt-font-weight:        $font-weight-bold !default;
-
-$line-height-base:      1.5em;
+$line-height-big:       $line-height-base + .5;
+$line-height-huge:      $line-height-base + 1.5;
+$line-height-h1:        $line-height-base - .2;
 
 $ms-base: $font-size-base;
 $ms-ratio: $golden;
@@ -34,46 +25,43 @@ body{
 
 h1{
     @include ms-respond(font-size, 7);
-    line-height: 1.2;
+    line-height: $line-height-h1;
     font-weight: $font-weight-normal;
     letter-spacing: -0.0225em;
-    @include mq($until: sm){
-        line-height: 1.2;
-    }
 }
 
 h2{
     @include ms-respond(font-size, 6);
     font-weight: $font-weight-normal;
-    line-height: 1.3;
+    line-height: $line-height-base;
 }
 
 h3{
     @include ms-respond(font-size, 4);
     font-weight: $font-weight-normal;
-    line-height: 1.3;
+    line-height: $line-height-base;
 }
 
 h4{
     @include ms-respond(font-size, 2);
     font-weight: $font-weight-normal;
-    line-height: 1.3;
+    line-height: $line-height-base;
 }
 
 h5{
     @include ms-respond(font-size, 1);
     font-weight: $font-weight-normal;
-    line-height: 1.3;
+    line-height: $line-height-base;
 }
 
 h6{
     @include ms-respond(font-size, 0);
     font-weight: $font-weight-normal;
-    line-height: 1.3;
+    line-height: $line-height-base;
 }
 
 p{
     @include ms-respond(font-size, 0);
-    line-height: 1.5;
+    line-height: $line-height-big;
     letter-spacing: .0125em;
 }

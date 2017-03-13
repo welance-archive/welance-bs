@@ -1,3 +1,16 @@
+// Fonts
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-weight-normal: normal !default;
+$font-weight-bold: bold !default;
+
+$font-family-base:      $font-family-sans-serif !default;
+$font-size-base:        1em !default; // Assumes the browser default, typically `16px`
+$font-weight-base:      $font-weight-normal !default;
+$dt-font-weight:        $font-weight-bold !default;
+
+$line-height-base:      1.3;
+
 // Start with assigning color names to specific hex values.
 
 $white:  #fff !default;
@@ -112,3 +125,26 @@ $grid-gutter-widths: (
   xl: $grid-gutter-width-base,
   xxl: $grid-gutter-width-base
 ) !default;
+
+
+
+//debug breakpoints (override it with $mq-show-breakpoints: ();)
+$mq-show-breakpoints: (xs, sm, md, lg, xl, xxl);
+
+$spacing-sizes: (
+  0: 0rem,
+  1: 0.5rem,
+  2: 1rem,
+  3: 1.5rem,
+  4: 2rem,
+  5: 2.5rem,
+  6: 3rem,
+  7: 3.5rem,
+  8: 4rem,
+  9: 4.5rem,
+  10: 5rem,
+  11: 5.5rem,
+  12: 6rem
+) !default;
+
+$spacing-important: false;

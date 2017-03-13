@@ -1,5 +1,20 @@
-ul {
-    li {
-        list-decoration: none;
-    }
+ul, ol{
+  @include m(0);
+  @include p(0);
+  display: flex;
+  flex-flow: column wrap;
+  flex-direction: flex-start;
+  @include ms-respond(font-size, 0);
+  line-height: $line-height-huge;
+
+  li {
+      list-style-type: none;
+  }
+}
+
+ol {
+  li {
+      list-style-type: decimal-leading-zero;
+      list-style-position: inside;
+  }
 }

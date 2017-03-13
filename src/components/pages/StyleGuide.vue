@@ -1,11 +1,11 @@
 <template>
   <div class="styles">
-    <h1>{{msg}}</h1>
-    <h2>{{msg}}</h2>
-    <h3>{{msg}}</h3>
-    <h4>{{msg}}</h4>
-    <h5>{{msg}}</h5>
-    <h6>{{msg}}</h6>
+    <h1>gee! This is an H1<br/>{{msg}}</h1>
+    <h2>gee! This is an H2<br/>{{msg}}</h2>
+    <h3>gee! This is an H3<br/>{{msg}}</h3>
+    <h4>gee! This is an H4<br/>{{msg}}</h4>
+    <h5>gee! This is an H5<br/>{{msg}}</h5>
+    <h6>gee! This is an H6<br/>{{msg}}</h6>
     <hr/>
     <h3> Paragraph </h3>
     <hr/>
@@ -47,7 +47,7 @@ export default {
     },
     data () {
         return{
-            msg: "This is Hello!This is Hello!This is Hello!This is Hello!This is Hello!This is Hello!This is Hello!",
+            msg: "This is a new line with the letter 'g' in it.",
             paragraph: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
             alphabet: " ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/> abcdefghijklmnopqrstuvwxyz <br/> 0123456789",
             btn_text: "click me!"
@@ -59,4 +59,15 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "~styles/main.scss";
+
+.styles{
+  @include make-container-max-widths();
+  margin: 0 auto;
+  @include mt(6);
+  @include mb(6);
+  @include mq($until: 'sm'){
+    @include pl(6);
+    @include pr(6);
+  }
+}
 </style>
