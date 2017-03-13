@@ -99,7 +99,7 @@ export default {
 	}
 };
 .logo{
-	max-height: 60px;
+	max-height: $logo-max-height;
   @include mq($until: 'sm'){
     float: right;
   }

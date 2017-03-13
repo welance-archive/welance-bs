@@ -68,8 +68,8 @@ export default {
       @include make-col(12);
     }
 
-    @include mb(6);
-    @include mt(6);
+    @include mb(5);
+    @include mt(5);
 
     @include mq($until: 'sm'){
       @include pl(6);

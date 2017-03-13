@@ -5,7 +5,8 @@
                       :contacts="contacts"
                       :details="details"
                       :menu="menu"
-    ></header-component>
+    >
+    </header-component>
 
     <fixed-header :name="'main'"
                   :contacts="contacts"
@@ -258,16 +259,37 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~styles/_variables.scss";
+@import "~styles/main.scss";
+
 .app{
   &--no-overflow{
       overflow: hidden;
   }
   .header{
     background: #f3f3f3;
+
+    .header__col--logo{
+      order: 0;
+    }
+    .header__col--extra{
+      @include make-col(6);
+      order: 1;
+    }
+    .header__col--menu{
+      order: 2;
+      @include make-col(5);
+      .menu-header{
+        //@include make-col(4);
+      }
+    }
   }
   .footer{
     .menu-footer{
+      @include make-container-max-widths();
+      margin: 0 auto;
+      @include pb(2);
+      @include pt(2)
+
       .img{
         //display: none;
       }

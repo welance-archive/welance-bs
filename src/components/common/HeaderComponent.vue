@@ -1,19 +1,29 @@
 <template>
-  <header class="header-wrap">
-    <div class="header" :class="'header-' + name">
-      <div class="header__container">
-        <div class="header__col">
-          <img class="logo" src="/assets/images/logo.svg"/>
+  <header class="header" :class="'header-' + name">
+    <div class="header__wrap">
+      <div class="header__row">
+        <div class="header__col header__col--logo">
+          <slot name="logo">
+              <router-link :to="{ path: '/' }">
+                <img class="logo" alt="logo" src="/assets/images/logo.svg"/>
+              </router-link>
+          </slot>
         </div>
-        <div class="header__col">
-          <h6 class="phone">
-            <a :href="'tel:'+contacts.phone" class="phone__number">
-              {{contacts.phone}}
-            </a><br/>
-            <span class="phone__availability">
-              <span class="phone__availability-check"></span> {{availabilityText}}
-            </span>
-          </h6>
+        <div class="header__col header__col--extra">
+          <slot name="extra"></slot>
+        </div>
+        <div class="header__col header__col--menu">
+          <slot name="menu">
+              <menu-component   slot="menu"
+                                :levels="1"
+                                :show-images="false"
+                                :name="'header'"
+                                :smallTextPre="''"
+                                :bigText="''"
+                                :smallTextSub="''"
+                                :lists="menu"
+              ></menu-component>
+          </slot>
         </div>
       </div>
     </div>
@@ -21,8 +31,13 @@
 </template>
 
 <script>
+import MenuComponent from 'components/common/MenuComponent.vue';
+
 export default {
   name: 'HeaderComponent',
+  components: {
+    MenuComponent
+  },
   props: [
     'name',
     'contacts',
@@ -45,42 +60,30 @@ export default {
 @import "~styles/main.scss";
 
 .header {
-  @include make-container-max-widths();
-  margin: 0 auto;
 
-  @include mq($until: 'sm'){
-    @include make-container();
+  &__wrap{
+    @include make-container-max-widths();
+    margin: 0 auto;
   }
 
-	&__container{
-		@include make-row();
-		justify-content: space-between;
-    align-items: center;
-	}
-	&__col{
-		@include make-col-ready();
-		@include make-col(6);
-    &:first-child{
-      @include make-col(4);
-    }
-    &:last-child{
-      @include make-col(8);
-    }
-	}
-};
-.logo{
-	max-height: 60px;
-  @include mq($until: 'sm'){
-    float: right;
+  &__row{
+    @include make-row();
   }
-}
-.phone{
-  margin-bottom: 0;
-	text-align: right;
-  @include mq($until: 'sm'){
-    font-size: 0.75em;
-    text-align: left;
+
+  &__col{
+    @include make-col-ready();
+
+    &--logo{
+      @include make-col(1);
+    }
+    &--extra{
+      @include make-col(2);
+    }
+    &--menu{
+      @include make-col(9);
+    }
   }
+
 }
 
 </style>

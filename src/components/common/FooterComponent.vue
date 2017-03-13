@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer class="footer" :class="'footer-' + name">
     <slot name="row-0">
       <div class="footer__wrap">
         SLOT "row-0"
@@ -41,6 +41,9 @@ export default {
 @import "~styles/main.scss";
 
 .footer{
+  @include pb(6);
+  @include pt(6);
+
   &__wrap{
     @include make-container-max-widths();
     margin: 0 auto;

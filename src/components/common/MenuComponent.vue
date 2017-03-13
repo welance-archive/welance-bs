@@ -1,16 +1,6 @@
 <template>
   <div class="menu" :class="'menu-' + name">
-    <div class="text-wrap">
-      <div class="text-wrap__col">
-        <quote  v-if="bigText || smallTextPre || smallTextSub"
-                :name="name"
-                :small-text-pre="smallTextPre"
-                :big-text="bigText"
-                :small-text-sub="smallTextSub"
-        ></quote>
-      </div>
-    </div>
-    <div class="menu-wrap">
+    <nav class="menu-wrap">
       <ul class="menu-wrap__col" v-for="(list, indexL) in lists">
 
         <template v-if="list.url">
@@ -71,7 +61,7 @@
         </ul>
 
       </ul>
-    </div>
+    </nav>
   </div>
 </template>
 
@@ -103,25 +93,18 @@ export default {
 @import "~styles/main.scss";
 
 .menu {
-  @include make-container-max-widths();
-  margin: 0 auto;
+  //@include make-container-max-widths();
+  //margin: 0 auto;
+  height: 100%;
+  display: flex;
 }
-.text-wrap{
-  @include make-row();
-  flex-direction: row;
-  overflow: hidden;
 
-  &__col{
-    @include make-col-ready();
-    @include make-col(10);
-    @include mq($until: 'lg'){
-      @include make-col(12);
-    }
-  }
-}
 .menu-wrap{
-  @include make-row();
-  flex-direction: row;
+  display: flex;
+  width: 100%;
+  flex-flow: row nowrap;
+  overflow: hidden;
+  justify-content: space-between;
 
   &__list{
   }
@@ -132,30 +115,14 @@ export default {
 
   &__menu-title{
     //display: none;
-    font-size: 1.5em;
   }
   &__menu-item{
     //border: 1px solid red;
   }
 
   &__col{
-    @include make-col-ready();
-    @include make-col(3);
-    @include mb(4);
-
-    @include mq($until: 'lg'){
-        @include make-col(4);
-    }
-
-    @include mq($until: 'md'){
-        @include make-col(6);
-    }
-    @include mq($until: 'sm'){
-      @include pl(6);
-      @include pr(6);
-      @include make-col(12);
-      text-align: center;
-    }
+    align-self: center;
+    //background: blue;
   }
 };
 
