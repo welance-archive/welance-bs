@@ -13,17 +13,7 @@
           <slot name="extra"></slot>
         </div>
         <div class="header__col header__col--menu">
-          <slot name="menu">
-              <menu-component   slot="menu"
-                                :levels="1"
-                                :show-images="false"
-                                :name="'header'"
-                                :smallTextPre="''"
-                                :bigText="''"
-                                :smallTextSub="''"
-                                :lists="menu"
-              ></menu-component>
-          </slot>
+          <slot name="menu"></slot>
         </div>
       </div>
     </div>

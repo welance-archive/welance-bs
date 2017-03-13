@@ -6,6 +6,16 @@
                       :details="details"
                       :menu="menu"
     >
+      <menu-component   slot="menu"
+                                :levels="1"
+                                :show-images="false"
+                                :name="'header'"
+                                :smallTextPre="''"
+                                :bigText="''"
+                                :smallTextSub="''"
+                                :lists="menu"
+      ></menu-component>
+
     </header-component>
 
     <fixed-header :name="'main'"
