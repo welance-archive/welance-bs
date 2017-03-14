@@ -62,6 +62,7 @@ export default {
 .gallery-wrapper{
   //background: red;
   overflow: hidden;
+  height: auto;
 }
 
 .gallery {
@@ -71,6 +72,13 @@ export default {
   &__container{
     flex-flow: row wrap;
     justify-content: space-around;
+
+    // GRID
+    // sm: 540px,
+    // md: 720px,
+    // lg: 960px,
+    // xl: 1140px,
+    // xxl: 1560px
 
     // Mode: squares
     //
@@ -82,30 +90,81 @@ export default {
     //
     &--squares{
       @include make-row();
-      justify-content: center;
+      flex-flow: row wrap;
+      justify-content: flex-start;
 
       .img{
-        @include flexembed-image(100%, null);
-        min-width: 128px;
-        align-self: center;
-        margin:  .5vw;
-        &__text-container{
-          display: none;
+        &:first-child, &:nth-child(4n+5){
+          margin-left: 0!important;
+          //border-bottom: 1px solid blue; //debug
         }
       }
+
+      @include mq($until: 'sm'){
+        @include ml(3);
+        @include mr(3);
+      }
+
       @include mq($until: 'md'){
-        @include make-row();
         flex-flow: row wrap;
-        //justify-content: flex-start;
+        justify-content: space-between;
+        @include mr(3);
+
         .img{
-          min-width: 160px;
-          align-self: center;
+          @include flexembed-image(100%, null, 140px); //lg: 540px,
+          @include m(0);
+          @include mb(3);
+          &__text-container{
+            display: none;
+          }
         }
       }
+
       @include mq($from: 'md'){
-        @include make-row();
-        flex-flow: row wrap;
-        justify-content: flex-start;
+        .img{
+          @include flexembed-image(100%, null, 180px); //lg: 720px,
+          @include m(0);
+          @include ml(2);
+          @include mb(2);
+          &__text-container{
+            display: none;
+          }
+        }
+      }
+
+      @include mq($from: 'lg'){
+        .img{
+          @include flexembed-image(100%, null, 240px); //lg: 960px,
+          @include m(0);
+          @include ml(2);
+          @include mb(2);
+          &__text-container{
+            display: none;
+          }
+        }
+      }
+
+      @include mq($from: 'xl'){
+        .img{
+          @include flexembed-image(100%, null, 284px); //xl: 1140px,
+          @include m(0);
+          @include ml(2);
+          @include mb(2);
+          &__text-container{
+            display: none;
+          }
+        }
+      }
+      @include mq($from: 'xxl'){
+        .img{
+          @include flexembed-image(100%, null, 382px); //xxl: 1560px
+          @include m(0);
+          @include ml(3);
+          @include mb(3);
+          &__text-container{
+            display: none;
+          }
+        }
       }
     }
 

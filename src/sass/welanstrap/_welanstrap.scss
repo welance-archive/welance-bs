@@ -1,6 +1,6 @@
 // SASS framework
 @import "variables";
-@import "./node_modules/sass-mq/mq";
+@import "~sass-mq/mq";
 @import '~modularscale-sass/stylesheets/modular-scale';
 @import "images";
 @import "hover";

@@ -13,15 +13,11 @@
     </section>
 
     <section class="quote-section">
-      <div class="quote-section__row">
-        <div class="quote-section__col">
-          <quote  :name="'quoty'"
-                  :small-text-pre="mainQuoteSmallTextPre"
-                  :big-text="mainQuoteBigText"
-                  :small-text-sub="mainQuoteSmallTextSub"
-          ></quote>
-        </div>
-      </div>
+      <quote  :name="'quoty'"
+              :small-text-pre="mainQuoteSmallTextPre"
+              :big-text="mainQuoteBigText"
+              :small-text-sub="mainQuoteSmallTextSub"
+      ></quote>
     </section>
 
     <modal  :name="'project'"
@@ -536,13 +532,11 @@ section{
 .quote-section{
   @include make-container-max-widths();
   margin: 0 auto;
-  &__row{
-    @include make-row();
-    margin: 0 auto;
-  }
-  &__col{
-    @include make-col-ready();
-    @include make-col(6);
+
+  @include mq($until: 'sm'){
+    @include make-container();
+    margin: 0;
+    padding: 0;
   }
 
   background: white;

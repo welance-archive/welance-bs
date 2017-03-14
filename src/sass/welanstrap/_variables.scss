@@ -93,7 +93,7 @@ $mq-breakpoints: (
   md: 768px,
   lg: 992px,
   xl: 1200px,
-  xxl: 1600px
+  xxl: 1680px
 ) !default;
 @include _assert-ascending($mq-breakpoints, "$mq-breakpoints");
 @include _assert-starts-at-zero($mq-breakpoints);
@@ -108,7 +108,7 @@ $container-max-widths: (
   md: 720px,
   lg: 960px,
   xl: 1140px,
-  xxl: 1500px
+  xxl: 1560px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 

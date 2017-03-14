@@ -141,8 +141,8 @@ export default {
         @include make-col(6);
     }
     @include mq($until: 'sm'){
-      @include pl(6);
-      @include pr(6);
+      @include pl(4);
+      @include pr(4);
       @include make-col(12);
       text-align: center;
     }
