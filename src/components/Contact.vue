@@ -1,6 +1,6 @@
 <template>
   <div class="contact" :class="'contact-' + name">
-    <div class="contact__container">
+    <div class="contact__row">
       <div class="contact__left-col">
         <quote  :name="name"
                 :small-text-pre="preTitle"
@@ -51,40 +51,26 @@ export default {
   @include make-container-max-widths();
   margin: 0 auto;
 
-  &__container{
+  &__row{
     @include make-row();
-    flex-direction: row;
-    justify-content: space-between;
-    overflow: hidden;
   }
 
   &__left-col{
-    @include make-col-ready();
     @include make-col(8);
       @include mq($until: 'md'){
         @include make-col(12);
       }
-    &:nth-child(2){
-      text-align: right;
-      align-self: flex-end;
-    }
   }
   &__right-col{
-    @include make-col-ready();
     @include make-col(4);
       @include mq($until: 'md'){
         @include make-col(12);
       }
-    &:nth-child(2){
-      text-align: right;
-      align-self: flex-end;
-    }
   }
   &__form{
     input[type=email]{
       height: 56px;
       padding: 2em 1.25em;
-      width: 100%;
       margin-bottom: 15px;
       border-radius: 4px;
       box-shadow: none;

@@ -7,8 +7,12 @@
                   :small-text-pre="''"
                   :big-text="title"
                   :small-text-sub="subtitle"
-          ></quote>
-          <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
+          >
+            <div class="hero__extra" slot="extra">
+              <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
+            </div>
+          </quote>
+
           <router-link class="btn btn--info" v-if="ctaUrl" :to="ctaUrl">{{ctaText}}</router-link>
         </div>
       </div>
@@ -58,6 +62,14 @@ export default {
     }
 
   }
+  &__extra{
+    @include mq($until: 'lg'){
+      @include pt(3);
+    }
+    @include mq($from: 'lg'){
+      @include pt(17);
+    }
+  }
   &__col{
     @include make-col-ready();
     @include make-col(7);
@@ -72,12 +84,9 @@ export default {
     @include mq($until: 'md'){
       @include make-col(12);
     }
-    text-align: right;
-    .img{
-      width: 90%;
-      @include mq($until: 'md'){
-        width: 100%;
-      }
+    @include mq($until: 'sm'){
+      @include pl(4);
+      @include pr(4);
     }
   }
 };

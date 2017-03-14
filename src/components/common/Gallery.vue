@@ -122,7 +122,7 @@ export default {
 
       @include mq($from: 'md'){
         .img{
-          @include flexembed-image(100%, null, 180px); //lg: 720px,
+          @include flexembed-image(100%, null, 172px); //lg: 720px,
           @include m(0);
           @include ml(2);
           @include mb(2);
@@ -134,7 +134,7 @@ export default {
 
       @include mq($from: 'lg'){
         .img{
-          @include flexembed-image(100%, null, 240px); //lg: 960px,
+          @include flexembed-image(100%, null, 232px); //lg: 960px,
           @include m(0);
           @include ml(2);
           @include mb(2);
@@ -146,7 +146,7 @@ export default {
 
       @include mq($from: 'xl'){
         .img{
-          @include flexembed-image(100%, null, 284px); //xl: 1140px,
+          @include flexembed-image(100%, null, 280px); //xl: 1140px,
           @include m(0);
           @include ml(2);
           @include mb(2);
@@ -157,7 +157,7 @@ export default {
       }
       @include mq($from: 'xxl'){
         .img{
-          @include flexembed-image(100%, null, 382px); //xxl: 1560px
+          @include flexembed-image(100%, null, 378px); //xxl: 1560px
           @include m(0);
           @include ml(3);
           @include mb(3);
@@ -217,11 +217,11 @@ export default {
 
       @include mq($until: 'md'){
         flex-flow: column wrap;
-        @include m(3);
+        @include m(2);
         .img{
           @include m(0);
-          @include mt(3);
-          width: 100%;
+          @include mt(2);
+
           &:last-child{
             @include mb(0);
           }

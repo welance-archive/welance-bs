@@ -62,7 +62,9 @@ export default {
   }
 
   &__col{
-    @include make-col-ready();
+    @include mq($from: 'sm'){
+      @include make-col-ready();
+    }
 
     &--logo{
       @include make-col(2);
