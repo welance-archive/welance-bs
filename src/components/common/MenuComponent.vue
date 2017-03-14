@@ -1,6 +1,6 @@
 <template>
   <div class="menu" :class="'menu-' + name">
-    <nav class="menu-wrap">
+    <nav class="menu-wrap" :class="'menu-wrap--' + mode">
       <ul class="menu-wrap__col" v-for="(list, indexL) in lists">
 
         <template v-if="list.url">
@@ -77,7 +77,8 @@ export default {
       'lists',
       'name',
       'levels',
-      'showImages'
+      'showImages',
+      'mode'
     ],
     components: {
       Quote
@@ -106,6 +107,15 @@ export default {
   overflow: hidden;
   justify-content: space-between;
 
+  &__col{
+    align-self: center;
+
+    @include mq($until: 'md'){
+      width: 100%;
+      text-align: center;
+    }
+    //background: blue;
+  }
   &__list{
   }
 
@@ -120,10 +130,34 @@ export default {
     //border: 1px solid red;
   }
 
-  &__col{
-    align-self: center;
-    //background: blue;
+  &--header{
+
   }
+
+  &--footer{
+    @include mq($until: 'md'){
+      flex-flow: column wrap;
+      justify-content: flex-start;
+    }
+
+    .menu-wrap__col{
+      @include mq($until: 'md'){
+        width: 100%;
+        text-align: center;
+
+        @include mt(4);
+        &:first-child{
+          @include mt(0);
+        }
+      }
+    }
+
+  }
+
+  &--sidebar{
+
+  }
+
 };
 
 </style>

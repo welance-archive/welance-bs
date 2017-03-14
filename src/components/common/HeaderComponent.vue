@@ -5,7 +5,7 @@
         <div class="header__col header__col--logo">
           <slot name="logo">
               <router-link :to="{ path: '/' }">
-                <img class="logo" alt="logo" src="/assets/images/logo.svg"/>
+                <img class="logo" :alt="details.altLogo" :src="details.logo"/>
               </router-link>
           </slot>
         </div>
@@ -58,16 +58,17 @@ export default {
 
   &__row{
     @include make-row();
+    @include m(0);
   }
 
   &__col{
     @include make-col-ready();
 
     &--logo{
-      @include make-col(1);
+      @include make-col(2);
     }
     &--extra{
-      @include make-col(2);
+      @include make-col(1);
     }
     &--menu{
       @include make-col(9);

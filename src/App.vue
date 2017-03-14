@@ -7,13 +7,14 @@
                       :menu="menu"
     >
       <menu-component   slot="menu"
-                                :levels="1"
-                                :show-images="false"
-                                :name="'header'"
-                                :smallTextPre="''"
-                                :bigText="''"
-                                :smallTextSub="''"
-                                :lists="menu"
+                        :levels="1"
+                        :show-images="false"
+                        :name="'header'"
+                        :smallTextPre="''"
+                        :bigText="''"
+                        :smallTextSub="''"
+                        :lists="menu"
+                        :mode="'header'"
       ></menu-component>
 
     </header-component>
@@ -38,6 +39,7 @@
                         :bigText="''"
                         :smallTextSub="''"
                         :lists="menu"
+                        :mode="'footer'"
       ></menu-component>
 
       <div slot="row-1"></div>
@@ -279,15 +281,15 @@ export default {
     background: #f3f3f3;
 
     .header__col--logo{
-      order: 0;
+      //order: 0;
     }
     .header__col--extra{
-      @include make-col(6);
-      order: 1;
+      //@include make-col(6);
+      //order: 1;
     }
     .header__col--menu{
-      order: 2;
-      @include make-col(5);
+      //order: 2;
+      //@include make-col(5);
       .menu-header{
         //@include make-col(4);
       }
