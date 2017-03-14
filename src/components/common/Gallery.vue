@@ -199,12 +199,12 @@ export default {
 
       .img{
         align-self: center;
-        margin: 16px;
+        @include m(3)
         &:last-child{
-          margin-right: 0px;
+          @include mr(0);
         }
         &:first-child{
-          margin-left: 0px;
+          @include ml(0);
         }
         &__text-container{
           @include ml(1);
@@ -217,13 +217,17 @@ export default {
 
       @include mq($until: 'md'){
         flex-flow: column wrap;
+        @include m(3);
         .img{
-          margin: 0px;
-          margin-top: 16px;
-          &:first-child{
-            margin-top: 0px;
-          }
+          @include m(0);
+          @include mt(3);
           width: 100%;
+          &:last-child{
+            @include mb(0);
+          }
+          &:first-child{
+            @include mt(0);
+          }
         }
       }
     }
