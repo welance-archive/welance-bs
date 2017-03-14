@@ -71,7 +71,6 @@ export default {
     }
   }
   &__col{
-    @include make-col-ready();
     @include make-col(7);
 
     @include mq($until: 'md'){
@@ -79,14 +78,13 @@ export default {
     }
   }
   &__visuals{
-    @include make-col-ready();
     @include make-col(5);
     @include mq($until: 'md'){
       @include make-col(12);
     }
     @include mq($until: 'sm'){
-      @include pl(4);
-      @include pr(4);
+      @include pl(3);
+      @include pr(3);
     }
   }
 };

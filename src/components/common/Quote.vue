@@ -76,8 +76,8 @@ export default {
     @include mt(4);
 
     @include mq($until: 'sm'){
-      @include pl(4);
-      @include pr(4);
+      @include pl(3);
+      @include pr(3);
     }
   }
 };

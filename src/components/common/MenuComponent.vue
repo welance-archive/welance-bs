@@ -138,6 +138,8 @@ export default {
     @include mq($until: 'md'){
       flex-flow: column wrap;
       justify-content: flex-start;
+      @include ml(3);
+      @include mr(3);
     }
 
     .menu-wrap__col{

@@ -100,18 +100,13 @@ export default {
         }
       }
 
-      @include mq($until: 'sm'){
+      @include mq($from: 'xs'){
         @include ml(3);
         @include mr(3);
-      }
-
-      @include mq($until: 'md'){
         flex-flow: row wrap;
         justify-content: space-between;
-        @include mr(3);
-
         .img{
-          @include flexembed-image(100%, null, 140px); //lg: 540px,
+          @include flexembed-image(100%, null, 8rem); //lg: 540px,
           @include m(0);
           @include mb(3);
           &__text-container{
@@ -120,9 +115,16 @@ export default {
         }
       }
 
+      @include mq($from: 'sm'){
+        @include ml(2);
+        @include mr(2);
+      }
+
       @include mq($from: 'md'){
+        @include ml(2);
+        @include mr(2);
         .img{
-          @include flexembed-image(100%, null, 172px); //lg: 720px,
+          @include flexembed-image(100%, null, 10rem); //lg: 720px,
           @include m(0);
           @include ml(2);
           @include mb(2);
@@ -134,7 +136,7 @@ export default {
 
       @include mq($from: 'lg'){
         .img{
-          @include flexembed-image(100%, null, 232px); //lg: 960px,
+          @include flexembed-image(100%, null, 13.7rem); //lg: 960px,
           @include m(0);
           @include ml(2);
           @include mb(2);
@@ -146,7 +148,7 @@ export default {
 
       @include mq($from: 'xl'){
         .img{
-          @include flexembed-image(100%, null, 280px); //xl: 1140px,
+          @include flexembed-image(100%, null, 16.55rem); //xl: 1140px,
           @include m(0);
           @include ml(2);
           @include mb(2);
@@ -157,7 +159,7 @@ export default {
       }
       @include mq($from: 'xxl'){
         .img{
-          @include flexembed-image(100%, null, 378px); //xxl: 1560px
+          @include flexembed-image(100%, null, 22.7rem); //xxl: 1560px
           @include m(0);
           @include ml(3);
           @include mb(3);
@@ -217,10 +219,10 @@ export default {
 
       @include mq($until: 'md'){
         flex-flow: column wrap;
-        @include m(2);
+        @include m(3);
         .img{
           @include m(0);
-          @include mt(2);
+          @include mt(3);
 
           &:last-child{
             @include mb(0);

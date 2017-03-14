@@ -504,13 +504,12 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "~styles/main.scss";
-@import "~styles/_variables.scss";
 
 .home{
   display: flex;
 	min-height: 100vh;
 	flex-direction: column;
-  overflow: hidden;
+  //overflow: hidden;
 }
 
 section{

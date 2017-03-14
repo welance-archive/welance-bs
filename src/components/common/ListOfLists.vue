@@ -1,15 +1,12 @@
 <template>
   <div class="list-of-lists" :class="'list-of-lists-' + name">
-    <div class="text-wrap">
-      <div class="text-wrap__col">
-        <quote  v-if="bigText || smallTextPre || smallTextSub"
-                :name="name"
-                :small-text-pre="smallTextPre"
-                :big-text="bigText"
-                :small-text-sub="smallTextSub"
-        ></quote>
-      </div>
-    </div>
+    <quote  v-if="bigText || smallTextPre || smallTextSub"
+            :name="name"
+            :small-text-pre="smallTextPre"
+            :big-text="bigText"
+            :small-text-sub="smallTextSub"
+    ></quote>
+
     <div class="list-wrap">
       <div class="list-wrap__col" v-for="(list, indexL) in lists">
 
@@ -97,19 +94,7 @@ export default {
   @include make-container-max-widths();
   margin: 0 auto;
 }
-.text-wrap{
-  @include make-row();
-  flex-direction: row;
-  overflow: hidden;
 
-  &__col{
-    @include make-col-ready();
-    @include make-col(10);
-    @include mq($until: 'lg'){
-      @include make-col(12);
-    }
-  }
-}
 .list-wrap{
   @include make-row();
   flex-direction: row;
@@ -141,8 +126,8 @@ export default {
         @include make-col(6);
     }
     @include mq($until: 'sm'){
-      @include pl(4);
-      @include pr(4);
+      @include pl(3);
+      @include pr(3);
       @include make-col(12);
       text-align: center;
     }
