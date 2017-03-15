@@ -4,7 +4,7 @@
       "targets": {
         //"chrome": 52,
         "browsers": ["last 10 versions", "safari >= 7"],
-        "modules" : false
+        "modules" : true
         //"debug" : true
         //"comments": false
       }

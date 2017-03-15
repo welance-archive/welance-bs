@@ -1,5 +1,6 @@
 let webpack = require("webpack");
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 let ExtractTextPlugin = require('extract-text-webpack-plugin');
 let path = require('path');
 let CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -14,11 +15,19 @@ const prod_plugins = [
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "./index.html",
+
+      // Optional
+      baseUrl: 'http://localhost:8080',
+
 			hash: true,
 			minify:{
 				collapseWhitespace: true
 			}
 		}),
+    //adds async tag to script to load JS asynchronously
+    new ScriptExtHtmlWebpackPlugin({
+      defaultAttribute: 'async'
+    }),
 		//about SASS compilation
 		new ExtractTextPlugin({
 			filename: "assets/bundle.css"
@@ -231,7 +240,8 @@ module.exports = {
 	entry: ["babel-polyfill", "./src/main.js"],	//this is to support ES6 features
 	output: {
 		path: path.resolve(__dirname, "dist"),
-		filename: "assets/bundle.js"
+		filename: "assets/bundle.js",
+    publicPath: '/'
 	},
 	devServer: {
 		historyApiFallback: true
