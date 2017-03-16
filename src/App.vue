@@ -1,46 +1,68 @@
 <template>
   <body class="app" :class="{ 'app--no-overflow': showModal }">
 
-    <header-component :name="'main'"
-                      :contacts="contacts"
-                      :details="details"
-                      :menu="menu"
-    >
-      <menu-component   slot="menu"
-                        :levels="1"
-                        :show-images="false"
-                        :name="'header'"
-                        :smallTextPre="''"
-                        :bigText="''"
-                        :smallTextSub="''"
-                        :lists="menu"
-                        :mode="'header'"
-      ></menu-component>
+    <header-component
+      :name="'main'"
+      :contacts="contacts"
+      :details="details"
+      :menu="menu">
+
+      <span slot="extra"></span>
+      <menu-component slot="menu"
+        :levels="1"
+        :show-images="false"
+        :name="'header'"
+        :smallTextPre="''"
+        :bigText="''"
+        :smallTextSub="''"
+        :lists="menu"
+        :mode="'header'">
+      </menu-component>
 
     </header-component>
 
-    <fixed-header :name="'main'"
-                  :contacts="contacts"
-                  :details="details"
-                  :menu="menu"
-    ></fixed-header>
+    <fixed-item :appear-at="200">
+
+      <template slot="content">
+        <header-component
+          :name="'main'"
+          :contacts="contacts"
+          :details="details"
+          :menu="menu">
+
+          <span slot="extra"></span>
+          <menu-component slot="menu"
+            :levels="1"
+            :show-images="false"
+            :name="'header'"
+            :smallTextPre="''"
+            :bigText="''"
+            :smallTextSub="''"
+            :lists="menu"
+            :mode="'header'">
+          </menu-component>
+        </header-component>
+      </template>
+
+    </fixed-item>
 
     <router-view @modalOpened="showModal = true" @modalClosed="showModal = false"></router-view>
 
-    <footer-component :name="'main'"
-                      :contacts="contacts"
-                      :details="details"
-                      :menu="menu"
-    >
-      <menu-component   slot="row-0"
-                        :show-images="false"
-                        :name="'footer'"
-                        :smallTextPre="''"
-                        :bigText="''"
-                        :smallTextSub="''"
-                        :lists="menu"
-                        :mode="'footer'"
-      ></menu-component>
+    <footer-component
+      :name="'main'"
+      :contacts="contacts"
+      :details="details"
+      :menu="menu">
+
+      <menu-component slot="row-0"
+        :show-images="false"
+        :name="'footer'"
+        :smallTextPre="''"
+        :bigText="''"
+        :smallTextSub="''"
+        :lists="menu"
+        :mode="'footer'">
+      </menu-component>
 
       <div slot="row-1"></div>
       <div slot="row-2"></div>
@@ -52,7 +74,7 @@
 <script>
 import HeaderComponent from './components/common/HeaderComponent.vue';
 import FooterComponent from './components/common/FooterComponent.vue';
-import FixedHeader from './components/common/FixedHeader.vue';
+import FixedItem from './components/common/FixedItem.vue';
 import MenuComponent from 'components/common/MenuComponent.vue';
 
 export default {
@@ -60,7 +82,7 @@ export default {
   components: {
     HeaderComponent,
     FooterComponent,
-    FixedHeader,
+    FixedItem,
     MenuComponent
   },
   data () {
