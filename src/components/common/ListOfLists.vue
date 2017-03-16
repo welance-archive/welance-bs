@@ -11,7 +11,7 @@
       <div class="list-wrap__col" v-for="(list, indexL) in lists">
 
         <template v-if="list.url">
-          <div  class="img list-wrap__list-header-img"
+          <div  v-if="list.image.src && levelOneImg" class="img list-wrap__list-header-img"
                 :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
                 :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
           ></div>
@@ -20,7 +20,7 @@
           </h5>
         </template>
         <template v-else-if="list.extUrl">
-          <div  class="img list-wrap__list-header-img"
+          <div    v-if="list.image.src && levelOneImg" class="img list-wrap__list-header-img"
                   :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
                   :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
           ></div>
@@ -29,7 +29,7 @@
           </h5>
         </template>
         <template v-else>
-          <div  class="img list-wrap__list-header-img"
+          <div    v-if="list.image.src && levelOneImg" class="img list-wrap__list-header-img"
                   :class="[list.image.ratio ? 'img--ratio-' + list.image.ratio : '']"
                   :style="{ backgroundImage: 'url(' + list.image.src + ')' }"
           ></div>
@@ -40,7 +40,7 @@
 
           <li class="list-wrap__list-item" :class="'list-wrap__list-item-' + index" v-for="(item,index) in list.items">
 
-              <div  class="img"
+              <div  v-if="item.image.src && levelTwoImg" class="img"
                     :class="[item.image.ratio ? 'img--ratio-' + item.image.ratio : '']"
                     :style="{ backgroundImage: 'url(' + item.image.src + ')' }"
               ></div>
@@ -75,7 +75,9 @@ export default {
       'smallTextSub',
       'lists',
       'name',
-      'levels'
+      'levels',
+      'levelOneImg',
+      'levelTwoImg'
     ],
     components: {
       Quote
