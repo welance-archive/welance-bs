@@ -71,9 +71,6 @@ import Quote from 'components/common/Quote.vue';
 export default {
     name: 'MenuComponent',
     props: [
-      'smallTextPre',
-      'bigText',
-      'smallTextSub',
       'lists',
       'name',
       'levels',
