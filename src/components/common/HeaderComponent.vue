@@ -5,7 +5,8 @@
         <div class="header__col header__col--logo">
           <slot name="logo">
               <router-link :to="{ path: '/' }">
-                <img class="logo" :alt="details.altLogo" :src="details.logo"/>
+                <img v-if="details.logo" class="logo" :alt="details.altLogo" :src="details.logo"/>
+                <img v-if="!details.logo" class="logo" :alt="'your logo will appear here and link to root'" :src="''"/>
               </router-link>
           </slot>
         </div>
