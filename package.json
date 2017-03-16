@@ -1,6 +1,6 @@
 {
-  "name": "welance",
-  "version": "1.0.0",
+  "name": "welance-bs",
+  "version": "0.1.0",
   "description": "Welance Website",
   "main": "index.html",
   "scripts": {
