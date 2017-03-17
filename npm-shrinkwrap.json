@@ -1,6 +1,6 @@
 {
-  "name": "welance",
-  "version": "1.0.0",
+  "name": "welance-bs",
+  "version": "0.1.0",
   "dependencies": {
     "abbrev": {
       "version": "1.1.0",
@@ -7364,9 +7364,9 @@
       "dev": true
     },
     "vue": {
-      "version": "2.2.3",
-      "from": "vue@>=2.2.3 <3.0.0",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.2.3.tgz"
+      "version": "2.2.4",
+      "from": "vue@2.2.4",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.2.4.tgz"
     },
     "vue-hot-reload-api": {
       "version": "2.0.11",
@@ -7413,9 +7413,9 @@
       }
     },
     "vue-template-compiler": {
-      "version": "2.2.3",
-      "from": "vue-template-compiler@>=2.2.3 <3.0.0",
-      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.2.3.tgz",
+      "version": "2.2.4",
+      "from": "vue-template-compiler@2.2.4",
+      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.2.4.tgz",
       "dev": true
     },
     "vue-template-es2015-compiler": {
