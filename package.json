@@ -23,11 +23,11 @@
   },
   "devDependencies": {
     "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.0",
+    "babel-loader": "^6.4.1",
     "babel-polyfill": "^6.23.0",
-    "babel-preset-env": "^1.2.1",
+    "babel-preset-env": "^1.2.2",
     "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.27.2",
+    "css-loader": "^0.27.3",
     "extract-text-webpack-plugin": "^2.1.0",
     "favicons-webpack-plugin": "0.0.7",
     "html-webpack-plugin": "^2.28.0",
@@ -44,6 +44,6 @@
     "vue-loader": "^11.1.4",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.1"
+    "webpack-dev-server": "^2.4.2"
   }
 }
