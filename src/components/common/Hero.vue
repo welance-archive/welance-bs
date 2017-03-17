@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import Quote from 'components/common/Quote.vue';
+import Quote from './Quote.vue';
 
 export default {
     name: 'Hero',
@@ -49,7 +49,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main.scss";
 
 .hero {
   @include make-container-max-widths();

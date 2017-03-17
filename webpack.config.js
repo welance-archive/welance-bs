@@ -248,9 +248,9 @@ module.exports = {
 	},
 	resolve: {
 		alias: {
-			styles:  path.resolve(__dirname, 'src/sass'), // relative to the location of the webpack config file!
-			node_modules: path.resolve(__dirname, 'node_modules'),
-      components: path.resolve(__dirname, 'src/components')
+			// styles:  path.resolve(__dirname, 'src/sass'), // relative to the location of the webpack config file!
+			// node_modules: path.resolve(__dirname, 'node_modules'),
+      // components: path.resolve(__dirname, 'src/components')
 		}
 	},
 	module: {

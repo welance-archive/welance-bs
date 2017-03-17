@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import MenuComponent from 'components/common/MenuComponent.vue';
+import MenuComponent from './MenuComponent.vue';
 
 export default {
   name: 'HeaderComponent',
@@ -48,7 +48,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main.scss";
 
 .header {
 

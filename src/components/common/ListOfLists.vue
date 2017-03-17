@@ -65,7 +65,7 @@
 </template>
 
 <script>
-import Quote from 'components/common/Quote.vue';
+import Quote from './Quote.vue';
 
 export default {
     name: 'ListOfLists',
@@ -90,7 +90,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main.scss";
 
 .list-of-lists {
   @include make-container-max-widths();

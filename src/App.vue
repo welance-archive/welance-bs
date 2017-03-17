@@ -75,7 +75,7 @@
 import HeaderComponent from './components/common/HeaderComponent.vue';
 import FooterComponent from './components/common/FooterComponent.vue';
 import FixedItem from './components/common/FixedItem.vue';
-import MenuComponent from 'components/common/MenuComponent.vue';
+import MenuComponent from './components/common/MenuComponent.vue';
 
 export default {
   name: 'app',
@@ -293,7 +293,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main.scss";
 
 .app{
   &--no-overflow{
