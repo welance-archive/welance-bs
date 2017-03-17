@@ -5,8 +5,8 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV='dev' webpack-dev-server --host 0.0.0.0 --open",
-    "prod": "NODE_ENV='prod' webpack -p  --optimize-minimize"
+    "dev": "NODE_ENV='dev' webpack-dev-server -d --host 0.0.0.0 --open",
+    "prod": "NODE_ENV='prod' webpack -p --optimize-minimize"
   },
   "repository": {
     "type": "git",
@@ -17,7 +17,7 @@
   "homepage": "https://bitbucket.org/ricricucit/welance-2017#readme",
   "dependencies": {
     "axios": "^0.15.3",
-    "vue": "^2.2.3",
+    "vue": "^2.2.4",
     "vue-multiselect": "^2.0.0-beta.14",
     "vue-router": "^2.3.0"
   },
@@ -42,7 +42,7 @@
     "script-ext-html-webpack-plugin": "^1.7.1",
     "style-loader": "^0.13.2",
     "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.2.3",
+    "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.1"
   }
