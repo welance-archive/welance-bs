@@ -38,7 +38,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "./src/sass/main.scss";
+@import "../../sass/main.scss";
 
 .footer{
   @include pb(6);
