@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import StyleGuide from 'components/pages/StyleGuide.vue';
+import StyleGuide from './../pages/StyleGuide.vue';
 
 Vue.use(Router);
 

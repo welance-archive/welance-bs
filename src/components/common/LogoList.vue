@@ -15,8 +15,8 @@
 </template>
 
 <script>
-import Quote from 'components/common/Quote.vue';
-import Gallery from 'components/common/Gallery.vue';
+import Quote from './Quote.vue';
+import Gallery from './Gallery.vue';
 
 export default {
   name: 'LogoList',
@@ -39,7 +39,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main.scss";
 
 .logo-list{
   @include make-container-max-widths();

@@ -445,17 +445,16 @@
 </template>
 
 <script>
-import HeaderComponent from 'components/common/HeaderComponent.vue';
-import FooterComponent from 'components/common/FooterComponent.vue';
-import MenuComponent from 'components/common/MenuComponent.vue';
-import Hero from 'components/common/Hero.vue';
-import Quote from 'components/common/Quote.vue';
-import Modal from 'components/common/Modal.vue';
-import Gallery from 'components/common/Gallery.vue';
-import TextForm from 'components/common/TextForm.vue';
-import ListOfLists from 'components/common/ListOfLists.vue';
-import LogoList from 'components/common/LogoList.vue';
-import Contact from 'components/Contact.vue';
+import HeaderComponent from '../common/HeaderComponent.vue';
+import FooterComponent from '../common/FooterComponent.vue';
+import MenuComponent from '../common/MenuComponent.vue';
+import Hero from '../common/Hero.vue';
+import Quote from '../common/Quote.vue';
+import Modal from '../common/Modal.vue';
+import Gallery from '../common/Gallery.vue';
+import TextForm from '../common/TextForm.vue';
+import ListOfLists from '../common/ListOfLists.vue';
+import LogoList from '../common/LogoList.vue';
 
 export default {
   name: 'StyleGuide',
@@ -474,8 +473,7 @@ export default {
     Gallery,
     TextForm,
     ListOfLists,
-    LogoList,
-    Contact
+    LogoList
   },
   methods: {
     openModal: function(){
@@ -1064,7 +1062,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main.scss";
 
 $light-gray:  #f3f3f3;
 $border-gray: #f1f1f1;
