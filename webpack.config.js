@@ -17,7 +17,7 @@ const prod_plugins = [
 			template: "./index.html",
 
       // Optional
-      baseUrl: 'http://localhost:8080',
+      baseUrl: 'https://welance.github.io/welance-bs/',
 
 			hash: true,
 			minify:{
@@ -74,7 +74,7 @@ const prod_plugins = [
 			// favicon background color (see https://github.com/haydenbleasel/favicons#usage)
 			//background: '#fff',
 			// favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-			title: 'Welance Website',
+			title: 'Welanstrap',
 
 			// which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
 			icons: {
@@ -241,7 +241,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "assets/bundle.js",
-    publicPath: '/'
+    publicPath: ''
 	},
 	devServer: {
 		historyApiFallback: true

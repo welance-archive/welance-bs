@@ -97,7 +97,7 @@ export default {
       details: {
         title: 'Welance',
         subtitle: 'Freelance Collective',
-        logo: '/assets/images/logo.svg',
+        logo: 'assets/images/logo.svg',
         altLogo: 'Welance - Freelancing Collectively'
       },
       menu: [
@@ -107,8 +107,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -118,8 +118,8 @@ export default {
               extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -129,8 +129,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -140,8 +140,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             }
@@ -153,8 +153,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -164,8 +164,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -175,8 +175,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -186,8 +186,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             }
@@ -199,8 +199,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -210,8 +210,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -221,8 +221,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -232,8 +232,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             }
@@ -245,8 +245,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -256,8 +256,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -267,8 +267,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -278,8 +278,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://fillmurray.com/400/400',
-                srcRetina: 'http://fillmurray.com/800/800',
+                src: 'https://fillmurray.com/400/400',
+                srcRetina: 'https://fillmurray.com/800/800',
                 ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
               }
             }
