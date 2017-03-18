@@ -510,8 +510,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-              src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-              srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+              src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+              srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
               ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -521,8 +521,8 @@ export default {
               extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -532,8 +532,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -543,8 +543,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             }
@@ -556,8 +556,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -567,8 +567,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -578,8 +578,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -589,8 +589,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             }
@@ -602,8 +602,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -613,8 +613,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -624,8 +624,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -635,8 +635,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             }
@@ -648,8 +648,8 @@ export default {
           extUrl: '',
           extUrlTarget: '_blank',
           image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
           },
           items: [
@@ -659,8 +659,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -670,8 +670,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             },
@@ -681,8 +681,8 @@ export default {
               extUrl: '',
               extUrlTarget: '_blank',
               image: {
-                src: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'http://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
             }
