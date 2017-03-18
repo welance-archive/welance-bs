@@ -1,23 +1,26 @@
-# Welance Website
+# Welance Boostrap
 
-This is the main repository for the welance website. A Single Page Application using HTML, CSS(SASS), JS (VueJS) and Webpack for bundling.
+This is the main repository for Welance Boostrap.
+
+A starting point servable through npm. [View demo](https://welance.github.io/welance-bs/) to see all features.
 
 - - -
 
 ## General Info
 
-Directory structure of the app is inspired by [vue-webpack-boilerplate](https://github.com/vuejs-templates/webpack)
-Content and data comes from using an external (not yet defined) REST API.
+This project is inspired by the famous Twitter Bootstrap project.
+It uses similar base SASS mixins like `@include make-col`, `@include make-row`, etc. and it should be seen, like his famous predecessor, a Front-End tooling suite to quickly kick-start Welance projects.
+
+It includes generic styling and components build by [welance members](https://welance.com) for internal welance projects, but its default values can easily be overridden to **build any sort of modern Web Application**.
+
+It does NOT have jQuery dependency (old-school approach), but uses the more modern [single-file component approach](https://vuejs.org/v2/guide/single-file-components.html) offered by the [VueJS framework 2.2+](https://vuejs.org/v2/) together with HTML5 and SASS (flexbox).
 
 #### This project features:
-* VueJS (ES6) implementation w/ tree-shaking
-* autogeneration and compression of HTML, CSS, JS (from SASS/VUE components), images and favicon generation (for needed devices) using webpack.
-* ES6(2015) for JS, autocompiled to ES5 for older browsers (babel)
-* async communication using [axios](https://github.com/mzabriskie/axios)
-* bootstrap SASS v4
-* SEO Pre-Rendering of specific routes using PhantomJS and prerender-spa-plugin
+* HTML5 + VueJS (ES6) components
+* SASS as CSS pre-processor with useful mixins and variables (Flexbox for grid)
+* Components w/ basic styling and default responsive capabilities
 
-Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more.
+Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more about this project's dependencies.
 
 
 ## Software Requirements
@@ -26,7 +29,7 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more.
 ## Application Requirements
 
 * [node](https://nodejs.org/en/) (6+) and NPM (4+)
-* [Webpack](https://github.com/webpack/webpack)
+* [Webpack](https://github.com/webpack/webpack) (to publish to github pages)
 
 ## Installation Instructions
 
@@ -49,19 +52,22 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more.
 
 ### Bundled (Production) Version
 1. Obtain bundled production app running `npm run prod`. Find production files under **_/dist_** folder.
+2. Run `npm run deploy` to publish the **_/dist_** folder to [this URL](https://welance.github.io/welance-bs/).
 
 ## Recovery Procedures
 * No specific Recovery procedures.
 
 ## Project Documentation and Specification
 
-* [Welance Website Redesign](https://docs.google.com/document/d/19Q0ryKOXxbcXurXhG0MgO_OMt8JR2rN1gVfB81QYlHg/edit?usp=sharing)'s Google Doc
-* [Welance Website ](https://welance-handbook.herokuapp.com/welance-website.html) – _TODO_
+* Check out the **[demo/documentation page](https://welance.github.io/welance-bs/)** to learn about specific features you might want to implement in your new website
+* The ***NPM installer coming soon***, but you can start using it inside your project's _package.json_ as a dependency for your welance projects. **[Read How](http://stackoverflow.com/a/26560992/252414)**.
 
 ## Contribution guidelines
 
 * Read **[Welance Development Guidelines](https://welance-handbook.herokuapp.com/welance-development-guidelines.html)**
 * Install [Vue.JS devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) for easier Front-End debugging
+* **clone/fork** the repo to contribute
+
 
 - - -
 
@@ -74,3 +80,4 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more.
 ## Who do I talk to?
 
 For more info you can ask [enrico](https://github.com/ricricucit/).
+Check this project's open issues to see what needs to be developed!
