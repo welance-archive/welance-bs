@@ -95,11 +95,15 @@ export default {
 .list-of-lists {
   @include make-container-max-widths();
   margin: 0 auto;
+
+  @include mq($until: 'md'){
+    text-align: center;
+  }
 }
 
 .list-wrap{
-  @include make-row();
-  flex-direction: row;
+  display: flex;
+  flex-flow: row wrap;
 
   &__list{
   }
@@ -116,7 +120,8 @@ export default {
   }
 
   &__col{
-    @include make-col-ready();
+
+    //@include make-col-ready();
     @include make-col(3);
     @include mb(4);
 
