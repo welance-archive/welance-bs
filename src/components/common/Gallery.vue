@@ -212,7 +212,8 @@ export default {
 
       .img{
         align-self: center;
-        @include m(3)
+        @include m(3);
+
         &:last-child{
           @include mr(0);
         }
@@ -231,6 +232,7 @@ export default {
       @include mq($until: 'md'){
         flex-flow: column wrap;
         @include m(3);
+        //@include ml(0);
         .img{
           @include m(0);
           @include mt(3);
@@ -242,6 +244,10 @@ export default {
             @include mt(0);
           }
         }
+      }
+      @include mq($until: 'xs'){
+        @include m(3);
+        @include ml(0);
       }
     }
  }
