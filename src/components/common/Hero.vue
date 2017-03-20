@@ -55,6 +55,10 @@ export default {
   @include make-container-max-widths();
   margin: 0 auto;
 
+  @include mq($until: 'sm'){
+    @include make-container();
+  }
+
   &__container{
     @include make-row();
     @include mq($until: 'md'){
@@ -71,20 +75,44 @@ export default {
     }
   }
   &__col{
+    @include make-col-ready();
     @include make-col(7);
 
     @include mq($until: 'md'){
       @include make-col(12);
     }
+
+    &-inner{
+      @include mq($until: 'sm'){
+        // @include pl(2);
+        // @include pr(2);
+      }
+      .btn{
+        @include mq($until: 'md'){
+          width: 100%;
+          text-align: center;
+        }
+      }
+      .quote__col{
+
+        @include mq($from: 'md'){
+          @include mt(0);
+          .quote-heading{
+            @include mt(0);
+          }
+        }
+      }
+    }
   }
   &__visuals{
+    @include make-col-ready();
     @include make-col(5);
     @include mq($until: 'md'){
       @include make-col(12);
     }
     @include mq($until: 'sm'){
-      @include pl(3);
-      @include pr(3);
+      //@include pl(3);
+      //@include pr(3);
     }
   }
 };
