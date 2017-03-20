@@ -175,17 +175,18 @@
 
     <!-- ––––––––––––––––––––––––––––––––––––––- HERO -->
     <section class="section">
-      <quote
-        :name="'hero'"
-        :small-text-pre="''"
-        :big-text="'Hero component'"
-        :small-text-sub="'This is how you create an hero component'">
-      </quote>
+      <div class="row">
+        <quote
+          :name="'hero'"
+          :small-text-pre="''"
+          :big-text="'Hero component'"
+          :small-text-sub="'This is how you create an hero component'">
+        </quote>
 
-      <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/5/embedded/html/"></iframe>
+        <div class="col-12">
+          <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/5/embedded/html/"></iframe>
+        </div>
       </div>
-
     </section>
     <section class="hero-section">
       <hero
@@ -203,15 +204,17 @@
 
     <!-- ––––––––––––––––––––––––––––––––––––––- GALLERY -->
     <section class="quote-section">
-      <quote
-        :name="'gallery'"
-        :small-text-pre="''"
-        :big-text="'Gallery'"
-        :small-text-sub="'The gallery component has different <em>gallery-types</em>'">
-      </quote>
+      <div class="row">
+        <quote
+          :name="'gallery'"
+          :small-text-pre="''"
+          :big-text="'Gallery'"
+          :small-text-sub="'The gallery component has different <em>gallery-types</em>'">
+        </quote>
 
-      <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/hcpyxdqx/embedded/html,js"></iframe>
+        <div class="col-12">
+          <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/hcpyxdqx/embedded/html,js"></iframe>
+        </div>
       </div>
 
     </section>

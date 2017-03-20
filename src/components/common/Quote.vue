@@ -57,8 +57,8 @@ export default {
 @import "~styles/main.scss";
 
 .quote {
-  @include make-container-max-widths();
-  margin: 0 auto;
+  @include make-container();
+  width: 100%;
 
   &__container{
     @include make-row();
