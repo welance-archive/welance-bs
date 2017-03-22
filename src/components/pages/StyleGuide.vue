@@ -15,7 +15,7 @@
 
     <!-- ––––––––––––––––––––––––––––––––––––––- COLORS -->
     <section class="colors-section">
-      <div class="row">
+
         <quote
           :name="'colors'"
           :small-text-pre="''"
@@ -89,13 +89,13 @@
             <h6><strong>$white</strong></h6>
           </div>
         </div>
-      </div>
+
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END COLORS -->
 
     <!-- ––––––––––––––––––––––––––––––––––––––- TYPOGRAPHY -->
     <section class="typography-section">
-      <div class="row">
+
         <quote
           :name="'typography'"
           :small-text-pre="''"
@@ -104,27 +104,29 @@
         </quote>
 
         <hr/>
-        <h1 class="bg col-12" v-html="'–H1 ' + msg + ' –H1'"></h1>
-        <h2 class="bg col-12" v-html="'–H2 ' + msg + ' –H2'"></h2>
-        <h3 class="bg col-12" v-html="'–H3 ' + msg + ' –H3'"></h3>
-        <h4 class="bg col-12" v-html="'–H4 ' + msg + ' –H4'"></h4>
-        <h5 class="bg col-12" v-html="'–H5 ' + msg + ' –H5'"></h5>
-        <h6 class="bg col-12" v-html="'–H6 ' + msg + ' –H6'"></h6>
-        <p class="bg col-12" v-html="paragraph"></p>
-        <p class="bg col-12" v-html="paragraph"></p>
+        <div class="row">
+          <h1 class="bg col-12" v-html="'–H1 ' + msg + ' –H1'"></h1>
+          <h2 class="bg col-12" v-html="'–H2 ' + msg + ' –H2'"></h2>
+          <h3 class="bg col-12" v-html="'–H3 ' + msg + ' –H3'"></h3>
+          <h4 class="bg col-12" v-html="'–H4 ' + msg + ' –H4'"></h4>
+          <h5 class="bg col-12" v-html="'–H5 ' + msg + ' –H5'"></h5>
+          <h6 class="bg col-12" v-html="'–H6 ' + msg + ' –H6'"></h6>
+          <p class="bg col-12" v-html="paragraph"></p>
+          <p class="bg col-12" v-html="paragraph"></p>
 
-        <p class="bg col-3" v-html="paragraph"></p>
-        <p class="bg col-3" v-html="paragraph"></p>
-        <p class="bg col-3" v-html="paragraph"></p>
+          <p class="bg col-3" v-html="paragraph"></p>
+          <p class="bg col-3" v-html="paragraph"></p>
+          <p class="bg col-3" v-html="paragraph"></p>
 
-        <p class="bg col-2" v-html="paragraph"></p>
-        <p class="bg col-2" v-html="paragraph"></p>
+          <p class="bg col-2" v-html="paragraph"></p>
+          <p class="bg col-2" v-html="paragraph"></p>
+        </div>
 
-      </div>
+
     </section>
 
     <section class="typography-section">
-      <div class="row">
+
         <quote
           :name="'type'"
           :small-text-pre="''"
@@ -134,13 +136,13 @@
 
         <h4 class="col-12">Standard TypeFace</h4>
         <p class="col-12" v-html="alphabet"></p>
-      </div>
+
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END TYPOGRAPHY -->
 
     <!-- ––––––––––––––––––––––––––––––––––––––- BUTTONS -->
     <section class="btn-section">
-      <div class="row">
+
         <quote
           :name="'buttons'"
           :small-text-pre="''"
@@ -167,7 +169,7 @@
           <br/>
           <button class="btn btn--primary btn--tiny" type="button">tiny</button>
         </div>
-      </div>
+
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END BUTTONS -->
 
@@ -175,7 +177,7 @@
 
     <!-- ––––––––––––––––––––––––––––––––––––––- HERO -->
     <section class="section">
-      <div class="row">
+
         <quote
           :name="'hero'"
           :small-text-pre="''"
@@ -186,7 +188,7 @@
         <div class="col-12">
           <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/5/embedded/html/"></iframe>
         </div>
-      </div>
+
     </section>
     <section class="hero-section">
       <hero
@@ -204,7 +206,7 @@
 
     <!-- ––––––––––––––––––––––––––––––––––––––- GALLERY -->
     <section class="quote-section">
-      <div class="row">
+
         <quote
           :name="'gallery'"
           :small-text-pre="''"
@@ -215,7 +217,7 @@
         <div class="col-12">
           <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/hcpyxdqx/embedded/html,js"></iframe>
         </div>
-      </div>
+
 
     </section>
 
@@ -242,7 +244,7 @@
       </quote>
 
       <gallery
-        :name="'off'"
+        :name="'squares'"
         :images="officeImages"
         :gallery-type="'squares'"
       ></gallery>
@@ -255,7 +257,7 @@
       </quote>
 
       <gallery
-        :name="'off'"
+        :name="'blocky'"
         :images="officeImages"
         :gallery-type="'blocky'"
       ></gallery>
@@ -335,12 +337,13 @@
       <div class="col-12">
         <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/aash1c26/embedded/html,js"></iframe>
       </div>
+      <br/><br/>
 
       <div class="col-12">
         <header-component
           :name="'main'"
-          :contacts="{}"
-          :details="{}"
+          :contacts="contacts"
+          :details="details"
           :menu="menu">
         </header-component>
       </div>
@@ -1071,15 +1074,13 @@ $light-gray:  #f3f3f3;
 $border-gray: #f1f1f1;
 
 .styles{
-  @include mt(6);
-  @include mb(6);
-  @include mq($until: 'sm'){
-    @include pl(6);
-    @include pr(6);
-  }
+  @include make-container-max-widths();
+  margin: 0 auto;
 
   .row{
-    @include make-row();
+    // display: flex;
+    // flex-wrap: wrap;
+    @include make-row-no-gutters();
   }
 
   .col-12{
@@ -1089,20 +1090,32 @@ $border-gray: #f1f1f1;
   .col-3{
     @include make-col-ready();
     @include make-col(4);
+    text-align: justify;
+
+    @include mq($until: 'md'){
+      @include make-col(12);
+      text-align: left;
+    }
   }
   .col-2{
     @include make-col-ready();
     @include make-col(6);
+    text-align: justify;
+    @include mq($until: 'md'){
+      @include make-col(12);
+      text-align: left;
+    }
   }
   //sections general styles
-  .colors-section, .quote-section, .lists-section, .clients-section,
-  .contact-section, .typography-section, .btn-section, .section{
-    @include make-container-max-widths();
+  section{
+    @include make-container();
     margin: 0 auto;
     @include pt(6);
     @include pb(6);
   }
+  .gallery-section{
 
+  }
   .colors-section{
     .color-items{
       display: flex;
@@ -1169,6 +1182,7 @@ $border-gray: #f1f1f1;
       }
     }
   }
+
 
   .hero-section{
     background: $light-gray;

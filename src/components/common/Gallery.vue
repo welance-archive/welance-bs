@@ -106,7 +106,7 @@ export default {
         flex-flow: row wrap;
         justify-content: space-between;
         .img{
-          @include flexembed-image(100%, null, 10.2rem); //lg: 540px,
+          @include flexembed-image(100%, null, 10rem); //lg: 540px,
           @include m(0);
           @include mb(3);
           &__text-container{
