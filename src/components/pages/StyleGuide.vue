@@ -1,4 +1,5 @@
 <template>
+<div>
   <div class="styles">
 
     <a id="forkMe" href="https://github.com/welance/welance-bs">Fork me on GitHub</a>
@@ -186,23 +187,29 @@
         </quote>
 
         <div class="col-12">
-          <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/5/embedded/html/"></iframe>
+          <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/6/embedded/html/"></iframe>
         </div>
 
     </section>
-    <section class="hero-section">
-      <hero
-        :name="'main'"
-        :title="heroTitle"
-        :subtitle="heroSubtitle"
-        :image="heroImage"
-        :open-modal="openModal"
-        :ctaUrl="heroUrl"
-        :ctaText="'View Modal (\'half\' mode)'"
-      ></hero>
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END HERO -->
+  </div>
 
+  <section class="hero-section">
+
+    <hero
+      :name="'main'"
+      :title="heroTitle"
+      :subtitle="heroSubtitle"
+      :image="heroImage"
+      :open-modal="openModal"
+      :ctaUrl="heroUrl"
+      :ctaText="'View Modal (\'half\' mode)'"
+      :maxWidth="true"
+    ></hero>
+
+  </section>
+  <!-- ––––––––––––––––––––––––––––––––––––––- END HERO -->
+
+  <div class="styles">
 
     <!-- ––––––––––––––––––––––––––––––––––––––- GALLERY -->
     <section class="quote-section">
@@ -273,22 +280,21 @@
         :name="'list'"
         :small-text-pre="''"
         :big-text="'Lists'"
-        :small-text-sub="'A component with optional quote for listing (recursively up to 2 levels)'">
+        :small-text-sub="'A component for listing (recursively up to 2 levels)'">
       </quote>
 
       <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/1/embedded/html,js"></iframe>
-      </div>
 
-      <list-of-lists
-        :name="'list'"
-        :smallTextPre="'Optional Pre-text'"
-        :bigText="'Optional title of the list'"
-				:smallTextSub="'Optional Sub-text'"
-        :lists="servicesList"
-        :levelOneImg="true"
-        :levelTwoImg="false">
-      </list-of-lists>
+        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
+
+        <list-of-lists
+          :name="'list'"
+          :lists="servicesList"
+          :levelOneImg="true"
+          :levelTwoImg="false">
+        </list-of-lists>
+
+      </div>
 
 
     </section>
@@ -378,9 +384,6 @@
           :levels="1"
           :show-images="false"
           :name="'header'"
-          :smallTextPre="''"
-          :bigText="''"
-          :smallTextSub="''"
           :lists="menu"
           :mode="'header'">
         </menu-component>
@@ -398,9 +401,6 @@
           :levels="2"
           :show-images="false"
           :name="'header'"
-          :smallTextPre="''"
-          :bigText="''"
-          :smallTextSub="''"
           :lists="menu"
           :mode="'header'">
         </menu-component>
@@ -418,9 +418,6 @@
           :levels="2"
           :show-images="false"
           :name="'header'"
-          :smallTextPre="''"
-          :bigText="''"
-          :smallTextSub="''"
           :lists="menu"
           :mode="'footer'">
         </menu-component>
@@ -448,6 +445,7 @@
     <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
 
   </div>
+</div>
 </template>
 
 <script>
@@ -1108,8 +1106,6 @@ $border-gray: #f1f1f1;
   }
   //sections general styles
   section{
-    @include make-container();
-    margin: 0 auto;
     @include pt(6);
     @include pb(6);
   }
@@ -1183,13 +1179,6 @@ $border-gray: #f1f1f1;
     }
   }
 
-
-  .hero-section{
-    background: $light-gray;
-    @include pt(6);
-    @include pb(6);
-  }
-
   .typography-section {
     .bg{
       &:nth-child(odd){
@@ -1203,7 +1192,7 @@ $border-gray: #f1f1f1;
 
   #forkMe {
     top: 3em;
-    right: -6em;
+    left: -6em;
     color: #fff;
     display: block;
     position: fixed;
@@ -1214,7 +1203,7 @@ $border-gray: #f1f1f1;
     padding: 0.5em 5em 0.4em 5em;
     //text-shadow: 0 0 0.75em #444;
     box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
-    transform: rotate(45deg) scale(0.75,1);
+    transform: rotate(-45deg) scale(0.75,1);
     font: bold 16px/1.2em Arial, Sans-Serif;
     z-index:9999999999999;
     &:before {
@@ -1232,7 +1221,12 @@ $border-gray: #f1f1f1;
       background: orangered;
     }
   }
+}
 
-
+.hero-section{
+  @include make-container();
+  background: $light-gray;
+  @include pt(3);
+  @include pb(3);
 }
 </style>

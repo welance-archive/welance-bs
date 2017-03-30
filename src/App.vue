@@ -12,9 +12,6 @@
         :levels="1"
         :show-images="false"
         :name="'header'"
-        :smallTextPre="''"
-        :bigText="''"
-        :smallTextSub="''"
         :lists="menu"
         :mode="'header'">
       </menu-component>
@@ -35,9 +32,6 @@
             :levels="1"
             :show-images="false"
             :name="'header'"
-            :smallTextPre="''"
-            :bigText="''"
-            :smallTextSub="''"
             :lists="menu"
             :mode="'header'">
           </menu-component>
@@ -57,9 +51,6 @@
       <menu-component slot="row-0"
         :show-images="false"
         :name="'footer'"
-        :smallTextPre="''"
-        :bigText="''"
-        :smallTextSub="''"
         :lists="menu"
         :mode="'footer'">
       </menu-component>
@@ -301,6 +292,7 @@ export default {
   }
   .header{
     background: #f3f3f3;
+    @include m(0);
 
     .header__col--logo{
       //order: 0;

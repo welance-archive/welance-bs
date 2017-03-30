@@ -1,10 +1,5 @@
 <template>
   <div class="logo-list" :class="'logo-list-' + name">
-      <quote  :name="name"
-              :small-text-pre="smallTextPre"
-              :big-text="bigText"
-              :small-text-sub="smallTextSub"
-      ></quote>
       <div class="logo-list__col">
         <gallery  :name="name"
                   :images="logos"
@@ -26,10 +21,7 @@ export default {
   },
   props: [
     'name',
-    'logos',
-    'smallTextPre',
-    'bigText',
-    'smallTextSub'
+    'logos'
   ],
   data () {
     return{}

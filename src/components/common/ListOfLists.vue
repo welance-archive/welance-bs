@@ -1,11 +1,5 @@
 <template>
   <div class="list-of-lists" :class="'list-of-lists-' + name">
-    <quote  v-if="bigText || smallTextPre || smallTextSub"
-            :name="name"
-            :small-text-pre="smallTextPre"
-            :big-text="bigText"
-            :small-text-sub="smallTextSub"
-    ></quote>
 
     <div class="list-wrap">
       <div class="list-wrap__col" v-for="(list, indexL) in lists">
@@ -70,9 +64,6 @@ import Quote from './Quote.vue';
 export default {
     name: 'ListOfLists',
     props: [
-      'smallTextPre',
-      'bigText',
-      'smallTextSub',
       'lists',
       'name',
       'levels',
@@ -105,7 +96,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
 
-  &__list{
+  /*&__list{
   }
 
   &__list-header-img{
@@ -117,7 +108,7 @@ export default {
   }
   &__list-item{
     //border: 1px solid red;
-  }
+  }*/
 
   &__col{
 

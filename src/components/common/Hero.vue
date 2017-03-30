@@ -1,5 +1,5 @@
 <template>
-  <div class="hero" :class="'hero-' + name">
+  <div class="hero" :class="classFunction">
     <div class="hero__container">
       <div class="hero__col">
         <div class="hero__col-inner">
@@ -38,10 +38,17 @@ export default {
               'subtitle',
               'image',
               'ctaUrl',
-              'ctaText'
+              'ctaText',
+              'maxWidth'
             ],
-    data () {
-        return{}
+    computed: {
+      classFunction: function() {
+        if(this.maxWidth === true){
+          return 'hero--' + this.name + ' hero--max';
+        }else{
+          return 'hero--' + this.name;
+        }
+      }
     }
 
 };
@@ -52,8 +59,11 @@ export default {
 @import "~styles/main.scss";
 
 .hero {
-  @include make-container-max-widths();
-  margin: 0 auto;
+  &--max{
+    @include make-container-max-widths();
+    margin: 0 auto;
+  }
+  @include make-container();
 
   @include mq($until: 'sm'){
     @include make-container();
@@ -75,7 +85,7 @@ export default {
     }
   }
   &__col{
-    @include make-col-ready();
+    //@include make-col-ready();
     @include make-col(7);
 
     @include mq($until: 'md'){
@@ -105,7 +115,7 @@ export default {
     }
   }
   &__visuals{
-    @include make-col-ready();
+    //@include make-col-ready();
     @include make-col(5);
     @include mq($until: 'md'){
       @include make-col(12);

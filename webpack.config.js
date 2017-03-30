@@ -8,16 +8,19 @@ let ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
 let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 let PrerenderSpaPlugin = require('prerender-spa-plugin');
 
-const seo_routes = [ '/', '/hello' ];
+const seo_routes = [ '/', '/styles' ];
 
 const prod_plugins = [
 		//about HTML compression and CSS/JS scripts injection
+
 		new HtmlWebpackPlugin({
 			filename: "index.html",
 			template: "./index.html",
-
+      inject: 'head',                       // ensure scripts to be include in the <head>
+                                            // so pre-render-spa-plugin doesn't override it
+      chunksSortMode: 'dependency',         // Ensure chunks are evaluated in correct order
       // Optional
-      baseUrl: 'https://welance.github.io/welance-bs/',
+      baseUrl: process.env.NODE_ENV === 'gh-pages' ? '/welance-bs/' : 'http://localhost:8000/',     // ensure to have a <base> for HTML5 History API
 
 			hash: true,
 			minify:{
@@ -25,9 +28,9 @@ const prod_plugins = [
 			}
 		}),
     //adds async tag to script to load JS asynchronously
-    new ScriptExtHtmlWebpackPlugin({
+    /*new ScriptExtHtmlWebpackPlugin({
       defaultAttribute: 'async'
-    }),
+    }),*/
 		//about SASS compilation
 		new ExtractTextPlugin({
 			filename: "assets/bundle.css"
@@ -110,13 +113,13 @@ const prod_plugins = [
 
 				// Wait until a specific element is detected with
 				// document.querySelector.
-				//**** captureAfterElementExists: '#content',
+				captureAfterElementExists: '#app',
 
 				// Wait until a number of milliseconds has passed after scripts
 				// have been executed. It's important to note that this may
 				// produce unreliable results when relying on network
 				// communication or other operations with highly variable timing.
-				captureAfterTime: 3000,
+				captureAfterTime: 1500,
 
 				// NOTE: You can even combine strategies if you like. For example,
 				// if you only _sometimes_ want to wait for an event to fire, you
@@ -232,7 +235,7 @@ const dev_plugins = [
 		})
 	];
 
-const plugins = process.env.NODE_ENV === 'prod' ? prod_plugins : dev_plugins;
+const plugins = (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'gh-pages') ? prod_plugins : dev_plugins;
 
 
 
@@ -241,7 +244,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "assets/bundle.js",
-    publicPath: ''
+    //publicPath: ''
 	},
 	devServer: {
 		historyApiFallback: true
@@ -268,9 +271,9 @@ module.exports = {
 							/*'scss': 'vue-style-loader!css-loader!sass-loader',
 							'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax',*/
 							'scss': ExtractTextPlugin.extract({
-								fallback: "style-loader",
+								fallback: "vue-style-loader",
 								use: ["css-loader", "sass-loader"],
-								publicPath: "/dist"
+								//publicPath: "/dist"
 							})
 					},
 					// other vue-loader options go here
@@ -286,9 +289,9 @@ module.exports = {
 			{
 				test: /\.scss$/,
 				use: ExtractTextPlugin.extract({
-					fallback: "style-loader",
+					fallback: "vue-style-loader",
 					use: ["css-loader", "sass-loader"],
-					publicPath: "/dist"
+					//publicPath: "/dist"
 				})
 			},
       {

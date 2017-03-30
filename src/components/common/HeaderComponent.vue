@@ -58,15 +58,12 @@ export default {
   }
 
   &__row{
-    @include make-row();
-    @include m(0);
+    @include make-row-no-gutters();
+    margin: 0;
   }
 
   &__col{
-    @include mq($from: 'sm'){
-      @include make-col-ready();
-    }
-
+    @include make-col-ready();
     &--logo{
       @include make-col(2);
     }

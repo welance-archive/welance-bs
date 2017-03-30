@@ -7464,14 +7464,14 @@
     },
     "vue-style-loader": {
       "version": "2.0.3",
-      "from": "vue-style-loader@>=2.0.0 <3.0.0",
+      "from": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-2.0.3.tgz",
       "resolved": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-2.0.3.tgz",
       "dev": true,
       "dependencies": {
         "loader-utils": {
-          "version": "1.0.3",
+          "version": "1.1.0",
           "from": "loader-utils@>=1.0.2 <2.0.0",
-          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.3.tgz",
+          "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.1.0.tgz",
           "dev": true
         }
       }

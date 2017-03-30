@@ -91,8 +91,6 @@ export default {
 @import "~styles/main.scss";
 
 .menu {
-  //@include make-container-max-widths();
-  //margin: 0 auto;
   height: 100%;
   display: flex;
 }

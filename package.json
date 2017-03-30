@@ -5,9 +5,10 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV='dev' webpack-dev-server -d --host 0.0.0.0 --open",
-    "prod": "NODE_ENV='prod' webpack -p --optimize-minimize",
-    "deploy": "gh-pages -d dist"
+    "dev": "NODE_ENV='dev' env UV_THREADPOOL_SIZE=100 webpack-dev-server -d --host 0.0.0.0 --open",
+    "prod": "NODE_ENV='prod' env UV_THREADPOOL_SIZE=100  webpack -p --optimize-minimize",
+    "deploy": "gh-pages -d dist",
+    "ghpages": "NODE_ENV='gh-pages' env UV_THREADPOOL_SIZE=100 webpack -p --optimize-minimize && npm run deploy"
   },
   "repository": {
     "type": "git",
@@ -44,6 +45,7 @@
     "script-ext-html-webpack-plugin": "^1.7.1",
     "style-loader": "^0.13.2",
     "vue-loader": "^11.1.4",
+    "vue-style-loader": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-2.0.3.tgz",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.2"
