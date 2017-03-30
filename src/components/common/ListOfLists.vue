@@ -96,7 +96,7 @@ export default {
   display: flex;
   flex-flow: row wrap;
 
-  /*&__list{
+  &__list{
   }
 
   &__list-header-img{
@@ -104,11 +104,12 @@ export default {
   }
 
   &__list-title{
+    @include pt(3);
     //display: none;
   }
   &__list-item{
     //border: 1px solid red;
-  }*/
+  }
 
   &__col{
 
@@ -124,8 +125,8 @@ export default {
         @include make-col(6);
     }
     @include mq($until: 'sm'){
-      @include pl(3);
-      @include pr(3);
+      @include pl(1);
+      @include pr(1);
       @include make-col(12);
       text-align: center;
     }

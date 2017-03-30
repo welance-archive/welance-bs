@@ -1,5 +1,5 @@
 <template>
-  <div class="menu" :class="'menu-' + name">
+  <div class="menu" :class="['menu-' + name, 'menu-' + mode]">
     <nav class="menu-wrap" :class="'menu-wrap--' + mode">
       <ul class="menu-wrap__col" v-for="(list, indexL) in lists">
 
@@ -137,7 +137,17 @@ export default {
       @include mr(3);
     }
 
+    .menu-wrap__menu-title{
+      font-weight: bold;
+    }
+
     .menu-wrap__col{
+      @include mq($from: 'md'){
+        @include make-col-ready();
+        @include make-col(3);
+        align-self: flex-start;
+      }
+
       @include mq($until: 'md'){
         width: 100%;
         text-align: center;
