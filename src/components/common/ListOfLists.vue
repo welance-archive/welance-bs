@@ -112,7 +112,7 @@ export default {
 
   &__col{
 
-    //@include make-col-ready();
+    @include make-col-ready();
     @include make-col(3);
     @include mb(4);
 
