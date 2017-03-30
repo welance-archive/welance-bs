@@ -8,6 +8,7 @@
       :menu="menu">
 
       <span slot="extra"></span>
+
       <menu-component slot="menu"
         :levels="1"
         :show-images="false"

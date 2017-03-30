@@ -1,6 +1,13 @@
 <template>
   <div class="menu" :class="['menu-' + name, 'menu-' + mode]">
-    <nav class="menu-wrap" :class="'menu-wrap--' + mode">
+
+    <div v-if="mode === 'header'" class="menu-hamburger" @click="mobileMenuOpen ? mobileMenuOpen=false : mobileMenuOpen=true" :class="mobileMenuOpen ? 'menu-hamburger--open' : ''">
+      <span class="menu-hamburger__line"></span>
+      <span class="menu-hamburger__line"></span>
+      <span class="menu-hamburger__line"></span>
+    </div>
+
+    <nav class="menu-wrap" :class="['menu-wrap--' + mode, mobileMenuOpen ? 'menu-wrap--header--open' : '']">
       <ul class="menu-wrap__col" v-for="(list, indexL) in lists">
 
         <template v-if="list.url">
@@ -81,7 +88,9 @@ export default {
       Quote
     },
     data () {
-        return{}
+        return{
+          mobileMenuOpen : false
+        }
     }
 };
 </script>
@@ -93,6 +102,55 @@ export default {
 .menu {
   height: 100%;
   display: flex;
+
+  .menu-hamburger {
+    @include mq($until: 'md'){
+      opacity: 1;
+      transition: .5s ease-in-out;
+    }
+    transition: .5s ease-in-out;
+    opacity: 0;
+    z-index: 10;
+    width: 4.125em;
+    height: 4em;
+    position: absolute;
+    right: 1em;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+
+    &__line {
+      display: block;
+      position: absolute;
+      height: .5em;
+      width: 100%;
+      background: $brand-primary;
+      opacity: 1;
+      left: 0;
+      transform: rotate(0deg);
+      transition: .25s ease-in-out;
+
+      &:nth-child(1) { top: .625em; }
+      &:nth-child(2) { top: 1.8em; }
+      &:nth-child(3) { top: 3em; }
+    }
+    &--open {
+      .menu-hamburger__line {
+        &:nth-child(1) {
+          top: 1.825em;
+          transform: rotate(135deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+          left: -5em;
+        }
+        &:nth-child(3) {
+          top: 1.825em;
+          transform: rotate(-135deg);
+        }
+      }
+    }
+  }
 }
 
 .menu-wrap{
@@ -126,7 +184,29 @@ export default {
   }
 
   &--header{
+    @include mq($until: 'md'){
+      flex-flow: column wrap;
+      height: 100vh;
+      width: 100vw;
+      text-align: center;
+      justify-content: space-around;
+      position: fixed;
+      z-index: 2;
+      left: 0;
+      opacity: 0;
+      display: none;
+      transition: .5s ease-in-out;
+      font-size: 2em;
+      z-index: 9;
+      top: 0;
+    }
 
+    &--open{
+      opacity: 1;
+      display: flex;
+      background: $white;
+      transition: .5s ease-in-out;
+    }
   }
 
   &--footer{
