@@ -1,5 +1,5 @@
 {
-  "name": "welance-bs",
+  "name": "@welance/welance-bs",
   "version": "0.2.0",
   "description": "Welanstrap – Welance Bootstrap build with SASS and VueJS",
   "main": "index.html",
