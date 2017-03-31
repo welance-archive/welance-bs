@@ -1205,7 +1205,7 @@ $border-gray: #f1f1f1;
     box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
     transform: rotate(-45deg) scale(0.75,1);
     font: bold 16px/1.2em Arial, Sans-Serif;
-    z-index:9999999999999;
+    z-index: $z-super-top;
     &:before {
       content: '';
       top: 0;

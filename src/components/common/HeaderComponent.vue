@@ -65,7 +65,7 @@ export default {
   &__col{
     @include make-col-ready();
     &--logo{
-      z-index: 9;
+      z-index: $z-top;
       @include make-col(2);
     }
     &--extra{

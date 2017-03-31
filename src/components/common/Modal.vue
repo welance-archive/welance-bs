@@ -61,7 +61,7 @@ export default {
 .modal{
   &__mask{
     position: fixed;
-    z-index: 9998;
+    z-index: $z-super-top;
     top: 0;
     left: 0;
     width: 100vw;
@@ -78,7 +78,7 @@ export default {
 		align-items: flex-start;
   	justify-content: center;
 
-    z-index: 9998;
+    z-index: $z-super-top;
     top: 0;
     left: 0;
     height: 100vh;

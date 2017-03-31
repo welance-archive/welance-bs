@@ -110,8 +110,8 @@ export default {
     }
     transition: .5s ease-in-out;
     opacity: 0;
-    z-index: 10;
-    width: 4.125em;
+    z-index: $z-super-top;
+    width: 2em;
     height: 4em;
     position: absolute;
     right: 1em;
@@ -122,7 +122,7 @@ export default {
     &__line {
       display: block;
       position: absolute;
-      height: .5em;
+      height: .2em;
       width: 100%;
       background: $brand-primary;
       opacity: 1;
@@ -130,9 +130,9 @@ export default {
       transform: rotate(0deg);
       transition: .25s ease-in-out;
 
-      &:nth-child(1) { top: .625em; }
-      &:nth-child(2) { top: 1.8em; }
-      &:nth-child(3) { top: 3em; }
+      &:nth-child(1) { top: 1.5em; }
+      &:nth-child(2) { top: 2.05em; }
+      &:nth-child(3) { top: 2.625em; }
     }
     &--open {
       .menu-hamburger__line {
@@ -191,21 +191,26 @@ export default {
       text-align: center;
       justify-content: space-around;
       position: fixed;
-      z-index: 2;
       left: 0;
       opacity: 0;
-      display: none;
-      transition: .5s ease-in-out;
-      font-size: 2em;
-      z-index: 9;
+      visibility: hidden;
+      z-index: $z-top;
       top: 0;
+      transition: .2s ease-in-out;
+      ul{
+        font-size: 1.2rem;
+        ul{
+          font-size: 1rem;
+        }
+      }
     }
 
     &--open{
       opacity: 1;
+      visibility: visible;
       display: flex;
       background: $white;
-      transition: .5s ease-in-out;
+      transition: .2s ease-in-out;
     }
   }
 

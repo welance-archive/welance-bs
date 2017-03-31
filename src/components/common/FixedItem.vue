@@ -54,7 +54,7 @@ export default {
     left: 0;
     right: 0;
     transition: all .2s ease;
-    z-index: 99999999999999999999;
+    z-index: $z-top;
     background: rgba(255,255,255,.8);
     opacity: 1;
   }
