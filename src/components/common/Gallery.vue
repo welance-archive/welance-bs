@@ -104,14 +104,14 @@ export default {
       }
 
       @include mq($from: 'xs'){
-        @include ml(2);
-        @include mr(2);
+        @include ml(1);
+        @include mr(1);
         flex-flow: row wrap;
         justify-content: space-between;
         .img{
           @include flexembed-image(100%, null, 10rem); //lg: 540px,
           @include m(0);
-          @include mb(3);
+          @include mb(1);
           &__text-container{
             display: none;
           }
@@ -119,14 +119,14 @@ export default {
       }
 
       @include mq($from: 'sm'){
-        @include ml(2);
-        @include mr(2);
+        @include ml(1);
+        @include mr(1);
         flex-flow: row wrap;
         justify-content: space-between;
         .img{
           @include flexembed-image(100%, null, 8rem); //lg: 540px,
           @include m(0);
-          @include mb(3);
+          @include mb(1);
           &__text-container{
             display: none;
           }
@@ -134,14 +134,14 @@ export default {
       }
 
       @include mq($from: 'md'){
-        @include ml(2);
-        @include mr(2);
+        @include ml(1);
+        @include mr(1);
         justify-content: center;
         .img{
           @include flexembed-image(100%, null, 10rem); //lg: 720px,
           @include m(0);
-          @include ml(2);
-          @include mb(2);
+          @include ml(1);
+          @include mb(1);
           &__text-container{
             display: none;
           }
@@ -149,11 +149,13 @@ export default {
       }
 
       @include mq($from: 'lg'){
+        flex-flow: row wrap;
+        justify-content: flex-start;
         .img{
           @include flexembed-image(100%, null, 13.7rem); //lg: 960px,
           @include m(0);
-          @include ml(2);
-          @include mb(2);
+          @include ml(1);
+          @include mb(1);
           &__text-container{
             display: none;
           }
@@ -164,8 +166,8 @@ export default {
         .img{
           @include flexembed-image(100%, null, 16.55rem); //xl: 1140px,
           @include m(0);
-          @include ml(2);
-          @include mb(2);
+          @include ml(1);
+          @include mb(1);
           &__text-container{
             display: none;
           }
@@ -175,8 +177,8 @@ export default {
         .img{
           @include flexembed-image(100%, null, 22.7rem); //xxl: 1560px
           @include m(0);
-          @include ml(3);
-          @include mb(3);
+          @include ml(1);
+          @include mb(1);
           &__text-container{
             display: none;
           }
@@ -240,7 +242,7 @@ export default {
 
       @include mq($until: 'md'){
         flex-flow: column wrap;
-        @include m(2);
+        @include m(1);
         //@include ml(0);
         .img{
           @include m(0);
