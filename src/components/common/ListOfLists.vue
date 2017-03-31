@@ -112,23 +112,65 @@ export default {
   }
 
   &__col{
-
     @include make-col-ready();
-    @include make-col(3);
-    @include mb(4);
+
+    @include mq($from: 'lg'){
+      @include make-col(3);
+      @include mb(2);
+      &:first-child, &:nth-child(4n+1){
+        //@include pl(0);
+        // background: red;
+        .list-wrap__list-header-img{
+          margin-left: -.9rem;
+          margin-right: -.8rem;
+        }
+      }
+      &:nth-child(4n-1), &:nth-child(2n+2){
+        //@include pr(0);
+        // background: rebeccapurple;
+        .list-wrap__list-header-img{
+          margin-left: -.8rem;
+          margin-right: -.8rem;
+        }
+      }
+      &:nth-child(4n){
+        //@include pr(0);
+        // background: green;
+        .list-wrap__list-header-img{
+          margin-left: -.8rem;
+          margin-right: -1rem;
+        }
+      }
+    }
 
     @include mq($until: 'lg'){
-        @include make-col(4);
+      @include make-col(6);
+      @include mb(2);
+      text-align: center;
+
+      &:first-child, &:nth-child(2n+1){
+        //@include pl(0);
+        //background: red;
+        .list-wrap__list-header-img{
+          margin-left: -1rem;
+          margin-right: -.8rem;
+        }
+      }
+      &:nth-child(2n+2){
+        //@include pr(0);
+        //background: green;
+        .list-wrap__list-header-img{
+          margin-left: -.8rem;
+          margin-right: -1rem;
+        }
+      }
     }
 
-    @include mq($until: 'md'){
-        @include make-col(6);
-    }
     @include mq($until: 'sm'){
-      @include pl(1);
-      @include pr(1);
+      // @include pl(2);
+      // @include pr(2);
       @include make-col(12);
-      text-align: center;
+
     }
   }
 };

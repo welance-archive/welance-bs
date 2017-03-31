@@ -691,6 +691,328 @@ export default {
               }
             }
           ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
+        },
+        {
+          title: 'Something Else',
+          url: '',
+          extUrl: '',
+          extUrlTarget: '_blank',
+          image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+          },
+          items: [
+            {
+              title: 'Something Else 1',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 2',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            },
+            {
+              title: 'Something Else 3',
+              url: '/',
+              extUrl: '',
+              extUrlTarget: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
         }
       ],
 
