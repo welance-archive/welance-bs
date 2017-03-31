@@ -1,5 +1,5 @@
 <template>
-  <div class="gallery-wrapper" :class="'gallery-' + name">
+  <div class="gallery-wrapper" :class="['gallery-' + name, galleryTypeClass]">
     <div class="gallery">
       <div class="gallery__container" :class="galleryTypeClass">
         <template v-for="image in images">
@@ -63,6 +63,9 @@ export default {
   //background: red;
   overflow: hidden;
   height: auto;
+  &.gallery__container--off-canvas{
+    overflow: visible;
+  }
 }
 
 .gallery {
@@ -101,8 +104,8 @@ export default {
       }
 
       @include mq($from: 'xs'){
-        @include ml(3);
-        @include mr(3);
+        @include ml(2);
+        @include mr(2);
         flex-flow: row wrap;
         justify-content: space-between;
         .img{
@@ -187,12 +190,18 @@ export default {
     // T.B.D with @nano
     //
     &--blocky{
-      @include make-row();
-      padding: .5vw;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: flex-start;
+      align-content: center;
 
       .img{
+        align-self: flex-start;
         flex: auto;
-        margin: .5vw;
+        @include p(2);
+        @include ml(2);
+        @include mr(2);
+        @include mb(2);
       }
     }
 
@@ -212,7 +221,7 @@ export default {
 
       .img{
         align-self: center;
-        @include m(3);
+        @include m(2);
 
         &:last-child{
           @include mr(0);
@@ -231,11 +240,11 @@ export default {
 
       @include mq($until: 'md'){
         flex-flow: column wrap;
-        @include m(3);
+        @include m(2);
         //@include ml(0);
         .img{
           @include m(0);
-          @include mt(3);
+          @include mt(2);
 
           &:last-child{
             @include mb(0);
@@ -246,7 +255,7 @@ export default {
         }
       }
       @include mq($until: 'xs'){
-        @include m(3);
+        @include m(2);
         @include ml(0);
       }
     }
