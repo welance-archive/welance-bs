@@ -1,0 +1,22 @@
+// INFO:
+// The folder structure of this project follows
+// Hugo Giraudel suggested SASS scaffolding
+// Read more: https://www.sitepoint.com/architecture-sass-project/
+
+//Imports all the SASS files that do no print classes and/or CSS
+
+@import "~sass-spacing/mixins";             // spacing mixin
+@import '~modularscale-sass/stylesheets/modular-scale';   // Modular Scale mixin
+@import "welanstrap/helpers/variables";     // Projects Variables
+@import "~sass-mq/mq";                      // Media Queries mixin
+@import "welanstrap/helpers/mixins";        // Project's Mixins
+@import "welanstrap/layout/grid";           // Grids Mixins (row, col, etc.)
+
+//Imports all the SASS files that print classes and/or CSS
+
+@import "welanstrap/components/images";     // Images Ratio mixins / helper classes  – NOTE: prints CSS
+@import "welanstrap/base/hover";            // Twitter Bootstrap Hover  – NOTE: prints CSS
+@import "welanstrap/base/normalise";        // Normalise  – NOTE: prints CSS
+@import "welanstrap/base/typography";       // Typography (headings, etc.) – NOTE: prints CSS
+@import "welanstrap/components/buttons";    // Buttons mixins / helper classes – NOTE: prints CSS
+@import "welanstrap/components/lists";      // Lists mixins / helper classes – NOTE: prints CSS

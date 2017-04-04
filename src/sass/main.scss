@@ -1,5 +1,8 @@
-//spacing mixin
-@import "~sass-spacing/mixins";
+//Imports all the SASS files that print classes and/or CSS
 
-// SASS framework
-@import "./welanstrap/welanstrap";
+@import "welanstrap/components/images";     // Images Ratio mixins / helper classes  – NOTE: prints CSS
+@import "welanstrap/base/hover";            // Twitter Bootstrap Hover  – NOTE: prints CSS
+@import "welanstrap/base/normalise";        // Normalise  – NOTE: prints CSS
+@import "welanstrap/base/typography";       // Typography (headings, etc.) – NOTE: prints CSS
+@import "welanstrap/components/buttons";    // Buttons mixins / helper classes – NOTE: prints CSS
+@import "welanstrap/components/lists";      // Lists mixins / helper classes – NOTE: prints CSS

@@ -1388,7 +1388,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "./src/sass/main.scss";
+@import "./src/sass/main-sass-only.scss";
 
 $light-gray:  #f3f3f3;
 $border-gray: #f1f1f1;

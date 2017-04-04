@@ -1,4 +1,4 @@
-const css = require("./sass/main.scss"); //webpack-dev
+//const css = require("./sass/welanstrap.scss"); //webpack-dev
 
 import Vue from 'vue';
 import App from './App.vue';

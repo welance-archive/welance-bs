@@ -285,7 +285,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import "./src/sass/main.scss";
+@import "./src/sass/welanstrap.scss";
 
 .app{
   &--no-overflow{
