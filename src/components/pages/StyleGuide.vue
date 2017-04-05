@@ -12,6 +12,33 @@
       :small-text-sub="'Default styles and VueJS components of the Welance Bootstrapm –visualised.'">
     </quote>
 
+    <div class="wrap">
+      <div class="row">
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
+      </div>
+      <br/><br/>
+      <div class="row">
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
+      </div>
+    </div>
+
     <hr/>
 
     <!-- ––––––––––––––––––––––––––––––––––––––- COLORS -->
@@ -1392,6 +1419,10 @@ export default {
 
 $light-gray:  #f3f3f3;
 $border-gray: #f1f1f1;
+
+.col{
+  background: rgba(150,150,255,.2);
+}
 
 .styles{
   @include make-container-max-widths();

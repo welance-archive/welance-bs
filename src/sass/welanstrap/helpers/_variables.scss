@@ -85,12 +85,12 @@ $body-bg:             white !default; // 2
 
 
 $mq-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1680px
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1680px
 ) !default;
 @include _assert-ascending($mq-breakpoints, "$mq-breakpoints");
 @include _assert-starts-at-zero($mq-breakpoints);
@@ -99,13 +99,14 @@ $mq-breakpoints: (
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
+$container-max-width:100%;
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1560px
+  'sm': 540px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+  'xxl': 1560px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -117,14 +118,20 @@ $container-max-widths: (
 $grid-columns:               12 !default;
 $grid-gutter-width-base:     30px !default;
 $grid-gutter-widths: (
-  xs: $grid-gutter-width-base,
-  sm: $grid-gutter-width-base,
-  md: $grid-gutter-width-base,
-  lg: $grid-gutter-width-base,
-  xl: $grid-gutter-width-base,
-  xxl: $grid-gutter-width-base
+  'xs': $grid-gutter-width-base,
+  'sm': $grid-gutter-width-base,
+  'md': $grid-gutter-width-base,
+  'lg': $grid-gutter-width-base,
+  'xl': $grid-gutter-width-base,
+  'xxl': $grid-gutter-width-base
 ) !default;
 
+
+// this is a variable used to name the auto generated columns
+$im-columns-class: '.col' !default;
+
+// this is a list of grids to create
+$grids: (1, 5, 7, 8, 12);
 
 
 //debug breakpoints (override it with $mq-show-breakpoints: ();)
