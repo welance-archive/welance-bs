@@ -1,6 +1,9 @@
 //define general wrap (container) rules
 .wrap{
   @include make-container();
+  &--contained{
+    @include make-container-max-widths();
+  }
 }
 
 //define general row rules
