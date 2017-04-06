@@ -54,7 +54,6 @@ pre{
   @include m(0);
   @include mt(1);
   @include mb(1);
-  @include p(0);
-  font-weight: bold;
+  @include p(2);
   background-color: $gray-lightest;
 }
