@@ -22,7 +22,7 @@
 
       <div class="row">
         <p class="col col--12-12">
-          You can generate as many grids as your project requires by simple changing the variable <strong>$grids</strong><br/>
+          You can generate as many grids as your project requires by simple changing the SASS variable <strong>$grids</strong><br/>
           Eg.:
           <pre> $grids: (1, 5, 7, 8, 12);</pre>
           Will generate 5 grids helper classes for 1, 5, 7, 8 and 12 columns grid andding helpers that you can use like:
@@ -69,7 +69,7 @@
           :name="'colors'"
           :small-text-pre="''"
           :big-text="'Colors'"
-          :small-text-sub="'Actual Colors'">
+          :small-text-sub="'SASS Color variables'">
         </quote>
 
         <div class="row">
@@ -177,23 +177,25 @@
           :small-text-sub="'A quick presentation of the headings and text styles available'">
         </quote>
 
-        <hr/>
         <div class="row">
-          <h1 class="bg col-12" v-html="'–H1 ' + msg + ' –H1'"></h1>
-          <h2 class="bg col-12" v-html="'–H2 ' + msg + ' –H2'"></h2>
-          <h3 class="bg col-12" v-html="'–H3 ' + msg + ' –H3'"></h3>
-          <h4 class="bg col-12" v-html="'–H4 ' + msg + ' –H4'"></h4>
-          <h5 class="bg col-12" v-html="'–H5 ' + msg + ' –H5'"></h5>
-          <h6 class="bg col-12" v-html="'–H6 ' + msg + ' –H6'"></h6>
-          <p class="bg col-12" v-html="paragraph"></p>
-          <p class="bg col-12" v-html="paragraph"></p>
+          <h1 class="lines col col--12-12" v-html="'–H1 ' + msg + ' –H1'"></h1>
+          <h2 class="lines col col--12-12" v-html="'–H2 ' + msg + ' –H2'"></h2>
+          <h3 class="lines col col--12-12" v-html="'–H3 ' + msg + ' –H3'"></h3>
+          <h4 class="lines col col--12-12" v-html="'–H4 ' + msg + ' –H4'"></h4>
+          <h5 class="lines col col--12-12" v-html="'–H5 ' + msg + ' –H5'"></h5>
+          <h6 class="lines col col--12-12" v-html="'–H6 ' + msg + ' –H6'"></h6>
+        </div>
+        <br><br>
+        <div class="row">
+          <p class="lines col col--12-12" v-html="paragraph"></p>
+          <p class="lines col col--12-12" v-html="paragraph"></p>
 
-          <p class="bg col-3" v-html="paragraph"></p>
-          <p class="bg col-3" v-html="paragraph"></p>
-          <p class="bg col-3" v-html="paragraph"></p>
+          <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
+          <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
+          <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
 
-          <p class="bg col-2" v-html="paragraph"></p>
-          <p class="bg col-2" v-html="paragraph"></p>
+          <p class="lines col col--6-12@md col--6-12@sm col--12-12@xs" v-html="paragraph"></p>
+          <p class="lines col col--6-12@md col--6-12@sm col--12-12@xs" v-html="paragraph"></p>
         </div>
 
 
@@ -565,7 +567,7 @@ export default {
   created () {},
   data () {
     return {
-      msg: "This is a new line with <a href=\"#\">simply</a> the letter 'g' in it.",
+      msg: "This letter 'qjg' gos on a new line so you can <a href=\"#\">simply</a> check the letter 'g'",
       paragraph: "Lorem Ipsum <a href=\"#\">is simply dummy</a> text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
       alphabet: " ABCDEFGHIJKLMNOPQRSTUVWXYZ <br/> abcdefghijklmnopqrstuvwxyz <br/> 0123456789",
 
@@ -1549,7 +1551,7 @@ $border-gray: #f1f1f1;
   }
 
   .typography-section {
-    .bg{
+    .lines{
       &:nth-child(odd){
         border-bottom: 1px solid deepskyblue;
         border-top: 1px solid deepskyblue;

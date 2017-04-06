@@ -1,7 +1,7 @@
 <template>
   <div class="quote" :class="'quote-' + name">
-    <div class="quote__row row">
-      <div class="quote__col col">
+    <div class="row quote__row">
+      <div class="col quote__col">
 
         <template v-if="type==='main'">
           <h4 v-if="smallTextPre" v-html="smallTextPre"></h4>
@@ -68,10 +68,6 @@ export default {
     @include mb(4);
     @include mt(4);
 
-    @include mq($until: 'sm'){
-      @include pl(3);
-      @include pr(3);
-    }
   }
 };
 
