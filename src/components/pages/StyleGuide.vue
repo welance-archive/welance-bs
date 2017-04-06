@@ -1,7 +1,6 @@
 <template>
 <div>
-  <div class="styles">
-
+  <div class="wrap wrap--contained styles">
     <a id="forkMe" href="https://github.com/welance/welance-bs">Fork - GitHub</a>
 
     <quote
@@ -12,34 +11,57 @@
       :small-text-sub="'Default styles and VueJS components of the Welance Bootstrapm –visualised.'">
     </quote>
 
-    <div class="wrap">
-      <div class="row">
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-        <div class="col col--1-12 col--1-1@sm">col-1-12 cia</div>
-      </div>
-      <br/><br/>
-      <div class="row">
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-        <div class="col col--1-7 col--1-1@sm">col-1-7 cia</div>
-      </div>
-    </div>
+    <section class="grid-section">
 
-    <hr/>
+      <quote
+        :name="'grid'"
+        :small-text-pre="''"
+        :big-text="'Grid System'"
+        :small-text-sub="'Helper Classes'">
+      </quote>
+
+      <div class="wrap">
+        <div class="row">
+          <p class="col col--12-12">
+            You can generate as many grids as your project requires by simple changing the variable <strong>$grids</strong><br/>
+            Eg.:
+            <pre> $grids: (1, 5, 7, 8, 12);</pre>
+            Will generate 5 grids helper classes for 1, 5, 7, 8 and 12 columns grid andding helpers that you can use like:
+            <pre> class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"</pre>
+            applied to 12 elements would generate this:
+          </p>
+        </div>
+        <div class="row row-example">
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        </div>
+        <div class="row">
+          <p class="col col--12-12">
+            And obsviously you can mix them up!
+            <pre> class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs"</pre>
+            applied to 5 elements would generate this:
+          </p>
+        </div>
+        <div class="row row-example">
+          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
+          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
+          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
+          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
+          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
+        </div>
+      </div>
+    </section>
+    <!-- ––––––––––––––––––––––––––––––––––––––- END GRID -->
 
     <!-- ––––––––––––––––––––––––––––––––––––––- COLORS -->
     <section class="colors-section">
@@ -471,7 +493,7 @@
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
 
-  </div>
+  </div> <!-- /.wrap .styles -->
 </div>
 </template>
 
@@ -1421,38 +1443,17 @@ $light-gray:  #f3f3f3;
 $border-gray: #f1f1f1;
 
 .styles{
-  @include make-container-max-widths();
-  margin: 0 auto;
 
-  .row{
-    // display: flex;
-    // flex-wrap: wrap;
-    @include make-row-no-gutters();
+  .row-example{
+    @include mt(2);
+    @include mb(4);
+  }
+  .col-example{
+    background: rgba(60,60,255,.4);
+    min-height: 60px;
+    color: rgba(60,60,255,1);
   }
 
-  .col-12{
-    @include make-col-ready();
-    @include make-col(12);
-  }
-  .col-3{
-    @include make-col-ready();
-    @include make-col(4);
-    text-align: justify;
-
-    @include mq($until: 'md'){
-      @include make-col(12);
-      text-align: left;
-    }
-  }
-  .col-2{
-    @include make-col-ready();
-    @include make-col(6);
-    text-align: justify;
-    @include mq($until: 'md'){
-      @include make-col(12);
-      text-align: left;
-    }
-  }
   //sections general styles
   section{
     @include pt(6);

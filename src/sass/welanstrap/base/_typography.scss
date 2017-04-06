@@ -49,3 +49,12 @@ p{
     line-height: $line-height-big;
     letter-spacing: .0125em;
 }
+
+pre{
+  @include m(0);
+  @include mt(1);
+  @include mb(1);
+  @include p(0);
+  font-weight: bold;
+  background-color: $gray-lightest;
+}
