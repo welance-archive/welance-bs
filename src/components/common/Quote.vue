@@ -1,7 +1,7 @@
 <template>
   <div class="quote" :class="'quote-' + name">
-    <div class="quote__container">
-      <div class="quote__col">
+    <div class="quote__row row">
+      <div class="quote__col col">
 
         <template v-if="type==='main'">
           <h4 v-if="smallTextPre" v-html="smallTextPre"></h4>
@@ -57,15 +57,8 @@ export default {
 @import "./src/sass/main-sass-only.scss";
 
 .quote {
-  @include make-container();
-  width: 100%;
-
-  &__container{
-    @include make-row();
-  }
 
   &__col{
-    @include make-col-ready();
     @include make-col(10);
 
     @include mq($until: 'xl'){

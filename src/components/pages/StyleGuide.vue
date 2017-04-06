@@ -20,46 +20,45 @@
         :small-text-sub="'Helper Classes'">
       </quote>
 
-      <div class="wrap">
-        <div class="row">
-          <p class="col col--12-12">
-            You can generate as many grids as your project requires by simple changing the variable <strong>$grids</strong><br/>
-            Eg.:
-            <pre> $grids: (1, 5, 7, 8, 12);</pre>
-            Will generate 5 grids helper classes for 1, 5, 7, 8 and 12 columns grid andding helpers that you can use like:
-            <pre> class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"</pre>
-            applied to 12 elements would generate this:
-          </p>
-        </div>
-        <div class="row row-example">
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-          <div class="col-example col col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        </div>
-        <div class="row">
-          <p class="col col--12-12">
-            And obsviously you can mix them up!
-            <pre> class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs"</pre>
-            applied to 5 elements would generate this:
-          </p>
-        </div>
-        <div class="row row-example">
-          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
-          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
-          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
-          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
-          <div class="col-example col col--1-3@xl col--1-8@lg col--1-5@xs">col</div>
-        </div>
+      <div class="row">
+        <p class="col col--12-12">
+          You can generate as many grids as your project requires by simple changing the variable <strong>$grids</strong><br/>
+          Eg.:
+          <pre> $grids: (1, 5, 7, 8, 12);</pre>
+          Will generate 5 grids helper classes for 1, 5, 7, 8 and 12 columns grid andding helpers that you can use like:
+          <pre> class="col col--1-12@xl col--6-12@lg col--4-12@md col--12-12@xs"</pre>
+          applied to 12 elements would generate this (resize window to see changes):
+        </p>
       </div>
+      <div class="row row-example">
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+      </div>
+      <div class="row">
+        <p class="col col--12-12">
+          And obsviously you can mix them up!
+          <pre> class="col col--4-12@xl col--1-8@lg col--1-5@xs"</pre>
+          applied to 5 elements would generate this (resize window to see changes):
+        </p>
+      </div>
+      <div class="row row-example">
+        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+      </div>
+
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END GRID -->
 
@@ -73,30 +72,42 @@
           :small-text-sub="'Actual Colors'">
         </quote>
 
-        <div class="color-items">
-          <div class="color-item">
-            <div class="color color--primary"></div>
-            <h6><strong>$brand-primary</strong></h6>
+        <div class="row">
+          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--primary"></div>
+              <h6><strong>$brand-primary</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--success"></div>
-            <h6><strong>$brand-success</strong></h6>
+          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--success"></div>
+              <h6><strong>$brand-success</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--info"></div>
-            <h6><strong>$brand-info</strong></h6>
+          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--info"></div>
+              <h6><strong>$brand-info</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--warning"></div>
-            <h6><strong>$brand-warning</strong></h6>
+          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--warning"></div>
+              <h6><strong>$brand-warning</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--danger"></div>
-            <h6><strong>$brand-danger</strong></h6>
+          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--danger"></div>
+              <h6><strong>$brand-danger</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--inverse"></div>
-            <h6><strong>$brand-inverse</strong></h6>
+          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--inverse"></div>
+              <h6><strong>$brand-inverse</strong></h6>
+            </div>
           </div>
         </div>
 
@@ -108,35 +119,48 @@
         </quote>
 
 
-        <div class="color-items">
-          <div class="color-item">
-            <div class="color color--gray-dark"></div>
-            <h6><strong>$gray-dark</strong></h6>
+        <div class="row">
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--black"></div>
+              <h6><strong>$black</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--gray"></div>
-            <h6><strong>$gray</strong></h6>
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--gray-dark"></div>
+              <h6><strong>$gray-dark</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--gray-light"></div>
-            <h6><strong>$gray-light</strong></h6>
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--gray"></div>
+              <h6><strong>$gray</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--gray-lighter"></div>
-            <h6><strong>$gray-lighter</strong></h6>
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--gray-light"></div>
+              <h6><strong>$gray-light</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--gray-lightest"></div>
-            <h6><strong>$gray-lightest</strong></h6>
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--gray-lighter"></div>
+              <h6><strong>$gray-lighter</strong></h6>
+            </div>
           </div>
-
-          <div class="color-item">
-            <div class="color color--black"></div>
-            <h6><strong>$black</strong></h6>
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--gray-lightest"></div>
+              <h6><strong>$gray-lightest</strong></h6>
+            </div>
           </div>
-          <div class="color-item">
-            <div class="color color--white"></div>
-            <h6><strong>$white</strong></h6>
+          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+            <div class="color-item">
+              <div class="color color--white"></div>
+              <h6><strong>$white</strong></h6>
+            </div>
           </div>
         </div>
 
@@ -1447,9 +1471,11 @@ $border-gray: #f1f1f1;
   .row-example{
     @include mt(2);
     @include mb(4);
+    width: 100%;
+    margin: 0 auto;
   }
   .col-example{
-    background: rgba(60,60,255,.4);
+    border: 1px solid rgba(60,60,255,.4);
     min-height: 60px;
     color: rgba(60,60,255,1);
   }
@@ -1463,47 +1489,40 @@ $border-gray: #f1f1f1;
 
   }
   .colors-section{
-    .color-items{
-      display: flex;
-      justify-content: flex-start;
-      align-content: center;
-      flex-flow: row wrap;
 
-      .color-item{
-        text-align: center;
-        border: 1px solid $border-gray;
-        border-radius: 5px;
+    .color-item{
+      text-align: center;
+      align-self: center;
+      border: 1px solid $border-gray;
+      @include mt(2);
+      h6{
         @include mt(2);
-        @include ml(2);
-        h6{
-          @include mt(2);
-        }
       }
     }
 
     .color{
-      width: 140px;
+      width: 100%;
       height: 140px;
       background: white;
       border-radius: 5px;
       border: 1px solid $border-gray;
       &--primary{
-       background: $brand-primary;
+        background: $brand-primary;
       }
       &--success{
-       background: $brand-success;
+        background: $brand-success;
       }
       &--info{
-       background: $brand-info;
+        background: $brand-info;
       }
       &--warning{
-       background: $brand-warning;
+        background: $brand-warning;
       }
       &--danger{
-       background: $brand-danger;
+        background: $brand-danger;
       }
       &--inverse{
-       background: $brand-inverse;
+        background: $brand-inverse;
       }
       &--gray{
         background: $gray;
@@ -1515,10 +1534,10 @@ $border-gray: #f1f1f1;
         background: $gray-light;
       }
       &--gray-lighter{
-        background: $gray-light;
+        background: $gray-lighter;
       }
       &--gray-lightest{
-        background: $gray-light;
+        background: $gray-lightest;
       }
       &--white{
         background: $white;
