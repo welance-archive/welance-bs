@@ -1,7 +1,7 @@
 <template>
   <header class="header" :class="'header-' + name">
 
-    <pre v-if="debug">
+    <pre v-if="debug" class="row">
       ℹ️ HeaderComponent
 
       SLOTS:

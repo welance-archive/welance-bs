@@ -2,7 +2,7 @@
 <div>
   <div class="styles">
 
-    <a id="forkMe" href="https://github.com/welance/welance-bs">Fork me on GitHub</a>
+    <a id="forkMe" href="https://github.com/welance/welance-bs">Fork - GitHub</a>
 
     <quote
       :name="'main'"
@@ -1536,38 +1536,6 @@ $border-gray: #f1f1f1;
       }
       border-bottom: 1px solid deepskyblue;
       border-top: 1px solid deepskyblue;
-    }
-  }
-
-  #forkMe {
-    top: 3em;
-    left: -6em;
-    color: #fff;
-    display: block;
-    position: fixed;
-    text-align: center;
-    text-decoration: none;
-    letter-spacing: .06em;
-    background-color: black;
-    padding: 0.5em 5em 0.4em 5em;
-    //text-shadow: 0 0 0.75em #444;
-    box-shadow: 0 0 0.5em rgba(0,0,0,0.5);
-    transform: rotate(-45deg) scale(0.75,1);
-    font: bold 16px/1.2em Arial, Sans-Serif;
-    z-index: $z-super-top;
-    &:before {
-      content: '';
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      position: absolute;
-      margin: -0.3em -5em;
-      transform: scale(0.7);
-      border: 2px rgba(255,255,255,0.7) dashed;
-    }
-    &:hover {
-      background: orangered;
     }
   }
 }
