@@ -1,20 +1,17 @@
 <template>
   <body class="app" :class="{ 'app--no-overflow': showModal }">
 
-    <header-component
-      :name="'main'"
-      :contacts="contacts"
-      :details="details"
-      :menu="menu">
-
-      <span slot="extra"></span>
+    <header-component :name="'main'"
+                      :contained="true"
+                      :contacts="contacts"
+                      :details="details">
 
       <menu-component slot="menu"
-        :levels="1"
-        :show-images="false"
-        :name="'header'"
-        :lists="menu"
-        :mode="'header'">
+                      :name="'header'"
+                      :levels="1"
+                      :show-images="false"
+                      :lists="menu"
+                      :mode="'header'">
       </menu-component>
 
     </header-component>
@@ -22,20 +19,19 @@
     <fixed-item :appear-at="200">
 
       <template slot="content">
-        <header-component
-          :name="'main'"
-          :contacts="contacts"
-          :details="details"
-          :menu="menu">
+        <header-component :name="'main'"
+                          :contained="true"
+                          :contacts="contacts"
+                          :details="details">
 
-          <span slot="extra"></span>
           <menu-component slot="menu"
-            :levels="1"
-            :show-images="false"
-            :name="'header'"
-            :lists="menu"
-            :mode="'header'">
+                          :levels="1"
+                          :show-images="false"
+                          :name="'header'"
+                          :lists="menu"
+                          :mode="'header'">
           </menu-component>
+
         </header-component>
       </template>
 

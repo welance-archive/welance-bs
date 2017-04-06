@@ -1420,10 +1420,6 @@ export default {
 $light-gray:  #f3f3f3;
 $border-gray: #f1f1f1;
 
-.col{
-  background: rgba(150,150,255,.2);
-}
-
 .styles{
   @include make-container-max-widths();
   margin: 0 auto;
