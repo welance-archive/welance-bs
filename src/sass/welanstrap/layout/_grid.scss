@@ -72,15 +72,6 @@
   }
 }
 
-@mixin make-col-fraction($size: 1/1, $columns: 1) {
-  flex: 0 0 percentage($size * $columns);
-  // width: percentage($size / $columns);
-  // Add a `max-width` to ensure content within each column does not blow out
-  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
-  // do not appear to require this.
-  max-width: percentage($size * $columns);
-}
-
 @mixin make-col($size, $columns: $grid-columns) {
   flex: 0 0 percentage($size / $columns);
   // width: percentage($size / $columns);
@@ -111,4 +102,27 @@
   } @else if $type == offset {
     @include make-col-offset($size, $columns);
   }
+}
+
+// FRACTION COLUMNS
+// Create custom columns from any fraction
+@mixin make-col-fraction($fraction: 1/1, $columns: 1) {
+  flex: 0 0 percentage($fraction * $columns);
+  // width: percentage($fraction * $columns);
+  // Add a `max-width` to ensure content within each column does not blow out
+  // the width of the column. Applies to IE10+ and Firefox. Chrome and Safari
+  // do not appear to require this.
+  max-width: percentage($fraction * $columns);
+}
+
+@mixin make-col-offset-fraction($fraction: 1/1, $columns: 1) {
+  margin-left: percentage($fraction * $columns);
+}
+
+@mixin make-col-push-fraction($fraction: 1/1, $columns: 1) {
+  left: if($fraction > 0, percentage($fraction * $columns), auto);
+}
+
+@mixin make-col-pull-fraction($fraction: 1/1, $columns: 1) {
+  right: if($fraction > 0, percentage($fraction * $columns), auto);
 }
