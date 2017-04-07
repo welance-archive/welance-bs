@@ -1,5 +1,22 @@
 <template>
-  <div class="quote" :class="'quote-' + name">
+  <div class="quote" :class="[{'wrap wrap--contained' : contained}, 'quote-' + name]">
+
+    <pre v-if="debug" class="row">
+      ℹ️ Quote
+
+      SLOTS:
+        no slots
+
+      PROPS:
+        • name (string)
+        • debug (boolean)
+        • contained (boolean)
+        • type (string) Possible balues: 'main' or ''
+        • smallTextPre (HTML string)
+        • BigText (HTML string)
+        • smallTextSub (HTML string)
+    </pre>
+
     <div class="row quote__row">
       <div class="col quote__col">
 
@@ -29,21 +46,29 @@ export default {
               type: String,
               default: 'default'
             },
+            'debug': {
+              type: Boolean,
+              default: false
+            },
+            'contained': {
+              type: Boolean,
+              default: false
+            },
             'type': {
               type: String,
               default: 'section'
             },
             'smallTextPre': {
               type: String,
-              default: 'Here a small text BEFORE Bit Text'
+              default: ''
             },
             'bigText': {
               type: String,
-              default: 'We make digital products and help organisations big and small connect with their audience.'
+              default: ''
             },
             'smallTextSub': {
               type: String,
-              default: 'Here a small text AFTER Bit Text'
+              default: ''
             }
           },
   data () {
@@ -58,22 +83,5 @@ export default {
 
 .quote {
 
-  &__col{
-    @include make-col(10);
-
-    @include mq($until: 'xl'){
-      @include make-col(12);
-    }
-
-    @include mb(4);
-    @include mt(4);
-
-  }
 };
-
-.quote-heading{
-  @include mb(3);
-  @include mt(3);
-}
-
 </style>
