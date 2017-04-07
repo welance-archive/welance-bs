@@ -256,6 +256,8 @@
 
         <quote
           :name="'hero'"
+          :debug="false"
+          :contained="false"
           :small-text-pre="''"
           :big-text="'Hero component'"
           :small-text-sub="'This is how you create an hero component'">
@@ -272,13 +274,16 @@
 
     <hero
       :name="'main'"
-      :title="heroTitle"
-      :subtitle="heroSubtitle"
-      :image="heroImage"
-      :open-modal="openModal"
-      :ctaUrl="heroUrl"
-      :ctaText="'View Modal (\'half\' mode)'"
-      :maxWidth="true"
+      :debug="false"
+      :contained="true"
+      :pre-title="''"
+      :title="'We are the coolest kids in town, really kewl. 🖖'"
+      :sub-title="'I am seriously guys'"
+      :visual-element="visualElement"
+      :col-one-class="'col--7-12@md col--12-12@xs'"
+      :col-two-class="'col--5-12@md col--12-12@xs show@sm hide@xs'"
+      :reverse-cols="false"
+      :ctas="ctasExample"
     ></hero>
 
   </section>
@@ -573,15 +578,20 @@ export default {
 
       showModal: false,
 
-      heroTitle: 'We are the coolest kids in town, really kewl. 🖖',
-      heroSubtitle: 'I am seriously guys',
-      heroImage: 'https://fillmurray.com/1400/1400',
-      heroUrl: '',      //if empty, opens modal using "open-modal" prop, if filled, goest to internal route (eg. YES: "/contacts", NO: "http://example.com")
-
       mainQuoteSmallTextPre: 'The Coolest',
       mainQuoteBigText: 'kids on the...new line:<br/>block',
       mainQuoteSmallTextSub: '',
 
+      ctasExample:
+        [
+          {title: 'go to external link', action: 'http://example.com', class: 'btn col--4-12 btn--primary'},
+          {title: 'go to internal link', action: 'add-route-here', class: 'btn col--4-12 btn--primary'},
+          {title: 'execute function', action: this.openModal, class: 'btn col--4-12 btn--primary'}
+        ],
+      visualElement:
+        {
+          type: 'image', class: 'img img--ratio-1-1', url: 'https://fillmurray.com/1400/1400'
+        },
       servicesList: [
         {
           title: 'Web Design - NO URL',
