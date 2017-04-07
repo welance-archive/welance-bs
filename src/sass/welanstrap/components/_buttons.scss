@@ -15,8 +15,20 @@
   border: none;
   padding: 1.25em 2.5em;
   cursor: pointer;
-  border-radius: 2px;
   text-decoration: none;
+  background: $gray-light;
+  white-space: normal;
+  transition: all .2s ease-out;
+
+  background: lighten($gray-light, 8%);
+  &:hover{
+    background: $gray-light;
+  }
+  &:disabled{
+    &:hover{
+      background: lighten($gray-light, 8%);
+    }
+  }
 
   &:focus,
   &--focus {
@@ -44,55 +56,172 @@
     font-size: ms(-2);
     letter-spacing: .2em;
     text-transform: uppercase;
+    font-weight: bold;
   }
-
+  &--outline{
+    background: transparent;
+    box-shadow: inset 0px 0px 0px .1em $gray-light;
+    color: $gray-light;
+    &:hover{
+      background: $gray-light;
+      color: $white;
+      text-decoration: none;
+    }
+    &:disabled{
+      &:hover{
+        background: transparent;
+        color: $gray-light;
+      }
+    }
+  }
+  &--rounded{
+    border-radius: 200px;
+  }
+  &--full{
+    width: 100%;
+  }
 
 //
 // Alternate colors
 //
   &--primary{
-    background: lighten($brand-primary, 5%);
-    transition: all .3s ease;
+    background: lighten($brand-primary, 8%);
     &:hover{
       background: $brand-primary;
-      color: white;
+      color: $white;
       text-decoration: none;
+    }
+    &:disabled{
+      &:hover{
+        background: lighten($brand-primary, 8%);
+      }
+    }
+    &.btn--outline{
+      background: transparent;
+      box-shadow: inset 0 0 0 .1em $brand-primary;
+      color: $brand-primary;
+      &:hover{
+        background: $brand-primary;
+        color: $white;
+      }
+      &:disabled{
+        &:hover{
+          background: transparent;
+          color: $brand-primary;
+        }
+      }
     }
   }
   &--warning{
-    background: lighten($brand-warning, 5%);
-    transition: all .3s ease;
+    background: lighten($brand-warning, 8%);
     &:hover{
       background: $brand-warning;
-      color: white;
+      color: $white;
       text-decoration: none;
+    }
+    &:disabled{
+      &:hover{
+        background: lighten($brand-warning, 8%);
+      }
+    }
+    &.btn--outline{
+      background: transparent;
+      box-shadow: inset 0 0 0 .1em $brand-warning;
+      color: $brand-warning;
+      &:hover{
+        background: $brand-warning;
+        color: $white;
+      }
+      &:disabled{
+        &:hover{
+          background: transparent;
+          color: $brand-warning;
+        }
+      }
     }
   }
   &--danger{
-    background: lighten($brand-danger, 5%);
-    transition: all .3s ease;
+    background: lighten($brand-danger, 8%);
     &:hover{
       background: $brand-danger;
-      color: white;
+      color: $white;
       text-decoration: none;
+    }
+    &:disabled{
+      &:hover{
+        background: lighten($brand-danger, 8%);
+      }
+    }
+    &.btn--outline{
+      background: transparent;
+      box-shadow: inset 0 0 0 .1em $brand-danger;
+      color: $brand-danger;
+      &:hover{
+        background: $brand-danger;
+        color: $white;
+      }
+      &:disabled{
+        &:hover{
+          background: transparent;
+          color: $brand-danger;
+        }
+      }
     }
   }
   &--success{
-    background: lighten($brand-success, 5%);
-    transition: all .3s ease;
+    background: lighten($brand-success, 8%);
     &:hover{
       background: $brand-success;
-      color: white;
+      color: $white;
       text-decoration: none;
+    }
+    &:disabled{
+      &:hover{
+        background: lighten($brand-success, 8%);
+      }
+    }
+    &.btn--outline{
+      background: transparent;
+      box-shadow: inset 0 0 0 .1em $brand-success;
+      color: $brand-success;
+      &:hover{
+        background: $brand-success;
+        color: $white;
+      }
+      &:disabled{
+        &:hover{
+          background: transparent;
+          color: $brand-success;
+        }
+      }
     }
   }
   &--info{
-    background: $brand-info;
-    transition: all .3s ease;
+    background: lighten($brand-info, 8%);
     &:hover{
-      background: lighten($brand-info, 5%);
-      color: white;
+      background: $brand-info;
+      color: $white;
       text-decoration: none;
+    }
+    &:disabled{
+      &:hover{
+        background: lighten($brand-info, 8%);
+      }
+    }
+    &.btn--outline{
+      background: transparent;
+      box-shadow: inset 0 0 0 .1em $brand-info;
+      color: $brand-info;
+      &:hover{
+        background: $brand-info;
+        color: $white;
+      }
+      &:disabled{
+        &:hover{
+          background: transparent;
+          color: $brand-info;
+        }
+      }
     }
   }
 }
