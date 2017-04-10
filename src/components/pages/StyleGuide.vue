@@ -612,9 +612,9 @@ export default {
 
       ctasExample:
         [
-          {title: 'go to external link', action: 'http://example.com', class: 'btn col--4-12 btn--primary'},
-          {title: 'go to internal link', action: 'add-route-here', class: 'btn col--4-12 btn--primary'},
-          {title: 'execute function', action: this.openModal, class: 'btn col--4-12 btn--primary'}
+          {title: 'go to external link', action: 'http://example.com', class: 'btn col--4-12@sm col--12-12@xs btn--primary'},
+          {title: 'go to internal link', action: 'add-route-here', class: 'btn col--4-12@sm col--12-12@xs btn--primary'},
+          {title: 'execute function', action: this.openModal, class: 'btn col--4-12@sm col--12-12@xs btn--primary'}
         ],
       visualElement:
         {

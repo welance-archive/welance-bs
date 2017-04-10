@@ -16,18 +16,16 @@
         • pre-title (HTML string)
         • title (HTML string)
         • sub-title (HTML string)
-        • ctas (array of objects⭐)
+        • ctas (array of objects)
+          [
+            {title: 'go to external link', action: 'http://example.com', class: 'btn col--4-12 btn--primary'},
+            {title: 'go to internal link', action: 'this-is-a-route', class: 'btn col--4-12 btn--primary'},
+            {title: 'execute function', action: this.openModal, class: 'btn col--4-12 btn--primary'}
+          ]
         • visual-element (object) {type: 'image', class: 'img img--ratio-1-1', url: 'https://fillmurray.com/1400/1400'}
         • col-one-class (String)
         • col-two-class (String)
         • reverse-cols (Boolean)
-
-        ⭐
-        [
-          {title: 'go to external link', action: 'http://example.com', class: 'btn col--4-12 btn--primary'},
-          {title: 'go to internal link', action: 'add-route-here', class: 'btn col--4-12 btn--primary'},
-          {title: 'execute function', action: this.openModal, class: 'btn col--4-12 btn--primary'}
-        ]
     </pre>
 
     <slot name="row-01"></slot>
