@@ -223,7 +223,7 @@
           :name="'buttons'"
           :small-text-pre="''"
           :big-text="'Buttons'"
-          :small-text-sub="'Normal, Outline, Full, Big, Normal, Small, Tiny, Rounded'">
+          :small-text-sub="'Normal, Outline, No-Outline, Full, Big, Normal, Small, Tiny, Rounded'">
         </quote>
 
         <div class="row">
@@ -232,31 +232,43 @@
             <button class="btn" type="button" disabled="disabled">default</button>
             <button class="btn btn--outline" type="button">default</button>
             <button class="btn btn--outline" disabled="disabled" type="button">default</button>
+            <button class="btn btn--no-outline" type="button">default</button>
+            <button class="btn btn--no-outline" disabled="disabled" type="button">default</button>
             <br/><br/>
             <button class="btn btn--primary" type="button">primary</button>
             <button class="btn btn--primary" type="button" disabled="disabled">primary</button>
             <button class="btn btn--primary btn--outline" type="button">primary</button>
             <button class="btn btn--primary btn--outline" disabled="disabled" type="button">primary</button>
+            <button class="btn btn--primary btn--no-outline" type="button">primary</button>
+            <button class="btn btn--primary btn--no-outline" disabled="disabled" type="button">primary</button>
             <br/><br/>
             <button class="btn btn--info" type="button">info</button>
             <button class="btn btn--info" type="button" disabled="disabled">info</button>
             <button class="btn btn--info btn--outline" type="button">info</button>
             <button class="btn btn--info btn--outline" disabled="disabled" type="button">info</button>
+            <button class="btn btn--info btn--no-outline" type="button">info</button>
+            <button class="btn btn--info btn--no-outline" disabled="disabled" type="button">info</button>
             <br/><br/>
             <button class="btn btn--warning" type="button">warning</button>
             <button class="btn btn--warning" disabled="disabled" type="button">warning</button>
             <button class="btn btn--warning btn--outline" type="button">warning</button>
             <button class="btn btn--warning btn--outline" disabled="disabled" type="button">warning</button>
+            <button class="btn btn--warning btn--no-outline" type="button">warning</button>
+            <button class="btn btn--warning btn--no-outline" disabled="disabled" type="button">warning</button>
             <br/><br/>
             <button class="btn btn--danger" type="button">danger</button>
             <button class="btn btn--danger" type="button" disabled="disabled">danger</button>
             <button class="btn btn--danger btn--outline" type="button">danger</button>
             <button class="btn btn--danger btn--outline" type="button" disabled="disabled">danger</button>
+            <button class="btn btn--danger btn--no-outline" type="button">danger</button>
+            <button class="btn btn--danger btn--no-outline" type="button" disabled="disabled">danger</button>
             <br/><br/>
             <button class="btn btn--success" type="button">success</button>
             <button class="btn btn--success" type="button" disabled="disabled">success</button>
             <button class="btn btn--success btn--outline" type="button">success</button>
             <button class="btn btn--success btn--outline" type="button" disabled="disabled">success</button>
+            <button class="btn btn--success btn--no-outline" type="button">success</button>
+            <button class="btn btn--success btn--no-outline" type="button" disabled="disabled">success</button>
             <br/><br/>
             <button class="btn btn--full btn--primary btn--outline" type="button">full</button>
             <br/><br/>
@@ -317,13 +329,14 @@
   </section>
   <!-- ––––––––––––––––––––––––––––––––––––––- END HERO -->
 
-  <div class="wrap wrap--contained styles">
+  <div class="wrap styles">
 
     <!-- ––––––––––––––––––––––––––––––––––––––- GALLERY -->
     <section class="quote-section">
 
         <quote
           :name="'gallery'"
+          :contained="true"
           :small-text-pre="''"
           :big-text="'Gallery'"
           :small-text-sub="'The gallery component has different <em>gallery-types</em>'">
@@ -333,13 +346,15 @@
           <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/hcpyxdqx/embedded/html,js"></iframe>
         </div>
 
-
     </section>
+
+  </div> <!-- /.styles -->
 
     <section class="gallery-section">
 
       <quote
         :name="'gallery-off'"
+        :contained="true"
         :small-text-pre="''"
         :big-text="'...'"
         :small-text-sub="'<strong>off-canvas</strong> (great for filling full width of a page without worries on overflowing them)'">
@@ -352,7 +367,8 @@
       ></gallery>
 
       <quote
-        :name="'gallery-off'"
+        :name="'gallery-squares'"
+        :contained="true"
         :small-text-pre="''"
         :big-text="'...'"
         :small-text-sub="'<strong>squares</strong> (great for logos, users, and generally squared layouts)'">
@@ -365,7 +381,8 @@
       ></gallery>
 
       <quote
-        :name="'gallery-off'"
+        :name="'gallery-blocky'"
+        :contained="true"
         :small-text-pre="''"
         :big-text="'...'"
         :small-text-sub="'<strong>blocky</strong> (great for filling spaces completely)'">
@@ -380,6 +397,7 @@
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END GALLERY -->
 
+  <div class="wrap wrap--contained styles">
 
     <!-- ––––––––––––––––––––––––––––––––––––––- LISTS -->
     <section class="lists-section">
@@ -1525,9 +1543,7 @@ $border-gray: #f1f1f1;
     @include pt(6);
     @include pb(6);
   }
-  .gallery-section{
 
-  }
   .colors-section{
 
     .color-item{
@@ -1598,6 +1614,10 @@ $border-gray: #f1f1f1;
       border-top: 1px solid deepskyblue;
     }
   }
+}
+
+.gallery-section{
+  overflow: hidden;
 }
 
 .hero-section{

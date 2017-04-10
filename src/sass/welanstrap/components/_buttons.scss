@@ -58,7 +58,12 @@
     text-transform: uppercase;
     font-weight: bold;
   }
-  &--outline{
+
+  //
+  // Alternate styles
+  //
+
+  &--outline, &--no-outline{
     background: transparent;
     box-shadow: inset 0px 0px 0px .1em $gray-light;
     color: $gray-light;
@@ -72,6 +77,14 @@
         background: transparent;
         color: $gray-light;
       }
+    }
+  }
+  &--no-outline{
+    color: lighten($gray-light, 8%);
+    box-shadow: none;
+    &:hover{
+      color: $gray-light;
+      background: transparent;
     }
   }
   &--rounded{
@@ -96,7 +109,7 @@
         background: lighten($brand-primary, 8%);
       }
     }
-    &.btn--outline{
+    &.btn--outline, &.btn--no-outline{
       background: transparent;
       box-shadow: inset 0 0 0 .1em $brand-primary;
       color: $brand-primary;
@@ -109,6 +122,14 @@
           background: transparent;
           color: $brand-primary;
         }
+      }
+    }
+    &.btn--no-outline{
+      color: lighten($brand-primary, 8%);
+      box-shadow: none;
+      &:hover{
+        background: transparent;
+        color: $brand-primary;
       }
     }
   }
@@ -124,7 +145,7 @@
         background: lighten($brand-warning, 8%);
       }
     }
-    &.btn--outline{
+    &.btn--outline, &.btn--no-outline{
       background: transparent;
       box-shadow: inset 0 0 0 .1em $brand-warning;
       color: $brand-warning;
@@ -137,6 +158,14 @@
           background: transparent;
           color: $brand-warning;
         }
+      }
+    }
+    &.btn--no-outline{
+      color: lighten($brand-warning, 8%);
+      box-shadow: none;
+      &:hover{
+        background: transparent;
+        color: $brand-warning;
       }
     }
   }
@@ -152,7 +181,7 @@
         background: lighten($brand-danger, 8%);
       }
     }
-    &.btn--outline{
+    &.btn--outline, &.btn--no-outline{
       background: transparent;
       box-shadow: inset 0 0 0 .1em $brand-danger;
       color: $brand-danger;
@@ -165,6 +194,14 @@
           background: transparent;
           color: $brand-danger;
         }
+      }
+    }
+    &.btn--no-outline{
+      color: lighten($brand-danger, 8%);
+      box-shadow: none;
+      &:hover{
+        background: transparent;
+        color: $brand-danger;
       }
     }
   }
@@ -180,7 +217,7 @@
         background: lighten($brand-success, 8%);
       }
     }
-    &.btn--outline{
+    &.btn--outline, &.btn--no-outline{
       background: transparent;
       box-shadow: inset 0 0 0 .1em $brand-success;
       color: $brand-success;
@@ -193,6 +230,14 @@
           background: transparent;
           color: $brand-success;
         }
+      }
+    }
+    &.btn--no-outline{
+      color: lighten($brand-success, 8%);
+      box-shadow: none;
+      &:hover{
+        background: transparent;
+        color: $brand-success;
       }
     }
   }
@@ -208,7 +253,7 @@
         background: lighten($brand-info, 8%);
       }
     }
-    &.btn--outline{
+    &.btn--outline, &.btn--no-outline{
       background: transparent;
       box-shadow: inset 0 0 0 .1em $brand-info;
       color: $brand-info;
@@ -221,6 +266,14 @@
           background: transparent;
           color: $brand-info;
         }
+      }
+    }
+    &.btn--no-outline{
+      color: lighten($brand-info, 8%);
+      box-shadow: none;
+      &:hover{
+        background: transparent;
+        color: $brand-info;
       }
     }
   }
