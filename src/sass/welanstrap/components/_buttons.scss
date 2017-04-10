@@ -13,12 +13,13 @@
   vertical-align: middle;
   user-select: none;
   border: none;
-  padding: 1.25em 2.5em;
+  padding: 1em 2em;
   cursor: pointer;
   text-decoration: none;
   background: $gray-light;
   white-space: normal;
   transition: all .2s ease-out;
+  @include mt(1);
 
   background: lighten($gray-light, 8%);
   &:hover{
@@ -65,7 +66,7 @@
 
   &--outline, &--no-outline{
     background: transparent;
-    box-shadow: inset 0px 0px 0px .1em $gray-light;
+    box-shadow: inset 0 0 0 .1em $gray-light;
     color: $gray-light;
     &:hover{
       background: $gray-light;
