@@ -2,7 +2,7 @@
   <ul class="list" :class="[{'wrap wrap--contained' : contained}, 'list-' + name]">
 
     <pre v-if="debug && level == 1" class="row">
-      ℹ️ Hero
+      ℹ️ List
 
       SLOTS:
         no slots

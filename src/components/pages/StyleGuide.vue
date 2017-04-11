@@ -415,7 +415,7 @@
 
         <list
           :name="'example'"
-          :debug="true"
+          :debug="false"
           :contained="false"
           :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
           :print-levels="2"
