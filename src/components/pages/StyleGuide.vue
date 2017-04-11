@@ -406,19 +406,24 @@
         :name="'list'"
         :small-text-pre="''"
         :big-text="'Lists'"
-        :small-text-sub="'A component for listing (recursively up to 2 levels)'">
+        :small-text-sub="'A component for listing (recursively)'">
       </quote>
 
-      <div class="col-12">
+      <div class="col--12-12">
 
         <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
 
-        <list-of-lists
-          :name="'list'"
-          :lists="servicesList"
-          :levelOneImg="true"
-          :levelTwoImg="false">
-        </list-of-lists>
+        <list
+          :name="'example'"
+          :debug="true"
+          :contained="false"
+          :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+          :print-levels="2"
+          :print-level-imgs="[1, 0, 0, 0]"
+          :print-level-text="[0, 1, 1, 1]"
+          :list="servicesList"
+          class="row">
+        </list>
 
       </div>
 
@@ -583,8 +588,7 @@ import Quote from '../common/Quote.vue';
 import Modal from '../common/Modal.vue';
 import Gallery from '../common/Gallery.vue';
 import TextForm from '../common/TextForm.vue';
-import ListOfLists from '../common/ListOfLists.vue';
-import LogoList from '../common/LogoList.vue';
+import List from '../common/List.vue';
 
 export default {
   name: 'StyleGuide',
@@ -602,8 +606,7 @@ export default {
     Modal,
     Gallery,
     TextForm,
-    ListOfLists,
-    LogoList
+    List
   },
   methods: {
     openModal: function(){
@@ -642,8 +645,8 @@ export default {
         {
           title: 'Web Design - NO URL',
           url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
+          target: '_blank',
+          class: 'col col--3-12',
           image: {
               src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
               srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -652,20 +655,46 @@ export default {
           items: [
             {
               title: 'Web Design 1 - EXT URL',
-              url: '',
-              extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
-              extUrlTarget: '_blank',
+              url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
+              },
+              items: [
+                {
+                  title: '-- 3rd level',
+                  url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                  target: '_blank',
+                  class: 'col col--3-12',
+                  image: {
+                    src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                    srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                    ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+                  },
+                  items: [
+                  {
+                    title: '--- 4th level',
+                    url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                    target: '_blank',
+                    class: 'col col--3-12',
+                    image: {
+                      src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                      srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                      ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+                    }
+                  }
+                ]
+                }
+              ]
             },
             {
               title: 'Web Design 2 - internal URL',
               url: '/styles',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -675,8 +704,8 @@ export default {
             {
               title: 'Web Design 2',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -686,10 +715,10 @@ export default {
           ]
         },
         {
-          title: 'Awesomeness',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
+          title: 'To Route!',
+          url: '/route-here',
+          target: '_blank',
+          class: 'col col--3-12',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -699,8 +728,8 @@ export default {
             {
               title: 'Awesomeness 1',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -710,8 +739,8 @@ export default {
             {
               title: 'Awesomeness 1',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -721,8 +750,8 @@ export default {
             {
               title: 'Awesomeness 3',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -732,10 +761,10 @@ export default {
           ]
         },
         {
-          title: 'Ultra Awesomeness',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
+          title: 'Function!',
+          url: this.openModal,
+          target: '_blank',
+          class: 'col col--3-12',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -745,8 +774,8 @@ export default {
             {
               title: 'Ultra Awesomeness 1',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -756,8 +785,8 @@ export default {
             {
               title: 'Ultra Awesomeness 2',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -767,8 +796,8 @@ export default {
             {
               title: 'Ultra Awesomeness 3',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -778,10 +807,10 @@ export default {
           ]
         },
         {
-          title: 'Something Else',
+          title: 'No url',
           url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
+          target: '_blank',
+          class: 'col col--3-12',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -791,8 +820,8 @@ export default {
             {
               title: 'Something Else 1',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -802,8 +831,8 @@ export default {
             {
               title: 'Something Else 2',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -813,330 +842,8 @@ export default {
             {
               title: 'Something Else 3',
               url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Something Else',
-          url: '',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
-                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
+              target: '_blank',
+              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',

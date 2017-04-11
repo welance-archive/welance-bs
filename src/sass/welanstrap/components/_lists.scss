@@ -2,8 +2,8 @@ ul, ol{
   @include m(0);
   @include p(0);
   display: flex;
-  flex-flow: column wrap;
-  flex-direction: flex-start;
+  flex-flow: row wrap;
+  align-content: flex-start;
   @include ms-respond(font-size, 0);
   line-height: $line-height-huge;
 

@@ -90,6 +90,8 @@ export default {
           return 'function';
         }else if(value.indexOf('http') !== -1){
           return 'external';
+        }else if(value === '' || value === undefined || value === 'undefined'){
+          return '';
         }else{
           return 'internal';
         }
