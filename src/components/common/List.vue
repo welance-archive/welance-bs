@@ -178,11 +178,11 @@ export default {
       },
       'printLevelImgs': {
         type: Array,
-        default: ''
+        default: []
       },
       'printLevelText': {
         type: Array,
-        default: ''
+        default: []
       },
       'list': {
         type: Array,
@@ -227,8 +227,17 @@ export default {
 @import "./src/sass/main-sass-only.scss";
 
 .list{
+  width:100%;
+
   @include mq($until: 'sm'){
     text-align: center;
+  }
+
+  &__item{
+    align-self: center;
+    .img{
+      min-width: 100%;
+    }
   }
 };
 
