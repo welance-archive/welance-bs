@@ -481,7 +481,7 @@
           :name="'main'"
           :contacts="contacts"
           :details="details"
-          :menu="menu">
+          :menu="servicesList">
         </header-component>
       </div>
 
@@ -510,49 +510,41 @@
         :small-text-sub="'MODE: Header (default) + 1 Level of Menu Items'">
       </quote>
 
-      <div class="col-12">
-        <menu-component slot="menu"
-          :levels="1"
-          :show-images="false"
-          :name="'header'"
-          :lists="menu"
-          :mode="'header'">
-        </menu-component>
-      </div>
-
-      <quote
-        :name="'menu-2'"
-        :small-text-pre="''"
-        :big-text="'...'"
-        :small-text-sub="'MODE: Header (default) + 2 Levels of Menu Items'">
-      </quote>
-
-      <div class="col-12">
-        <menu-component slot="menu"
-          :levels="2"
-          :show-images="false"
-          :name="'header'"
-          :lists="menu"
-          :mode="'header'">
-        </menu-component>
-      </div>
-
-      <quote
-        :name="'menu-2'"
-        :small-text-pre="''"
-        :big-text="'...'"
-        :small-text-sub="'MODE: Footer + 2 Levels of Menu Items'">
-      </quote>
-
-      <div class="col-12">
-        <menu-component slot="menu"
-          :levels="2"
-          :show-images="false"
-          :name="'header'"
-          :lists="menu"
-          :mode="'footer'">
-        </menu-component>
-      </div>
+      <menu-component slot="menu"
+        :name="'example'"
+        :debug="false"
+        :contained="false"
+        :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+        :print-levels="2"
+        :print-level-imgs="[1, 0, 0, 0]"
+        :print-level-text="[0, 1, 1, 1]"
+        :menu="servicesList"
+        :mode="'header'">
+      </menu-component>
+      <hr/>
+      <menu-component slot="menu"
+        :name="'example'"
+        :debug="false"
+        :contained="false"
+        :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+        :print-levels="2"
+        :print-level-imgs="[1, 0, 0, 0]"
+        :print-level-text="[0, 1, 1, 1]"
+        :menu="servicesList"
+        :mode="'footer'">
+      </menu-component>
+      <hr/>
+      <menu-component slot="menu"
+        :name="'example'"
+        :debug="false"
+        :contained="false"
+        :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+        :print-levels="2"
+        :print-level-imgs="[1, 0, 0, 0]"
+        :print-level-text="[0, 1, 1, 1]"
+        :menu="servicesList"
+        :mode="'main'">
+      </menu-component>
 
     </section>
     <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
@@ -646,7 +638,6 @@ export default {
           title: 'Web Design - NO URL',
           url: '',
           target: '_blank',
-          class: 'col col--3-12',
           image: {
               src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
               srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -657,7 +648,6 @@ export default {
               title: 'Web Design 1 - EXT URL',
               url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -668,7 +658,6 @@ export default {
                   title: '-- 3rd level',
                   url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                   target: '_blank',
-                  class: 'col col--3-12',
                   image: {
                     src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                     srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -679,7 +668,6 @@ export default {
                     title: '--- 4th level',
                     url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                     target: '_blank',
-                    class: 'col col--3-12',
                     image: {
                       src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                       srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -694,7 +682,6 @@ export default {
               title: 'Web Design 2 - internal URL',
               url: '/styles',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -705,7 +692,6 @@ export default {
               title: 'Web Design 2',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -718,7 +704,6 @@ export default {
           title: 'To Route!',
           url: '/route-here',
           target: '_blank',
-          class: 'col col--3-12',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -729,7 +714,6 @@ export default {
               title: 'Awesomeness 1',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -740,7 +724,6 @@ export default {
               title: 'Awesomeness 1',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -751,7 +734,6 @@ export default {
               title: 'Awesomeness 3',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -764,7 +746,6 @@ export default {
           title: 'Function!',
           url: this.openModal,
           target: '_blank',
-          class: 'col col--3-12',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -775,7 +756,6 @@ export default {
               title: 'Ultra Awesomeness 1',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -786,7 +766,6 @@ export default {
               title: 'Ultra Awesomeness 2',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -797,7 +776,6 @@ export default {
               title: 'Ultra Awesomeness 3',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -810,7 +788,6 @@ export default {
           title: 'No url',
           url: '',
           target: '_blank',
-          class: 'col col--3-12',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -821,7 +798,6 @@ export default {
               title: 'Something Else 1',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -832,7 +808,6 @@ export default {
               title: 'Something Else 2',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -843,7 +818,6 @@ export default {
               title: 'Something Else 3',
               url: '/',
               target: '_blank',
-              class: 'col col--3-12',
               image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -1031,194 +1005,7 @@ export default {
         subtitle: 'Freelance Collective',
         logo: 'assets/images/logo.svg',
         altLogo: 'Welance - Freelancing Collectively'
-      },
-
-      menu: [
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Web Design 1 - EXT URL',
-              url: '',
-              extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Web Design 2 - internal URL',
-              url: '/styles',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Web Design 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Awesomeness 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Awesomeness 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Awesomeness 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Ultra Awesomeness 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Ultra Awesomeness 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Ultra Awesomeness 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        }
-      ]
+      }
     }
   }
 };
