@@ -79,7 +79,7 @@ export default {
 @import "./src/sass/main-sass-only.scss";
 
 .header {
-  z-index: $z-top;
+  z-index: $z-super-top;
 
   &__col{
     &--logo{

@@ -457,7 +457,7 @@
       :name="'project'"
       :modal-size="'half'"
       v-if="showModal"
-      @close="closeModal()">
+      @modalClose="closeModal()">
     </modal>
     <!-- ––––––––––––––––––––––––––––––––––––––- END MODAL -->
 
@@ -608,7 +608,7 @@ export default {
     closeModal: function(){
       this.showModal = false;
       this.$emit('modalClosed');
-    },
+    }
   },
   created () {},
   data () {

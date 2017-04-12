@@ -47,7 +47,7 @@ export default {
 		methods: {
 			closeModal: function(event){
 				if (event) event.preventDefault();
-				this.$emit('close');
+				this.$emit('modalClose');
 			}
 		}
 };

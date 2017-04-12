@@ -1,7 +1,7 @@
 <template>
   <div class="menu" :class="[{'wrap wrap--contained' : contained}, 'menu-' + name, 'menu-' + mode]">
 
-    <div v-if="mode === 'header'" class="menu-hamburger" @click="mobileMenuOpen ? mobileMenuOpen=false : mobileMenuOpen=true" :class="mobileMenuOpen ? 'menu-hamburger--open' : ''">
+    <div v-if="mode === 'header'" class="menu-hamburger" @click="toggleMenu()" :class="mobileMenuOpen ? 'menu-hamburger--open' : ''">
       <span class="menu-hamburger__line"></span>
       <span class="menu-hamburger__line"></span>
       <span class="menu-hamburger__line"></span>
@@ -76,6 +76,18 @@ export default {
     },
     components: {
       List
+    },
+    methods: {
+      toggleMenu: function(event){
+				if (event) event.preventDefault();
+        this.mobileMenuOpen = this.mobileMenuOpen ? false : true;
+
+				if(this.mobileMenuOpen){
+          this.$emit('menuOpen');
+        }else{
+          this.$emit('menuClose');
+        }
+			}
     },
     data () {
         return{
@@ -185,6 +197,9 @@ export default {
       display: flex;
       background: $white;
       transition: .2s ease-in-out;
+      overflow: scroll;
+      @include pt(4);
+      @include pb(4);
     }
   }
 

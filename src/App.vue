@@ -1,5 +1,5 @@
 <template>
-  <body class="app" :class="{ 'app--no-overflow': showModal }">
+  <body class="app" :class="{ 'app--no-overflow': blockScroll }">
 
     <header-component :name="'main'"
                       :contained="true"
@@ -15,7 +15,9 @@
                       :print-level-imgs="[0, 0, 0, 0]"
                       :print-level-text="[1, 1, 1, 1]"
                       :menu="servicesList"
-                      :mode="'header'">
+                      :mode="'header'"
+                      @menuOpen="blockScroll = true"
+                      @menuClose="blockScroll = false">
       </menu-component>
 
     </header-component>
@@ -28,7 +30,6 @@
                           :contacts="contacts"
                           :details="details">
 
-
           <menu-component slot="menu"
                           :name="'fixed-header'"
                           :debug="false"
@@ -38,7 +39,9 @@
                           :print-level-imgs="[0, 0, 0, 0]"
                           :print-level-text="[1, 1, 1, 1]"
                           :menu="servicesList"
-                          :mode="'header'">
+                          :mode="'header'"
+                          @menuOpen="blockScroll = true"
+                          @menuClose="blockScroll = false">
           </menu-component>
 
         </header-component>
@@ -46,7 +49,7 @@
 
     </fixed-item>
 
-    <router-view @modalOpened="showModal = true" @modalClosed="showModal = false"></router-view>
+    <router-view @modalOpened="blockScroll = true" @modalClosed="blockScroll = false"></router-view>
 
     <footer-component
       :name="'main'"
@@ -301,7 +304,7 @@ export default {
           ]
         }
       ],
-      showModal: false
+      blockScroll: false
     }
   }
 };
