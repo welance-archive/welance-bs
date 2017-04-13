@@ -412,18 +412,18 @@
       <div class="col--12-12">
 
         <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
-
-        <list
-          :name="'example'"
-          :debug="false"
-          :contained="false"
-          :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
-          :print-levels="2"
-          :print-level-imgs="[1, 0, 0, 0]"
-          :print-level-text="[0, 1, 1, 1]"
-          :list="servicesList"
-          class="row">
-        </list>
+        <div class="row">
+          <list
+            :name="'example'"
+            :debug="false"
+            :contained="false"
+            :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+            :print-levels="4"
+            :print-level-imgs="[1, 0, 0, 0]"
+            :print-level-text="[0, 1, 1, 1]"
+            :list="servicesList">
+          </list>
+        </div>
 
       </div>
 
@@ -520,30 +520,6 @@
         :print-level-text="[0, 1, 1, 1]"
         :menu="servicesList"
         :mode="'header'">
-      </menu-component>
-      <hr/>
-      <menu-component slot="menu"
-        :name="'example'"
-        :debug="false"
-        :contained="false"
-        :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
-        :print-levels="2"
-        :print-level-imgs="[1, 0, 0, 0]"
-        :print-level-text="[0, 1, 1, 1]"
-        :menu="servicesList"
-        :mode="'footer'">
-      </menu-component>
-      <hr/>
-      <menu-component slot="menu"
-        :name="'example'"
-        :debug="false"
-        :contained="false"
-        :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
-        :print-levels="2"
-        :print-level-imgs="[1, 0, 0, 0]"
-        :print-level-text="[0, 1, 1, 1]"
-        :menu="servicesList"
-        :mode="'main'">
       </menu-component>
 
     </section>

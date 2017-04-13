@@ -7,14 +7,25 @@
       <span class="menu-hamburger__line"></span>
     </div>
 
-    <nav class="row menu-row" :class="['menu-row--' + mode, mobileMenuOpen ? 'menu-row--header--open' : '']">
+    <nav class="row menu-row" :class="['menu-row--' + mode, mobileMenuOpen ? 'menu-row--open' : '']">
         <list
+          v-if="!showMobileMenu()"
           :name="name + '-' + mode"
           :debug="false"
           :columnClass="columnClass"
           :print-levels="printLevels"
           :print-level-imgs="printLevelImgs"
           :print-level-text="printLevelText"
+          :list="menu">
+        </list>
+        <list
+          v-if="showMobileMenu()"
+          :name="name + '-' + mode"
+          :debug="false"
+          :columnClass="columnClass"
+          :print-levels="mobilePrintLevels >= 1 ? mobilePrintLevels : printLevels"
+          :print-level-imgs="mobilePrintLevelImgs.length ? mobilePrintLevelImgs : printLevelImgs"
+          :print-level-text="mobilePrintLevelText.length ? mobilePrintLevelText : printLevelText"
           :list="menu">
         </list>
     </nav>
@@ -24,8 +35,10 @@
 
 <script>
 import List from './List.vue';
+import Breakpoints from '../../mixins/breakpoints.js';
 
 export default {
+    mixins: [ Breakpoints ],
     name: 'MenuComponent',
     props:
     {
@@ -45,10 +58,6 @@ export default {
         type: Number,
         default: 1
       },
-      'printLevels': {
-        type: Number,
-        default: 0
-      },
       'columnClass': {
         type: String,
         default: ''
@@ -57,11 +66,27 @@ export default {
         type: Boolean,
         default: false
       },
+      'printLevels': {
+        type: Number,
+        default: 0
+      },
       'printLevelImgs': {
         type: Array,
         default: function(){return[]}
       },
       'printLevelText': {
+        type: Array,
+        default: function(){return[]}
+      },
+      'mobilePrintLevels': {
+        type: Number,
+        default: 0
+      },
+      'mobilePrintLevelImgs': {
+        type: Array,
+        default: function(){return[]}
+      },
+      'mobilePrintLevelText': {
         type: Array,
         default: function(){return[]}
       },
@@ -78,6 +103,15 @@ export default {
       List
     },
     methods: {
+      showMobileMenu: function(){
+        if(this.vW <= this.breakpoints.md){
+          return true;
+        }else{
+          this.mobileMenuOpen = false;
+          this.$emit('menuClose');
+          return false;
+        }
+      },
       toggleMenu: function(event){
 				if (event) event.preventDefault();
         this.mobileMenuOpen = this.mobileMenuOpen ? false : true;
@@ -86,8 +120,13 @@ export default {
           this.$emit('menuOpen');
         }else{
           this.$emit('menuClose');
+          this.getWindowWidth();
         }
-			}
+			},
+      isMd: function(){
+        console.log(this.$currentViewport.label === 'md' || this.$currentViewport.label === 'lg');
+        return this.$currentViewport.label === 'md' || this.$currentViewport.label === 'lg';
+      }
     },
     data () {
         return{
@@ -165,16 +204,18 @@ export default {
       height: 100vh;
       width: 100vw;
       margin: 0;
+      left:0;
+      top: 0;
+      @include mt(9);
       text-align: center;
       position: fixed;
-      left: 0;
       opacity: 0;
       visibility: hidden;
+      display: none;
       z-index: $z-top;
-      top: 0;
       transition: .2s ease-in-out;
       ul{
-        flex-flow: column wrap;
+        flex-flow: row wrap;
         justify-content: space-around;
         width: 100%;
         font-size: 1.2rem;
@@ -182,20 +223,21 @@ export default {
           font-size: 1rem;
         }
       }
+    }
+    .list{
       .list__item{
         align-self: center;
-        .img{
-          min-width: 50%;
-          max-width: 50%;
-        }
       }
     }
+  }
 
-    &--open{
+  &--open{
+
+    @include mq($until: 'md'){
       opacity: 1;
       visibility: visible;
       display: flex;
-      background: $white;
+      background: $gray-lightest;
       transition: .2s ease-in-out;
       overflow: scroll;
       @include pt(4);
@@ -211,6 +253,23 @@ export default {
       justify-content: flex-start;
       @include ml(3);
       @include mr(3);
+    }
+
+    ul{
+      font-size: 1.2rem;
+      @include mb(2);
+      ul{
+        font-size: 1rem;
+      }
+    }
+    .list{
+      .list__item{
+        align-self: flex-start;
+        .img{
+          min-width: 50%;
+          max-width: 50%;
+        }
+      }
     }
 
     .menu-row__col{
@@ -232,11 +291,6 @@ export default {
     }
 
   }
-
-  &--sidebar{
-
-  }
-
 };
 
 </style>

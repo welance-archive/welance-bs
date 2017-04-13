@@ -229,12 +229,12 @@ export default {
 .list{
   width:100%;
 
-  @include mq($until: 'sm'){
+  @include mq($until: 'md'){
     text-align: center;
   }
 
   &__item{
-    align-self: center;
+    align-self: flex-start;
     .img{
       min-width: 100%;
     }
