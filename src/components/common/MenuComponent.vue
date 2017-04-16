@@ -8,8 +8,12 @@
     </div>
 
     <nav class="row menu-row" :class="['menu-row--' + mode, mobileMenuOpen ? 'menu-row--open' : '']">
+        <!--
+          the following component gets displayed for mode of any type, but the header mode
+          ...on any vieport size
+         -->
         <list
-          v-if="!showMobileMenu()"
+          v-if="!showMobileMenu() || mode !== 'header'"
           :name="name + '-' + mode"
           :debug="false"
           :columnClass="columnClass"
@@ -18,11 +22,16 @@
           :print-level-text="printLevelText"
           :list="menu">
         </list>
+        <!--
+          the following component gets displayed only when mode is header,
+          ...for a viewport size <= 768
+         -->
         <list
-          v-if="showMobileMenu()"
-          :name="name + '-' + mode"
+          v-if="showMobileMenu() && mode === 'header'"
+          :name="name + '-' + mode + '-mobile'"
           :debug="false"
           :columnClass="columnClass"
+          :mode="'accordion'"
           :print-levels="mobilePrintLevels >= 1 ? mobilePrintLevels : printLevels"
           :print-level-imgs="mobilePrintLevelImgs.length ? mobilePrintLevelImgs : printLevelImgs"
           :print-level-text="mobilePrintLevelText.length ? mobilePrintLevelText : printLevelText"
@@ -129,9 +138,9 @@ export default {
       }
     },
     data () {
-        return{
-          mobileMenuOpen : false
-        }
+      return{
+        mobileMenuOpen : false,
+      }
     }
 };
 </script>

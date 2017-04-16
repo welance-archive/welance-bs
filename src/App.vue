@@ -14,9 +14,9 @@
                       :print-levels="1"
                       :print-level-imgs="[0, 0, 0, 0]"
                       :print-level-text="[1, 1, 1, 1]"
-                      :mobile-print-levels="4"
-                      :mobile-print-level-imgs="[1, 1, 1, 1]"
-                      :mobile-print-level-text="[1, 1, 1, 1]"
+                      :mobile-print-levels="5"
+                      :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
+                      :mobile-print-level-text="[1, 1, 1, 1, 1]"
                       :menu="servicesList"
                       :mode="'header'"
                       @menuOpen="blockScroll = true"
@@ -41,9 +41,9 @@
                           :print-levels="1"
                           :print-level-imgs="[0, 0, 0, 0]"
                           :print-level-text="[1, 1, 1, 1]"
-                          :mobile-print-levels="4"
-                          :mobile-print-level-imgs="[1, 1, 1, 1]"
-                          :mobile-print-level-text="[1, 1, 1, 1]"
+                          :mobile-print-levels="5"
+                          :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
+                          :mobile-print-level-text="[1, 1, 1, 1, 1]"
                           :menu="servicesList"
                           :mode="'header'"
                           @menuOpen="blockScroll = true"
@@ -201,7 +201,63 @@ export default {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              },
+              items: [
+            {
+              title: 'Web Design 1 - EXT URL',
+              url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+              target: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              },
+              items: [
+                {
+                  title: '-- 3rd level',
+                  url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                  target: '_blank',
+                  image: {
+                    src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                    srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                    ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+                  },
+                  items: [
+                  {
+                    title: '--- 4th level',
+                    url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                    target: '_blank',
+                    image: {
+                      src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                      srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                      ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+                    }
+                  }
+                ]
+                }
+              ]
+            },
+            {
+              title: 'Web Design 2 - internal URL',
+              url: '/styles',
+              target: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
+            },
+            {
+              title: 'Web Design 2',
+              url: '/',
+              target: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
             },
             {
               title: 'Awesomeness 1',

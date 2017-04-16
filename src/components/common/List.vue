@@ -1,5 +1,5 @@
 <template>
-  <ul class="list" :class="[{'wrap wrap--contained' : contained}, 'list-' + name]">
+  <ul class="list" :class="[{'wrap wrap--contained' : contained}, 'list-' + name , mode ? 'list--' + mode : '']">
 
     <pre v-if="debug && level == 1" class="row">
       ℹ️ List
@@ -90,9 +90,13 @@
                             ...
                             ]
     </pre>
-
-
-    <li v-if="level <= printLevels" class="list__item" :class="['list__item-' + index, columnClass && !ignoreClass ? columnClass : 'col--12-12']" v-for="(item,index) in list">
+    <li v-if="level <= printLevels"
+        class="list__item"
+        :class="[ 'list__item-' + index,
+                  columnClass && !ignoreClass ? columnClass : 'col--12-12',
+                  (parentLevel === openParentLevel && level <= openLevel) || level === 1 ? 'list__item--visible' : 'list__item--hidden'
+                ]"
+        v-for="(item,index) in list">
 
         <router-link v-if="urlType(item.url) === 'internal'" :to="item.url">
           <div v-if="item.image.src && printLevelImgs[level-1]" class="img"
@@ -126,10 +130,22 @@
           <template v-if="printLevelText[level-1]">{{item.title}}</template>
         </template>
 
-        <list v-if="item.items && level <= printLevels"
-          :name="'example-' + index"
+
+        <span @click.stop="toggleAccordion(parentLevel ? parentLevel : index, level);"
+              v-if="item.items && level <= printLevels-1" class="list__arrow"
+              :class="(parentLevel+index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
+              <!--{{parentLevel}}/{{index}} = {{selectedParentLevel}} & {{level}} <= {{selectedLevel}}-->
+        </span>
+        <!--<span class="list__arrow list__arrow--close" v-if="(parentLevel === openParentLevel && level >= selectedLevel) && item.items"></span>-->
+
+        <list
+          v-if="item.items && level <= printLevels"
+          :name="'list-' + index"
           :debug="true"
           :contained="false"
+          :open-parent-level="selectedParentLevel ? selectedParentLevel : openParentLevel"
+          :open-level="selectedLevel ? selectedLevel : openLevel"
+          :parent-level="parentLevel ? parentLevel : index"
           :level="addCount"
           :print-levels="printLevels"
           :print-level-imgs="printLevelImgs"
@@ -160,9 +176,25 @@ export default {
         type: Boolean,
         default: false
       },
+      'mode': {
+        type: String,
+        default: ''
+      },
       'level': {
         type: Number,
         default: 1
+      },
+      'parentLevel': {
+        type: Number,
+        default: 0
+      },
+      'openLevel': {
+        type: Number,
+        default: 0
+      },
+      'openParentLevel': {
+        type: Number,
+        default: 0
       },
       'printLevels': {
         type: Number,
@@ -189,24 +221,34 @@ export default {
         default: []
       }
     },
-    data () {
-      return {
-        cnt : 0
+    data (){
+      return{
+        selectedLevel : 0,
+        selectedParentLevel : 1
       }
     },
     computed: {
       addCount: function(){
         if(this.level){
-          return this.cnt+this.level+1;
+          return this.level+1;
         }else{
-          return 1;
+          return 0;
         }
       }
     },
-    mounted: function(){
-      this.level = this.level ? this.level :  1;
-    },
     methods: {
+      toggleAccordion : function(parentLevel, level){
+        console.log('clicked', parentLevel+'-'+this.selectedParentLevel, level+1+'-'+this.selectedLevel);
+        if((parentLevel === this.selectedParentLevel) && (level + 1 === this.selectedLevel)){
+          console.log('BK');
+          this.selectedLevel = level - 1;
+        }else{
+          console.log('FW');
+          this.selectedLevel = level + 1;
+        }
+        this.selectedParentLevel = parentLevel;
+        console.log('opening:', this.selectedParentLevel, this.selectedLevel);
+      },
       urlType: function (value) {
         if(typeof value == 'function'){
           return 'function';
@@ -237,6 +279,53 @@ export default {
     align-self: flex-start;
     .img{
       min-width: 100%;
+    }
+  }
+
+  &--accordion{
+    align-self: flex-start;
+
+    li {
+      padding: 0;
+      background: lighten($brand-primary, 8%);
+    }
+    ul li{
+      background: lighten($brand-primary, 15%);
+      ul li{
+        background: lighten($brand-primary, 22%);
+        ul li{
+          background: lighten($brand-primary, 27%);
+        }
+      }
+    }
+    .list__item{
+      transition: all .3s ease-in-out;
+      &--visible{
+        opacity: 1;
+        height: auto;
+        display: block;
+      }
+      &--hidden{
+        opacity: 0;
+        height: 0;
+        display: none;
+      }
+    }
+    .list__arrow{
+      cursor: pointer;
+      position: absolute;
+      color: $white;
+      right: 5%;
+      transition: all .2s ease-in-out;
+      &::before{
+        content: "▶";
+      }
+      &--open{
+        transform: rotate(90deg);
+      }
+      &--close{
+
+      }
     }
   }
 };
