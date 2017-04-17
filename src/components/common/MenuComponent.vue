@@ -133,7 +133,7 @@ export default {
         }
 			},
       isMd: function(){
-        console.log(this.$currentViewport.label === 'md' || this.$currentViewport.label === 'lg');
+        //console.log(this.$currentViewport.label === 'md' || this.$currentViewport.label === 'lg');
         return this.$currentViewport.label === 'md' || this.$currentViewport.label === 'lg';
       }
     },
@@ -206,7 +206,7 @@ export default {
 .menu-row{
 
   width: 100%;
-  text-align: center;
+  text-align: left;
 
   &--header{
     @include mq($until: 'md'){

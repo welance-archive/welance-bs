@@ -138,7 +138,7 @@ export default {
               },
               items: [
                 {
-                  title: '-- 3rd level',
+                  title: '3rd level',
                   url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                   target: '_blank',
                   image: {
@@ -148,7 +148,7 @@ export default {
                   },
                   items: [
                   {
-                    title: '--- 4th level',
+                    title: '4th level',
                     url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                     target: '_blank',
                     image: {
@@ -214,7 +214,7 @@ export default {
               },
               items: [
                 {
-                  title: '-- 3rd level',
+                  title: '3rd level',
                   url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                   target: '_blank',
                   image: {
@@ -224,7 +224,7 @@ export default {
                   },
                   items: [
                   {
-                    title: '--- 4th level',
+                    title: '4th level',
                     url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                     target: '_blank',
                     image: {

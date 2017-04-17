@@ -94,7 +94,8 @@
         class="list__item"
         :class="[ 'list__item-' + index,
                   columnClass && !ignoreClass ? columnClass : 'col--12-12',
-                  (parentLevel === openParentLevel && level <= openLevel) || level === 1 ? 'list__item--visible' : 'list__item--hidden'
+                  (parentLevel === openParentLevel && level <= openLevel) || level === 1 ? 'list__item--visible' : 'list__item--hidden',
+                  openAll === true ? 'list__item--always-visible' : ''
                 ]"
         v-for="(item,index) in list">
 
@@ -132,7 +133,12 @@
 
 
         <span @click.stop="toggleAccordion(parentLevel ? parentLevel : index, level);"
-              v-if="item.items && level <= printLevels-1" class="list__arrow"
+              v-if="item.items && level <= printLevels-1 && mode === 'accordion' && openAll === false" class="list__arrow"
+              :class="(parentLevel+index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
+              <!--{{parentLevel}}/{{index}} = {{selectedParentLevel}} & {{level}} <= {{selectedLevel}}-->
+        </span>
+        <span @click.stop="toggleAccordion(parentLevel ? parentLevel : index, level);"
+              v-if="item.items && level <= printLevels-1 && mode === 'tree' && openAll === false" class="list__arrow"
               :class="(parentLevel+index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
               <!--{{parentLevel}}/{{index}} = {{selectedParentLevel}} & {{level}} <= {{selectedLevel}}-->
         </span>
@@ -143,6 +149,8 @@
           :name="'list-' + index"
           :debug="true"
           :contained="false"
+          :open-all="openAll"
+          :mode="mode"
           :open-parent-level="selectedParentLevel ? selectedParentLevel : openParentLevel"
           :open-level="selectedLevel ? selectedLevel : openLevel"
           :parent-level="parentLevel ? parentLevel : index"
@@ -196,6 +204,10 @@ export default {
         type: Number,
         default: 0
       },
+      'openAll': {
+        type: Boolean,
+        default: false
+      },
       'printLevels': {
         type: Number,
         default: 0
@@ -238,16 +250,14 @@ export default {
     },
     methods: {
       toggleAccordion : function(parentLevel, level){
-        console.log('clicked', parentLevel+'-'+this.selectedParentLevel, level+1+'-'+this.selectedLevel);
+        //console.log('clicked', parentLevel+'-'+this.selectedParentLevel, level+1+'-'+this.selectedLevel);
         if((parentLevel === this.selectedParentLevel) && (level + 1 === this.selectedLevel)){
-          console.log('BK');
           this.selectedLevel = level - 1;
         }else{
-          console.log('FW');
           this.selectedLevel = level + 1;
         }
         this.selectedParentLevel = parentLevel;
-        console.log('opening:', this.selectedParentLevel, this.selectedLevel);
+        //console.log('opening:', this.selectedParentLevel, this.selectedLevel);
       },
       urlType: function (value) {
         if(typeof value == 'function'){
@@ -295,6 +305,15 @@ export default {
         background: lighten($brand-primary, 22%);
         ul li{
           background: lighten($brand-primary, 27%);
+          ul li{
+            background: lighten($brand-primary, 35%);
+            ul li{
+              background: lighten($brand-primary, 40%);
+            }
+            ul li{
+              background: lighten($brand-primary, 45%);
+            }
+          }
         }
       }
     }
@@ -303,12 +322,14 @@ export default {
       &--visible{
         opacity: 1;
         height: auto;
-        display: block;
       }
       &--hidden{
         opacity: 0;
         height: 0;
-        display: none;
+      }
+      &--always-visible{
+        opacity: 1!important;
+        height: auto!important;
       }
     }
     .list__arrow{
@@ -325,6 +346,74 @@ export default {
       }
       &--close{
 
+      }
+    }
+  }
+  &--tree{
+    align-self: flex-start;
+
+    li {
+      padding: 0;
+    }
+    ul li{
+      font-size: 1rem;
+      ul li{
+        font-size: .8rem;
+        ul li{
+          font-size: .8rem;
+          ul li{
+            font-size: .8rem;
+            ul li{
+              font-size: .6rem;
+            }
+            ul li{
+              font-size: .6rem;
+            }
+          }
+        }
+      }
+    }
+    .list__item{
+      text-align: left;
+      @include pb(0);
+      @include pt(0);
+      * > *{
+        @include pl(1);
+      }
+
+      @include pr(1);
+      transition: all .3s ease-in-out;
+      &--visible{
+        opacity: 1;
+        height: auto;
+        display: block;
+      }
+      &--hidden{
+        opacity: 0;
+        height: 0;
+        display: none;
+      }
+      &--always-visible{
+        opacity: 1!important;
+        height: auto!important;
+        display: block;
+      }
+    }
+    .list__arrow{
+      cursor: pointer;
+      position: absolute;
+      color: $brand-primary;
+      right: 5%;
+      transition: all .2s ease-in-out;
+      &::before{
+        content: "+";
+      }
+      &--open{
+        &::before{
+          content: "-";
+        }
+      }
+      &--close{
       }
     }
   }

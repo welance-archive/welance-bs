@@ -1,549 +1,569 @@
 <template>
 <div>
-  <div class="wrap wrap--contained styles">
-    <a id="forkMe" href="https://github.com/welance/welance-bs">Fork - GitHub</a>
-
-    <quote
-      :name="'main'"
-      :type="'main'"
-      :small-text-pre="''"
-      :big-text="'Welance Bootstrap & Style Guide'"
-      :small-text-sub="'Default styles and VueJS components of the Welance Bootstrapm –visualised.'">
-    </quote>
-
-    <section class="grid-section">
-
-      <quote
-        :name="'grid'"
-        :small-text-pre="''"
-        :big-text="'Grid System'"
-        :small-text-sub="'Helper Classes'">
-      </quote>
-
-      <div class="row">
-        <p class="col col--12-12">
-          You can generate as many grids as your project requires by simple changing the SASS variable <strong>$grids</strong><br/>
-          Eg.:
-          <pre> $grids: (1, 5, 7, 8, 12);</pre>
-          Will generate 5 grids helper classes for 1, 5, 7, 8 and 12 columns grid andding helpers that you can use like:
-          <pre> class="col col--1-12@xl col--6-12@lg col--4-12@md col--12-12@xs"</pre>
-          applied to 12 elements would generate this (resize window to see changes):
-        </p>
-      </div>
-      <div class="row row-example">
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-        <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-      </div>
-      <div class="row">
-        <p class="col col--12-12">
-          And obsviously you can mix them up!
-          <pre> class="col col--4-12@xl col--1-8@lg col--1-5@xs"</pre>
-          applied to 5 elements would generate this (resize window to see changes):
-        </p>
-      </div>
-      <div class="row row-example">
-        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-        <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-      </div>
-
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END GRID -->
-
-    <!-- ––––––––––––––––––––––––––––––––––––––- COLORS -->
-    <section class="colors-section">
-
-        <quote
-          :name="'colors'"
-          :small-text-pre="''"
-          :big-text="'Colors'"
-          :small-text-sub="'SASS Color variables'">
-        </quote>
-
-        <div class="row">
-          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--primary"></div>
-              <h6><strong>$brand-primary</strong></h6>
-            </div>
-          </div>
-          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--success"></div>
-              <h6><strong>$brand-success</strong></h6>
-            </div>
-          </div>
-          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--info"></div>
-              <h6><strong>$brand-info</strong></h6>
-            </div>
-          </div>
-          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--warning"></div>
-              <h6><strong>$brand-warning</strong></h6>
-            </div>
-          </div>
-          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--danger"></div>
-              <h6><strong>$brand-danger</strong></h6>
-            </div>
-          </div>
-          <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--inverse"></div>
-              <h6><strong>$brand-inverse</strong></h6>
-            </div>
-          </div>
-        </div>
-
-        <quote
-          :name="'colors-2'"
-          :small-text-pre="''"
-          :big-text="'...'"
-          :small-text-sub="'Gray Scale'">
-        </quote>
-
-
-        <div class="row">
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--black"></div>
-              <h6><strong>$black</strong></h6>
-            </div>
-          </div>
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--gray-dark"></div>
-              <h6><strong>$gray-dark</strong></h6>
-            </div>
-          </div>
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--gray"></div>
-              <h6><strong>$gray</strong></h6>
-            </div>
-          </div>
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--gray-light"></div>
-              <h6><strong>$gray-light</strong></h6>
-            </div>
-          </div>
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--gray-lighter"></div>
-              <h6><strong>$gray-lighter</strong></h6>
-            </div>
-          </div>
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--gray-lightest"></div>
-              <h6><strong>$gray-lightest</strong></h6>
-            </div>
-          </div>
-          <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
-            <div class="color-item">
-              <div class="color color--white"></div>
-              <h6><strong>$white</strong></h6>
-            </div>
-          </div>
-        </div>
-
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END COLORS -->
-
-    <!-- ––––––––––––––––––––––––––––––––––––––- TYPOGRAPHY -->
-    <section class="typography-section">
-
-        <quote
-          :name="'typography'"
-          :small-text-pre="''"
-          :big-text="'Typography'"
-          :small-text-sub="'A quick presentation of the headings and text styles available'">
-        </quote>
-
-        <div class="row">
-          <h1 class="lines col col--12-12" v-html="'–H1 ' + msg + ' –H1'"></h1>
-          <h2 class="lines col col--12-12" v-html="'–H2 ' + msg + ' –H2'"></h2>
-          <h3 class="lines col col--12-12" v-html="'–H3 ' + msg + ' –H3'"></h3>
-          <h4 class="lines col col--12-12" v-html="'–H4 ' + msg + ' –H4'"></h4>
-          <h5 class="lines col col--12-12" v-html="'–H5 ' + msg + ' –H5'"></h5>
-          <h6 class="lines col col--12-12" v-html="'–H6 ' + msg + ' –H6'"></h6>
-        </div>
-        <br><br>
-        <div class="row">
-          <p class="lines col col--12-12" v-html="paragraph"></p>
-          <p class="lines col col--12-12" v-html="paragraph"></p>
-
-          <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
-          <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
-          <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
-
-          <p class="lines col col--6-12@md col--6-12@sm col--12-12@xs" v-html="paragraph"></p>
-          <p class="lines col col--6-12@md col--6-12@sm col--12-12@xs" v-html="paragraph"></p>
-        </div>
-
-
-    </section>
-
-    <section class="typography-section">
-
-        <quote
-          :name="'type'"
-          :small-text-pre="''"
-          :big-text="'Typefaces'"
-          :small-text-sub="''">
-        </quote>
-
-        <h4 class="col-12">Standard TypeFace</h4>
-        <p class="col-12" v-html="alphabet"></p>
-
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END TYPOGRAPHY -->
-
-    <!-- ––––––––––––––––––––––––––––––––––––––- BUTTONS -->
-    <section class="btn-section">
-
-        <quote
-          :name="'buttons'"
-          :small-text-pre="''"
-          :big-text="'Buttons'"
-          :small-text-sub="'Normal, Outline, No-Outline, Full, Big, Normal, Small, Tiny, Rounded'">
-        </quote>
-
-        <div class="row">
-          <div class="col col--12-12">
-            <button class="btn" type="button">default</button>
-            <button class="btn" type="button" disabled="disabled">default</button>
-            <button class="btn btn--outline" type="button">default</button>
-            <button class="btn btn--outline" disabled="disabled" type="button">default</button>
-            <button class="btn btn--no-outline" type="button">default</button>
-            <button class="btn btn--no-outline" disabled="disabled" type="button">default</button>
-            <br/><br/>
-            <button class="btn btn--primary" type="button">primary</button>
-            <button class="btn btn--primary" type="button" disabled="disabled">primary</button>
-            <button class="btn btn--primary btn--outline" type="button">primary</button>
-            <button class="btn btn--primary btn--outline" disabled="disabled" type="button">primary</button>
-            <button class="btn btn--primary btn--no-outline" type="button">primary</button>
-            <button class="btn btn--primary btn--no-outline" disabled="disabled" type="button">primary</button>
-            <br/><br/>
-            <button class="btn btn--info" type="button">info</button>
-            <button class="btn btn--info" type="button" disabled="disabled">info</button>
-            <button class="btn btn--info btn--outline" type="button">info</button>
-            <button class="btn btn--info btn--outline" disabled="disabled" type="button">info</button>
-            <button class="btn btn--info btn--no-outline" type="button">info</button>
-            <button class="btn btn--info btn--no-outline" disabled="disabled" type="button">info</button>
-            <br/><br/>
-            <button class="btn btn--warning" type="button">warning</button>
-            <button class="btn btn--warning" disabled="disabled" type="button">warning</button>
-            <button class="btn btn--warning btn--outline" type="button">warning</button>
-            <button class="btn btn--warning btn--outline" disabled="disabled" type="button">warning</button>
-            <button class="btn btn--warning btn--no-outline" type="button">warning</button>
-            <button class="btn btn--warning btn--no-outline" disabled="disabled" type="button">warning</button>
-            <br/><br/>
-            <button class="btn btn--danger" type="button">danger</button>
-            <button class="btn btn--danger" type="button" disabled="disabled">danger</button>
-            <button class="btn btn--danger btn--outline" type="button">danger</button>
-            <button class="btn btn--danger btn--outline" type="button" disabled="disabled">danger</button>
-            <button class="btn btn--danger btn--no-outline" type="button">danger</button>
-            <button class="btn btn--danger btn--no-outline" type="button" disabled="disabled">danger</button>
-            <br/><br/>
-            <button class="btn btn--success" type="button">success</button>
-            <button class="btn btn--success" type="button" disabled="disabled">success</button>
-            <button class="btn btn--success btn--outline" type="button">success</button>
-            <button class="btn btn--success btn--outline" type="button" disabled="disabled">success</button>
-            <button class="btn btn--success btn--no-outline" type="button">success</button>
-            <button class="btn btn--success btn--no-outline" type="button" disabled="disabled">success</button>
-            <br/><br/>
-            <button class="btn btn--full btn--primary btn--outline" type="button">full</button>
-            <br/><br/>
-            <button class="btn btn--primary btn--big" type="button">I'm a Big Button!</button>
-            <br/><br/>
-            <button class="btn btn--primary" type="button">I'm a Normal Button</button>
-            <br/><br/>
-            <button class="btn btn--primary btn--small" type="button">I'm a Small Button</button>
-            <br/><br/>
-            <button class="btn btn--primary btn--tiny" type="button">I'm a tiny Button</button>
-            <button class="btn btn--primary btn--tiny btn--outline" type="button">I'm a tiny Button</button>
-            <br/><br/>
-            <button class="btn btn--warning btn--outline btn--rounded" type="button">rounded</button>
-            <button class="btn btn--warning btn--outline btn--rounded" type="button">rounded<br/>with smt<br/>like... five<br/>lines<br/>in it<br/></button>
-          </div>
-        </div>
-
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END BUTTONS -->
-
-    <hr/>
-
-    <!-- ––––––––––––––––––––––––––––––––––––––- HERO -->
-    <section class="section">
-
-        <quote
-          :name="'hero'"
+  <div class="wrap wrap--contained">
+    <div class="row">
+      <div class="col col--3-12@lg col--12-12@xs">
+        <!--:open-all="true"-->
+        <list
+          :name="'menuzio'"
           :debug="false"
-          :contained="false"
-          :small-text-pre="''"
-          :big-text="'Hero component'"
-          :small-text-sub="'This is how you create an hero component'">
-        </quote>
+          :columnClass="'col--12-12@xs'"
+          :mode="'tree'"
+          :open-all="true"
+          :print-levels="5"
+          :print-level-imgs="[0,0,0,0,0]"
+          :print-level-text="[1,1,1,1,1]"
+          :list="servicesList">
+        </list>
+      </div>
+      <div class="col col--9-12">
+        <div class="styles">
+          <a id="forkMe" href="https://github.com/welance/welance-bs">Fork - GitHub</a>
 
-        <div class="col-12">
-          <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/6/embedded/html/"></iframe>
-        </div>
+          <quote
+            :name="'main'"
+            :type="'main'"
+            :small-text-pre="''"
+            :big-text="'Welance Bootstrap & Style Guide'"
+            :small-text-sub="'Default styles and VueJS components of the Welance Bootstrapm –visualised.'">
+          </quote>
 
-    </section>
-  </div> <!-- /.styles -->
+          <section class="grid-section">
 
-  <section class="hero-section">
+            <quote
+              :name="'grid'"
+              :small-text-pre="''"
+              :big-text="'Grid System'"
+              :small-text-sub="'Helper Classes'">
+            </quote>
 
-    <hero
-      :name="'main'"
-      :debug="false"
-      :contained="true"
-      :pre-title="''"
-      :title="'We are the coolest kids in town, really kewl. 🖖'"
-      :sub-title="'I am seriously guys'"
-      :visual-element="visualElement"
-      :col-one-class="'col--7-12@md col--12-12@xs'"
-      :col-two-class="'col--5-12@md col--12-12@xs show@sm hide@xs'"
-      :reverse-cols="false"
-      :ctas="ctasExample"
-    ></hero>
+            <div class="row">
+              <p class="col col--12-12">
+                You can generate as many grids as your project requires by simple changing the SASS variable <strong>$grids</strong><br/>
+                Eg.:
+                <pre> $grids: (1, 5, 7, 8, 12);</pre>
+                Will generate 5 grids helper classes for 1, 5, 7, 8 and 12 columns grid andding helpers that you can use like:
+                <pre> class="col col--1-12@xl col--6-12@lg col--4-12@md col--12-12@xs"</pre>
+                applied to 12 elements would generate this (resize window to see changes):
+              </p>
+            </div>
+            <div class="row row-example">
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+              <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+            </div>
+            <div class="row">
+              <p class="col col--12-12">
+                And obsviously you can mix them up!
+                <pre> class="col col--4-12@xl col--1-8@lg col--1-5@xs"</pre>
+                applied to 5 elements would generate this (resize window to see changes):
+              </p>
+            </div>
+            <div class="row row-example">
+              <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+              <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+              <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+              <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+              <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+            </div>
 
-  </section>
-  <!-- ––––––––––––––––––––––––––––––––––––––- END HERO -->
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END GRID -->
 
-  <div class="wrap styles">
+          <!-- ––––––––––––––––––––––––––––––––––––––- COLORS -->
+          <section class="colors-section">
 
-    <!-- ––––––––––––––––––––––––––––––––––––––- GALLERY -->
-    <section class="quote-section">
+              <quote
+                :name="'colors'"
+                :small-text-pre="''"
+                :big-text="'Colors'"
+                :small-text-sub="'SASS Color variables'">
+              </quote>
 
-        <quote
-          :name="'gallery'"
-          :contained="true"
-          :small-text-pre="''"
-          :big-text="'Gallery'"
-          :small-text-sub="'The gallery component has different <em>gallery-types</em>'">
-        </quote>
+              <div class="row">
+                <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--primary"></div>
+                    <h6><strong>$brand-primary</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--success"></div>
+                    <h6><strong>$brand-success</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--info"></div>
+                    <h6><strong>$brand-info</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--warning"></div>
+                    <h6><strong>$brand-warning</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--danger"></div>
+                    <h6><strong>$brand-danger</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--inverse"></div>
+                    <h6><strong>$brand-inverse</strong></h6>
+                  </div>
+                </div>
+              </div>
 
-        <div class="col-12">
-          <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/hcpyxdqx/embedded/html,js"></iframe>
-        </div>
+              <quote
+                :name="'colors-2'"
+                :small-text-pre="''"
+                :big-text="'...'"
+                :small-text-sub="'Gray Scale'">
+              </quote>
 
-    </section>
 
-  </div> <!-- /.styles -->
+              <div class="row">
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--black"></div>
+                    <h6><strong>$black</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--gray-dark"></div>
+                    <h6><strong>$gray-dark</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--gray"></div>
+                    <h6><strong>$gray</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--gray-light"></div>
+                    <h6><strong>$gray-light</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--gray-lighter"></div>
+                    <h6><strong>$gray-lighter</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--gray-lightest"></div>
+                    <h6><strong>$gray-lightest</strong></h6>
+                  </div>
+                </div>
+                <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+                  <div class="color-item">
+                    <div class="color color--white"></div>
+                    <h6><strong>$white</strong></h6>
+                  </div>
+                </div>
+              </div>
 
-    <section class="gallery-section">
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END COLORS -->
 
-      <quote
-        :name="'gallery-off'"
-        :contained="true"
-        :small-text-pre="''"
-        :big-text="'...'"
-        :small-text-sub="'<strong>off-canvas</strong> (great for filling full width of a page without worries on overflowing them)'">
-      </quote>
+          <!-- ––––––––––––––––––––––––––––––––––––––- TYPOGRAPHY -->
+          <section class="typography-section">
 
-      <gallery
-        :name="'off'"
-        :images="officeImages"
-        :gallery-type="'off-canvas'"
-      ></gallery>
+              <quote
+                :name="'typography'"
+                :small-text-pre="''"
+                :big-text="'Typography'"
+                :small-text-sub="'A quick presentation of the headings and text styles available'">
+              </quote>
 
-      <quote
-        :name="'gallery-squares'"
-        :contained="true"
-        :small-text-pre="''"
-        :big-text="'...'"
-        :small-text-sub="'<strong>squares</strong> (great for logos, users, and generally squared layouts)'">
-      </quote>
+              <div class="row">
+                <h1 class="lines col col--12-12" v-html="'–H1 ' + msg + ' –H1'"></h1>
+                <h2 class="lines col col--12-12" v-html="'–H2 ' + msg + ' –H2'"></h2>
+                <h3 class="lines col col--12-12" v-html="'–H3 ' + msg + ' –H3'"></h3>
+                <h4 class="lines col col--12-12" v-html="'–H4 ' + msg + ' –H4'"></h4>
+                <h5 class="lines col col--12-12" v-html="'–H5 ' + msg + ' –H5'"></h5>
+                <h6 class="lines col col--12-12" v-html="'–H6 ' + msg + ' –H6'"></h6>
+              </div>
+              <br><br>
+              <div class="row">
+                <p class="lines col col--12-12" v-html="paragraph"></p>
+                <p class="lines col col--12-12" v-html="paragraph"></p>
 
-      <gallery
-        :name="'squares'"
-        :images="officeImages"
-        :gallery-type="'squares'"
-      ></gallery>
+                <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
+                <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
+                <p class="lines col col--4-12@md col--12-12@sm" v-html="paragraph"></p>
 
-      <quote
-        :name="'gallery-blocky'"
-        :contained="true"
-        :small-text-pre="''"
-        :big-text="'...'"
-        :small-text-sub="'<strong>blocky</strong> (great for filling spaces completely)'">
-      </quote>
+                <p class="lines col col--6-12@md col--6-12@sm col--12-12@xs" v-html="paragraph"></p>
+                <p class="lines col col--6-12@md col--6-12@sm col--12-12@xs" v-html="paragraph"></p>
+              </div>
 
-      <gallery
-        :name="'blocky'"
-        :images="officeImages"
-        :gallery-type="'blocky'"
-      ></gallery>
 
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END GALLERY -->
+          </section>
 
-  <div class="wrap wrap--contained styles">
+          <section class="typography-section">
 
-    <!-- ––––––––––––––––––––––––––––––––––––––- LISTS -->
-    <section class="lists-section">
+              <quote
+                :name="'type'"
+                :small-text-pre="''"
+                :big-text="'Typefaces'"
+                :small-text-sub="''">
+              </quote>
 
-      <quote
-        :name="'list'"
-        :small-text-pre="''"
-        :big-text="'Lists'"
-        :small-text-sub="'A component for listing (recursively)'">
-      </quote>
+              <h4 class="col-12">Standard TypeFace</h4>
+              <p class="col-12" v-html="alphabet"></p>
 
-      <div class="col--12-12">
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END TYPOGRAPHY -->
 
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
-        <div class="row">
-          <list
-            :name="'example'"
+          <!-- ––––––––––––––––––––––––––––––––––––––- BUTTONS -->
+          <section class="btn-section">
+
+              <quote
+                :name="'buttons'"
+                :small-text-pre="''"
+                :big-text="'Buttons'"
+                :small-text-sub="'Normal, Outline, No-Outline, Full, Big, Normal, Small, Tiny, Rounded'">
+              </quote>
+
+              <div class="row">
+                <div class="col col--12-12">
+                  <button class="btn" type="button">default</button>
+                  <button class="btn" type="button" disabled="disabled">default</button>
+                  <button class="btn btn--outline" type="button">default</button>
+                  <button class="btn btn--outline" disabled="disabled" type="button">default</button>
+                  <button class="btn btn--no-outline" type="button">default</button>
+                  <button class="btn btn--no-outline" disabled="disabled" type="button">default</button>
+                  <br/><br/>
+                  <button class="btn btn--primary" type="button">primary</button>
+                  <button class="btn btn--primary" type="button" disabled="disabled">primary</button>
+                  <button class="btn btn--primary btn--outline" type="button">primary</button>
+                  <button class="btn btn--primary btn--outline" disabled="disabled" type="button">primary</button>
+                  <button class="btn btn--primary btn--no-outline" type="button">primary</button>
+                  <button class="btn btn--primary btn--no-outline" disabled="disabled" type="button">primary</button>
+                  <br/><br/>
+                  <button class="btn btn--info" type="button">info</button>
+                  <button class="btn btn--info" type="button" disabled="disabled">info</button>
+                  <button class="btn btn--info btn--outline" type="button">info</button>
+                  <button class="btn btn--info btn--outline" disabled="disabled" type="button">info</button>
+                  <button class="btn btn--info btn--no-outline" type="button">info</button>
+                  <button class="btn btn--info btn--no-outline" disabled="disabled" type="button">info</button>
+                  <br/><br/>
+                  <button class="btn btn--warning" type="button">warning</button>
+                  <button class="btn btn--warning" disabled="disabled" type="button">warning</button>
+                  <button class="btn btn--warning btn--outline" type="button">warning</button>
+                  <button class="btn btn--warning btn--outline" disabled="disabled" type="button">warning</button>
+                  <button class="btn btn--warning btn--no-outline" type="button">warning</button>
+                  <button class="btn btn--warning btn--no-outline" disabled="disabled" type="button">warning</button>
+                  <br/><br/>
+                  <button class="btn btn--danger" type="button">danger</button>
+                  <button class="btn btn--danger" type="button" disabled="disabled">danger</button>
+                  <button class="btn btn--danger btn--outline" type="button">danger</button>
+                  <button class="btn btn--danger btn--outline" type="button" disabled="disabled">danger</button>
+                  <button class="btn btn--danger btn--no-outline" type="button">danger</button>
+                  <button class="btn btn--danger btn--no-outline" type="button" disabled="disabled">danger</button>
+                  <br/><br/>
+                  <button class="btn btn--success" type="button">success</button>
+                  <button class="btn btn--success" type="button" disabled="disabled">success</button>
+                  <button class="btn btn--success btn--outline" type="button">success</button>
+                  <button class="btn btn--success btn--outline" type="button" disabled="disabled">success</button>
+                  <button class="btn btn--success btn--no-outline" type="button">success</button>
+                  <button class="btn btn--success btn--no-outline" type="button" disabled="disabled">success</button>
+                  <br/><br/>
+                  <button class="btn btn--full btn--primary btn--outline" type="button">full</button>
+                  <br/><br/>
+                  <button class="btn btn--primary btn--big" type="button">I'm a Big Button!</button>
+                  <br/><br/>
+                  <button class="btn btn--primary" type="button">I'm a Normal Button</button>
+                  <br/><br/>
+                  <button class="btn btn--primary btn--small" type="button">I'm a Small Button</button>
+                  <br/><br/>
+                  <button class="btn btn--primary btn--tiny" type="button">I'm a tiny Button</button>
+                  <button class="btn btn--primary btn--tiny btn--outline" type="button">I'm a tiny Button</button>
+                  <br/><br/>
+                  <button class="btn btn--warning btn--outline btn--rounded" type="button">rounded</button>
+                  <button class="btn btn--warning btn--outline btn--rounded" type="button">rounded<br/>with smt<br/>like... five<br/>lines<br/>in it<br/></button>
+                </div>
+              </div>
+
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END BUTTONS -->
+
+          <hr/>
+
+          <!-- ––––––––––––––––––––––––––––––––––––––- HERO -->
+          <section class="section">
+
+              <quote
+                :name="'hero'"
+                :debug="false"
+                :contained="false"
+                :small-text-pre="''"
+                :big-text="'Hero component'"
+                :small-text-sub="'This is how you create an hero component'">
+              </quote>
+
+              <div class="col-12">
+                <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/5vqrchv4/6/embedded/html/"></iframe>
+              </div>
+
+          </section>
+        </div> <!-- /.styles -->
+
+        <section class="hero-section">
+
+          <hero
+            :name="'main'"
             :debug="false"
-            :contained="false"
-            :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
-            :print-levels="4"
-            :print-level-imgs="[1, 0, 0, 0]"
-            :print-level-text="[0, 1, 1, 1]"
-            :list="servicesList">
-          </list>
-        </div>
+            :contained="true"
+            :pre-title="''"
+            :title="'We are the coolest kids in town, really kewl. 🖖'"
+            :sub-title="'I am seriously guys'"
+            :visual-element="visualElement"
+            :col-one-class="'col--7-12@md col--12-12@xs'"
+            :col-two-class="'col--5-12@md col--12-12@xs show@sm hide@xs'"
+            :reverse-cols="false"
+            :ctas="ctasExample"
+          ></hero>
 
-      </div>
+        </section>
+        <!-- ––––––––––––––––––––––––––––––––––––––- END HERO -->
+
+        <div class="wrap styles">
+
+          <!-- ––––––––––––––––––––––––––––––––––––––- GALLERY -->
+          <section class="quote-section">
+
+              <quote
+                :name="'gallery'"
+                :contained="true"
+                :small-text-pre="''"
+                :big-text="'Gallery'"
+                :small-text-sub="'The gallery component has different <em>gallery-types</em>'">
+              </quote>
+
+              <div class="col-12">
+                <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/hcpyxdqx/embedded/html,js"></iframe>
+              </div>
+
+          </section>
+
+        </div> <!-- /.styles -->
+
+          <section class="gallery-section">
+
+            <quote
+              :name="'gallery-off'"
+              :contained="true"
+              :small-text-pre="''"
+              :big-text="'...'"
+              :small-text-sub="'<strong>off-canvas</strong> (great for filling full width of a page without worries on overflowing them)'">
+            </quote>
+
+            <gallery
+              :name="'off'"
+              :images="officeImages"
+              :gallery-type="'off-canvas'"
+            ></gallery>
+
+            <quote
+              :name="'gallery-squares'"
+              :contained="true"
+              :small-text-pre="''"
+              :big-text="'...'"
+              :small-text-sub="'<strong>squares</strong> (great for logos, users, and generally squared layouts)'">
+            </quote>
+
+            <gallery
+              :name="'squares'"
+              :images="officeImages"
+              :gallery-type="'squares'"
+            ></gallery>
+
+            <quote
+              :name="'gallery-blocky'"
+              :contained="true"
+              :small-text-pre="''"
+              :big-text="'...'"
+              :small-text-sub="'<strong>blocky</strong> (great for filling spaces completely)'">
+            </quote>
+
+            <gallery
+              :name="'blocky'"
+              :images="officeImages"
+              :gallery-type="'blocky'"
+            ></gallery>
+
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END GALLERY -->
+
+        <div class="styles">
+
+          <!-- ––––––––––––––––––––––––––––––––––––––- LISTS -->
+          <section class="lists-section">
+
+            <quote
+              :name="'list'"
+              :small-text-pre="''"
+              :big-text="'Lists'"
+              :small-text-sub="'A component for listing (recursively)'">
+            </quote>
+
+            <div class="col--12-12">
+
+              <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
+              <div class="row">
+                <list
+                  :name="'example'"
+                  :debug="false"
+                  :contained="false"
+                  :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+                  :print-levels="4"
+                  :print-level-imgs="[1, 0, 0, 0]"
+                  :print-level-text="[0, 1, 1, 1]"
+                  :list="servicesList">
+                </list>
+              </div>
+
+            </div>
 
 
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END LISTS -->
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END LISTS -->
 
 
-    <!-- ––––––––––––––––––––––––––––––––––––––- MODAL -->
-    <section class="lists-section">
+          <!-- ––––––––––––––––––––––––––––––––––––––- MODAL -->
+          <section class="lists-section">
 
-      <quote
-        :name="'modal'"
-        :small-text-pre="''"
-        :big-text="'Modal'"
-        :small-text-sub="'Show/Hide a Modal with 3 option for <em>sizes</em> (\'tiny\', \'half\', \'full\')'">
-      </quote>
+            <quote
+              :name="'modal'"
+              :small-text-pre="''"
+              :big-text="'Modal'"
+              :small-text-sub="'Show/Hide a Modal with 3 option for <em>sizes</em> (\'tiny\', \'half\', \'full\')'">
+            </quote>
 
-      <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/vhpxcdvs/embedded/html,js"></iframe>
-      </div>
+            <div class="col-12">
+              <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/vhpxcdvs/embedded/html,js"></iframe>
+            </div>
 
-      <div class="col-12">
-        <br/><br/>
-        <button @click="openModal" class="btn" type="button">show me a HALF Modal</button>
-      </div>
+            <div class="col-12">
+              <br/><br/>
+              <button @click="openModal" class="btn" type="button">show me a HALF Modal</button>
+            </div>
 
-    </section>
+          </section>
 
-    <modal
-      :name="'project'"
-      :modal-size="'half'"
-      v-if="showModal"
-      @modalClose="closeModal()">
-    </modal>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END MODAL -->
+          <modal
+            :name="'project'"
+            :modal-size="'half'"
+            v-if="showModal"
+            @modalClose="closeModal()">
+          </modal>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END MODAL -->
 
-    <!-- ––––––––––––––––––––––––––––––––––––––- LIST -->
-    <section class="lists-section">
+          <!-- ––––––––––––––––––––––––––––––––––––––- LIST -->
+          <section class="lists-section">
 
-      <quote
-        :name="'header'"
-        :small-text-pre="''"
-        :big-text="'Header'"
-        :small-text-sub="'Adds a header on top of the page'">
-      </quote>
+            <quote
+              :name="'header'"
+              :small-text-pre="''"
+              :big-text="'Header'"
+              :small-text-sub="'Adds a header on top of the page'">
+            </quote>
 
-      <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/aash1c26/embedded/html,js"></iframe>
-      </div>
-      <br/><br/>
+            <div class="col-12">
+              <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/aash1c26/embedded/html,js"></iframe>
+            </div>
+            <br/><br/>
 
-      <div class="col-12">
-        <header-component
-          :name="'main'"
-          :contacts="contacts"
-          :details="details"
-          :menu="servicesList">
-        </header-component>
-      </div>
+            <div class="col-12">
+              <header-component
+                :name="'main'"
+                :contacts="contacts"
+                :details="details"
+                :menu="servicesList">
+              </header-component>
+            </div>
 
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END LIST -->
-
-
-    <!-- ––––––––––––––––––––––––––––––––––––––- FIXED ITEM -->
-    <section class="section">
-
-      <quote
-        :name="'menu'"
-        :small-text-pre="''"
-        :big-text="'Menu'"
-        :small-text-sub="'Similarly to the list component adds a menu, up to 2 level recursion.<br/>It can link externarl URLs or internal routes and show Images.'">
-      </quote>
-
-      <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/g5ym2u26/embedded/html,js"></iframe>
-      </div>
-
-      <quote
-        :name="'menu-1'"
-        :small-text-pre="''"
-        :big-text="'...'"
-        :small-text-sub="'MODE: Header (default) + 1 Level of Menu Items'">
-      </quote>
-
-      <menu-component slot="menu"
-        :name="'example'"
-        :debug="false"
-        :contained="false"
-        :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
-        :print-levels="2"
-        :print-level-imgs="[1, 0, 0, 0]"
-        :print-level-text="[0, 1, 1, 1]"
-        :menu="servicesList"
-        :mode="'header'">
-      </menu-component>
-
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END LIST -->
 
 
-    <!-- ––––––––––––––––––––––––––––––––––––––- FIXED ITEM -->
-    <section class="section">
+          <!-- ––––––––––––––––––––––––––––––––––––––- FIXED ITEM -->
+          <section class="section">
 
-      <quote
-        :name="'fixed-item'"
-        :small-text-pre="''"
-        :big-text="'Fixed Item'"
-        :small-text-sub="'Adds a FIXED status (on top of the page) to any component (HTML or Vue)'">
-      </quote>
+            <quote
+              :name="'menu'"
+              :small-text-pre="''"
+              :big-text="'Menu'"
+              :small-text-sub="'Similarly to the list component adds a menu, up to 2 level recursion.<br/>It can link externarl URLs or internal routes and show Images.'">
+            </quote>
 
-      <div class="col-12">
-        <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/wv0y0pfx/1/embedded/html"></iframe>
-      </div>
+            <div class="col-12">
+              <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/g5ym2u26/embedded/html,js"></iframe>
+            </div>
 
-    </section>
-    <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
+            <quote
+              :name="'menu-1'"
+              :small-text-pre="''"
+              :big-text="'...'"
+              :small-text-sub="'MODE: Header (default) + 1 Level of Menu Items'">
+            </quote>
 
-  </div> <!-- /.wrap .styles -->
+            <menu-component slot="menu"
+              :name="'example'"
+              :debug="false"
+              :contained="false"
+              :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+              :print-levels="2"
+              :print-level-imgs="[1, 0, 0, 0]"
+              :print-level-text="[0, 1, 1, 1]"
+              :menu="servicesList"
+              :mode="'header'">
+            </menu-component>
+
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
+
+
+          <!-- ––––––––––––––––––––––––––––––––––––––- FIXED ITEM -->
+          <section class="section">
+
+            <quote
+              :name="'fixed-item'"
+              :small-text-pre="''"
+              :big-text="'Fixed Item'"
+              :small-text-sub="'Adds a FIXED status (on top of the page) to any component (HTML or Vue)'">
+            </quote>
+
+            <div class="col-12">
+              <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/wv0y0pfx/1/embedded/html"></iframe>
+            </div>
+
+          </section>
+          <!-- ––––––––––––––––––––––––––––––––––––––- END FIXED ITEM -->
+
+        </div> <!-- /.wrap .styles -->
+      </div>  <!-- /.col .col--10-12 -->
+    </div> <!-- /.row -->
+  </div> <!-- /.wrap -->
 </div>
 </template>
 
@@ -631,7 +651,7 @@ export default {
               },
               items: [
                 {
-                  title: '-- 3rd level',
+                  title: '3rd level',
                   url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                   target: '_blank',
                   image: {
@@ -641,7 +661,7 @@ export default {
                   },
                   items: [
                   {
-                    title: '--- 4th level',
+                    title: '4th level',
                     url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
                     target: '_blank',
                     image: {
@@ -694,7 +714,63 @@ export default {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
                 ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              },
+              items: [
+            {
+              title: 'Web Design 1 - EXT URL',
+              url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+              target: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              },
+              items: [
+                {
+                  title: '3rd level',
+                  url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                  target: '_blank',
+                  image: {
+                    src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                    srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                    ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+                  },
+                  items: [
+                  {
+                    title: '4th level',
+                    url: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
+                    target: '_blank',
+                    image: {
+                      src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                      srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                      ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+                    }
+                  }
+                ]
+                }
+              ]
+            },
+            {
+              title: 'Web Design 2 - internal URL',
+              url: '/styles',
+              target: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
               }
+            },
+            {
+              title: 'Web Design 2',
+              url: '/',
+              target: '_blank',
+              image: {
+                src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                srcRetina: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
+                ratio: '3-2' //see welanstrap/_images.scsss for possible ratio values
+              }
+            }
+          ]
             },
             {
               title: 'Awesomeness 1',
