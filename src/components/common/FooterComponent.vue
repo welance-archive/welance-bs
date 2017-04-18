@@ -1,35 +1,50 @@
 <template>
   <footer class="footer" :class="'footer-' + name">
-    <slot name="row-0">
-      <div class="footer__wrap">
-        SLOT "row-0"
-      </div>
-    </slot>
+    <div class="wrap footer__wrap" :class="{'wrap--contained' : contained}">
+      <slot name="row-01">
+        <div class="row">
+        </div>
+      </slot>
 
-    <slot name="row-1">
-      <div class="footer__wrap">
-        SLOT "row-1"
-      </div>
-    </slot>
+      <slot name="row-02">
+        <div class="row">
+        </div>
+      </slot>
 
-    <slot name="row-2">
-      <div class="footer__wrap">
-        SLOT "row-2"
-      </div>
-    </slot>
-
+      <slot name="row-03">
+        <div class="row">
+        </div>
+      </slot>
+    </div>
   </footer>
 </template>
 
 <script>
 export default {
   name: 'FooterComponent',
-  props: [
-    'name',
-    'contacts',
-    'menu',
-    'details'
-  ],
+  props:
+  {
+    'name': {
+      type: String,
+      default: 'default'
+    },
+    'debug': {
+      type: Boolean,
+      default: false
+    },
+    'contained': {
+      type: Boolean,
+      default: false
+    },
+    'contacts': {
+      type: Object,
+      default: {}
+    },
+    'details': {
+      type: Object,
+      default: {}
+    }
+  },
   data () {
     return{}
   }
@@ -39,15 +54,4 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "./src/sass/main-sass-only.scss";
-
-.footer{
-  @include pb(6);
-  @include pt(6);
-
-  &__wrap{
-    @include make-container-max-widths();
-    margin: 0 auto;
-  }
-}
-
 </style>

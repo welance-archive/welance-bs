@@ -27,7 +27,7 @@
         <div class="row header__row">
           <div class="col header__col header__col--logo">
             <slot name="logo" v-if="details">
-                <router-link :to="{ path: '/' }">
+                <router-link :to="'/'">
                   <img v-if="details.logo" class="logo" :alt="details.altLogo" :src="details.logo"/>
                   <img v-if="!details.logo" class="logo" :alt="'MISSING LOGO in details json'" :src="''"/>
                 </router-link>
@@ -56,13 +56,28 @@ export default {
   components: {
     MenuComponent
   },
-  props: [
-    'name',
-    'contained',
-    'debug',
-    'contacts',
-    'details'
-  ],
+  props: {
+    'name': {
+      type: String,
+      default: 'default'
+    },
+    'debug': {
+      type: Boolean,
+      default: false
+    },
+    'contained': {
+      type: Boolean,
+      default: false
+    },
+    'contacts': {
+      type: Object,
+      default: {}
+    },
+    'details': {
+      type: Object,
+      default: {}
+    }
+  },
   data () {
     return{}
   },
