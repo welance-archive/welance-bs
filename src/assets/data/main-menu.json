@@ -1,0 +1,183 @@
+[
+  {
+    "title" : "Guide",
+    "url": "/",
+    "target": "",
+    "image": {
+        "src": "",
+        "srcRetina": "",
+        "ratio": ""
+    }
+  },
+  {
+    "title" : "Components",
+    "url": "/components/basic-styling/grid",
+    "target": "",
+    "image": {
+        "src": "",
+        "srcRetina": "",
+        "ratio": ""
+    },
+    "items": [
+      {
+        "title" : "Basic Styling and Structure",
+        "url": "",
+        "target": "",
+        "image": {
+            "src": "",
+            "srcRetina": "",
+            "ratio": ""
+        },
+        "items": [
+          {
+            "title" : "Grid(s)",
+            "url": "/components/basic-styling/grid",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          },
+          {
+            "title" : "Typography",
+            "url": "/components/basic-styling/typography",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          },
+          {
+            "title" : "Colors",
+            "url": "/components/basic-styling/colors",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          },
+          {
+            "title" : "Buttons",
+            "url": "/components/basic-styling/buttons",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          }
+        ]
+      },
+      {
+        "title" : "Data Displayers",
+        "url": "",
+        "target": "",
+        "image": {
+            "src": "",
+            "srcRetina": "",
+            "ratio": ""
+        },
+        "items": [
+          {
+            "title" : "Header and Footer",
+            "url": "/components/data-display/header-footer",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          },
+          {
+            "title" : "Hero",
+            "url": "/components/data-display/hero",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          },
+          {
+            "title" : "Lists",
+            "url": "/components/data-display/lists",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          },
+          {
+            "title" : "Gallery",
+            "url": "/components/data-display/gallery",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          }
+        ]
+      },
+      {
+        "title" : "Forms",
+        "url": "",
+        "target": "",
+        "image": {
+            "src": "",
+            "srcRetina": "",
+            "ratio": ""
+        },
+        "items": []
+      },
+      {
+        "title" : "Navigation",
+        "url": "",
+        "target": "",
+        "image": {
+            "src": "",
+            "srcRetina": "",
+            "ratio": ""
+        },
+        "items": [
+          {
+            "title" : "Menu",
+            "url": "/components/navigation/menu",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          }
+        ]
+      },
+      {
+        "title" : "Helpers",
+        "url": "",
+        "target": "",
+        "image": {
+            "src": "",
+            "srcRetina": "",
+            "ratio": ""
+        },
+        "items": [
+          {
+            "title" : "Fixed Items",
+            "url": "/components/helpers/fixed-items",
+            "target": "",
+            "image": {
+              "src": "",
+              "srcRetina": "",
+              "ratio": ""
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

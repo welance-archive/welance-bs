@@ -208,7 +208,7 @@ export default {
   text-align: left;
 
   &--header{
-    width: 100%;
+
     @include mq($until: 'md'){
       height: 100vh;
       width: 100vw;

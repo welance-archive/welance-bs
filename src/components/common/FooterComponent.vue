@@ -1,20 +1,24 @@
 <template>
   <footer class="footer" :class="'footer-' + name">
     <div class="wrap footer__wrap" :class="{'wrap--contained' : contained}">
-      <slot name="row-01">
-        <div class="row">
-        </div>
-      </slot>
 
-      <slot name="row-02">
-        <div class="row">
+      <div class="row footer__row">
+        <div class="col footer__col">
+          <slot name="row-01"></slot>
         </div>
-      </slot>
+      </div>
 
-      <slot name="row-03">
-        <div class="row">
+      <div class="row footer__row">
+        <div class="col footer__col">
+          <slot name="row-02"></slot>
         </div>
-      </slot>
+      </div>
+
+      <div class="row footer__row">
+        <div class="col footer__col">
+          <slot name="row-02"></slot>
+        </div>
+      </div>
     </div>
   </footer>
 </template>
@@ -54,4 +58,13 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
 @import "./src/sass/main-sass-only.scss";
+
+.footer{
+  &__row{
+
+  }
+  &__col{
+    @include make-col(12);
+  }
+}
 </style>
