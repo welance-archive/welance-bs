@@ -16,7 +16,7 @@
           :list="servicesList">
         </list>
       </div>
-      <div class="col col--9-12">
+      <div class="col col--9-12@lg col--12-12@xs">
         <div class="styles">
           <a id="forkMe" href="https://github.com/welance/welance-bs">Fork - GitHub</a>
 
@@ -1089,87 +1089,5 @@ $border-gray: #f1f1f1;
     @include pt(6);
     @include pb(6);
   }
-
-  .colors-section{
-
-    .color-item{
-      text-align: center;
-      align-self: center;
-      border: 1px solid $border-gray;
-      @include mt(2);
-      h6{
-        @include mt(2);
-      }
-    }
-
-    .color{
-      width: 100%;
-      height: 140px;
-      background: white;
-      border-radius: 5px;
-      border: 1px solid $border-gray;
-      &--primary{
-        background: $brand-primary;
-      }
-      &--success{
-        background: $brand-success;
-      }
-      &--info{
-        background: $brand-info;
-      }
-      &--warning{
-        background: $brand-warning;
-      }
-      &--danger{
-        background: $brand-danger;
-      }
-      &--inverse{
-        background: $brand-inverse;
-      }
-      &--gray{
-        background: $gray;
-      }
-      &--gray-dark{
-        background: $gray-dark;
-      }
-      &--gray-light{
-        background: $gray-light;
-      }
-      &--gray-lighter{
-        background: $gray-lighter;
-      }
-      &--gray-lightest{
-        background: $gray-lightest;
-      }
-      &--white{
-        background: $white;
-      }
-      &--black{
-        background: $black;
-      }
-    }
-  }
-
-  .typography-section {
-    .lines{
-      &:nth-child(odd){
-        border-bottom: 1px solid deepskyblue;
-        border-top: 1px solid deepskyblue;
-      }
-      border-bottom: 1px solid deepskyblue;
-      border-top: 1px solid deepskyblue;
-    }
-  }
-}
-
-.gallery-section{
-  overflow: hidden;
-}
-
-.hero-section{
-  @include make-container();
-  background: $light-gray;
-  @include pt(3);
-  @include pb(3);
 }
 </style>

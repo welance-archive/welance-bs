@@ -1,121 +1,82 @@
 <template>
-  <body class="app" :class="{ 'app--no-overflow': blockScroll }">
-
-    <header-component :name="'main'"
-                      :contained="true"
-                      :contacts="contacts"
-                      :details="details">
-
-      <menu-component slot="menu"
-                      :name="'regular'"
-                      :debug="false"
-                      :contained="false"
-                      :columnClass="'col col--3-12@md col--12-12@xs'"
-                      :print-levels="1"
-                      :print-level-imgs="[0, 0, 0, 0]"
-                      :print-level-text="[1, 1, 1, 1]"
-                      :mobile-print-levels="5"
-                      :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
-                      :mobile-print-level-text="[1, 1, 1, 1, 1]"
-                      :menu="servicesList"
-                      :mode="'header'"
-                      @menuOpen="blockScroll = true"
-                      @menuClose="blockScroll = false">
-      </menu-component>
-
-    </header-component>
-
-    <fixed-item :appear-at="200">
-
-      <template slot="content">
-        <header-component :name="'main'"
-                          :contained="true"
-                          :contacts="contacts"
-                          :details="details">
-
-          <menu-component slot="menu"
-                          :name="'fixed'"
-                          :debug="false"
-                          :contained="false"
-                          :columnClass="'col col--3-12@md col--12-12@xs'"
-                          :print-levels="1"
-                          :print-level-imgs="[0, 0, 0, 0]"
-                          :print-level-text="[1, 1, 1, 1]"
-                          :mobile-print-levels="5"
-                          :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
-                          :mobile-print-level-text="[1, 1, 1, 1, 1]"
-                          :menu="servicesList"
-                          :mode="'header'"
-                          @menuOpen="blockScroll = true"
-                          @menuClose="blockScroll = false">
-          </menu-component>
-
-        </header-component>
-      </template>
-
-    </fixed-item>
-
-    <router-view @modalOpened="blockScroll = true" @modalClosed="blockScroll = false"></router-view>
-
-    <footer-component
-      :name="'main'"
-      :contacts="contacts"
-      :details="details">
-      <div class="row" slot="row-01">
-        <menu-component
-          :name="'footer'"
+<div>
+  <div class="wrap wrap--contained">
+    <div class="row">
+      <div class="col col--3-12@lg col--12-12@xs">
+        <!--:open-all="true"-->
+        <list
+          :name="'menuzio'"
           :debug="false"
-          :contained="true"
-          :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
-          :print-levels="2"
-          :print-level-imgs="[0, 0, 0, 0]"
-          :print-level-text="[1, 1, 1, 1]"
-          :menu="servicesList"
-          :mode="'footer'">
-        </menu-component>
+          :columnClass="'col--12-12@xs'"
+          :mode="'tree'"
+          :open-all="true"
+          :print-levels="5"
+          :print-level-imgs="[0,0,0,0,0]"
+          :print-level-text="[1,1,1,1,1]"
+          :list="componentsMenu">
+        </list>
       </div>
+      <div class="col col--9-12@lg col--12-12@xs">
+        <!-- ––––––––––––––––––––––––––––––––––––––- LISTS -->
+        <section class="lists-section">
 
-      <div slot="row-1"></div>
-      <div slot="row-2"></div>
+          <quote
+            :name="'list'"
+            :small-text-pre="''"
+            :big-text="'Lists'"
+            :small-text-sub="'A component for listing (recursively)'">
+          </quote>
 
-    </footer-component>
-  </body>
+          <div class="col--12-12">
+
+            <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
+            <div class="row">
+              <list
+                :name="'example'"
+                :debug="false"
+                :contained="false"
+                :columnClass="'col col--3-12@xl col--4-12@lg col--6-12@md col--12-12@xs'"
+                :print-levels="4"
+                :print-level-imgs="[1, 0, 0, 0]"
+                :print-level-text="[1, 1, 1, 1]"
+                :list="servicesList">
+              </list>
+            </div>
+
+          </div>
+
+        </section>
+        <!-- ––––––––––––––––––––––––––––––––––––––- END LISTS -->
+      </div>
+    </div>
+  </div>
+</div>
 </template>
 
 <script>
-import HeaderComponent from './components/common/HeaderComponent.vue';
-import FooterComponent from './components/common/FooterComponent.vue';
-import FixedItem from './components/common/FixedItem.vue';
-import MenuComponent from './components/common/MenuComponent.vue';
+import Quote from '../../../common/Quote.vue';
+import List from '../../../common/List.vue';
+import axios from 'axios';
 
 export default {
-  name: 'app',
+  name: 'ListsPage',
+  watch: {
+    '$route' (to, from) {
+      console.log('route changed');
+    }
+  },
   components: {
-    HeaderComponent,
-    FooterComponent,
-    FixedItem,
-    MenuComponent
+    Quote,
+    List
   },
   methods: {
     exampleFunction : function(){
-      alert('this could be anything!!');
+      alert('here you can have function calls')
     }
   },
-  data () {
+  data(){
     return{
-      contacts: {
-        phone: '+49 30 609 857 750',
-        address: 'Waldemarstraße 37a',
-        zip: '12043',
-        city: 'Berlin',
-        country: 'GERMANY',
-      },
-      details: {
-        title: 'Welance',
-        subtitle: 'Freelance Collective',
-        logo: '/assets/images/logo.svg',
-        altLogo: 'Welance - Freelancing Collectively'
-      },
+      componentsMenu : [],
       servicesList: [
         {
           title: 'Web Design - NO URL',
@@ -185,7 +146,7 @@ export default {
         },
         {
           title: 'To Route!',
-          url: '/components/basic-styling/typography',
+          url: '/route-here',
           target: '_blank',
           image: {
                 src: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400',
@@ -365,51 +326,24 @@ export default {
             }
           ]
         }
-      ],
-      blockScroll: false
+      ]
     }
+  },
+  created () {
+    axios.get(`/assets/data/components-menu.json`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.componentsMenu = response.data;
+    })
+    .catch(e => {
+      console.log(e);
+    })
   }
 };
 </script>
 
+<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "./src/sass/welanstrap.scss";
+@import "./src/sass/main-sass-only.scss";
 
-.app{
-  &--no-overflow{
-      overflow: hidden;
-  }
-  .header{
-    background: #f3f3f3;
-    @include m(0);
-
-    .header__col--logo{
-      //order: 0;
-    }
-    .header__col--extra{
-      //@include make-col(6);
-      //order: 1;
-    }
-    .header__col--menu{
-      //order: 2;
-      //@include make-col(5);
-      .menu-header{
-        //@include make-col(4);
-      }
-    }
-  }
-  .footer{
-    .menu-footer{
-      @include make-container-max-widths();
-      margin: 0 auto;
-      @include pb(2);
-      @include pt(2)
-
-      .img{
-        //display: none;
-      }
-    }
-    background: #f3f3f3;
-  }
-}
 </style>

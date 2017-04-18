@@ -9,6 +9,23 @@ let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 let PrerenderSpaPlugin = require('prerender-spa-plugin');
 
 const seo_routes = [ '/', '/styles' ];
+let base_url = 'http://localhost:8000/';
+
+switch(process.env.NODE_ENV){
+  case 'gh-pages':
+    base_url = '/welance-bs/';
+    break;
+  case 'dev':
+    base_url = 'http://localhost:8080/';
+    break;
+  case 'prod':
+    base_url = 'http://localhost:8000/';
+    break;
+  default:
+    //nothing here;
+    break;
+}
+//const base_url = process.env.NODE_ENV === 'gh-pages' ? '/welance-bs/' : 'http://localhost:8000/';
 
 const prod_plugins = [
 		//about HTML compression and CSS/JS scripts injection
@@ -20,7 +37,7 @@ const prod_plugins = [
                                             // so pre-render-spa-plugin doesn't override it
       chunksSortMode: 'dependency',         // Ensure chunks are evaluated in correct order
       // Optional
-      baseUrl: process.env.NODE_ENV === 'gh-pages' ? '/welance-bs/' : 'http://localhost:8000/',     // ensure to have a <base> for HTML5 History API
+      baseUrl: base_url,                    // ensure to have a <base> for HTML5 History API
 
 			hash: true,
 			minify:{
@@ -40,10 +57,10 @@ const prod_plugins = [
 			axios: "axios"
 		}),*/
 		// Copy the images folder and optimize all the images
-		new CopyWebpackPlugin([{
-			from: 'src/assets/images/',
-			to: 'assets/images/'
-		}]),
+		new CopyWebpackPlugin([
+      { from: 'src/assets/images/', to: 'assets/images/' },
+      { from: 'src/assets/data/', to: 'assets/data/' }
+    ]),
 		new ImageminWebpackPlugin({
 			test: /\.(jpe?g|png|gif|svg)$/i,
 			//disable: process.env.NODE_ENV !== 'prod',
@@ -197,10 +214,10 @@ const dev_plugins = [
 			axios: "axios"
 		}),*/
 		// Copy the images folder and optimize all the images
-		new CopyWebpackPlugin([{
-			from: 'src/assets/images/',
-			to: 'assets/images/'
-		}]),
+		new CopyWebpackPlugin([
+      { from: 'src/assets/images/', to: 'assets/images/' },
+      { from: 'src/assets/data/', to: 'assets/data/' }
+    ]),
 		new FaviconsWebpackPlugin({
 			// Your source logo
 			logo: './src/assets/images/favicon.svg',
@@ -244,7 +261,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, "dist"),
 		filename: "assets/bundle.js",
-    //publicPath: ''
+    publicPath: '/'
 	},
 	devServer: {
 		historyApiFallback: true
