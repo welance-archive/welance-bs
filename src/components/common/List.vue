@@ -1,6 +1,6 @@
 <template>
   <ul class="list" :class="[{'wrap wrap--contained' : contained}, 'list-' + name , mode ? 'list--' + mode : '']">
-
+<!--{{parentLevel+'+'+level}}-->
     <pre v-if="debug && level == 1" class="row">
       ℹ️ List
 
@@ -94,7 +94,7 @@
         class="list__item"
         :class="[ 'list__item-' + index,
                   columnClass && !ignoreClass ? columnClass : 'col--12-12',
-                  (parentLevel === openParentLevel && level <= openLevel) || level === 1 ? 'list__item--visible' : 'list__item--hidden',
+                  (parentLevel === openParentLevel && level === openLevel) || level === 1 ? 'list__item--visible' : 'list__item--hidden',
                   openAll === true ? 'list__item--always-visible' : ''
                 ]"
         v-for="(item,index) in list">
@@ -132,15 +132,15 @@
         </template>
 
 
-        <span @click.stop="toggleAccordion(parentLevel ? parentLevel : index, level);"
-              v-if="item.items && level <= printLevels-1 && mode === 'accordion' && openAll === false" class="list__arrow"
-              :class="(parentLevel+index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
-              <!--{{parentLevel}}/{{index}} = {{selectedParentLevel}} & {{level}} <= {{selectedLevel}}-->
+        <span @click.stop="toggleAccordion(index, level);"
+              v-if="item.items && item.items.length && level <= printLevels-1 && mode === 'accordion' && openAll === false" class="list__arrow"
+              :class="(index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
+              <!--{{parentLevel}} = {{openParentLevel}} & {{level}} <= {{openLevel}}-->
         </span>
-        <span @click.stop="toggleAccordion(parentLevel ? parentLevel : index, level);"
-              v-if="item.items && level <= printLevels-1 && mode === 'tree' && openAll === false" class="list__arrow"
-              :class="(parentLevel+index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
-              <!--{{parentLevel}}/{{index}} = {{selectedParentLevel}} & {{level}} <= {{selectedLevel}}-->
+        <span @click.stop="toggleAccordion(index, level);"
+              v-if="item.items && item.items.length && level <= printLevels-1 && mode === 'tree' && openAll === false" class="list__arrow"
+              :class="(index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
+              <!--{{parentLevel}} = {{openParentLevel}} & {{level}} <= {{openLevel}}-->
         </span>
         <!--<span class="list__arrow list__arrow--close" v-if="(parentLevel === openParentLevel && level >= selectedLevel) && item.items"></span>-->
 
@@ -151,10 +151,10 @@
           :contained="false"
           :open-all="openAll"
           :mode="mode"
-          :open-parent-level="selectedParentLevel ? selectedParentLevel : openParentLevel"
-          :open-level="selectedLevel ? selectedLevel : openLevel"
-          :parent-level="parentLevel ? parentLevel : index"
-          :level="addCount"
+          :open-parent-level="selectedParentLevel"
+          :open-level="selectedLevel"
+          :parent-level="index"
+          :level="level+1"
           :print-levels="printLevels"
           :print-level-imgs="printLevelImgs"
           :print-level-text="printLevelText"
@@ -236,28 +236,21 @@ export default {
     data (){
       return{
         selectedLevel : 0,
-        selectedParentLevel : 1
-      }
-    },
-    computed: {
-      addCount: function(){
-        if(this.level){
-          return this.level+1;
-        }else{
-          return 0;
-        }
+        selectedParentLevel : 0
       }
     },
     methods: {
       toggleAccordion : function(parentLevel, level){
-        //console.log('clicked', parentLevel+'-'+this.selectedParentLevel, level+1+'-'+this.selectedLevel);
+        // console.log('clicked', parentLevel+'-'+this.selectedParentLevel, level+1+'-'+this.selectedLevel);
+        // alert(parentLevel+'-'+level);
         if((parentLevel === this.selectedParentLevel) && (level + 1 === this.selectedLevel)){
           this.selectedLevel = level - 1;
         }else{
           this.selectedLevel = level + 1;
         }
         this.selectedParentLevel = parentLevel;
-        //console.log('opening:', this.selectedParentLevel, this.selectedLevel);
+        // console.log('selected:', this.selectedParentLevel, this.selectedLevel);
+        // console.log('open:', this.openParentLevel, this.openLevel);
       },
       urlType: function (value) {
         if(typeof value == 'function'){
@@ -280,6 +273,15 @@ export default {
 
 .list{
   width:100%;
+
+  &--visible{
+        opacity: 1;
+        height: auto;
+      }
+      &--hidden{
+        opacity: 0;
+        height: 0;
+      }
 
   @include mq($until: 'md'){
     text-align: center;
@@ -343,6 +345,7 @@ export default {
       }
       &--open{
         transform: rotate(90deg);
+        //color: red;
       }
       &--close{
 

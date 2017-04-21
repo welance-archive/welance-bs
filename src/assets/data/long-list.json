@@ -105,17 +105,17 @@
               "ratio": "3-2"
             },
             "items": [
-            {
-              "title": "4th level",
-              "url": "https://welance-handbook.herokuapp.com/welance-development-guidelines.html",
-              "target": "_blank",
-              "image": {
-                "src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
-                "srcRetina": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
-                "ratio": "3-2"
+              {
+                "title": "4th level",
+                "url": "https://welance-handbook.herokuapp.com/welance-development-guidelines.html",
+                "target": "_blank",
+                "image": {
+                  "src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
+                  "srcRetina": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
+                  "ratio": "3-2"
+                }
               }
-            }
-          ]
+            ]
           }
         ]
       },
@@ -127,7 +127,31 @@
           "src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
           "srcRetina": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
           "ratio": "3-2"
-        }
+        },
+        "items": [
+          {
+            "title": "3rd level",
+            "url": "https://welance-handbook.herokuapp.com/welance-development-guidelines.html",
+            "target": "_blank",
+            "image": {
+              "src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
+              "srcRetina": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
+              "ratio": "3-2"
+            },
+            "items": [
+              {
+                "title": "4th level",
+                "url": "https://welance-handbook.herokuapp.com/welance-development-guidelines.html",
+                "target": "_blank",
+                "image": {
+                  "src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
+                  "srcRetina": "https://placeholdit.imgix.net/~text?txtsize=33&txt=ICON_HERE&w=400&h=400",
+                  "ratio": "3-2"
+                }
+              }
+            ]
+          }
+        ]
       },
       {
         "title": "Web Design 2",
