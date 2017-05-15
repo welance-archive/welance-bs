@@ -102,8 +102,8 @@
             }
           },
           {
-            "title" : "Lists",
-            "url": "/components/data-display/lists",
+            "title" : "Trees",
+            "url": "/components/data-display/trees",
             "target": "",
             "image": {
               "src": "",
