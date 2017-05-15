@@ -402,7 +402,7 @@
 
         <div class="styles">
 
-          <!-- ––––––––––––––––––––––––––––––––––––––- LISTS -->
+          <!-- ––––––––––––––––––––––––––––––––––––––- TREES -->
           <section class="lists-section">
 
             <quote
@@ -416,7 +416,7 @@
 
               <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
               <div class="row">
-                <list
+                <tree
                   :name="'example'"
                   :debug="false"
                   :contained="false"
@@ -424,15 +424,15 @@
                   :print-levels="4"
                   :print-level-imgs="[1, 0, 0, 0]"
                   :print-level-text="[0, 1, 1, 1]"
-                  :list="servicesList">
-                </list>
+                  :tree="servicesList">
+                </tree>
               </div>
 
             </div>
 
 
           </section>
-          <!-- ––––––––––––––––––––––––––––––––––––––- END LISTS -->
+          <!-- ––––––––––––––––––––––––––––––––––––––- END TREES -->
 
 
           <!-- ––––––––––––––––––––––––––––––––––––––- MODAL -->
@@ -562,7 +562,7 @@ import Quote from '../common/Quote.vue';
 import Modal from '../common/Modal.vue';
 import Gallery from '../common/Gallery.vue';
 import TextForm from '../common/TextForm.vue';
-import List from '../common/List.vue';
+import Tree from '../common/Tree.vue';
 
 import axios from 'axios';
 
@@ -582,7 +582,7 @@ export default {
     Modal,
     Gallery,
     TextForm,
-    List
+    Tree
   },
   methods: {
     openModal: function(){

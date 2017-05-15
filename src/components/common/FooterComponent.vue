@@ -16,7 +16,7 @@
 
       <div class="row footer__row">
         <div class="col footer__col">
-          <slot name="row-02"></slot>
+          <slot name="row-03"></slot>
         </div>
       </div>
     </div>

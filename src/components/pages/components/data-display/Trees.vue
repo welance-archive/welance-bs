@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col col--3-12@lg col--12-12@xs">
         <!--:open-all="true"-->
-        <list
+        <tree
           :name="'menuzio'"
           :debug="false"
           :columnClass="'col--12-12@xs'"
@@ -13,17 +13,17 @@
           :print-levels="5"
           :print-level-imgs="[0,0,0,0,0]"
           :print-level-text="[1,1,1,1,1]"
-          :list="componentsMenu">
-        </list>
+          :tree="componentsMenu">
+        </tree>
       </div>
       <div class="col col--9-12@lg col--12-12@xs">
-        <!-- ––––––––––––––––––––––––––––––––––––––- LISTS -->
-        <section class="lists-section">
+        <!-- ––––––––––––––––––––––––––––––––––––––- TREES -->
+        <section class="trees-section">
 
           <quote
-            :name="'list'"
+            :name="'tree'"
             :small-text-pre="''"
-            :big-text="'Lists'"
+            :big-text="'Trees'"
             :small-text-sub="'A component for listing (recursively)'">
           </quote>
 
@@ -31,7 +31,7 @@
 
             <iframe style="border: none; width:100%; height: 300px;" src="https://jsfiddle.net/c6s2tntm/2/embedded/html,js"></iframe>
             <div class="row">
-              <list
+              <tree
                 :name="'example'"
                 :debug="false"
                 :contained="false"
@@ -39,14 +39,14 @@
                 :print-levels="4"
                 :print-level-imgs="[1, 0, 0, 0]"
                 :print-level-text="[1, 1, 1, 1]"
-                :list="servicesList">
-              </list>
+                :tree="servicesList">
+              </tree>
             </div>
 
           </div>
 
         </section>
-        <!-- ––––––––––––––––––––––––––––––––––––––- END LISTS -->
+        <!-- ––––––––––––––––––––––––––––––––––––––- END TREES -->
       </div>
     </div>
   </div>
@@ -55,11 +55,11 @@
 
 <script>
 import Quote from '../../../common/Quote.vue';
-import List from '../../../common/List.vue';
+import Tree from '../../../common/Tree.vue';
 import axios from 'axios';
 
 export default {
-  name: 'ListsPage',
+  name: 'TreesPage',
   watch: {
     '$route' (to, from) {
       console.log('route changed');
@@ -67,7 +67,7 @@ export default {
   },
   components: {
     Quote,
-    List
+    Tree
   },
   methods: {
     exampleFunction : function(){

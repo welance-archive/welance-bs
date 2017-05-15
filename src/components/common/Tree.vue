@@ -1,8 +1,8 @@
 <template>
-  <ul class="list" :class="[{'wrap wrap--contained' : contained}, 'list-' + name , mode ? 'list--' + mode : '']">
+  <ul class="tree" :class="[{'wrap wrap--contained' : contained}, 'tree-' + name , mode ? 'tree--' + mode : '']">
 <!--{{parentLevel+'+'+level}}-->
     <pre v-if="debug && level == 1" class="row">
-      ℹ️ List
+      ℹ️ tree
 
       SLOTS:
         no slots
@@ -11,10 +11,10 @@
         • name (string)
         • debug (boolean)
         • contained (boolean)
-        • print-levels (array) eg, for a 4 nested level list: [1,0,0,0]
-        • print-level-imgs (array) eg, for a 4 nested level list: [1,0,0,0]
-        • print-level-text (array) eg, for a 4 nested level list: [1,0,0,0]
-        • list (array) eg. [
+        • print-levels (array) eg, for a 4 nested level tree: [1,0,0,0]
+        • print-level-imgs (array) eg, for a 4 nested level tree: [1,0,0,0]
+        • print-level-text (array) eg, for a 4 nested level tree: [1,0,0,0]
+        • tree (array) eg. [
                             {
                               title: 'Web Design - NO URL',
                               url: '',
@@ -91,13 +91,13 @@
                             ]
     </pre>
     <li v-if="level <= printLevels"
-        class="list__item"
-        :class="[ 'list__item-' + index,
+        class="tree__item"
+        :class="[ 'tree__item-' + index,
                   columnClass && !ignoreClass ? columnClass : 'col--12-12',
-                  (parentLevel === openParentLevel && level === openLevel) || level === 1 ? 'list__item--visible' : 'list__item--hidden',
-                  openAll === true ? 'list__item--always-visible' : ''
+                  (parentLevel === openParentLevel && level === openLevel) || level === 1 ? 'tree__item--visible' : 'tree__item--hidden',
+                  openAll === true ? 'tree__item--always-visible' : ''
                 ]"
-        v-for="(item,index) in list">
+        v-for="(item,index) in tree">
 
         <router-link v-if="urlType(item.url) === 'internal'" :to="item.url">
           <div v-if="item.image.src && printLevelImgs[level-1]" class="img"
@@ -133,20 +133,20 @@
 
 
         <span @click.stop="toggleAccordion(index, level);"
-              v-if="item.items && item.items.length && level <= printLevels-1 && mode === 'accordion' && openAll === false" class="list__arrow"
-              :class="(index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
+              v-if="item.items && item.items.length && level <= printLevels-1 && mode === 'accordion' && openAll === false" class="tree__arrow"
+              :class="(index === selectedParentLevel && level <= selectedLevel) ? 'tree__arrow--open' : 'tree__arrow--close'">
               <!--{{parentLevel}} = {{openParentLevel}} & {{level}} <= {{openLevel}}-->
         </span>
         <span @click.stop="toggleAccordion(index, level);"
-              v-if="item.items && item.items.length && level <= printLevels-1 && mode === 'tree' && openAll === false" class="list__arrow"
-              :class="(index === selectedParentLevel && level <= selectedLevel) ? 'list__arrow--open' : 'list__arrow--close'">
+              v-if="item.items && item.items.length && level <= printLevels-1 && mode === 'tree' && openAll === false" class="tree__arrow"
+              :class="(index === selectedParentLevel && level <= selectedLevel) ? 'tree__arrow--open' : 'tree__arrow--close'">
               <!--{{parentLevel}} = {{openParentLevel}} & {{level}} <= {{openLevel}}-->
         </span>
-        <!--<span class="list__arrow list__arrow--close" v-if="(parentLevel === openParentLevel && level >= selectedLevel) && item.items"></span>-->
+        <!--<span class="tree__arrow tree__arrow--close" v-if="(parentLevel === openParentLevel && level >= selectedLevel) && item.items"></span>-->
 
-        <list
+        <tree
           v-if="item.items && level <= printLevels"
-          :name="'list-' + index"
+          :name="'tree-' + index"
           :debug="true"
           :contained="false"
           :open-all="openAll"
@@ -159,8 +159,8 @@
           :print-level-imgs="printLevelImgs"
           :print-level-text="printLevelText"
           :ignore-class="true"
-          :list="item.items">
-        </list>
+          :tree="item.items">
+        </tree>
 
     </li>
 
@@ -169,7 +169,7 @@
 
 <script>
 export default {
-    name: 'List',
+    name: 'Tree',
     props:
     {
       'name': {
@@ -228,7 +228,7 @@ export default {
         type: Array,
         default: []
       },
-      'list': {
+      'tree': {
         type: Array,
         default: []
       }
@@ -271,7 +271,7 @@ export default {
 <style lang="scss">
 @import "./src/sass/main-sass-only.scss";
 
-.list{
+.tree{
   width:100%;
 
   &--visible{
@@ -319,7 +319,7 @@ export default {
         }
       }
     }
-    .list__item{
+    .tree__item{
       transition: all .3s ease-in-out;
       &--visible{
         opacity: 1;
@@ -334,7 +334,7 @@ export default {
         height: auto!important;
       }
     }
-    .list__arrow{
+    .tree__arrow{
       cursor: pointer;
       position: absolute;
       color: $white;
@@ -376,7 +376,7 @@ export default {
         }
       }
     }
-    .list__item{
+    .tree__item{
       text-align: left;
       @include pb(0);
       @include pt(0);
@@ -402,7 +402,7 @@ export default {
         display: block;
       }
     }
-    .list__arrow{
+    .tree__arrow{
       cursor: pointer;
       position: absolute;
       color: $brand-primary;

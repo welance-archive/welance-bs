@@ -11,7 +11,7 @@ import TypographyPage from './../pages/components/basic-styling/Typography.vue';
 import HeroPage from './../pages/components/data-display/Hero.vue';
 import HeaderFooterPage from './../pages/components/data-display/HeaderFooter.vue';
 import GalleryPage from './../pages/components/data-display/Gallery.vue';
-import ListsPage from './../pages/components/data-display/Lists.vue';
+import TreesPage from './../pages/components/data-display/Trees.vue';
 
 Vue.use(Router);
 
@@ -48,8 +48,8 @@ export default new Router({
         component: GalleryPage
       },
       {
-        path: '/components/data-display/lists',
-        component: ListsPage
+        path: '/components/data-display/trees',
+        component: TreesPage
       },
       {
         path: '/components/data-display/hero',

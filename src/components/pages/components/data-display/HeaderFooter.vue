@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col col--3-12@lg col--12-12@xs">
         <!--:open-all="true"-->
-        <list
+        <tree
           :name="'menuzio'"
           :debug="false"
           :columnClass="'col--12-12@xs'"
@@ -13,8 +13,8 @@
           :print-levels="5"
           :print-level-imgs="[0,0,0,0,0]"
           :print-level-text="[1,1,1,1,1]"
-          :list="componentsMenu">
-        </list>
+          :tree="componentsMenu">
+        </tree>
       </div>
       <div class="col col--9-12@lg col--12-12@xs">
         <!-- ––––––––––––––––––––––––––––––––––––––- HEADER -->
@@ -66,7 +66,7 @@
 
 <script>
 import Quote from '../../../common/Quote.vue';
-import List from '../../../common/List.vue';
+import Tree from '../../../common/Tree.vue';
 import HeaderComponent from '../../../common/HeaderComponent.vue';
 import FooterComponent from '../../../common/FooterComponent.vue';
 import axios from 'axios';
@@ -80,7 +80,7 @@ export default {
   },
   components: {
     Quote,
-    List,
+    Tree,
     HeaderComponent,
     FooterComponent
   },

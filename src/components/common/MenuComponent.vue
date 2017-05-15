@@ -12,7 +12,7 @@
           the following component gets displayed for mode of any type, but the header mode
           ...on any vieport size
          -->
-        <list
+        <tree
           v-if="!showMobileMenu() || mode !== 'header'"
           :name="name + '-' + mode"
           :debug="false"
@@ -20,13 +20,13 @@
           :print-levels="printLevels"
           :print-level-imgs="printLevelImgs"
           :print-level-text="printLevelText"
-          :list="menu">
-        </list>
+          :tree="menu">
+        </tree>
         <!--
           the following component gets displayed only when mode is header,
           ...for a viewport size <= 768
          -->
-        <list
+        <tree
           v-if="showMobileMenu() && mode === 'header'"
           :name="name + '-' + mode + '-mobile'"
           :debug="false"
@@ -35,15 +35,15 @@
           :print-levels="mobilePrintLevels >= 1 ? mobilePrintLevels : printLevels"
           :print-level-imgs="mobilePrintLevelImgs.length ? mobilePrintLevelImgs : printLevelImgs"
           :print-level-text="mobilePrintLevelText.length ? mobilePrintLevelText : printLevelText"
-          :list="menu">
-        </list>
+          :tree="menu">
+        </tree>
     </nav>
 
   </div>
 </template>
 
 <script>
-import List from './List.vue';
+import Tree from './Tree.vue';
 import Breakpoints from '../../mixins/breakpoints.js';
 
 export default {
@@ -109,7 +109,7 @@ export default {
       }
     },
     components: {
-      List
+      Tree
     },
     methods: {
       showMobileMenu: function(){
@@ -233,8 +233,8 @@ export default {
         }
       }
     }
-    .list{
-      .list__item{
+    .tree{
+      .tree__item{
         align-self: center;
       }
     }
@@ -271,8 +271,8 @@ export default {
         font-size: 1rem;
       }
     }
-    .list{
-      .list__item{
+    .tree{
+      .tree__item{
         align-self: flex-start;
         .img{
           min-width: 50%;
