@@ -81,7 +81,7 @@ export default {
     }
   },
   created () {
-    axios.get(`/assets/data/components-menu.json`)
+    axios.get(API_URL + `assets/data/components-menu.json`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.componentsMenu = response.data;
@@ -89,7 +89,7 @@ export default {
     .catch(e => {
       console.log(e);
     })
-    axios.get(`/assets/data/long-list.json`)
+    axios.get(API_URL + `assets/data/long-list.json`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.servicesList = response.data;

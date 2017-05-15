@@ -103,7 +103,7 @@ export default {
     }
   },
   created (){
-    axios.get(`/assets/data/main-menu.json`)
+    axios.get(API_URL + `assets/data/main-menu.json`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.mainMenu = response.data;

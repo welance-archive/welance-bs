@@ -595,7 +595,7 @@ export default {
     }
   },
   created () {
-    axios.get(`/assets/data/long-list.json`)
+    axios.get(API_URL + `assets/data/long-list.json`)
     .then(response => {
       // JSON responses are automatically parsed.
       this.servicesList = response.data;
