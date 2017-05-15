@@ -165,6 +165,9 @@
           #{$im-columns-class}--#{$n}-#{$i}\@#{$breakpoint-name} {
             width: ($n / $i) * 100%;
           }
+          #{$im-columns-class}--offset-#{$n}-#{$i}\@#{$breakpoint-name} {
+            margin-left: ($n / $i) * 100%;
+          }
         }
       }
     }

@@ -38,18 +38,18 @@
             </p>
           </div>
           <div class="row row-example">
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
-            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs">col</div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
+            <div class="col col-example col--1-12@xl col--6-12@lg col--3-12@md col--12-12@xs"></div>
           </div>
           <div class="row">
             <p class="col col--12-12">
@@ -59,11 +59,28 @@
             </p>
           </div>
           <div class="row row-example">
-            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
-            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs">col</div>
+            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs"></div>
+            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs"></div>
+            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs"></div>
+            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs"></div>
+            <div class="col-example col col--4-12@xl col--1-8@lg col--1-5@xs"></div>
+          </div>
+          <div class="row">
+            <p class="col col--12-12">
+              If you need to position columns with a <strong>responsive offset</strong>, you can do that as well...
+              <pre> class="col col-example col--offset-3-5@xl col--2-5@xl"</pre>
+            </p>
+          </div>
+          <div class="row row-example">
+            <div class="col col-example col--offset-3-5@xl col--2-5@xl"></div>
+          </div>
+          <div class="row">
+            <p class="col col--12-12">
+              <pre> class="col col-example col--offset-3-12@xl col--2-12@xl"</pre>
+            </p>
+          </div>
+          <div class="row row-example">
+            <div class="col col-example col--offset-3-12@xl col--2-12@xl"></div>
           </div>
 
         </section>
@@ -118,6 +135,7 @@ export default {
     @include mb(4);
     width: 100%;
     margin: 0 auto;
+    background: rgba(60,60,255,.1);
   }
   .col-example{
     border: 1px solid rgba(60,60,255,.4);
