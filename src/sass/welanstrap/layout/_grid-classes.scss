@@ -1,0 +1,22 @@
+//define general wrap (container) rules
+.wrap{
+  @include make-container();
+  &--contained{
+    @include make-container-max-widths();
+  }
+}
+
+//define general row rules
+.row {
+  @include make-row();
+}
+
+
+//define general column rules
+.col {
+  @include make-col-ready();
+  //@include make-col-fraction(6/15);
+}
+
+//generate all classes for columns (only widths)
+@include im-columns($grids...);

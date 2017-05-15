@@ -1,54 +1,71 @@
 <template>
-  <div class="gallery-wrapper" :class="['gallery-' + name, galleryTypeClass]">
-    <div class="gallery">
-      <div class="gallery__container" :class="galleryTypeClass">
-        <template v-for="image in images">
-          <template v-if="image.link">
+  <div class="gallery" :class="['gallery-' + name]">
+    <div class="gallery__wrap" :class="{'wrap wrap--contained' : contained}">
+    <div class="gallery__row" :class="galleryTypeClass">
+      <template v-for="image in images">
+        <template v-if="image.link">
 
-              <a    :href="image.link" :alt="image.alt" :target="image.target"
-                    class="img"
-                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
-                    :style="{ backgroundImage: 'url(' + image.src + ')' }"
+            <a    :href="image.link" :alt="image.alt" :target="image.target"
+                  class="img"
+                  :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
+                  :style="{ backgroundImage: 'url(' + image.src + ')' }"
 
-              >
-                <div class="img__text-container">
-                  <h5 v-if="image.title">{{image.title}}</h5>
-                  <h6 v-if="image.subtitle">{{image.subtitle}}</h6>
-                </div>
-              </a>
-
-          </template>
-          <template v-else>
-              <div  class="img"
-                    :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
-                    :style="{ backgroundImage: 'url(' + image.src + ')' }"
-              >
-                <div class="img__text-container">
-                  <h5 v-if="image.title">{{image.title}}</h5>
-                  <h6 v-if="image.subtitle">{{image.subtitle}}</h6>
-                </div>
+            >
+              <div class="img__text-container">
+                <h5 v-if="image.title">{{image.title}}</h5>
+                <h6 v-if="image.subtitle">{{image.subtitle}}</h6>
               </div>
-          </template>
+            </a>
+
         </template>
-      </div>
+        <template v-else>
+            <div  class="img"
+                  :class="[image.ratio ? 'img--ratio-' + image.ratio : '']"
+                  :style="{ backgroundImage: 'url(' + image.src + ')' }"
+            >
+              <div class="img__text-container">
+                <h5 v-if="image.title">{{image.title}}</h5>
+                <h6 v-if="image.subtitle">{{image.subtitle}}</h6>
+              </div>
+            </div>
+        </template>
+      </template>
     </div>
   </div>
+</div>
 </template>
 
 <script>
 export default {
   name: 'Gallery',
-  props: [
-          'name',
-          'images',
-          'galleryType'
-          ],
+  props: {
+    'name': {
+      type: String,
+      default: 'default'
+    },
+    'debug': {
+      type: Boolean,
+      default: false
+    },
+    'contained': {
+      type: Boolean,
+      default: false
+    },
+    'galleryType': {
+      type: String,
+      default: 'squares'
+    },
+    'images': {
+      type: Array,
+      default: []
+    }
+  },
   data () {
     return{
       galleryTypeClass: {
-        'gallery__container--off-canvas'  : this.galleryType === 'off-canvas',
-        'gallery__container--blocky'      : this.galleryType === 'blocky',
-        'gallery__container--squares'     : this.galleryType === 'squares'
+        'gallery__row--off-canvas'  : this.galleryType === 'off-canvas',
+        'gallery__row--blocky'      : this.galleryType === 'blocky',
+        'gallery__row--squares'     : this.galleryType === 'squares'
       }
     }
   }
@@ -57,32 +74,25 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main-sass-only.scss";
 
-.gallery-wrapper{
-  //background: red;
-  overflow: hidden;
-  height: auto;
-  &.gallery__container--off-canvas{
-    overflow: visible;
-  }
-}
 
 .gallery {
-  @include make-container-max-widths();
-  margin: 0 auto;
 
-  &__container{
-    flex-flow: row wrap;
-    justify-content: space-around;
+  &__wrap{
+    width: 100%;
+    height: 100%;
+  }
 
-    // GRID
-    // sm: 540px,
-    // md: 720px,
-    // lg: 960px,
-    // xl: 1140px,
-    // xxl: 1560px
+  &__row{
 
+    .img{
+      &__text-container{
+        @include pl(2);
+        @include pr(2);
+        @include pb(1);
+      }
+    }
     // Mode: squares
     //
     // Feature List:
@@ -92,96 +102,26 @@ export default {
     // 4) If links exists they work, but title and subtitle are not shown
     //
     &--squares{
-      @include make-row();
+      display: flex;
       flex-flow: row wrap;
-      justify-content: flex-start;
+      justify-content: center;
 
       .img{
-        &:first-child, &:nth-child(4n+5){
-          margin-left: 0!important;
-          //border-bottom: 1px solid blue; //debug
-        }
-      }
+        @include flexembed-image(100%, null);
+        min-width: 20%;
+        border: 1px solid $white;
+        margin: 0;
+        align-self: space-between;
 
-      @include mq($from: 'xs'){
-        @include ml(1);
-        @include mr(1);
-        flex-flow: row wrap;
-        justify-content: space-between;
-        .img{
-          @include flexembed-image(100%, null, 10rem); //lg: 540px,
-          @include m(0);
-          @include mb(1);
-          &__text-container{
-            display: none;
-          }
+        @include mq($until: 'lg'){
+          min-width: 33.33%;
         }
-      }
 
-      @include mq($from: 'sm'){
-        @include ml(1);
-        @include mr(1);
-        flex-flow: row wrap;
-        justify-content: space-between;
-        .img{
-          @include flexembed-image(100%, null, 8rem); //lg: 540px,
-          @include m(0);
-          @include mb(1);
-          &__text-container{
-            display: none;
-          }
+        @include mq($until: 'md'){
+          min-width: 50%;
         }
-      }
-
-      @include mq($from: 'md'){
-        @include ml(1);
-        @include mr(1);
-        justify-content: center;
-        .img{
-          @include flexembed-image(100%, null, 10rem); //lg: 720px,
-          @include m(0);
-          @include ml(1);
-          @include mb(1);
-          &__text-container{
-            display: none;
-          }
-        }
-      }
-
-      @include mq($from: 'lg'){
-        flex-flow: row wrap;
-        justify-content: flex-start;
-        .img{
-          @include flexembed-image(100%, null, 13.7rem); //lg: 960px,
-          @include m(0);
-          @include ml(1);
-          @include mb(1);
-          &__text-container{
-            display: none;
-          }
-        }
-      }
-
-      @include mq($from: 'xl'){
-        .img{
-          @include flexembed-image(100%, null, 16.55rem); //xl: 1140px,
-          @include m(0);
-          @include ml(1);
-          @include mb(1);
-          &__text-container{
-            display: none;
-          }
-        }
-      }
-      @include mq($from: 'xxl'){
-        .img{
-          @include flexembed-image(100%, null, 22.7rem); //xxl: 1560px
-          @include m(0);
-          @include ml(1);
-          @include mb(1);
-          &__text-container{
-            display: none;
-          }
+        &__text-container{
+          display: none;
         }
       }
     }
@@ -193,17 +133,29 @@ export default {
     //
     &--blocky{
       display: flex;
-      flex-flow: row wrap;
-      justify-content: flex-start;
-      align-content: center;
+      flex-direction: row;
+      flex-wrap: wrap;
+      height: 100%;
+
+      //behaves like off-canvas until MD
+      @include mq($until: 'md'){
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-content: flex-start;
+        overflow: scroll;
+      }
 
       .img{
-        align-self: flex-start;
-        flex: auto;
-        @include p(2);
-        @include ml(2);
-        @include mr(2);
-        @include mb(2);
+        @include mq($until: 'md'){
+          @include mr(2);
+        }
+        flex: 1 2 auto;
+        &__text-container{
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
       }
     }
 
@@ -216,52 +168,27 @@ export default {
     // 4) 100% responsive on small displays
     // 5) If links exists they work, and title and subtitle are shown
     &--off-canvas{
-      @include mq($from: 'md'){
-        @include make-row();
-        flex-flow: row nowrap;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
+      align-content: center;
+
+      @include mq($until: 'lg'){
+        justify-content: flex-start;
+        align-content: flex-start;
+        overflow: scroll;
       }
 
       .img{
         align-self: center;
-        @include m(2);
-
-        &:last-child{
-          @include mr(0);
-        }
-        &:first-child{
-          @include ml(0);
-        }
-        &__text-container{
-          @include ml(1);
-        }
+        @include mr(2);
 
         @include mq($from: 'xl'){
           align-self: flex-end;
         }
       }
-
-      @include mq($until: 'md'){
-        flex-flow: column wrap;
-        @include m(1);
-        //@include ml(0);
-        .img{
-          @include m(0);
-          @include mt(2);
-
-          &:last-child{
-            @include mb(0);
-          }
-          &:first-child{
-            @include mt(0);
-          }
-        }
-      }
-      @include mq($until: 'xs'){
-        @include m(2);
-        @include ml(0);
-      }
     }
- }
+  }
 };
 
 </style>

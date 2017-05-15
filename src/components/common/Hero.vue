@@ -1,25 +1,65 @@
 <template>
-  <div class="hero" :class="classFunction">
-    <div class="hero__container">
-      <div class="hero__col">
-        <div class="hero__col-inner">
-          <quote  :type="'main'"
-                  :small-text-pre="''"
-                  :big-text="title"
-                  :small-text-sub="subtitle"
-          >
-            <div class="hero__extra" slot="extra">
-              <button class="btn btn--primary" v-if="!ctaUrl" v-on:click.stop.prevent="openModal()" >{{ctaText}}</button>
-            </div>
-          </quote>
+  <div class="hero" :class="[{'wrap wrap--contained' : contained}, 'hero-' + name]">
 
-          <router-link class="btn btn--info" v-if="ctaUrl" :to="ctaUrl">{{ctaText}}</router-link>
+    <pre v-if="debug" class="row">
+      ℹ️ Hero
+
+      SLOTS:
+        • row-01
+        • row-02
+        • row-03
+
+      PROPS:
+        • name (string)
+        • debug (boolean)
+        • contained (boolean)
+        • pre-title (HTML string)
+        • title (HTML string)
+        • sub-title (HTML string)
+        • ctas (array of objects)
+          [
+            {title: 'go to external link', action: 'http://example.com', class: 'btn col--4-12 btn--primary'},
+            {title: 'go to internal link', action: 'this-is-a-route', class: 'btn col--4-12 btn--primary'},
+            {title: 'execute function', action: this.openModal, class: 'btn col--4-12 btn--primary'}
+          ]
+        • visual-element (object) {type: 'image', class: 'img img--ratio-1-1', url: 'https://fillmurray.com/1400/1400'}
+        • col-one-class (String)
+        • col-two-class (String)
+        • reverse-cols (Boolean)
+    </pre>
+
+    <slot name="row-01"></slot>
+    <slot name="row-02">
+      <div class="row hero__row" :class="reverseCols ? 'hero__row--reverse' : ''">
+        <div class="col hero__col" :class="colOneClass">
+          <quote  :type="'main'"
+                  :small-text-pre="preTitle"
+                  :big-text="title"
+                  :small-text-sub="subTitle"
+          >
+          </quote>
+          <div class="wrap hero__ctas">
+            <div class="row">
+              <template v-for="(cta, index) in ctas">
+                <template v-if="urlType(cta.action) === 'internal'">
+                  <router-link :class="cta.class ? cta.class : 'btn col--6-12 btn--primary'" v-if="urlType(cta.action) === 'internal'" :to="cta.action">{{cta.title}}</router-link>
+                </template>
+                <template v-else-if="urlType(cta.action) === 'external'">
+                  <a :class="cta.class ? cta.class : 'btn col--6-12 btn--primary'" v-if="urlType(cta.action) === 'external'" :href="cta.action">{{cta.title}}</a>
+                </template>
+                <template v-else="urlType(cta.action) === 'function'">
+                  <button :class="cta.class ? cta.class : 'btn col--6-12 btn--primary'" v-if="urlType(cta.action) === 'function'" v-on:click.stop.prevent="cta.action" >{{cta.title}}</button>
+                </template>
+              </template>
+            </div>
+          </div>
+        </div>
+        <div class="col hero__visuals" v-if="visualElement" :class="colTwoClass">
+          <div v-if="visualElement.type === 'image'" :class="visualElement.class" :style="{ 'background-image': 'url(' + visualElement.url + ')' }"> </div>
         </div>
       </div>
-      <div class="hero__visuals" v-if="image">
-        <div class="img img--ratio-1-1" :style="{ 'background-image': 'url(' + image + ')' }"> </div>
-      </div>
-    </div>
+    </slot>
+    <slot name="row-03"></slot>
   </div>
 </template>
 
@@ -33,97 +73,62 @@ export default {
     },
     props: [
               'name',
-              'openModal',
+              'debug',
+              'contained',
               'title',
-              'subtitle',
-              'image',
-              'ctaUrl',
-              'ctaText',
-              'maxWidth'
+              'subTitle',
+              'preTitle',
+              'ctas',
+              'visualElement',
+              'colOneClass',
+              'colTwoClass',
+              'reverseCols'
             ],
-    computed: {
-      classFunction: function() {
-        if(this.maxWidth === true){
-          return 'hero--' + this.name + ' hero--max';
+    methods: {
+      urlType: function (value) {
+        if(typeof value == 'function'){
+          return 'function';
+        }else if(value.indexOf('http') !== -1){
+          return 'external';
+        }else if(value === '' || value === undefined || value === 'undefined'){
+          return '';
         }else{
-          return 'hero--' + this.name;
+          return 'internal';
         }
       }
     }
-
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main-sass-only.scss";
 
 .hero {
-  &--max{
-    @include make-container-max-widths();
-    margin: 0 auto;
-  }
-  @include make-container();
+  margin: 0 auto;
 
   @include mq($until: 'sm'){
-    @include make-container();
+    padding-left: 0;
+    padding-right: 0;
   }
 
-  &__container{
-    @include make-row();
+  &__row{
+
+    &--reverse{
+      flex-flow: row-reverse;
+      @include mq($until: 'md'){
+        flex-wrap: wrap;
+      }
+    }
     @include mq($until: 'md'){
       flex-wrap: wrap-reverse;
     }
-
-  }
-  &__extra{
-    @include mq($until: 'lg'){
-      @include pt(3);
-    }
-    @include mq($from: 'lg'){
-      @include pt(17);
-    }
-  }
-  &__col{
-    //@include make-col-ready();
-    @include make-col(7);
-
-    @include mq($until: 'md'){
-      @include make-col(12);
-    }
-
-    &-inner{
-      @include mq($until: 'sm'){
-        // @include pl(2);
-        // @include pr(2);
-      }
-      .btn{
-        @include mq($until: 'md'){
-          width: 100%;
-          text-align: center;
-        }
-      }
-      .quote__col{
-
-        @include mq($from: 'md'){
-          @include mt(0);
-          .quote-heading{
-            @include mt(0);
-          }
-        }
-      }
-    }
   }
   &__visuals{
-    //@include make-col-ready();
-    @include make-col(5);
-    @include mq($until: 'md'){
-      @include make-col(12);
-    }
-    @include mq($until: 'sm'){
-      //@include pl(3);
-      //@include pr(3);
-    }
+    align-self: center;
+  }
+  &__ctas{
+    @include mt(1);
   }
 };
 

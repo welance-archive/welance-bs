@@ -1,20 +1,26 @@
 <template>
-  <body class="app" :class="{ 'app--no-overflow': showModal }">
+  <body class="app" :class="{ 'app--no-overflow': blockScroll }">
 
-    <header-component
-      :name="'main'"
-      :contacts="contacts"
-      :details="details"
-      :menu="menu">
-
-      <span slot="extra"></span>
+    <header-component :name="'main'"
+                      :contained="true"
+                      :contacts="contacts"
+                      :details="details">
 
       <menu-component slot="menu"
-        :levels="1"
-        :show-images="false"
-        :name="'header'"
-        :lists="menu"
-        :mode="'header'">
+                      :name="'regular'"
+                      :debug="false"
+                      :contained="false"
+                      :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
+                      :print-levels="1"
+                      :print-level-imgs="[0, 0, 0, 0]"
+                      :print-level-text="[1, 1, 1, 1]"
+                      :mobile-print-levels="5"
+                      :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
+                      :mobile-print-level-text="[1, 1, 1, 1, 1]"
+                      :menu="mainMenu"
+                      :mode="'header'"
+                      @menuOpen="blockScroll = true"
+                      @menuClose="blockScroll = false">
       </menu-component>
 
     </header-component>
@@ -22,38 +28,51 @@
     <fixed-item :appear-at="200">
 
       <template slot="content">
-        <header-component
-          :name="'main'"
-          :contacts="contacts"
-          :details="details"
-          :menu="menu">
+        <header-component :name="'main'"
+                          :contained="true"
+                          :contacts="contacts"
+                          :details="details">
 
-          <span slot="extra"></span>
           <menu-component slot="menu"
-            :levels="1"
-            :show-images="false"
-            :name="'header'"
-            :lists="menu"
-            :mode="'header'">
+                          :name="'fixed'"
+                          :debug="false"
+                          :contained="false"
+                          :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
+                          :print-levels="1"
+                          :print-level-imgs="[0, 0, 0, 0]"
+                          :print-level-text="[1, 1, 1, 1]"
+                          :mobile-print-levels="5"
+                          :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
+                          :mobile-print-level-text="[1, 1, 1, 1, 1]"
+                          :menu="mainMenu"
+                          :mode="'header'"
+                          @menuOpen="blockScroll = true"
+                          @menuClose="blockScroll = false">
           </menu-component>
+
         </header-component>
       </template>
 
     </fixed-item>
 
-    <router-view @modalOpened="showModal = true" @modalClosed="showModal = false"></router-view>
+    <router-view @modalOpened="blockScroll = true" @modalClosed="blockScroll = false"></router-view>
 
     <footer-component
       :name="'main'"
+      :contained="true"
       :contacts="contacts"
-      :details="details"
-      :menu="menu">
+      :details="details">
 
-      <menu-component slot="row-0"
-        :show-images="false"
-        :name="'footer'"
-        :lists="menu"
-        :mode="'footer'">
+      <menu-component slot="row-01"
+          :name="'footer'"
+          :debug="false"
+          :contained="false"
+          :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
+          :print-levels="1"
+          :print-level-imgs="[0, 0, 0, 0]"
+          :print-level-text="[1, 0, 0, 0]"
+          :menu="mainMenu"
+          :mode="'footer'">
       </menu-component>
 
       <div slot="row-1"></div>
@@ -68,6 +87,7 @@ import HeaderComponent from './components/common/HeaderComponent.vue';
 import FooterComponent from './components/common/FooterComponent.vue';
 import FixedItem from './components/common/FixedItem.vue';
 import MenuComponent from './components/common/MenuComponent.vue';
+import axios from 'axios';
 
 export default {
   name: 'app',
@@ -77,8 +97,24 @@ export default {
     FixedItem,
     MenuComponent
   },
+  methods: {
+    exampleFunction : function(){
+      alert('this could be anything!!');
+    }
+  },
+  created (){
+    axios.get(API_URL + `assets/data/main-menu.json`)
+    .then(response => {
+      // JSON responses are automatically parsed.
+      this.mainMenu = response.data;
+    })
+    .catch(e => {
+      console.log(e);
+    })
+  },
   data () {
     return{
+      mainMenu: [],
       contacts: {
         phone: '+49 30 609 857 750',
         address: 'Waldemarstraße 37a',
@@ -89,203 +125,17 @@ export default {
       details: {
         title: 'Welance',
         subtitle: 'Freelance Collective',
-        logo: 'assets/images/logo.svg',
+        logo: '/assets/images/logo.svg',
         altLogo: 'Welance - Freelancing Collectively'
       },
-      menu: [
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Web Design 1 - EXT URL',
-              url: '',
-              extUrl: 'https://welance-handbook.herokuapp.com/welance-development-guidelines.html',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Web Design 2 - internal URL',
-              url: '/styles',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Web Design 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Awesomeness 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Awesomeness 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Awesomeness 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Ultra Awesomeness 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Ultra Awesomeness 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Ultra Awesomeness 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        },
-        {
-          title: 'Styles',
-          url: '/styles',
-          extUrl: '',
-          extUrlTarget: '_blank',
-          image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-          },
-          items: [
-            {
-              title: 'Something Else 1',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 2',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            },
-            {
-              title: 'Something Else 3',
-              url: '/',
-              extUrl: '',
-              extUrlTarget: '_blank',
-              image: {
-                src: 'https://fillmurray.com/400/400',
-                srcRetina: 'https://fillmurray.com/800/800',
-                ratio: '16-9' //see welanstrap/_images.scsss for possible ratio values
-              }
-            }
-          ]
-        }
-      ],
-      showModal: false
+      blockScroll: false
     }
   }
 };
 </script>
 
 <style lang="scss">
-@import "./src/sass/main.scss";
+@import "./src/sass/welanstrap.scss";
 
 .app{
   &--no-overflow{
@@ -309,19 +159,6 @@ export default {
         //@include make-col(4);
       }
     }
-  }
-  .footer{
-    .menu-footer{
-      @include make-container-max-widths();
-      margin: 0 auto;
-      @include pb(2);
-      @include pt(2)
-
-      .img{
-        //display: none;
-      }
-    }
-    background: #f3f3f3;
   }
 }
 </style>

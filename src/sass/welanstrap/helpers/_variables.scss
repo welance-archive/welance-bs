@@ -83,14 +83,13 @@ $body-bg:             white !default; // 2
   }
 }
 
-
 $mq-breakpoints: (
-  xs: 0,
-  sm: 576px,
-  md: 768px,
-  lg: 992px,
-  xl: 1200px,
-  xxl: 1680px
+  'xs': 0,
+  'sm': 576px,
+  'md': 768px,
+  'lg': 992px,
+  'xl': 1200px,
+  'xxl': 1680px
 ) !default;
 @include _assert-ascending($mq-breakpoints, "$mq-breakpoints");
 @include _assert-starts-at-zero($mq-breakpoints);
@@ -99,13 +98,14 @@ $mq-breakpoints: (
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
+$container-max-width:100%;
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px,
-  xxl: 1560px
+  'sm': 540px,
+  'md': 720px,
+  'lg': 960px,
+  'xl': 1140px,
+  'xxl': 1560px
 ) !default;
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
@@ -114,17 +114,54 @@ $container-max-widths: (
 //
 // Set the number of columns and specify the width of the gutters.
 
-$grid-columns:               12 !default;
-$grid-gutter-width-base:     30px !default;
+$grid-columns:               12 !default;     // this sets the "make-col(number)"
+                                              // default amount of columns
+$grid-gutter-width-base:     32px !default;
 $grid-gutter-widths: (
-  xs: $grid-gutter-width-base,
-  sm: $grid-gutter-width-base,
-  md: $grid-gutter-width-base,
-  lg: $grid-gutter-width-base,
-  xl: $grid-gutter-width-base,
-  xxl: $grid-gutter-width-base
+  'xs': $grid-gutter-width-base,
+  'sm': $grid-gutter-width-base,
+  'md': $grid-gutter-width-base,
+  'lg': $grid-gutter-width-base,
+  'xl': $grid-gutter-width-base,
+  'xxl': $grid-gutter-width-base
 ) !default;
 
+
+// this is a variable used to name the auto generated columns
+$im-columns-class: '.col' !default;
+
+// this is a list of grids to create in the CSS
+// It creates helper classes for all the grids listed
+// considering our mq-breakpoints (for grid and gutters)
+$grids: (1, 5, 7, 8, 12);
+// Usage is similar to twitter bootstrap:
+// <div class="col col--1-12 col--6-12@md col--1-1@sm">col-1-12 cia</div>
+// It generates something like:
+// .col--1-1 {
+//   width: 100%;
+// }
+// .col--1-5 {
+//   width: 20%;
+// }
+// .col--2-5 {
+//   width: 40%;
+// }
+// .col--3-5 {
+//   width: 60%;
+// }
+// .col--4-5 {
+//   width: 80%;
+// }
+// .col--5-5 {
+//   width: 100%;
+// }
+// .col--1-7 {
+//   width: 14.28571%;
+// }
+// .col--2-7 {
+//   width: 28.57143%;
+//
+// ...et cetera...
 
 
 //debug breakpoints (override it with $mq-show-breakpoints: ();)
@@ -167,3 +204,21 @@ $z-front: 998;
 $z-page: 997;
 $z-bottom: 996;
 $z-super-bottom: 996;
+
+
+$line-height-big:       $line-height-base + .5;
+$line-height-huge:      $line-height-base + 1.5;
+$line-height-h1:        $line-height-base - .2;
+
+$ms-base: $font-size-base;
+$ms-ratio: $golden;
+$ms-range:
+  1.1 20em,     //320px
+  1.15 36em,     //576px
+  1.17 48em,     //768px
+  1.18 62em,     //992px
+  1.2 75em,     //1200
+  1.23 105em;    //1680
+
+//do not scale fluidly
+$ms-fluid: false;

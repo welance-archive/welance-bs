@@ -47,7 +47,7 @@ export default {
 		methods: {
 			closeModal: function(event){
 				if (event) event.preventDefault();
-				this.$emit('close');
+				this.$emit('modalClose');
 			}
 		}
 };
@@ -55,7 +55,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main-sass-only.scss";
 
 
 .modal{

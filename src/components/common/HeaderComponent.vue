@@ -1,22 +1,49 @@
 <template>
   <header class="header" :class="'header-' + name">
-    <div class="header__wrap">
-      <div class="header__row">
-        <div class="header__col header__col--logo">
-          <slot name="logo">
-              <router-link :to="{ path: '/' }">
-                <img v-if="details.logo" class="logo" :alt="details.altLogo" :src="details.logo"/>
-                <img v-if="!details.logo" class="logo" :alt="'your logo will appear here and link to root'" :src="''"/>
-              </router-link>
-          </slot>
+
+    <pre v-if="debug" class="row">
+      ℹ️ HeaderComponent
+
+      SLOTS:
+        • row-01
+        • row-02
+          • logo (make-col(2))
+          • extra (make-col(1))
+          • menu (make-col(9))
+        • row-03
+
+      PROPS:
+        • name (string)
+        • debug (boolean)
+        • details (json)
+        • contacts (json)
+    </pre>
+
+    <div class="wrap header__wrap" :class="{'wrap--contained' : contained}">
+      <slot name="row-01">
+        <div class="row header__row"></div>
+      </slot>
+      <slot name="row-02">
+        <div class="row header__row">
+          <div class="col header__col header__col--logo">
+            <slot name="logo" v-if="details">
+                <router-link :to="'/'">
+                  <img v-if="details.logo" class="logo" :alt="details.altLogo" :src="details.logo"/>
+                  <img v-if="!details.logo" class="logo" :alt="'MISSING LOGO in details json'" :src="''"/>
+                </router-link>
+            </slot>
+          </div>
+          <div class="col header__col header__col--extra">
+            <slot name="extra"></slot>
+          </div>
+          <div class="col header__col header__col--menu">
+            <slot name="menu"></slot>
+          </div>
         </div>
-        <div class="header__col header__col--extra">
-          <slot name="extra">col-1<br/>Slot <em>EXTRA</em></slot>
-        </div>
-        <div class="header__col header__col--menu">
-          <slot name="menu">This is a col-9 in slot <em>MENU</em></slot>
-        </div>
-      </div>
+      </slot>
+      <slot name="row-03">
+        <div class="row header__row"></div>
+      </slot>
     </div>
   </header>
 </template>
@@ -29,12 +56,28 @@ export default {
   components: {
     MenuComponent
   },
-  props: [
-    'name',
-    'contacts',
-    'menu',
-    'details'
-  ],
+  props: {
+    'name': {
+      type: String,
+      default: 'default'
+    },
+    'debug': {
+      type: Boolean,
+      default: false
+    },
+    'contained': {
+      type: Boolean,
+      default: false
+    },
+    'contacts': {
+      type: Object,
+      default: {}
+    },
+    'details': {
+      type: Object,
+      default: {}
+    }
+  },
   data () {
     return{}
   },
@@ -48,24 +91,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "~styles/main.scss";
+@import "./src/sass/main-sass-only.scss";
 
 .header {
-
-  &__wrap{
-    @include make-container-max-widths();
-    margin: 0 auto;
-  }
-
-  &__row{
-    @include make-row-no-gutters();
-    margin: 0;
-  }
+  z-index: $z-super-top;
 
   &__col{
-    @include make-col-ready();
     &--logo{
-      z-index: $z-top;
       @include make-col(2);
     }
     &--extra{

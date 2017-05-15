@@ -101,3 +101,75 @@
     @content;
   }
 }
+
+
+// Flexible Cover Images
+// http://nicolasgallagher.com/flexible-css-cover-images
+//
+// $btm-padding: [ratio percentage]
+// For Example: 16:9 (16/9 = .5625 || 56.25%)
+// $btm-padding: 56.25%
+
+@mixin flexembed-image($btm-padding, $bg-image, $min-width: 80px, $min-height: null, $max-width: 1200px, $max-height: 1200px) {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  margin: 0 auto;
+
+  min-height: #{$min-height};
+  min-width: #{$min-width};
+  max-height: #{$max-height};
+  max-width: #{$max-width};
+
+
+  @if($bg-image){
+    background-image: $bg-image;
+  }
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+      content: "";
+      display: block;
+      padding-bottom: $btm-padding;
+      width: 100%;
+  }
+}
+
+@mixin im-columns($columns...) {
+  @each $i in $columns {
+    @for $n from 1 through $i {
+      #{$im-columns-class}--#{$n}-#{$i} {
+        width: ($n / $i) * 100%;
+      }
+    }
+  }
+
+  @each $breakpoint in $mq-breakpoints {
+    $breakpoint-name: nth($breakpoint, 1);
+
+    @include mq($from: $breakpoint-name){
+      .hide\@#{$breakpoint-name} {
+        display: none;
+      }
+      .show-flex\@#{$breakpoint-name} {
+        display: flex;
+      }
+      .show-block\@#{$breakpoint-name}, .show\@#{$breakpoint-name} {
+        display: block;
+      }
+      @each $i in $columns {
+        @for $n from 1 through $i {
+          #{$im-columns-class}--#{$n}-#{$i}\@#{$breakpoint-name} {
+            width: ($n / $i) * 100%;
+          }
+          #{$im-columns-class}--offset-#{$n}-#{$i}\@#{$breakpoint-name} {
+            margin-left: ($n / $i) * 100%;
+          }
+        }
+      }
+    }
+  }
+}
