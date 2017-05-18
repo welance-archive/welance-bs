@@ -1,6 +1,6 @@
 {
   "name": "@welance/welance-bs",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "description": "Welanstrap – Welance Bootstrap build with SASS and VueJS",
   "main": "index.html",
   "scripts": {
@@ -12,11 +12,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://nanonansen@bitbucket.org/ricricucit/welance-2017.git"
+    "url": "git+https://github.com/welance/welance-bs.git"
   },
   "author": "Welance",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/ricricucit/welance-2017#readme",
+  "homepage": "https://github.com/welance/welance-bs",
   "dependencies": {
     "axios": "^0.15.3",
     "vue": "^2.2.4",
