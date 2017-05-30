@@ -161,6 +161,9 @@
         display: block;
       }
       @each $i in $columns {
+        #{$im-columns-class}--offset-0-#{$i}\@#{$breakpoint-name} {
+          margin-left: 0;
+        }
         @for $n from 1 through $i {
           #{$im-columns-class}--#{$n}-#{$i}\@#{$breakpoint-name} {
             width: ($n / $i) * 100%;
