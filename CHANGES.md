@@ -2,6 +2,28 @@
 
 ---
 
+## [0.5.2](https://github.com/welance/welance-bs/compare/v0.2.0...0.5.0) \(2017-05-15\)
+
+### Features
+
+* added col--offset-0-*@anyBreakpoint to offer possibility of having no offset, or better: overriding offsets when another offset is set at a smaller breakpoint
+
+### Bug Fixes
+
+* none
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+---
+
 ## [0.5.0](https://github.com/welance/welance-bs/compare/v0.2.0...0.5.0) \(2017-05-15\)
 
 ### Features
@@ -23,6 +45,3 @@
 * Since 0.2.0 (previous version) was very much an experimental version, many things will be breaking
 
 ---
-
-
-
