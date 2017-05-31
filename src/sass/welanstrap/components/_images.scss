@@ -27,16 +27,16 @@
   &--ratio-2-3{
     @include flexembed-image(150%, null);
   }
-  &--ratio-4-1{
-    @include flexembed-image(25%, null);
+  &--ratio-4-3{
+    @include flexembed-image(75%, null);
+  }
+  &--ratio-3-4{
+    @include flexembed-image(133.333%, null);
   }
   &--ratio-16-9{
     @include flexembed-image(56.25%, null, 320px);
   }
   &--ratio-9-16{
     @include flexembed-image(177.777%, null, 320px);
-  }
-  &--ratio-12-16{
-    @include flexembed-image(133.33%, null, 320px);
   }
 }

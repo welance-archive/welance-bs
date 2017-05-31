@@ -2,7 +2,29 @@
 
 ---
 
-## [0.5.2](https://github.com/welance/welance-bs/compare/v0.2.0...0.5.0) \(2017-05-15\)
+## [0.5.3](https://github.com/welance/welance-bs/compare/v0.5.2...0.5.3) \(2017-05-31\)
+
+### Features
+
+* defined images aspect ratios
+
+### Bug Fixes
+
+* none
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+---
+
+## [0.5.2](https://github.com/welance/welance-bs/compare/v0.5.0...0.5.2) \(2017-05-28\)
 
 ### Features
 
