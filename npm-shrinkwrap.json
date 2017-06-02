@@ -1,6 +1,6 @@
 {
   "name": "@welance/welance-bs",
-  "version": "0.5.1",
+  "version": "0.5.4",
   "dependencies": {
     "abbrev": {
       "version": "1.1.0",
@@ -5149,6 +5149,11 @@
       "from": "object-assign@>=4.0.1 <5.0.0",
       "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
       "dev": true
+    },
+    "object-fit-images": {
+      "version": "3.2.3",
+      "from": "object-fit-images@latest",
+      "resolved": "https://registry.npmjs.org/object-fit-images/-/object-fit-images-3.2.3.tgz"
     },
     "object.omit": {
       "version": "2.0.1",

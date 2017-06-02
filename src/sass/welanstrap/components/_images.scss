@@ -1,3 +1,24 @@
+/*
+
+RATIO FOR <picture> and background-image.
+
+Usage for picture:
+
+<div class="r16-9">
+  <picture class="ratio-content">
+    <source srcset="https://fillmurray.com/1400/1400" media="(min-width: 600px)">
+    <img src="https://fillmurray.com/1400/1400" alt="alt text"/>
+  </picture>
+</div>
+
+
+Usage for background:
+
+<div class="img img--ratio-1-1" style="background-image: url("https://fillmurray.com/1400/1400");"></div>
+
+
+*/
+
 .img{
   //classic 2:3 Portrait Photo Ratio
   @include flexembed-image(150%, null);
@@ -18,25 +39,78 @@
   &--ratio-1-1{
     @include flexembed-image(100%, null);
   }
-  &--ratio-3-1{
-    @include flexembed-image(33.333%, null);
+  &--r1-1 {
+    @include aspect-ratio(1, 1);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
   }
   &--ratio-3-2{
     @include flexembed-image(66.666%, null);
   }
+  &--r3-2 {
+    @include aspect-ratio(3, 2);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
+  }
   &--ratio-2-3{
     @include flexembed-image(150%, null);
+  }
+  &--r2-3 {
+    @include aspect-ratio(2, 3);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
   }
   &--ratio-4-3{
     @include flexembed-image(75%, null);
   }
+  &--r4-3 {
+    @include aspect-ratio(4, 3);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
+  }
   &--ratio-3-4{
     @include flexembed-image(133.333%, null);
+  }
+  &--r3-4 {
+    @include aspect-ratio(3, 4);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
   }
   &--ratio-16-9{
     @include flexembed-image(56.25%, null, 320px);
   }
+  &--r16-9 {
+    @include aspect-ratio(16, 9);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
+  }
   &--ratio-9-16{
     @include flexembed-image(177.777%, null, 320px);
+  }
+  &--r9-16 {
+    @include aspect-ratio(9, 16);
+    img{
+      object-fit:cover;
+      width:100%;
+      height:100%;
+    }
   }
 }

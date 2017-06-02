@@ -1,6 +1,6 @@
 {
   "name": "@welance/welance-bs",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "description": "Welanstrap – Welance Bootstrap build with SASS and VueJS",
   "main": "index.html",
   "scripts": {
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/welance/welance-bs",
   "dependencies": {
     "axios": "^0.15.3",
+    "object-fit-images": "^3.2.3",
     "vue": "^2.2.4",
     "vue-multiselect": "^2.0.0-beta.14",
     "vue-router": "^2.3.0"

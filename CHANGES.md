@@ -3,6 +3,46 @@
 
 ---
 
+## [0.5.5](https://github.com/welance/welance-bs/compare/v0.5.4...0.5.5) \(2017-06-02\)
+
+### Features
+
+* re-defined images aspect ratio classes
+
+```
+RATIO FOR <picture> and background-image.
+
+Usage for picture:
+
+<div class="r16-9">
+  <picture class="ratio-content">
+    <source srcset="https://fillmurray.com/1400/1400" media="(min-width: 600px)">
+    <img src="https://fillmurray.com/1400/1400" alt="alt text"/>
+  </picture>
+</div>
+
+
+Usage for background:
+
+<div class="img img--ratio-1-1" style="background-image: url("https://fillmurray.com/1400/1400");"></div>
+```
+
+### Bug Fixes
+
+* none
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+---
+
 ## [0.5.4](https://github.com/welance/welance-bs/compare/v0.5.3...0.5.4) \(2017-06-02\)
 
 ### Features
