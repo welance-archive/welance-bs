@@ -210,6 +210,8 @@ $line-height-big:       $line-height-base + .5;
 $line-height-huge:      $line-height-base + 1.5;
 $line-height-h1:        $line-height-base - .2;
 
+$golden: 1.618!default;
+
 $ms-base: $font-size-base;
 $ms-ratio: $golden;
 $ms-range:

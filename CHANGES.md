@@ -1,5 +1,28 @@
 # Changelog
 
+
+---
+
+## [0.5.4](https://github.com/welance/welance-bs/compare/v0.5.3...0.5.4) \(2017-06-02\)
+
+### Features
+
+* none
+
+### Bug Fixes
+
+* added $golden var into variables to permit overriding of it
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
 ---
 
 ## [0.5.3](https://github.com/welance/welance-bs/compare/v0.5.2...0.5.3) \(2017-05-31\)
