@@ -17,7 +17,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-@import "./src/sass/main-sass-only.scss";
+@import "~styles/main-sass-only.scss";
 
 fieldset[disabled] .multiselect {
   pointer-events: none;

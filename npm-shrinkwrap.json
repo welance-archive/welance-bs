@@ -1,6 +1,6 @@
 {
   "name": "@welance/welance-bs",
-  "version": "0.5.4",
+  "version": "0.5.6",
   "dependencies": {
     "abbrev": {
       "version": "1.1.0",
@@ -1425,8 +1425,7 @@
     "de-indent": {
       "version": "1.0.2",
       "from": "de-indent@>=1.0.2 <2.0.0",
-      "resolved": "https://registry.npmjs.org/de-indent/-/de-indent-1.0.2.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/de-indent/-/de-indent-1.0.2.tgz"
     },
     "debug": {
       "version": "2.6.2",
@@ -3692,8 +3691,7 @@
     "he": {
       "version": "1.1.1",
       "from": "he@>=1.1.0 <1.2.0",
-      "resolved": "https://registry.npmjs.org/he/-/he-1.1.1.tgz",
-      "dev": true
+      "resolved": "https://registry.npmjs.org/he/-/he-1.1.1.tgz"
     },
     "hmac-drbg": {
       "version": "1.0.0",
@@ -7433,9 +7431,9 @@
       "dev": true
     },
     "vue": {
-      "version": "2.2.4",
-      "from": "vue@2.2.4",
-      "resolved": "https://registry.npmjs.org/vue/-/vue-2.2.4.tgz"
+      "version": "2.3.4",
+      "from": "vue@2.3.4",
+      "resolved": "https://registry.npmjs.org/vue/-/vue-2.3.4.tgz"
     },
     "vue-hot-reload-api": {
       "version": "2.0.11",
@@ -7454,6 +7452,12 @@
           "from": "loader-utils@>=1.0.2 <2.0.0",
           "resolved": "https://registry.npmjs.org/loader-utils/-/loader-utils-1.0.3.tgz",
           "dev": true
+        },
+        "vue-style-loader": {
+          "version": "2.0.5",
+          "from": "vue-style-loader@>=2.0.0 <3.0.0",
+          "resolved": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-2.0.5.tgz",
+          "dev": true
         }
       }
     },
@@ -7468,9 +7472,9 @@
       "resolved": "https://registry.npmjs.org/vue-router/-/vue-router-2.3.0.tgz"
     },
     "vue-style-loader": {
-      "version": "2.0.3",
-      "from": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-2.0.3.tgz",
-      "resolved": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-2.0.3.tgz",
+      "version": "3.0.1",
+      "from": "vue-style-loader@3.0.1",
+      "resolved": "https://registry.npmjs.org/vue-style-loader/-/vue-style-loader-3.0.1.tgz",
       "dev": true,
       "dependencies": {
         "loader-utils": {
@@ -7482,10 +7486,9 @@
       }
     },
     "vue-template-compiler": {
-      "version": "2.2.4",
-      "from": "vue-template-compiler@2.2.4",
-      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.2.4.tgz",
-      "dev": true
+      "version": "2.3.4",
+      "from": "vue-template-compiler@2.3.4",
+      "resolved": "https://registry.npmjs.org/vue-template-compiler/-/vue-template-compiler-2.3.4.tgz"
     },
     "vue-template-es2015-compiler": {
       "version": "1.5.1",
