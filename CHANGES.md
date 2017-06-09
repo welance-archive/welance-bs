@@ -3,6 +3,30 @@
 
 ---
 
+## [0.5.8](https://github.com/welance/welance-bs/compare/v0.5.5...0.5.8) \(2017-06-02\)
+
+### Features
+
+* cleaned up inclusion of SASS files
+
+### Bug Fixes
+
+* none
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+
+
+---
+
 ## [0.5.5](https://github.com/welance/welance-bs/compare/v0.5.4...0.5.5) \(2017-06-02\)
 
 ### Features
