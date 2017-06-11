@@ -3,6 +3,29 @@
 
 ---
 
+## [0.5.8](https://github.com/welance/welance-bs/compare/v0.5.8...0.5.9) \(2017-06-02\)
+
+### Features
+
+* none
+
+### Bug Fixes
+
+* Fixed ability to override `$ms-base`, `$ms-ratio`, `$ms-range` and `$ms-fluid` in SASS from projects using welance-bs.
+
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+---
+
 ## [0.5.8](https://github.com/welance/welance-bs/compare/v0.5.5...0.5.8) \(2017-06-02\)
 
 ### Features
@@ -22,8 +45,6 @@
 * none
 
 ---
-
-
 
 ---
 
