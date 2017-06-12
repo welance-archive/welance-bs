@@ -60,13 +60,16 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more a
 
 ## Project Documentation and Specification
 
-* Check out the **[demo/documentation page](https://welance.github.io/welance-bs/)** to learn about specific features you might want to implement in your new website
+* Check out the **[demo page](https://welance.github.io/welance-bs/)** to learn about specific features and components you might want to implement in your new website
+* For developers and designers, please check out the **[wiki page](https://github.com/welance/welance-bs/wiki)** that explains basic ideas behind this bootstrapping project
 
 ## Contribution guidelines
 
 * Read **[Welance Development Guidelines](https://welance-handbook.herokuapp.com/welance-development-guidelines.html)**
 * Install [Vue.JS devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) for easier Front-End debugging
-* **clone/fork** the repo to contribute
+* Check out the **[demo page](https://welance.github.io/welance-bs/)** to learn about specific features and components you might want to implement in your new website
+* For developers and designers, please check out the **[wiki page](https://github.com/welance/welance-bs/wiki)** that explains basic ideas behind this bootstrapping project
+* **clone/fork** the repo to contribute and send pull-requests!
 
 
 - - -
