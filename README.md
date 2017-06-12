@@ -35,7 +35,7 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more a
 
 1. Install the latest [node](https://nodejs.org/en/) and NPM. (For future use, I suggest using [NVM](https://github.com/creationix/nvm) to manage both of these)
 2. Install webpack globally with `npm install webpack -g` _(optional, suggested)_
-3. Install projects dependencies with `npm install`
+3. Run `npm install @welance/welance-bs` (see [public package here](https://www.npmjs.com/package/@welance/welance-bs))
 
 ### Installation solutions to possible errors
 ...if you get a `mozjpeg pre-build test failed` running `npm install`, run the following commands (as suggested [here](https://github.com/tcoopman/image-webpack-loader/issues/49)):
@@ -60,7 +60,6 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more a
 ## Project Documentation and Specification
 
 * Check out the **[demo/documentation page](https://welance.github.io/welance-bs/)** to learn about specific features you might want to implement in your new website
-* The ***NPM installer coming soon***, but you can start using it inside your project's _package.json_ as a dependency for your welance projects. **[Read How](http://stackoverflow.com/a/26560992/252414)**.
 
 ## Contribution guidelines
 
