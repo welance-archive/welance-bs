@@ -1,5 +1,29 @@
 # Changelog
 
+---
+
+## [0.6.0](https://github.com/welance/welance-bs/compare/v0.5.9...0.6.0) \(2017-06-12\)
+
+### Features
+
+* none
+
+### Bug Fixes
+
+* added modular-scale sass mixins in the right SASS file.
+
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+
 
 ---
 

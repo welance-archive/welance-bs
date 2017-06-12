@@ -1,5 +1,6 @@
 //Imports all the SASS files that do no print classes and/or CSS
 @import "welanstrap/helpers/variables";     // Projects Variables
+@import '~modularscale-sass/stylesheets/modular-scale';   // Modular Scale mixin
 @import "~sass-spacing/mixins";             // spacing mixin
 @import "~sass-mq/mq";                      // Media Queries mixin
 @import "welanstrap/helpers/mixins";        // Project's Mixins
