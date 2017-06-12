@@ -36,7 +36,7 @@ Check out _package.json_ _webpack.config.js_ and _.babelrc_ to understand more a
 1. Install the latest [node](https://nodejs.org/en/) and NPM. (For future use, I suggest using [NVM](https://github.com/creationix/nvm) to manage both of these)
 2. Install webpack globally with `npm install webpack -g` _(optional, suggested)_
 3. Run `npm install @welance/welance-bs` 
-**IMPORTANT** use the flag `save` if you want to use the VueJS components or `--save-dev` if you're only going to use the SASS/CSS utilities (see [public package here](https://www.npmjs.com/package/@welance/welance-bs))
+**IMPORTANT** use the flag `--save` if you want to use the VueJS components or `--save-dev` if you're only going to use the SASS/CSS utilities (see [public package here](https://www.npmjs.com/package/@welance/welance-bs))
 
 ### Installation solutions to possible errors
 ...if you get a `mozjpeg pre-build test failed` running `npm install`, run the following commands (as suggested [here](https://github.com/tcoopman/image-webpack-loader/issues/49)):
