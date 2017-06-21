@@ -2,6 +2,31 @@
 
 ---
 
+## [0.6.1](https://github.com/welance/welance-bs/compare/v0.6.0...0.6.1) \(2017-06-21\)
+
+### Features
+
+* none
+
+### Bug Fixes
+
+* added missing `!default` to variables SASS file to be able to correctly override values
+
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+
+
+---
+
 ## [0.6.0](https://github.com/welance/welance-bs/compare/v0.5.9...0.6.0) \(2017-06-12\)
 
 ### Features

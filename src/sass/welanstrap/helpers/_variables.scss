@@ -9,9 +9,9 @@ $font-size-base:        1em !default; // Assumes the browser default, typically 
 $font-weight-base:      $font-weight-normal !default;
 $dt-font-weight:        $font-weight-bold !default;
 
-$line-height-base:      1.3;
+$line-height-base:      1.3 !default;
 
-$logo-max-height:       120px;
+$logo-max-height:       120px !default;
 
 // Start with assigning color names to specific hex values.
 
@@ -98,7 +98,7 @@ $mq-breakpoints: (
 // Grid containers
 //
 // Define the maximum width of `.container` for different screen sizes.
-$container-max-width:100%;
+$container-max-width:100% !default;
 
 $container-max-widths: (
   'sm': 540px,
@@ -133,7 +133,7 @@ $im-columns-class: '.col' !default;
 // this is a list of grids to create in the CSS
 // It creates helper classes for all the grids listed
 // considering our mq-breakpoints (for grid and gutters)
-$grids: (1, 5, 7, 8, 12);
+$grids: (1, 5, 7, 8, 12) !default;
 // Usage is similar to twitter bootstrap:
 // <div class="col col--1-12 col--6-12@md col--1-1@sm">col-1-12 cia</div>
 // It generates something like:
@@ -165,7 +165,7 @@ $grids: (1, 5, 7, 8, 12);
 
 
 //debug breakpoints (override it with $mq-show-breakpoints: ();)
-$mq-show-breakpoints: (xs, sm, md, lg, xl, xxl);
+$mq-show-breakpoints: (xs, sm, md, lg, xl, xxl) !default;
 
 $spacing-sizes: (
   0: 0rem,
@@ -205,28 +205,28 @@ $spacing-sizes: (
   34: 17.5rem,
   35: 18rem,
   36: 18.5rem
-);
+) !default;
 
-$spacing-important: false;
+$spacing-important: false !default;
 
 
 // z-indexes
-$z-super-top: 1000;
-$z-top: 999;
-$z-front: 998;
-$z-page: 997;
-$z-bottom: 996;
-$z-super-bottom: 996;
+$z-super-top: 1000 !default;
+$z-top: 999 !default;
+$z-front: 998 !default;
+$z-page: 997 !default;
+$z-bottom: 996 !default;
+$z-super-bottom: 996 !default;
 
 
-$line-height-big:       $line-height-base + .5;
-$line-height-huge:      $line-height-base + 1.5;
-$line-height-h1:        $line-height-base - .2;
+$line-height-big:       $line-height-base + .5 !default;
+$line-height-huge:      $line-height-base + 1.5 !default;
+$line-height-h1:        $line-height-base - .2 !default;
 
-$golden: 1.618!default;
+$golden: 1.618 !default;
 
-$ms-base: $font-size-base;
-$ms-ratio: $golden;
+$ms-base: $font-size-base !default;
+$ms-ratio: $golden !default;
 $ms-range:
   1.1 20em,     //320px
   1.15 36em,     //576px
@@ -236,4 +236,4 @@ $ms-range:
   1.23 105em !default;    //1680
 
 //do not scale fluidly
-$ms-fluid: false;
+$ms-fluid: false !default;
