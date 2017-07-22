@@ -2,7 +2,7 @@
 <div>
   <div class="wrap wrap--contained">
     <div class="row">
-      <div class="col col--3-12@lg col--12-12@xs">
+      <div class="col col--3-12@lg col--12-12@xs hide@md hide@sm hide@xs show-flex@lg">
         <!--:open-all="true"-->
         <tree
           :name="'menuzio'"
@@ -98,11 +98,6 @@ import axios from 'axios';
 
 export default {
   name: 'GridPage',
-  watch: {
-    '$route' (to, from) {
-      console.log('route changed');
-    }
-  },
   components: {
     Quote,
     Tree

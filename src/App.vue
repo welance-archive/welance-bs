@@ -1,90 +1,93 @@
 <template>
-  <body class="app" :class="{ 'app--no-overflow': blockScroll }">
+  <div class="app">
 
-    <header-component :name="'main'"
-                      :contained="true"
-                      :contacts="contacts"
-                      :details="details">
-
-      <menu-component slot="menu"
-                      :name="'regular'"
-                      :debug="false"
-                      :contained="false"
-                      :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
-                      :print-levels="1"
-                      :print-level-imgs="[0, 0, 0, 0]"
-                      :print-level-text="[1, 1, 1, 1]"
-                      :mobile-print-levels="5"
-                      :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
-                      :mobile-print-level-text="[1, 1, 1, 1, 1]"
-                      :menu="mainMenu"
-                      :mode="'header'"
-                      @menuOpen="blockScroll = true"
-                      @menuClose="blockScroll = false">
-      </menu-component>
-
-    </header-component>
+    <header>
+      <div class="wrap wrap--contained">
+        <div class="row">
+          <div class="col col--3-12@xs">
+            <router-link :to="'/'">
+              <img src="/assets/images/logo.svg">
+            </router-link>
+          </div>
+          <div class="col col--9-12@xs">
+            <menu-component :name="'regular'"
+                            :new-route-triggered="newRoute"
+                            :debug="false"
+                            :contained="false"
+                            :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
+                            :print-levels="1"
+                            :print-level-imgs="[0, 0, 0, 0]"
+                            :print-level-text="[1, 1, 1, 1]"
+                            :mobile-print-levels="5"
+                            :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
+                            :mobile-print-level-text="[1, 1, 1, 1, 1]"
+                            :menu="mainMenu"
+                            :mode="'header'"
+                            @menuOpen="blockScrolling(true)"
+                            @menuClose="blockScrolling(false)">
+            </menu-component>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <fixed-item :appear-at="200">
-
-      <template slot="content">
-        <header-component :name="'main'"
-                          :contained="true"
-                          :contacts="contacts"
-                          :details="details">
-
-          <menu-component slot="menu"
-                          :name="'fixed'"
-                          :debug="false"
-                          :contained="false"
-                          :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
-                          :print-levels="1"
-                          :print-level-imgs="[0, 0, 0, 0]"
-                          :print-level-text="[1, 1, 1, 1]"
-                          :mobile-print-levels="5"
-                          :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
-                          :mobile-print-level-text="[1, 1, 1, 1, 1]"
-                          :menu="mainMenu"
-                          :mode="'header'"
-                          @menuOpen="blockScroll = true"
-                          @menuClose="blockScroll = false">
-          </menu-component>
-
-        </header-component>
-      </template>
-
+      <div slot="content" class="wrap wrap--contained">
+        <div class="row">
+          <div class="col col--3-12@xs">
+            <router-link :to="'/'">
+              <img src="/assets/images/logo.svg">
+            </router-link>
+          </div>
+          <div class="col col--9-12@xs">
+            <menu-component :name="'fixed'"
+                            :new-route-triggered="newRoute"
+                            :debug="false"
+                            :contained="false"
+                            :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
+                            :print-levels="1"
+                            :print-level-imgs="[0, 0, 0, 0]"
+                            :print-level-text="[1, 1, 1, 1]"
+                            :mobile-print-levels="5"
+                            :mobile-print-level-imgs="[0, 0, 0, 0, 1]"
+                            :mobile-print-level-text="[1, 1, 1, 1, 1]"
+                            :menu="mainMenu"
+                            :mode="'header'"
+                            @menuOpen="blockScrolling(true)"
+                            @menuClose="blockScrolling(false)">
+            </menu-component>
+          </div>
+        </div>
+      </div>
     </fixed-item>
 
-    <router-view @modalOpened="blockScroll = true" @modalClosed="blockScroll = false"></router-view>
+    <router-view @modalOpened="blockScrolling(true,'modal')" @modalClosed="blockScrolling(false,'modal')"></router-view>
 
-    <footer-component
-      :name="'main'"
-      :contained="true"
-      :contacts="contacts"
-      :details="details">
+    <footer>
+      <div class="wrap wrap--contained">
+        <div class="row">
+          <div class="col col--offset-3-12@xs col--9-12@xs">
+            <menu-component
+                :name="'footer'"
+                :new-route-triggered="newRoute"
+                :debug="false"
+                :contained="false"
+                :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
+                :print-levels="1"
+                :print-level-imgs="[0, 0, 0, 0]"
+                :print-level-text="[1, 0, 0, 0]"
+                :menu="mainMenu"
+                :mode="'footer'">
+            </menu-component>
+          </div>
+        </div>
+      </div>
+    </footer>
 
-      <menu-component slot="row-01"
-          :name="'footer'"
-          :debug="false"
-          :contained="false"
-          :columnClass="'col col--3-12@lg col--6-12@md col--12-12@xs'"
-          :print-levels="1"
-          :print-level-imgs="[0, 0, 0, 0]"
-          :print-level-text="[1, 0, 0, 0]"
-          :menu="mainMenu"
-          :mode="'footer'">
-      </menu-component>
-
-      <div slot="row-1"></div>
-      <div slot="row-2"></div>
-
-    </footer-component>
-  </body>
+  </div>
 </template>
 
 <script>
-import HeaderComponent from './components/common/HeaderComponent.vue';
-import FooterComponent from './components/common/FooterComponent.vue';
 import FixedItem from './components/common/FixedItem.vue';
 import MenuComponent from './components/common/MenuComponent.vue';
 import axios from 'axios';
@@ -92,14 +95,40 @@ import axios from 'axios';
 export default {
   name: 'app',
   components: {
-    HeaderComponent,
-    FooterComponent,
     FixedItem,
     MenuComponent
+  },
+  watch: {
+    '$route' (to, from) {
+      //this is to let the menucomponent that the route changed
+      this.newRoute = to.path;
+    }
   },
   methods: {
     exampleFunction : function(){
       alert('this could be anything!!');
+    },
+    blockScrolling: function(block, triggerer){
+      if(triggerer == 'modal'){
+        this.isModalOpen = block;
+      }
+      let body = document.getElementsByTagName("BODY")[0];
+
+      //add class to block scroll
+      if(block){
+        if (body.classList)
+          body.classList.add('body--no-overflow');
+        else
+          body.className += ' ' + 'body--no-overflow';
+      //remove class to un-block scroll
+      }else{
+        if(!this.isModalOpen){
+          if (body.classList)
+            body.classList.remove('body--no-overflow');
+          else
+            body.className = body.className.replace(new RegExp('(^|\\b)' + 'body--no-overflow'.split(' ').join('|') + '(\\b|$)', 'gi'), ' ');
+        }
+      }
     }
   },
   created (){
@@ -128,7 +157,9 @@ export default {
         logo: '/assets/images/logo.svg',
         altLogo: 'Welance - Freelancing Collectively'
       },
-      blockScroll: false
+      blockScroll: false,
+      isModalOpen: false,
+      newRoute: '/'
     }
   }
 };
@@ -136,29 +167,4 @@ export default {
 
 <style lang="scss">
 @import "./src/sass/welanstrap.scss";
-
-.app{
-  &--no-overflow{
-      overflow: hidden;
-  }
-  .header{
-    background: #f3f3f3;
-    @include m(0);
-
-    .header__col--logo{
-      //order: 0;
-    }
-    .header__col--extra{
-      //@include make-col(6);
-      //order: 1;
-    }
-    .header__col--menu{
-      //order: 2;
-      //@include make-col(5);
-      .menu-header{
-        //@include make-col(4);
-      }
-    }
-  }
-}
 </style>

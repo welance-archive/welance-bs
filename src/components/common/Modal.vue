@@ -17,7 +17,7 @@
 					<div class="modal__footer">
 					<slot name="footer">
 						default footer
-						<button class="modal__default-btn" v-on:click="closeModal">
+						<button class="btn btn--primary btn--outline btn--outline modal__default-btn" v-on:click="closeModal">
 						OK
 						</button>
 					</slot>

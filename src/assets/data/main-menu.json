@@ -82,16 +82,6 @@
         },
         "items": [
           {
-            "title" : "Header and Footer",
-            "url": "/components/data-display/header-footer",
-            "target": "",
-            "image": {
-              "src": "",
-              "srcRetina": "",
-              "ratio": ""
-            }
-          },
-          {
             "title" : "Hero",
             "url": "/components/data-display/hero",
             "target": "",

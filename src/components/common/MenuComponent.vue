@@ -30,6 +30,7 @@
           v-if="showMobileMenu() && mode === 'header'"
           :name="name + '-' + mode + '-mobile'"
           :debug="false"
+          :contained="true"
           :columnClass="columnClass"
           :mode="'accordion'"
           :print-levels="mobilePrintLevels >= 1 ? mobilePrintLevels : printLevels"
@@ -103,6 +104,10 @@ export default {
         type: Array,
         default: function(){return[]}
       },
+      'newRouteTriggered':{
+        type: String,
+        default: '/'
+      },
       'mode':{
         type: String,
         default: 'main'
@@ -110,6 +115,15 @@ export default {
     },
     components: {
       Tree
+    },
+    watch: {
+      //close (at least) the mobile menu every time I change (select/click on) a route
+      newRouteTriggered: function(newRoute){
+        //console.log('route changed to: ', newRoute);
+        this.mobileMenuOpen = false;
+        this.$emit('menuClose');
+        return false;
+      }
     },
     methods: {
       showMobileMenu: function(){
@@ -139,7 +153,7 @@ export default {
     },
     data () {
       return{
-        mobileMenuOpen : false,
+        mobileMenuOpen : false
       }
     }
 };
@@ -164,7 +178,7 @@ export default {
     width: 2em;
     height: 4em;
     position: absolute;
-    right: 1em;
+    right: 5%;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
@@ -246,11 +260,11 @@ export default {
       opacity: 1;
       visibility: visible;
       display: flex;
-      background: $gray-lightest;
+      background: $brand-primary;
       transition: .2s ease-in-out;
       overflow: scroll;
-      @include pt(4);
-      @include pb(4);
+      @include pt(2);
+      @include pb(2);
     }
   }
 

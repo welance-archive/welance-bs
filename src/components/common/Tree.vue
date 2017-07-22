@@ -1,5 +1,6 @@
 <template>
-  <ul class="tree" :class="[{'wrap wrap--contained' : contained}, 'tree-' + name , mode ? 'tree--' + mode : '']">
+  <div class="tree-wrap" :class="[{'wrap wrap--contained' : contained}]">
+  <ul class="tree" :class="['tree-' + name , mode ? 'tree--' + mode : '']">
 <!--{{parentLevel+'+'+level}}-->
     <pre v-if="debug && level == 1" class="row">
       ℹ️ tree
@@ -95,7 +96,8 @@
         :class="[ 'tree__item-' + index,
                   columnClass && !ignoreClass ? columnClass : 'col--12-12',
                   (parentLevel === openParentLevel && level === openLevel) || level === 1 ? 'tree__item--visible' : 'tree__item--hidden',
-                  openAll === true ? 'tree__item--always-visible' : ''
+                  openAll === true ? 'tree__item--always-visible' : '',
+                  (index === selectedParentLevel && level <= selectedLevel) ? 'tree__item--open' : 'tree__item--close'
                 ]"
         v-for="(item,index) in tree">
 
@@ -165,6 +167,7 @@
     </li>
 
   </ul>
+  </div>
 </template>
 
 <script>
@@ -274,17 +277,22 @@ export default {
 .tree{
   width:100%;
 
+  &-wrap{
+    margin: 0 auto;
+    padding: 0;
+  }
   &--visible{
-        opacity: 1;
-        height: auto;
-      }
-      &--hidden{
-        opacity: 0;
-        height: 0;
-      }
+    opacity: 1;
+    height: auto;
+  }
+  &--hidden{
+    opacity: 0;
+    height: 0;
+  }
 
   @include mq($until: 'md'){
-    text-align: center;
+    text-align: left;
+    text-indent: 5%;
   }
 
   &__item{
@@ -296,31 +304,42 @@ export default {
 
   &--accordion{
     align-self: flex-start;
-
+    color: $brand-secondary;
+    a{
+      color: $brand-secondary;
+    }
     li {
       padding: 0;
-      background: lighten($brand-primary, 8%);
+      background: $brand-primary;
     }
     ul li{
-      background: lighten($brand-primary, 15%);
+      background: lighten($brand-primary, 8%);
       ul li{
-        background: lighten($brand-primary, 22%);
+        background: lighten($brand-primary, 12%);
         ul li{
-          background: lighten($brand-primary, 27%);
+          background: lighten($brand-primary, 22%);
           ul li{
-            background: lighten($brand-primary, 35%);
+            background: lighten($brand-primary, 27%);
             ul li{
-              background: lighten($brand-primary, 40%);
+              background: lighten($brand-primary, 35%);
             }
             ul li{
-              background: lighten($brand-primary, 45%);
+              background: lighten($brand-primary, 40%);
             }
           }
         }
       }
     }
     .tree__item{
+      position: relative;
+      overflow: hidden;
       transition: all .3s ease-in-out;
+      &--open{
+        color: $white;
+        a{
+          color: $white;
+        }
+      }
       &--visible{
         opacity: 1;
         height: auto;
@@ -336,15 +355,25 @@ export default {
     }
     .tree__arrow{
       cursor: pointer;
+      color: $brand-secondary;
+      transition: all .1s ease-in-out;
+      width: 50px;
+      height: 50px;
       position: absolute;
-      color: $white;
-      right: 5%;
-      transition: all .2s ease-in-out;
+      right: 2%;
+      top: 0;
       &::before{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        text-align: center;
+        left: 0;
+        line-height: 50px;
         content: "▶";
       }
       &--open{
         transform: rotate(90deg);
+        color: $white;
         //color: red;
       }
       &--close{

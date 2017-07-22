@@ -9,7 +9,6 @@ import ButtonsPage from './../pages/components/basic-styling/Buttons.vue';
 import TypographyPage from './../pages/components/basic-styling/Typography.vue';
 
 import HeroPage from './../pages/components/data-display/Hero.vue';
-import HeaderFooterPage from './../pages/components/data-display/HeaderFooter.vue';
 import GalleryPage from './../pages/components/data-display/Gallery.vue';
 import TreesPage from './../pages/components/data-display/Trees.vue';
 
@@ -54,11 +53,6 @@ export default new Router({
       {
         path: '/components/data-display/hero',
         component: HeroPage
-      },
-      {
-        path: '/components/data-display/header-footer',
-        component: HeaderFooterPage
       }
-
     ]
 });

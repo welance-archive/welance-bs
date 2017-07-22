@@ -6,3 +6,9 @@
 @import "welanstrap/components/buttons";    // Buttons mixins / helper classes – NOTE: prints CSS
 @import "welanstrap/components/lists";      // Lists mixins / helper classes – NOTE: prints CSS
 @import "welanstrap/layout/grid-classes";   // Prints grid helper classes – NOTE: prints CSS
+
+body{
+  &.body--no-overflow{
+      overflow: hidden;
+  }
+}

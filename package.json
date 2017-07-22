@@ -5,7 +5,7 @@
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "NODE_ENV='dev' env UV_THREADPOOL_SIZE=100 webpack-dev-server -d --host 0.0.0.0 --open",
+    "dev": "NODE_ENV='dev' env UV_THREADPOOL_SIZE=100 webpack-dev-server --host 0.0.0.0 --open",
     "prod": "NODE_ENV='prod' env UV_THREADPOOL_SIZE=100  webpack -p --optimize-minimize",
     "deploy": "gh-pages -d dist",
     "ghpages": "NODE_ENV='gh-pages' env UV_THREADPOOL_SIZE=100 webpack -p --optimize-minimize && npm run deploy"

@@ -2,7 +2,7 @@
 <div>
   <div class="wrap wrap--contained">
     <div class="row">
-      <div class="col col--3-12@lg col--12-12@xs">
+      <div class="col col--3-12@lg col--12-12@xs hide@md hide@sm hide@xs show-flex@lg">
         <!--:open-all="true"-->
         <tree
           :name="'menuzio'"
@@ -28,37 +28,49 @@
             </quote>
 
             <div class="row">
-              <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--primary"></div>
                   <h6><strong>$brand-primary</strong></h6>
                 </div>
               </div>
-              <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
+                <div class="color-item">
+                  <div class="color color--secondary"></div>
+                  <h6><strong>$brand-secondary</strong></h6>
+                </div>
+              </div>
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
+                <div class="color-item">
+                  <div class="color color--background"></div>
+                  <h6><strong>$brand-background</strong></h6>
+                </div>
+              </div>
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--success"></div>
                   <h6><strong>$brand-success</strong></h6>
                 </div>
               </div>
-              <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--info"></div>
                   <h6><strong>$brand-info</strong></h6>
                 </div>
               </div>
-              <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--warning"></div>
                   <h6><strong>$brand-warning</strong></h6>
                 </div>
               </div>
-              <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--danger"></div>
                   <h6><strong>$brand-danger</strong></h6>
                 </div>
               </div>
-              <div class="col col--2-12@lg col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--inverse"></div>
                   <h6><strong>$brand-inverse</strong></h6>
@@ -75,43 +87,43 @@
 
 
             <div class="row">
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--black"></div>
                   <h6><strong>$black</strong></h6>
                 </div>
               </div>
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--gray-dark"></div>
                   <h6><strong>$gray-dark</strong></h6>
                 </div>
               </div>
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--gray"></div>
                   <h6><strong>$gray</strong></h6>
                 </div>
               </div>
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--gray-light"></div>
                   <h6><strong>$gray-light</strong></h6>
                 </div>
               </div>
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--gray-lighter"></div>
                   <h6><strong>$gray-lighter</strong></h6>
                 </div>
               </div>
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--gray-lightest"></div>
                   <h6><strong>$gray-lightest</strong></h6>
                 </div>
               </div>
-              <div class="col col--1-7@lg col--4-12@md col--4-12@sm col--6-12@xs">
+              <div class="col col--2-8@lg col--4-12@md col--4-12@sm col--6-12@xs">
                 <div class="color-item">
                   <div class="color color--white"></div>
                   <h6><strong>$white</strong></h6>
@@ -134,11 +146,6 @@ import axios from 'axios';
 
 export default {
   name: 'ColorsPage',
-  watch: {
-    '$route' (to, from) {
-      console.log('route changed');
-    }
-  },
   components: {
     Quote,
     Tree
@@ -188,6 +195,12 @@ $border-gray: #f1f1f1;
     border: 1px solid $border-gray;
     &--primary{
       background: $brand-primary;
+    }
+    &--secondary{
+      background: $brand-secondary;
+    }
+    &--background{
+      background: $brand-background;
     }
     &--success{
       background: $brand-success;
