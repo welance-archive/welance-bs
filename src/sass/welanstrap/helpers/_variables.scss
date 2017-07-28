@@ -230,16 +230,28 @@ $line-height-huge:      $line-height-base + 1.5 !default;
 $line-height-h1:        $line-height-base - .2 !default;
 
 $golden: 1.618 !default;
-
-$ms-base: $font-size-base !default;
-$ms-ratio: $golden !default;
-$ms-range:
-  1.1 20em,     //320px
-  1.15 36em,     //576px
-  1.17 48em,     //768px
-  1.18 62em,     //992px
-  1.2 75em,     //1200
-  1.23 105em !default;    //1680
+$modularscale: (
+  base: $font-size-base,
+  ratio: 1.5,
+  20em: (
+    ratio: 1.1
+  ),
+  36em: (
+    ratio: 1.15
+  ),
+  48em: (
+    ratio: 1.17
+  ),
+  62em: (
+    ratio: 1.18
+  ),
+  75: (
+    ratio: 1.2
+  ),
+  105em: (
+    ratio: 1.23
+  )
+)!default;
 
 //do not scale fluidly
 $ms-fluid: false !default;
