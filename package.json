@@ -1,7 +1,7 @@
 {
   "name": "@welance/welance-bs",
-  "version": "0.6.1",
-  "description": "Welanstrap – Welance Bootstrap build with SASS and VueJS",
+  "version": "0.7.0",
+  "description": "Welance Bootstrap build with SASS and VueJS",
   "main": "index.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

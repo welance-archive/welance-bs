@@ -2,7 +2,33 @@
 
 ---
 
-## [0.6.1](https://github.com/welance/welance-bs/compare/v0.6.0...0.6.1) \(2017-06-21\)
+## [0.7.0](https://github.com/welance/welance-bs/compare/0.6.1...0.7.0) \(2017-06-21\)
+
+### Features
+
+* upgraded (speed) of build system by using **webpack v3** (w/ **npm 5.3.0 and node 8.2.1**)
+* new **modular-scale** SASS mixin (v3.0.2
+* upgraded all major vuejs dependencies (vue, router, compiler, etc.)
+
+### Bug Fixes
+
+* added missing `!default` to variables SASS file to be able to correctly override values
+
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* **sass-spacing** is no longer installed via npm (but included in mixins)
+* **sass-mq** new version requires [new variables for setup](https://github.com/welance/welance-bs/commit/00c73c2603a8b3b3e051d0550563cf0b56c92b98)
+
+---
+
+---
+
+## [0.6.1](https://github.com/welance/welance-bs/compare/0.6.0...0.6.1) \(2017-06-21\)
 
 ### Features
 
@@ -27,7 +53,7 @@
 
 ---
 
-## [0.6.0](https://github.com/welance/welance-bs/compare/v0.5.9...0.6.0) \(2017-06-12\)
+## [0.6.0](https://github.com/welance/welance-bs/compare/0.5.9...0.6.0) \(2017-06-12\)
 
 ### Features
 
@@ -52,7 +78,7 @@
 
 ---
 
-## [0.5.8](https://github.com/welance/welance-bs/compare/v0.5.8...0.5.9) \(2017-06-02\)
+## [0.5.8](https://github.com/welance/welance-bs/compare/0.5.8...0.5.9) \(2017-06-02\)
 
 ### Features
 
@@ -75,7 +101,7 @@
 
 ---
 
-## [0.5.8](https://github.com/welance/welance-bs/compare/v0.5.5...0.5.8) \(2017-06-02\)
+## [0.5.8](https://github.com/welance/welance-bs/compare/0.5.5...0.5.8) \(2017-06-02\)
 
 ### Features
 
@@ -97,7 +123,7 @@
 
 ---
 
-## [0.5.5](https://github.com/welance/welance-bs/compare/v0.5.4...0.5.5) \(2017-06-02\)
+## [0.5.5](https://github.com/welance/welance-bs/compare/0.5.4...0.5.5) \(2017-06-02\)
 
 ### Features
 
@@ -137,7 +163,7 @@ Usage for background:
 
 ---
 
-## [0.5.4](https://github.com/welance/welance-bs/compare/v0.5.3...0.5.4) \(2017-06-02\)
+## [0.5.4](https://github.com/welance/welance-bs/compare/0.5.3...0.5.4) \(2017-06-02\)
 
 ### Features
 
@@ -159,7 +185,7 @@ Usage for background:
 
 ---
 
-## [0.5.3](https://github.com/welance/welance-bs/compare/v0.5.2...0.5.3) \(2017-05-31\)
+## [0.5.3](https://github.com/welance/welance-bs/compare/0.5.2...0.5.3) \(2017-05-31\)
 
 ### Features
 
@@ -181,7 +207,7 @@ Usage for background:
 
 ---
 
-## [0.5.2](https://github.com/welance/welance-bs/compare/v0.5.0...0.5.2) \(2017-05-28\)
+## [0.5.2](https://github.com/welance/welance-bs/compare/0.5.0...0.5.2) \(2017-05-28\)
 
 ### Features
 
@@ -203,7 +229,7 @@ Usage for background:
 
 ---
 
-## [0.5.0](https://github.com/welance/welance-bs/compare/v0.2.0...0.5.0) \(2017-05-15\)
+## [0.5.0](https://github.com/welance/welance-bs/compare/0.2.0...0.5.0) \(2017-05-15\)
 
 ### Features
 
