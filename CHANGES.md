@@ -2,6 +2,29 @@
 
 ---
 
+## [0.7.1](https://github.com/welance/welance-bs/compare/0.7.0...0.7.1) \(2017-07-28\)
+
+### Features
+
+* upgraded **babel** related packages and **extract-text-webpack-plugin** to make them work with webpack v3+
+
+### Bug Fixes
+
+* none
+
+
+### DEPRECATIONS
+
+* none
+
+### BREAKING CHANGES
+
+* none
+
+---
+
+---
+
 ## [0.7.0](https://github.com/welance/welance-bs/compare/0.6.1...0.7.0) \(2017-06-21\)
 
 ### Features
