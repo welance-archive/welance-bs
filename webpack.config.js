@@ -1,8 +1,9 @@
-let webpack = require("webpack");
-let path = require('path');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require("webpack");
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-let config = require('./config/webpack-constants');
+
+const config = require('./config/webpack-constants');
 
 module.exports = {
 	entry: ["babel-polyfill", "./src/main.js"],	//this is to support ES6 features
