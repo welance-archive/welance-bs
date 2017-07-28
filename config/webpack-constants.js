@@ -1,12 +1,13 @@
-let webpack = require("webpack");
-let path = require('path');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
-let ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
-let ExtractTextPlugin = require('extract-text-webpack-plugin');
-let CopyWebpackPlugin = require('copy-webpack-plugin');
-let ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
-let FaviconsWebpackPlugin = require('favicons-webpack-plugin');
-let PrerenderSpaPlugin = require('prerender-spa-plugin');
+const webpack = require("webpack");
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminWebpackPlugin = require('imagemin-webpack-plugin').default;
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
+const PrerenderSpaPlugin = require('prerender-spa-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 const PLUGINS=[], PROD_PLUGINS=[], DEV_PLUGINS=[], SEO_ROUTES=[];
 
@@ -205,7 +206,8 @@ module.exports.PROD_PLUGINS = [
         )
       }*/
     }
-  )
+  ),
+  new UglifyJSPlugin({})
 ]; //end PROD_PLUGINS
 
 module.exports.DEV_PLUGINS = [
@@ -267,6 +269,9 @@ module.exports.DEV_PLUGINS = [
       yandex: false,
       windows: false
     }
+  }),
+  new UglifyJSPlugin({
+    sourceMap: true
   })
 ]; //end DEV_PLUGINS
 
