@@ -1,5 +1,7 @@
 # Welance Boostrap
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/welance/welance-bs.svg)](https://greenkeeper.io/)
+
 This is the main repository for Welance Boostrap.
 
 A starting point servable through npm. [View demo](https://welance.github.io/welance-bs/) to see all features.
